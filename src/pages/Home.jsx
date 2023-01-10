@@ -1,17 +1,23 @@
-import React from 'react';
-import foto from '../assets/foto.png'
-import Nav from '../components/Nav'
+import React from "react";
+
+import Nav from "../components/Nav";
+import Banner from "../components/Banner";
+import Acerca from "../components/Acerca";
+import Habilidades from "../components/Habilidades";
+import BtnArriba from "../components/BtnArriba";
 
 const Home = () => {
-    return (
-      <>
+  return (
+    <>
+      <div className="d-grid gap-4">
         <Nav />
-        <div>
-          <h1>hola mundo estoy editado</h1>
-          <img src={foto} width="100px" alt="" />
-        </div>
-      </>
-    );
-}
+        <Banner />
+        <Acerca/>
+        <Habilidades/>
+        <BtnArriba/>
+      </div>
+    </>
+  );
+};
 
 export default Home;

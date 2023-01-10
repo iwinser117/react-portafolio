@@ -1,18 +1,17 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "../styles/home.css";
-import Layout from "../components/Layout";
+
 import Home from "../pages/Home";
 import Nav from "../components/Nav";
 
 const App = () => {
   return (
-    <Layout>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="nav" element={<Nav/>} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/nav" element={<Nav/>} />
       </Routes>
-    </Layout>
+    
   );
 };
 

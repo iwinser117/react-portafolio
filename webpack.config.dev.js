@@ -59,6 +59,9 @@ module.exports = {
     },
     watchFiles: path.join(__dirname, "dist"), //observa los cambios en todos nuestros archivos y actualiza el navegador
     compress: true,
+    historyApiFallback: {
+      index: "index.html",
+    },
     port: 3006,
     open: true, //Hace que se abra en el navegador
   },

@@ -4,7 +4,6 @@ import ReactDOM from "react-dom/client";
 import App from "./routes/App";
 
 
-
 // (async function app() {
 //     const main = null || document.getElementById('main');
 //     main.innerHTML = await Home();
@@ -12,7 +11,7 @@ import App from "./routes/App";
 
 const root = ReactDOM.createRoot(document.getElementById("main"));
 root.render(
-    <BrowserRouter>
-        <App/>
-    </BrowserRouter>
-)
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);

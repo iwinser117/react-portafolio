@@ -1,0 +1,19 @@
+.banner {
+  height: 70vh;
+  width: 80%;
+  margin: auto;
+}
+.bannerItem {
+  width: 100%;
+  height: 400px;
+}
+.nav-link:hover {
+  color: rgb(17, 82, 168) !important;
+}
+.navbar li:hover {
+ border-radius:solid 1px black;
+ -webkit-border-radius:solid 1px black;
+ -moz-border-radius:solid 1px black;
+ -ms-border-radius:solid 1px black;
+ -o-border-radius:solid 1px black;
+}
