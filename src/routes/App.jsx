@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "../styles/home.css";
-import '../codigoProyectos/calculadora'
+import '../codigoProyectos/verResultados/calculadora'
 
 import Home from "../pages/Home";
 import Proyectos from "../pages/Proyectos";

@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import { noDatosMostrar } from "../codigoProyectos/noDatos";
+import { noDatosMostrar } from "./noDatos";
 export const mostrarR = (input1, input2, r, operando) => {
     
   if (input1 === "" || input2 === "") {
