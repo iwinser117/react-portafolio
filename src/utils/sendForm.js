@@ -1,9 +1,6 @@
 const Swal = require("sweetalert2");
 
-export const sendForm = (input) => {
-  if (input.value.trim() === ""){
-    console.log("hola")
-  }else
+export const sendForm = () => {
     Swal.fire({
       position: "center",
       icon: "success",

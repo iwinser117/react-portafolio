@@ -1,13 +1,22 @@
-import React from "react";
+import React ,{useState}from "react";
 import logo from "../assets/ok.svg";
 import Home from "../pages/Home";
 
 const Nav = () => {
+  const [currentPage, setCurrentPage] = useState('/');
+  function handleNavigation(newPage) {
+    setCurrentPage(newPage);
+  }
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <img className="navbar-brand" src={logo} width="60px" />
+          <img
+            className="navbar-brand"
+            src={logo}
+            width="60px"
+            onClick={() => handleNavigation("/")}
+          />
           <button
             className="navbar-toggler"
             type="button"
@@ -26,18 +35,24 @@ const Nav = () => {
                   Acerca de mi
                 </a>
               </li>
+              {currentPage === "/" ? (
+                <li className="nav-item">
+                  <a className="nav-link" href="#habilidades">
+                    Habilidades
+                  </a>
+                </li>
+              ) : null}
               <li className="nav-item">
-                <a className="nav-link" href="#habilidades">
-                  Habilidades
+                <a
+                  className="nav-link"
+                  href="#"
+                  onClick={() => handleNavigation("nav")}
+                >
+                  Proyectos
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Proyecto
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="#contactame">
                   Contactame
                 </a>
               </li>

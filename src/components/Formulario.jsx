@@ -5,7 +5,7 @@ const Fomulario = () => {
   return (
     <>
       <section className="container col-8 fs-5 text-justify lh-lg">
-        <h3 className="text-center">Contactame</h3>
+        <h3 className="text-center" id="contactame">Contactame</h3>
         <form className="container col-6">
           <div className="mb-3 ">
             <label htmlFor="exampleFormControlInput1" className="form-label">
@@ -54,9 +54,9 @@ const Fomulario = () => {
             ></textarea>
           </div>
           <button
-            type="submit"
+            type="button"
             className="btn btn-success m-auto d-block"
-            // onClick={() => sendForm()}
+            onClick={() => sendForm()}
           >
             Enviar
           </button>
