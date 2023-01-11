@@ -17,6 +17,7 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "babel-loader": "^9.1.2",
+    "bootstrap": "^5.2.3",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.3",
@@ -24,6 +25,7 @@
     "html-webpack-plugin": "^5.5.0",
     "mdb-react-ui-kit": "^5.1.0",
     "mini-css-extract-plugin": "^2.7.2",
+    "react-bootstrap": "^2.7.0",
     "react-bootstrap-carousel": "^4.1.1",
     "terser-webpack-plugin": "^5.3.6",
     "webpack": "^5.75.0",
@@ -33,6 +35,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.6.2"
+    "react-router-dom": "^6.6.2",
+    "sweetalert2": "^11.6.16"
   }
 }

@@ -17,3 +17,18 @@
  -ms-border-radius:solid 1px black;
  -o-border-radius:solid 1px black;
 }
+.see-more-button {
+  color: #0000EE;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+}
+
+.see-more-button:hover {
+  color: #0000EE;
+  text-decoration: none;
+}
+
+.mostrarList {
+  display: none;
+}

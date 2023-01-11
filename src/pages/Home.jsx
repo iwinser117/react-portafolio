@@ -4,7 +4,8 @@ import Nav from "../components/Nav";
 import Banner from "../components/Banner";
 import Acerca from "../components/Acerca";
 import Habilidades from "../components/Habilidades";
-import BtnArriba from "../components/BtnArriba";
+import BtnArriba from "../buttons/BtnArriba";
+import Formulario from "../components/Formulario";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         <Acerca/>
         <Habilidades/>
         <BtnArriba/>
+        <Formulario/>
       </div>
     </>
   );

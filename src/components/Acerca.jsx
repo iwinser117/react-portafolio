@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Acerca = () => {
+  const [isVisible, setIsVisible] = useState(false);
+   const toggleVisibility = () => {
+     setIsVisible(!isVisible);
+   };
   return (
     <section className="container col-8 fs-5 text-justify lh-lg">
       <article id="acercademi">
@@ -25,92 +29,92 @@ const Acerca = () => {
         </p>
       </article>
       <div className="certificados-iconos">
-        <ul>
-          <li>
+        <ul className="list-group">
+          <li className="list-group-item list-group-item-action">
             <p>
               Diplomado en Desarrollo de Aplicaciones Web
-              <pre>
-                <i className="fa-solid fa-trophy"></i>MisionTic2022{" "}
-                <a
-                  download="certificadoAppWebs"
-                  href="./certificaciones/Certificado_ciclo_4a_2022.pdf"
-                >
-                  <i className="fa-solid fa-download"></i>
-                </a>
-              </pre>
+              <br />
+              <i className="fa-solid fa-trophy"></i>MisionTic2022{" "}
+              <a
+                download="certificadoAppWebs"
+                href="./certificaciones/Certificado_ciclo_4a_2022.pdf"
+              >
+                <i className="fa-solid fa-download"></i>
+              </a>
             </p>
           </li>
-          <li>
+          <li className="list-group-item list-group-item-action">
             <p>
               Diplomado en Desarrollo de Software
-              <pre>
-                <i className="fa-solid fa-trophy"></i>MisionTic2022{" "}
-                <a
-                  download="certificadoDesarrolloSoftware"
-                  href="./certificaciones/Certificado_ciclo_3_2022.pdf"
-                >
-                  <i className="fa-solid fa-download"></i>
-                </a>
-              </pre>
+              <br />
+              <i className="fa-solid fa-trophy"></i>MisionTic2022{" "}
+              <a
+                download="certificadoDesarrolloSoftware"
+                href="./certificaciones/Certificado_ciclo_3_2022.pdf"
+              >
+                <i className="fa-solid fa-download"></i>
+              </a>
             </p>
           </li>
-          <li>
+          <li className="list-group-item list-group-item-action">
             <p>
               Diplomado en Programaci&oacute;n Basica Lenguaje Java
-              <pre>
-                <i className="fa-solid fa-trophy"></i>MisionTic2022{" "}
-                <a
-                  download="CertificadoJava"
-                  href="./certificaciones/Certificado_ciclo_2_2022_JAVA_MisionTic.pdf"
-                >
-                  <i className="fa-solid fa-download"></i>
-                </a>
-              </pre>
+              <br />
+              <i className="fa-solid fa-trophy"></i>MisionTic2022{" "}
+              <a
+                download="CertificadoJava"
+                href="./certificaciones/Certificado_ciclo_2_2022_JAVA_MisionTic.pdf"
+              >
+                <i className="fa-solid fa-download"></i>
+              </a>
             </p>
           </li>
-          <li>
+        </ul>
+        <ul
+          className="mostrarList list-group"
+          id="mostrarList"
+          style={{ display: isVisible ? "block" : "none" }}
+        >
+          <li className="list-group-item list-group-item-action">
             <p>
               Diplomado Fundamentos de Programaci&oacute;n en Lenguaje Python
-              <pre>
-                <i className="fa-solid fa-trophy"></i>MisionTic2022{" "}
-                <a
-                  download="certificadoPython"
-                  href="./certificaciones/Certificado_ciclo_1_2022 PYTHON_MisionTic.pdf"
-                >
-                  <i className="fa-solid fa-download"></i>
-                </a>
-              </pre>
+              <br />
+              <i className="fa-solid fa-trophy"></i>MisionTic2022{" "}
+              <a
+                download="certificadoPython"
+                href="./certificaciones/Certificado_ciclo_1_2022 PYTHON_MisionTic.pdf"
+              >
+                <i className="fa-solid fa-download"></i>
+              </a>
             </p>
           </li>
-          <li>
+          <li className="list-group-item list-group-item-action">
             <p>
               Curso Pr&aacute;ctico Javascript
-              <pre>
-                <i className="fa-solid fa-trophy"></i>Platzi
-              </pre>
+              <br />
+              <i className="fa-solid fa-trophy"></i>Platzi
             </p>
           </li>
-        </ul>
-        <ul className="mostrarList" id="mostrarText">
-          <li>
+          <li className="list-group-item list-group-item-action">
             <p>
               Curso Práctico de Frontend Developer
-              <pre>
-                <i className="fa-solid fa-trophy"></i>Platzi
-              </pre>
+              <br />
+              <i className="fa-solid fa-trophy"></i>Platzi
             </p>
           </li>
-          <li>
+          <li className="list-group-item list-group-item-action">
             <p>
               Curso de NPM: Gestión de Paquetes y Dependencias en JavaScript
-              <pre>
-                <i className="fa-solid fa-trophy"></i>Platzi
-              </pre>
+              <br />
+              <i className="fa-solid fa-trophy"></i>Platzi
             </p>
           </li>
         </ul>
-        <button className="leer" id="mostrarTextBtn">
-          ....Mostrar mas
+        <button
+          onClick={toggleVisibility}
+          className="btn-outline-info btn position-relative bottom-0  start-50"
+        >
+          {isVisible ? "Ver menos" : "Ver mas"}
         </button>
       </div>
     </section>

@@ -30,7 +30,7 @@ const Habilidades = () => {
         </article>
         <article>
           <h3>
-            <i className="fa-solid fa-server"></i> <b>Backend</b>
+            <i className="fa-solid fa-server"></i> Backend
           </h3>
           <p>
             Conocimientos de estructuras de datos, y dar soluciones a problemas
