@@ -6,7 +6,7 @@ const Acerca = () => {
      setIsVisible(!isVisible);
    };
   return (
-    <section className="container col-8 fs-5 text-justify lh-lg">
+    <section className="container col-8  text-justify lh-lg">
       <article id="acercademi">
         <h3>Acerca de mi</h3>
         <p>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Habilidades = () => {
     return (
-      <section className="container col-8 fs-5 text-justify lh-lg">
+      <section className="container col-8  text-justify lh-lg">
         <article id='habilidades'>
           <h3>Habilidades</h3>
         </article>

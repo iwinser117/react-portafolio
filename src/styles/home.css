@@ -32,3 +32,6 @@
 .mostrarList {
   display: none;
 }
+.aside {
+  border:none;
+}
