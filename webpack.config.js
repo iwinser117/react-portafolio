@@ -34,6 +34,20 @@ module.exports = {
         test: /\.png|svg/,
         type: "asset/resource",
       },
+      {
+        test: /\.mp4$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].mp4",
+              output: {
+                path: path.resolve(__dirname, "dist"),
+              },
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
