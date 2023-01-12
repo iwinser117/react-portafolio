@@ -8,14 +8,26 @@ function handleColorChange(event) {
 }
     return (
       <>
-        <div className="card w-50 m-auto noBorder">
-          <h4>Paleta de colores</h4>
-        </div>
-        <div className="card w-50 m-auto noBorder">
-          <div className="rounded-circle w-50 d-block" style={{ backgroundColor }}>
-            hola mundo
+        <div className="card m-auto w-50 p-4">
+          <div className="card  m-auto noBorder">
+            <h4 className='text-center'>Paleta de colores</h4>
+            <p>
+              Se toma mediante un input el valor del color y se le agrega este
+              estilo a un elemento contenedor
+            </p>
           </div>
-          <input type="color" onChange={handleColorChange} />
+          <div className="card  m-auto p-3" style={{ backgroundColor }}>
+            <div className="rounded-circle w-50 d-block m-auto">
+              <p className="text-center border-palet">
+                Hola Cambio de Colores <br /> ¡Intentalo!
+              </p>
+            </div>
+            <input
+              className="m-auto selectColor"
+              type="color"
+              onChange={handleColorChange}
+            />
+          </div>
         </div>
       </>
     );
