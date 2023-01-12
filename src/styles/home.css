@@ -24,3 +24,16 @@
 .aside, .noBorder {
   border:none;
 }
+.border-palet {
+  font-size: 2em;
+  font-weight: bold;
+   -webkit-text-stroke: 1px rgb(255, 255, 255);
+}
+.selectColor:hover {
+  cursor: pointer;
+}
+.descripcionEncabezado {
+  height: 75vh;
+  align-items: center;
+  display: flex;
+}

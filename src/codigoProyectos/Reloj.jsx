@@ -11,7 +11,7 @@ const Reloj = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setTime(new Date().toLocaleTimeString());
-      setCurrentDate(new Date());
+      
     }, 1000);
 
     return () => {
@@ -21,10 +21,10 @@ const Reloj = () => {
  
     return (
       <>
-        <div className="card w-50 m-auto noBorder">
-          <h4>Reloj</h4>
+        <div className="card m-auto w-50 p-4">
+          <h4 className='text-center'>Reloj</h4>
           <p>
-            en esta ocasion haciendo uso de useEffect y useState, junto con el
+            En esta ocasion haciendo uso de useEffect y useState, junto con el
             metodo de toLocaleTimeString() se llama el dato de fecha actual cada
             segundo
           </p>

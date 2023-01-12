@@ -43,8 +43,8 @@ const Calculadora = () => {
   }
   return (
     <>
-      <div id="calculadora" className="card w-50 m-auto noBorder">
-        <h4>Calculadora</h4>
+      <div id="calculadora" className="card w-50 m-auto p-4">
+        <h4 className="text-center">Calculadora</h4>
         <p>
           Operamos con los datos obtenidos de los input del formulario y
           operamos segun corresponda con las funciones asignada a los botones de
