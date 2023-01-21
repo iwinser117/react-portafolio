@@ -1,19 +1,19 @@
-import React, { useState, useRef,useEffect } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import VistaDiploma from "../viewCerti/VistaDiploma";
-import diploma1 from "../assets/d1Python.jpg";
+// import diploma1 from "../assets/d1Python.jpg";d6
 import mostrarDiploma from "../utils/modalDiploma.js";
 
 const Acerca = () => {
-  function handleClick(event) {
-    console.log(event.target.id.value);
-  }
-  const ref = useRef(null);
+  const [selectedId, setSelectedId] = useState(null);
+  const handleClick = (event) => {
+    mostrarDiploma(selectedId);
+    setSelectedId(event.currentTarget.id);
+  };
   useEffect(() => {
-    const element = ref.current;
-    console.log(element);
-    console.log(element.id.value);
-  }, []);
+    console.log(selectedId);
+    mostrarDiploma(selectedId);
+    // Cualquier cosa que quieres hacer con selectedId aquí
+  }, [selectedId]);
 
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => {
@@ -42,32 +42,27 @@ const Acerca = () => {
           Platzi los cuales he culminado ha satisfaccion.
         </p>
       </article>
-      <div className="certificados-iconos">
-        <ul className="list-group">
-          <li className="list-group-item list-group-item-action" id="item1">
+      <div className="certificados-iconos container-sm w-75">
+        <ul className="list-group ">
+          <li className="list-group-item list-group-item-action">
             <p>
               Diplomado en Desarrollo de Aplicaciones Web
               <br />
-              <i className="fa-solid fa-trophy"></i>MisionTic2022
-              <button
-                onClick={(() => mostrarDiploma(3), (e) => handleClick(e))}
-                className="btn btn-success"
-              >
+              <i className="fa-solid fa-trophy"></i>&nbsp;MisionTic2022 &nbsp;
+              &nbsp;
+              <a id="0" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
                 <i className="fa-regular fa-eye"></i>
-              </button>
+              </a>
             </p>
           </li>
           <li className="list-group-item list-group-item-action">
             <p>
               Diplomado en Desarrollo de Software
               <br />
-              <i className="fa-solid fa-trophy"></i>MisionTic2022{" "}
-              <a
-                id="2"
-                onClick={(e) => handleClick(e)}
-                download="certificadoDesarrolloSoftware"
-              >
-                <i className="fa-solid fa-download"></i>
+              <i className="fa-solid fa-trophy"></i>&nbsp;MisionTic2022 &nbsp;
+              &nbsp;
+              <a id="1" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
+                <i className="fa-regular fa-eye"></i>
               </a>
             </p>
           </li>
@@ -75,35 +70,26 @@ const Acerca = () => {
             <p>
               Diplomado en Programaci&oacute;n Basica Lenguaje Java
               <br />
-              <i className="fa-solid fa-trophy"></i>MisionTic2022{" "}
-              <a
-                download="CertificadoJava"
-                href="./certificaciones/Certificado_ciclo_2_2022_JAVA_MisionTic.pdf"
-              >
-                <i className="fa-solid fa-download"></i>
+              <i className="fa-solid fa-trophy"></i>&nbsp;MisionTic2022 &nbsp;
+              &nbsp;
+              <a id="2" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
+                <i className="fa-regular fa-eye"></i>
               </a>
             </p>
           </li>
         </ul>
         <ul
-          className="mostrarList list-group"
+          className="mostrarList list-group "
           id="mostrarList"
           style={{ display: isVisible ? "block" : "none" }}
         >
-          <li
-            className="list-group-item list-group-item-action"
-            ref={ref}
-            id="0"
-          >
+          <li className="list-group-item list-group-item-action" id="0">
             <p>
               Diplomado Fundamentos de Programaci&oacute;n en Lenguaje Python
               <br />
-              <i className="fa-solid fa-trophy"></i>MisionTic2022{" "}
-              <a
-                download="certificadoPython"
-                href="./certificaciones/Certificado_ciclo_1_2022 PYTHON_MisionTic.pdf"
-              >
-                <i className="fa-solid fa-download"></i>
+              <i className="fa-solid fa-trophy"></i>&nbsp;MisionTic2022{" "}
+              <a id="3" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
+                <i className="fa-regular fa-eye"></i>
               </a>
             </p>
           </li>
@@ -111,27 +97,36 @@ const Acerca = () => {
             <p>
               Curso Pr&aacute;ctico Javascript
               <br />
-              <i className="fa-solid fa-trophy"></i>Platzi
+              <i className="fa-solid fa-trophy"></i>&nbsp;Platzi &nbsp; &nbsp;
+              <a id="4" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
+                <i className="fa-regular fa-eye"></i>
+              </a>
             </p>
           </li>
           <li className="list-group-item list-group-item-action">
             <p>
               Curso Práctico de Frontend Developer
               <br />
-              <i className="fa-solid fa-trophy"></i>Platzi
+              <i className="fa-solid fa-trophy"></i>&nbsp;Platzi &nbsp; &nbsp;
+              <a id="5" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
+                <i className="fa-regular fa-eye"></i>
+              </a>
             </p>
           </li>
           <li className="list-group-item list-group-item-action">
             <p>
-              Curso de NPM: Gestión de Paquetes y Dependencias en JavaScript
+              Curso Practico de React
               <br />
-              <i className="fa-solid fa-trophy"></i>Platzi
+              <i className="fa-solid fa-trophy"></i>&nbsp;Platzi &nbsp; &nbsp;
+              <a id="6" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
+                <i className="fa-regular fa-eye"></i>
+              </a>
             </p>
           </li>
         </ul>
         <button
           onClick={toggleVisibility}
-          className="btn-outline-info btn position-relative bottom-0  start-50"
+          className="btn btn-light position-relative bottom-0  start-50 m-2"
         >
           {isVisible ? "Ver menos" : "Ver mas"}
         </button>
