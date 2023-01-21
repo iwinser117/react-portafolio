@@ -1,11 +1,19 @@
 const Swal = require("sweetalert2");
 const imgs = [
-  "../assets/d1Python.jpg",
-  "../assets/d2Java.jpg",
-  "../assets/d3Soft.jpg",
-  "../assets/d4Web.jpg",
+  "../assets/certificados/d4Web.jpg",
+  "../assets/certificados/d3Soft.jpg",
+  "../assets/certificados/d2Java.jpg",
+  "../assets/certificados/d1Python.jpg",
+  '../assets/certificados/d5JsPrac.jpg',
+  '../assets/certificados/d6FronDev.jpg',
+  '../assets/certificados/d7ReactPractico.jpg'
+
+  ,
 ];
 function mostrarDiploma(idImg) {
+  if(idImg == null){
+    return
+  }
   Swal.fire({
     // title: "Sweet!",
     // text: "Modal with a custom image.",
