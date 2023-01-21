@@ -36,14 +36,12 @@ module.exports = {
       },
       {
         test: /\.mp4$/,
+        type: "asset/resource",
         use: [
           {
             loader: "file-loader",
             options: {
               name: "[name].mp4",
-              output: {
-                path: path.resolve(__dirname, "dist"),
-              },
             },
           },
         ],

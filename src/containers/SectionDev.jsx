@@ -4,6 +4,7 @@ import Calculadora from "../codigoProyectos/Calculadora";
 import Contador from "../codigoProyectos/Contador";
 import PaletColores from "../codigoProyectos/PaletColores";
 import ListaTareas from "../codigoProyectos/ListaTareas";
+import RickAndMorty from "../codigoProyectos/RickAndMorty";
 
 
 const SectionDev = () => {
@@ -17,6 +18,7 @@ const SectionDev = () => {
         <Contador />
         <PaletColores />
         <ListaTareas/>
+        <RickAndMorty/>
       </div>
     </>
   );
