@@ -1,10 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useRef,useEffect } from "react";
+import { Link } from "react-router-dom";
+import VistaDiploma from "../viewCerti/VistaDiploma";
+import diploma1 from "../assets/d1Python.jpg";
+import mostrarDiploma from "../utils/modalDiploma.js";
 
 const Acerca = () => {
+  function handleClick(event) {
+    console.log(event.target.id.value);
+  }
+  const ref = useRef(null);
+  useEffect(() => {
+    const element = ref.current;
+    console.log(element);
+    console.log(element.id.value);
+  }, []);
+
   const [isVisible, setIsVisible] = useState(false);
-   const toggleVisibility = () => {
-     setIsVisible(!isVisible);
-   };
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
   return (
     <section className="container col-8  text-justify lh-lg">
       <article id="acercademi">
@@ -30,17 +44,17 @@ const Acerca = () => {
       </article>
       <div className="certificados-iconos">
         <ul className="list-group">
-          <li className="list-group-item list-group-item-action">
+          <li className="list-group-item list-group-item-action" id="item1">
             <p>
               Diplomado en Desarrollo de Aplicaciones Web
               <br />
-              <i className="fa-solid fa-trophy"></i>MisionTic2022{" "}
-              <a
-                download="certificadoAppWebs"
-                href="./certificaciones/Certificado_ciclo_4a_2022.pdf"
+              <i className="fa-solid fa-trophy"></i>MisionTic2022
+              <button
+                onClick={(() => mostrarDiploma(3), (e) => handleClick(e))}
+                className="btn btn-success"
               >
-                <i className="fa-solid fa-download"></i>
-              </a>
+                <i className="fa-regular fa-eye"></i>
+              </button>
             </p>
           </li>
           <li className="list-group-item list-group-item-action">
@@ -49,8 +63,9 @@ const Acerca = () => {
               <br />
               <i className="fa-solid fa-trophy"></i>MisionTic2022{" "}
               <a
+                id="2"
+                onClick={(e) => handleClick(e)}
                 download="certificadoDesarrolloSoftware"
-                href="./certificaciones/Certificado_ciclo_3_2022.pdf"
               >
                 <i className="fa-solid fa-download"></i>
               </a>
@@ -75,7 +90,11 @@ const Acerca = () => {
           id="mostrarList"
           style={{ display: isVisible ? "block" : "none" }}
         >
-          <li className="list-group-item list-group-item-action">
+          <li
+            className="list-group-item list-group-item-action"
+            ref={ref}
+            id="0"
+          >
             <p>
               Diplomado Fundamentos de Programaci&oacute;n en Lenguaje Python
               <br />
