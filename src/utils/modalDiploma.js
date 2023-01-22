@@ -1,12 +1,12 @@
 const Swal = require("sweetalert2");
 const imgs = [
-  "../assets/certificados/d4Web.jpg",
-  "../assets/certificados/d3Soft.jpg",
-  "../assets/certificados/d2Java.jpg",
-  "../assets/certificados/d1Python.jpg",
-  '../assets/certificados/d5JsPrac.jpg',
-  '../assets/certificados/d6FronDev.jpg',
-  '../assets/certificados/d7ReactPractico.jpg'
+  "../assets/d4Web.jpg",
+  "../assets/d3Soft.jpg",
+  "../assets/d2Java.jpg",
+  "../assets/d1Python.jpg",
+  '../assets/d5JsPrac.jpg',
+  '../assets/d6FronDev.jpg',
+  '../assets/d7ReactPractico.jpg'
 
   ,
 ];
