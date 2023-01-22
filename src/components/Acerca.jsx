@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import VistaDiploma from "../viewCerti/VistaDiploma";
-// import diploma1 from "../assets/d1Python.jpg";d6
 import mostrarDiploma from "../utils/modalDiploma.js";
 
 const Acerca = () => {
