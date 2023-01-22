@@ -36,11 +36,13 @@ const Fomulario = () => {
           Contactame
         </h3>
         <form
-          
-          name="formulario-portafolio"
+          style={{ display: "none" }}
+          name="contact"
+          action="post"
           data-netlify="true"
           className="container col-6"
         >
+          <input type="hidden" name="form-name" value="contact"></input>
           <div className="mb-3 ">
             <label htmlFor="name" className="form-label">
               Nombre:
@@ -104,6 +106,25 @@ const Fomulario = () => {
           </button>
         </form>
       </section>
+      <div style={{ display: "none" }}>
+        <form name="contact" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
+
+          <p>
+            <label>
+              Name <input type="text" name="name" />
+            </label>
+          </p>
+          <p>
+            <label>
+              Email <input type="email" name="email" />
+            </label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>
+      </div>
     </>
   );
 };
