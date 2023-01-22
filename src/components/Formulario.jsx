@@ -36,11 +36,10 @@ const Fomulario = () => {
           Contactame
         </h3>
         <form
-          method="post"
+          
           name="formulario-portafolio"
-          netlify
+          data-netlify="true"
           className="container col-6"
-          onSubmit={(e) => handleSubmit(e)}
         >
           <div className="mb-3 ">
             <label htmlFor="name" className="form-label">
@@ -96,7 +95,11 @@ const Fomulario = () => {
               rows="3"
             ></textarea>
           </div>
-          <button type="submit" className="btn btn-success m-auto d-block">
+          <button
+            onSubmit={(e) => handleSubmit(e)}
+            type="submit"
+            className="btn btn-success m-auto d-block"
+          >
             Enviar
           </button>
         </form>
