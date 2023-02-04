@@ -3,16 +3,13 @@ import logo from "../assets/ok.svg";
 import Home from "../pages/Home";
 import { NavLink, useLocation } from "react-router-dom";
 const Nav = () => {
-  /* const [currentPage, setCurrentPage] = useState('nav');
-  function handleNavigation(newPage) {
-    setCurrentPage(newPage);
-  } */
+
 
   const locacion = useLocation();
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
+      <nav className="navbar navbar-expand-lg mt-2 ">
+        <div className="container-fluid w-75 ">
           <img className="navbar-brand" src={logo} width="60px" />
           <button
             className="navbar-toggler"
@@ -26,8 +23,9 @@ const Nav = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav">
-              {location.pathname === "/nav" ?  <li className="nav-item">
+            <ul className="navbar-nav nav-ul">
+              {location.pathname === "/nav" ? (
+                <li className="nav-item">
                   <NavLink
                     className="nav-link"
                     to={"/"}
@@ -35,9 +33,8 @@ const Nav = () => {
                   >
                     Inicio
                   </NavLink>
-                </li> : (
-               null
-              )}
+                </li>
+              ) : null}
               {location.pathname === "/nav" ? null : (
                 <li className="nav-item">
                   <a className="nav-link" href="#acercademi">
@@ -47,17 +44,17 @@ const Nav = () => {
               )}
 
               {location.pathname === "/nav" ? null : (
-                <li className="nav-item">
-                  <a className="nav-link" href="#habilidades">
+                <li className="nav-item ">
+                  <a className="nav-link " href="#habilidades">
                     Habilidades
                   </a>
                 </li>
               )}
 
               {location.pathname === "/nav" ? null : (
-                <li className="nav-item">
+                <li className="nav-item ">
                   <NavLink
-                    className="nav-link"
+                    className="nav-link "
                     to={"/nav"}
                     // onClick={() => handleNavigation("nav")}
                   >
@@ -66,7 +63,7 @@ const Nav = () => {
                 </li>
               )}
 
-              <li className="nav-item">
+              <li className="nav-item ">
                 <a className="nav-link" href="#contactame">
                   Contactame
                 </a>

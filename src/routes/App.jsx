@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "../styles/home.css";
+import "../styles/resposiveMed.css";
 import '../codigoProyectos/verResultados/calculadora'
 
 import Home from "../pages/Home";

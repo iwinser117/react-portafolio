@@ -1,0 +1,49 @@
+@media screen and (max-width:991px) {
+ .collapse {
+  position: inherit;
+  width: 100%;
+}
+.banner {
+  height: inherit;
+  width: inherit;
+  margin: inherit;
+}
+.nav-ul {
+    width: 100%;
+  z-index: 1;
+  height: inherit;
+  width: inherit;
+  justify-content: inherit;
+  position: inherit;
+  margin-left: inherit;
+}
+
+.nav-ul li {
+  margin-right: 0px;
+  position: inherit;
+  width: inherit;
+  text-align: inherit;
+  width: 100%;
+}
+
+.nav-ul a {
+    width: 100%;
+  position: inherit;
+  display: inherit;
+  padding: inherit;
+}
+.nav-ul a::before {
+  content: "";
+  position: inherit;
+  bottom: inherit;
+  left: inherit;
+  width: inherit;
+  height: inherit;
+  background: inherit;
+  z-index: 1;
+  transform: none(0);
+  transform-origin: none;
+  transition:inherit;
+}
+
+}
