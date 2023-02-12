@@ -1,10 +1,9 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit";
-import bann1 from "../assets/b2.png";
-import bann2 from "../assets/b1.png";
-import bann3 from "../assets/bann3.png";
-
+import React from "react"
+import { MDBCarousel, MDBCarouselItem } from "mdb-react-ui-kit"
+import "@styles/Banner.css"
+import bann1 from "@assets/b2.png"
+import bann2 from "@assets/b1.png"
+import bann3 from "@assets/bann3.png"
 
 const Banner = () => {
   return (
@@ -30,7 +29,7 @@ const Banner = () => {
         />
       </MDBCarousel>
     </div>
-  );
-};
+  )
+}
 
-export default Banner;
+export default Banner

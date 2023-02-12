@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import "../styles/home.css";
-import { Button } from "react-bootstrap";
+import "@styles/home.css";
 
 
 const  SeeMoreButton = ()=> {

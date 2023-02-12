@@ -1,23 +1,23 @@
-import React, { useState } from "react";
-const Swal = require("sweetalert2");
+import React, { useState } from "react"
+const Swal = require("sweetalert2")
 const Fomulario = () => {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({})
 
   const handleChange = (e) => {
-    console.log(e.target.value);
+    console.log(e.target.value)
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    });
-  };
+    })
+  }
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     if (!formData.name || !formData.email || !formData.asunto) {
       Swal.fire({
         title: "Vaya! algo ha salido mal",
         text: "Por favor, rellene todos los campos",
         icon: "error",
-      });
+      })
     } else {
       Swal.fire({
         position: "center",
@@ -26,9 +26,9 @@ const Fomulario = () => {
         showConfirmButton: false,
         timer: 2000,
         text: "Pronto nos pondremos en contacto",
-      });
+      })
     }
-  };
+  }
   return (
     <>
       <section className="container col-8 fs-5 text-justify lh-lg">
@@ -126,7 +126,7 @@ const Fomulario = () => {
         </form>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Fomulario;
+export default Fomulario

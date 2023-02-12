@@ -1,5 +1,5 @@
-import React from "react";
-import rickFoto from '../assets/RickandMorty.png'
+import React from "react"
+import rickFoto from "../assets/RickandMorty.png"
 const RickAndMorty = () => {
   return (
     <div className="card m-auto w-50 p-4">
@@ -23,7 +23,7 @@ const RickAndMorty = () => {
         <img src={rickFoto} width="100%" alt="" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default RickAndMorty;
+export default RickAndMorty

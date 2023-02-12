@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 const Aside = () => {
   return (
@@ -62,7 +62,7 @@ const Aside = () => {
         </div>
       </aside>
     </section>
-  );
-};
+  )
+}
 
-export default Aside;
+export default Aside

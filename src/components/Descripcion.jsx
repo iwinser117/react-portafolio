@@ -1,5 +1,5 @@
-import React from "react";
-import SectionDev from "../containers/SectionDev";
+import React from "react"
+import SectionDev from "../containers/SectionDev"
 
 const Descripcion = () => {
   return (
@@ -23,7 +23,7 @@ const Descripcion = () => {
         <SectionDev />
       </section>
     </>
-  );
-};
+  )
+}
 
-export default Descripcion;
+export default Descripcion

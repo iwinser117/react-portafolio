@@ -1,22 +1,21 @@
-import React, { useState, useEffect } from "react";
-import mostrarDiploma from "../utils/modalDiploma.js";
+import React, { useState, useEffect } from "react"
+import mostrarDiploma from "../utils/modalDiploma.js"
 
 const Acerca = () => {
-  const [selectedId, setSelectedId] = useState(null);
+  const [selectedId, setSelectedId] = useState(null)
   const handleClick = (event) => {
-    mostrarDiploma(selectedId);
-    setSelectedId(event.currentTarget.id);
-  };
+    mostrarDiploma(selectedId)
+    setSelectedId(event.currentTarget.id)
+  }
   useEffect(() => {
-    console.log(selectedId);
-    mostrarDiploma(selectedId);
-    // Cualquier cosa que quieres hacer con selectedId aquí
-  }, [selectedId]);
+    console.log(selectedId)
+    mostrarDiploma(selectedId)
+  }, [selectedId])
 
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false)
   const toggleVisibility = () => {
-    setIsVisible(!isVisible);
-  };
+    setIsVisible(!isVisible)
+  }
   return (
     <section className="container col-8  text-justify lh-lg">
       <article id="acercademi">
@@ -130,7 +129,7 @@ const Acerca = () => {
         </button>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Acerca;
+export default Acerca

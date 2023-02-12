@@ -1,7 +1,7 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
+const path = require("path")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const CopyPlugin = require("copy-webpack-plugin")
 
 module.exports = {
   entry: "./src/index.js",
@@ -13,6 +13,15 @@ module.exports = {
   //es como un live server pero para webpack   watch : true,
   resolve: {
     extensions: [".js", ".jsx"],
+    alias: {
+      "@styles": path.resolve(__dirname, "src/styles/"),
+      "@buttons": path.resolve(__dirname, "src/buttons/"),
+      "@codigoProyectos": path.resolve(__dirname, "src/codigoProyectos/"),
+      "@components": path.resolve(__dirname, "src/components/"),
+      "@containers": path.resolve(__dirname, "src/containers/"),
+      "@pages": path.resolve(__dirname, "src/pages/"),
+      "@assets": path.resolve(__dirname, "src/assets/"),
+    },
   },
   module: {
     rules: [
@@ -65,4 +74,4 @@ module.exports = {
     port: 3006,
     open: true, //Hace que se abra en el navegador
   },
-};
+}
