@@ -1,25 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"
 
 const BtnArriba = () => {
-  const [showButton, setShowButton] = useState(false);
-  
-    useEffect(() => {
-      const handleScroll = () => {
-        if (window.pageYOffset > 300) {
-          setShowButton(true);
-        } else {
-          setShowButton(false);
-        }
-      };
+  const [showButton, setShowButton] = useState(false)
 
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+  useEffect(() => {
+    const handleScroll = () => {
+      window.pageYOffset > 300 ? setShowButton(true) : setShowButton(false)
+    }
 
-    const handleClick = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
-  
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
 
   return (
     <button
@@ -29,7 +24,7 @@ const BtnArriba = () => {
     >
       <i className="fa-regular fa-circle-up"></i>
     </button>
-  );
-};
+  )
+}
 
-export default BtnArriba;
+export default BtnArriba

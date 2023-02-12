@@ -1,11 +1,8 @@
-import React, { useState } from "react";
-import logo from "../assets/ok.svg";
-import Home from "../pages/Home";
-import { NavLink, useLocation } from "react-router-dom";
+import React, { useState } from "react"
+import logo from "@assets/ok.svg"
+import { NavLink, useLocation } from "react-router-dom"
 const Nav = () => {
-
-
-  const locacion = useLocation();
+  const locacion = useLocation()
   return (
     <>
       <nav className="navbar navbar-expand-lg mt-2 ">
@@ -73,7 +70,7 @@ const Nav = () => {
         </div>
       </nav>
     </>
-  );
-};
+  )
+}
 
-export default Nav;
+export default Nav

@@ -3,7 +3,6 @@
 
 ### Linux ###
 *~
-.history
 # temporary files which can be created if a process still has a handle open of a deleted file
 .fuse_hidden*
 
@@ -84,6 +83,7 @@ web_modules/
 
 # Optional REPL history
 .node_repl_history
+
 
 # Output of 'npm pack'
 *.tgz
@@ -168,5 +168,5 @@ node_modules
 psd
 thumb
 sketch
-
+*.history
 # End of https://www.toptal.com/developers/gitignore/api/node,react,linux

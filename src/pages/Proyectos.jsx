@@ -1,7 +1,7 @@
 import React from "react";
-import Nav from "../components/Nav";
-import Descripcion from "../components/Descripcion";
-import Footer from "../components/Footer";
+import Nav from "@components/Nav";
+import Descripcion from "@components/Descripcion";
+import Footer from "@components/Footer";
 
 const Proyectos = () => {
   return (

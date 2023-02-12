@@ -1,12 +1,4 @@
-.banner {
-  height: 70vh;
-  width: 80%;
-  margin: auto;
-}
-.bannerItem {
-  width: 100%;
-  height: 400px;
-}
+
 .collapse {
   position: relative;
 }
