@@ -1,0 +1,16 @@
+.icono-formulario {
+    text-align: center;
+    width: 50% ;
+    margin: auto;
+}
+.icono-formulario:hover{
+    color: #cf0505;
+    cursor: pointer;
+    
+}
+form {
+    font-size: 16px;
+}
+/* .cont-Form {
+    display: none;
+} */

@@ -1,0 +1,21 @@
+.btn-arriba {
+  background: rgb(197, 197, 197);
+  background: linear-gradient(    180deg,    rgba(100, 100, 100, 0.827) 25%,    rgb(201, 201, 202) 99%  );
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.btn-arriba:hover {
+  background: rgb(32, 32, 32);
+  background: linear-gradient(    180deg,    rgba(131, 131, 131, 0.827) 25%,    rgb(245, 245, 245) 99%  );
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  
+}

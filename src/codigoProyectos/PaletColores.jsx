@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import '@styles/PaletaColores.css'
 
 const PaletColores = () => {
     const [backgroundColor, setBackgroundColor] = useState("#ffffff");
