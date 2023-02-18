@@ -1,5 +1,5 @@
 import React from "react"
-
+import '@styles/habilidades.css'
 const Habilidades = () => {
   return (
     <section className="container col-8  text-justify lh-lg">

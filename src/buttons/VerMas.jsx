@@ -11,7 +11,6 @@ const  SeeMoreButton = ()=> {
   return (
     <div>
       <button onClick={toggleVisibility}>Toggle Visibility</button>
-      
     </div>
   );
 }

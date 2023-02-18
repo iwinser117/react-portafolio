@@ -1,0 +1,42 @@
+.content-aside {
+    width: 100%;
+}
+.aside,
+.noBorder {
+  border: none;
+  width: 40%;
+  
+}
+.aside-div-int h6 {
+    margin-left: 52px;
+    color: rgb(80, 80, 80);
+}
+.cont-int-aside {
+    display: flex;
+    padding: 0;
+    margin-left: 52px;
+}
+.cont-int-aside a{
+    color:rgb(43, 43, 43);
+    text-decoration: none;
+}
+
+.git-link:hover {
+    color: var(--iconGit);
+}
+.linkedin-link:hover {
+    color: var(--iconLinkedin);
+}
+.pdf-link:hover {
+    color: var(--iconPdf);
+}
+.email-link:hover {
+    background-image: var(--iconEmail);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.wsp-link:hover {
+    color: var(--iconWsp);
+}

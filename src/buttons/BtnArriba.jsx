@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-
+import "@styles/botons.css"
 const BtnArriba = () => {
   const [showButton, setShowButton] = useState(false)
 
@@ -18,7 +18,7 @@ const BtnArriba = () => {
 
   return (
     <button
-      className="text-warning position-fixed bottom-0 end-0 translate-middle translate-middle btn btn-primary"
+      className=" position-fixed bottom-0 end-0 translate-middle translate-middle btn  btn-arriba"
       onClick={() => handleClick()}
       style={{ display: showButton ? "block" : "none" }}
     >

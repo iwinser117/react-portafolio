@@ -1,0 +1,9 @@
+:root {
+
+    /* iconos colores */
+  --iconGit: #b140c0;
+  --iconLinkedin: #0e76a8;
+  --iconPdf: #8d0808;
+  --iconWsp:#0b4412;
+  --iconEmail :linear-gradient(to right, #D44638, #FF5B32);
+}

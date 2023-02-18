@@ -1,8 +1,13 @@
 import React, { useState } from "react"
+import "@styles/formulario.css"
 const Swal = require("sweetalert2")
 const Fomulario = () => {
   const [formData, setFormData] = useState({})
+  const [viewForm, setViewForm] = useState(false)
 
+  const verForm = () => {
+    setViewForm(!viewForm)
+  }
   const handleChange = (e) => {
     console.log(e.target.value)
     setFormData({
@@ -35,12 +40,37 @@ const Fomulario = () => {
         <h3 className="text-center" id="contactame">
           Contactame
         </h3>
+
+        <div
+          className="icono-formulario"
+          title="Diligenciar formulario"
+          onClick={() => verForm()}
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-article"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path>
+            <path d="M7 8h10"></path>
+            <path d="M7 12h10"></path>
+            <path d="M7 16h10"></path>
+          </svg>
+        </div>
         <form
-          style={{ display: "none" }}
+          style={{ display: viewForm ? "block" : "none" }}
           name="contact"
           action="post"
           data-netlify="true"
-          className="container col-6"
+          className="container col-6 cont-Form"
         >
           <input type="hidden" name="form-name" value="contact"></input>
           <div className="mb-3 ">
