@@ -1,38 +1,45 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
+import emailjs from "@emailjs/browser"
 import "@styles/formulario.css"
-const Swal = require("sweetalert2")
+import formLogo from "@assets/formLogo.png"
+import { exito, noEnviado, limpiarInput } from "../utils/sendForm"
 const Fomulario = () => {
-  const [formData, setFormData] = useState({})
+  //const [formData, setFormData] = useState({})
   const [viewForm, setViewForm] = useState(false)
 
   const verForm = () => {
     setViewForm(!viewForm)
   }
-  const handleChange = (e) => {
+  /* const handleChange = (e) => {
     console.log(e.target.value)
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     })
-  }
-  const handleSubmit = (e) => {
+  } */
+
+  const form = useRef()
+  const sendEmail = (e) => {
     e.preventDefault()
-    if (!formData.name || !formData.email || !formData.asunto) {
-      Swal.fire({
-        title: "Vaya! algo ha salido mal",
-        text: "Por favor, rellene todos los campos",
-        icon: "error",
+
+    emailjs
+      .sendForm(
+        "service_uiwikh8",
+        "template_40uel95",
+        form.current,
+        "tvVn2ElRQmSkAAMc2"
+      )
+      .then(
+        (result) => {
+          limpiarInput()
+        },
+        (error) => {
+          noEnviado()
+        }
+      )
+      .then((result) => {
+        exito()
       })
-    } else {
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Mensaje enviado con exito",
-        showConfirmButton: false,
-        timer: 2000,
-        text: "Pronto nos pondremos en contacto",
-      })
-    }
   }
   return (
     <>
@@ -42,61 +49,50 @@ const Fomulario = () => {
         </h3>
 
         <div
-          className="icono-formulario"
+        className="icono-formulario"
           title="Diligenciar formulario"
           onClick={() => verForm()}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-article"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"></path>
-            <path d="M7 8h10"></path>
-            <path d="M7 12h10"></path>
-            <path d="M7 16h10"></path>
-          </svg>
+          <img
+            src={formLogo}
+            alt="logo formulario"
+            width="32px"
+          />
         </div>
         <form
           style={{ display: viewForm ? "block" : "none" }}
+          ref={form}
           name="contact"
           action="post"
           data-netlify="true"
+          onSubmit={sendEmail}
           className="container col-6 cont-Form"
         >
           <input type="hidden" name="form-name" value="contact"></input>
           <div className="mb-3 ">
-            <label htmlFor="name" className="form-label">
+            <label htmlFor="user_name" className="form-label">
               Nombre:
             </label>
             <input
-              onChange={(e) => handleChange(e)}
+              // onChange={(e) => handleChange(e)}
               type="text"
               className="form-control"
-              id="name"
-              name="name"
+              id="user_name"
+              name="user_name"
               placeholder="escribe tu nombre"
               required
             />
           </div>
           <div className="mb-3 ">
-            <label htmlFor="email" className="form-label">
+            <label htmlFor="user_email" className="form-label">
               Email:
             </label>
             <input
-              onChange={(e) => handleChange(e)}
+              // onChange={(e) => handleChange(e)}
               type="email"
               className="form-control"
-              id="email"
-              name="email"
+              id="user_email"
+              name="user_email"
               placeholder="name@example.com"
               required
             />
@@ -107,7 +103,7 @@ const Fomulario = () => {
             </label>
             <input
               name="asunto"
-              onChange={(e) => handleChange(e)}
+              // onChange={(e) => handleChange(e)}
               type="text"
               className="form-control"
               id="asunto"
@@ -116,45 +112,22 @@ const Fomulario = () => {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="descripcion" className="form-label">
-              Descripcion
+            <label htmlFor="message" className="form-label">
+              Mensaje:
             </label>
             <textarea
-              name="descripcion"
-              onChange={(e) => handleChange(e)}
+              name="message"
+              // onChange={(e) => handleChange(e)}
               className="form-control"
-              id="descripcion"
+              id="message"
               rows="3"
             ></textarea>
           </div>
-          <button
-            onSubmit={(e) => handleSubmit(e)}
-            type="submit"
-            className="btn btn-success m-auto d-block"
-          >
+          <button type="submit" className="btn btn-success m-auto d-block">
             Enviar
           </button>
         </form>
       </section>
-      <div style={{ display: "none" }}>
-        <form name="contact" data-netlify="true">
-          <input type="hidden" name="form-name" value="contact" />
-
-          <p>
-            <label>
-              Name <input type="text" name="name" />
-            </label>
-          </p>
-          <p>
-            <label>
-              Email <input type="email" name="email" />
-            </label>
-          </p>
-          <p>
-            <button type="submit">Send</button>
-          </p>
-        </form>
-      </div>
     </>
   )
 }

@@ -9,7 +9,7 @@ function handleColorChange(event) {
     return (
       <>
         <div className="card m-auto w-50 p-4">
-          <div className="card  m-auto noBorder">
+          <div className="card  w-100 m-auto noBorder">
             <h4 className='text-center'>Paleta de colores</h4>
             <p>
               Se toma mediante un input el valor del color y se le agrega este

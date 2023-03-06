@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "name": "portafolio-react",
+  "dependencies": {
+    "@emailjs/browser": { "version": "3.10.0" },
+    "react-dom": { "version": "18.2.0" },
+    "react-router-dom": { "version": "6.6.2" },
+    "react": { "version": "18.2.0" },
+    "sweetalert2": { "version": "11.6.16" }
+  }
+}
