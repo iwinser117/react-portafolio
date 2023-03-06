@@ -1,12 +1,20 @@
 .icono-formulario {
     text-align: center;
-    width: 50% ;
-    margin: auto;
+    position: relative;
+    height: 44px;
 }
-.icono-formulario:hover{
-    color: #cf0505;
+.icono-formulario img:hover{
+    position: static;
+    width: auto;
+    height: 90%;
+    padding: 3px;
+    border-radius: 50%;
+    background: #d3d3d3;
     cursor: pointer;
-    
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 form {
     font-size: 16px;

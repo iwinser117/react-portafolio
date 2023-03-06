@@ -5,7 +5,7 @@ const Contador = () => {
     return (
       <>
         <div className="card m-auto w-50 p-4">
-          <div className="card  m-auto noBorder">
+          <div className="card  m-auto w-100 noBorder">
             <h4 className='text-center'>Contador</h4>
             <p>
               Interfaz en la cual cada boton se le asigna una funcion, muy
@@ -13,7 +13,7 @@ const Contador = () => {
               contador a cero 0. Haciendo uso de "useState"
             </p>
           </div>
-          <div className="card  noBorder ">
+          <div className="card  noBorder w-100 ">
             <h2 className="text-center fs-1">{count}</h2>
 
             <div className=" d-flex justify-content-around">
