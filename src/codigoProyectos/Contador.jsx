@@ -3,9 +3,9 @@ import React, {useState} from 'react';
 const Contador = () => {
     const [count, setCount] = useState(0);
     return (
-      <>
-        <div className="card m-auto w-50 p-4">
-          <div className="card  m-auto w-100 noBorder">
+      
+        <div className="card m-auto w-50 p-4 bg-dark text-white">
+          <div className="card  m-auto w-100 noBorder bg-dark text-white">
             <h4 className='text-center'>Contador</h4>
             <p>
               Interfaz en la cual cada boton se le asigna una funcion, muy
@@ -13,7 +13,7 @@ const Contador = () => {
               contador a cero 0. Haciendo uso de "useState"
             </p>
           </div>
-          <div className="card  noBorder w-100 ">
+          <div className="card  noBorder w-100 bg-dark text-white">
             <h2 className="text-center fs-1">{count}</h2>
 
             <div className=" d-flex justify-content-around">
@@ -41,7 +41,7 @@ const Contador = () => {
             </div>
           </div>
         </div>
-      </>
+      
     );
 }
 

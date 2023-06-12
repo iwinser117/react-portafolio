@@ -2,7 +2,7 @@ import React from "react"
 import rickFoto from "../assets/RickandMorty.png"
 const RickAndMorty = () => {
   return (
-    <div className="card m-auto w-50 p-4">
+    <div className="card m-auto w-50 p-4 bg-dark text-white">
       <div>
         <h4 className="text-center">Web Rick and Morty</h4>
         <p>

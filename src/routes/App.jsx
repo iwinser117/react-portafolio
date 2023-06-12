@@ -1,20 +1,24 @@
-import React from "react"
-import { Routes, Route } from "react-router-dom"
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
-import "@styles/resposiveMed.css"
+import "@styles/resposiveMed.css";
+import "@codigoProyectos/verResultados/calculadora";
 
-import "@codigoProyectos/verResultados/calculadora"
+import DarkModeProvider from "../buttons/DarkModeProvider";
+import Home from "@pages/Home";
+import Proyectos from "@pages/Proyectos";
 
-import Home from "@pages/Home"
-import Proyectos from "@pages/Proyectos"
 
 const App = () => {
   return (
-    <Routes>
-      <Route exact path="/" element={<Home />} />
-      <Route exact path="nav" element={<Proyectos />} />
-    </Routes>
-  )
-}
-
-export default App
+    <DarkModeProvider>
+      <div className="app-container">
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="nav" element={<Proyectos />} />
+        </Routes>
+      </div>
+    </DarkModeProvider>
+  );
+};
+export default App;

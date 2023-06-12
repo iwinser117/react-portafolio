@@ -3,12 +3,12 @@ import '@styles/aside.css'
 import '@styles/root.css'
 const Aside = () => {
   return (
-    <section className="container col-8  ">
+    <section className="container col-8">
       <aside className="d-flex justify-content-around content-aside">
-        <div className="card aside">
-          <div className="card-body aside-div-int">
+        <div className="card aside ">
+          <div className="card-body aside-div-int ">
             <h6 className="card-title">Trabajemos juntos</h6>
-            <div className="card-body d-flex cont-int-aside">
+            <div className="card-body d-flex cont-int-aside ">
               <a
                 className="email-link"
                 href="mailto:iwinser.sanchez47@gmail.com"
@@ -65,7 +65,7 @@ const Aside = () => {
               <a
                 className="pdf-link"
                 download="CurriculumDeveloperIwinserSanchez"
-                href="./images/IwinserSanchez.pdf"
+                href="../assets/CurriculumDeveloperIwinserSanchez.pdf"
               >
                 <p>
                   <i className="fa-solid fa-file-pdf "></i>&nbsp; Curriculum

@@ -12,7 +12,7 @@ const SectionDev = () => {
 
   return (
     <>
-      <div className="container gap-4 d-grid">
+      <div className="container gap-4 d-grid ">
         <Calculadora />
         <Reloj />
         <Contador />

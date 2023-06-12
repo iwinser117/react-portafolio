@@ -1,0 +1,13 @@
+@import '../temas/temaConfig.js';
+
+.App.dark {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}
+
+.button.dark {
+  background-color: var(--color-primary);
+  color: var(--color-dark);
+}
+
+/* ...otros estilos para el tema dark */

@@ -1,0 +1,10 @@
+@import '../temas/temaConfig.js';
+.App.light {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+.button.light {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
