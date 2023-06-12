@@ -1,21 +1,64 @@
 .btn-arriba {
-  background: rgb(197, 197, 197);
-  background: linear-gradient(    180deg,    rgba(100, 100, 100, 0.827) 25%,    rgb(201, 201, 202) 99%  );
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
+  z-index: 1000;
+  background-color: transparent;
+  color: #030303;
+  border: 2px solid #000000;
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 .btn-arriba:hover {
-  background: rgb(32, 32, 32);
-  background: linear-gradient(    180deg,    rgba(131, 131, 131, 0.827) 25%,    rgb(245, 245, 245) 99%  );
-  color: rgb(0, 0, 0);
+  background-color: #fff;
+  color: #000;
+  font-size: 1.2rem;
+}
+.dark-mode .btn-arriba {
+  color: #000000;
+  border-color: #0c0c0c;
+}
+
+
+
+/* Estilos para el botón que cambia el tema */
+.theme-toggle {
+  z-index: 1000;
+  background-color: transparent;
+  color: #030303;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Estilos para el botón en modo oscuro */
+.dark-mode .theme-toggle {
+  color: #ffffff;
+  border-color: #ffffff;
+  background-color: #dfdfdf;
+}
+.dark-mode .theme-toggle:hover {
+
+  background-color: #dfdfdf;
+}
+
+/* Estilos para el botón al pasar el cursor por encima */
+.theme-toggle:hover {
+  background-color: #727272;
+  color: #000;
+}
+.ci-icon{
+  color:rgb(0, 0, 0);
+  border-color:#000000;
   font-size: 18px;
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
+  padding: 0px;
+  margin: 0px;
+}
+.dark-mode .ci-icon:hover {
+  color:#000000;
+  border-color:#ffffff;
   
 }

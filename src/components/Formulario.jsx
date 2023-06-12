@@ -43,30 +43,29 @@ const Fomulario = () => {
   }
   return (
     <>
-      <section className="container col-8 fs-5 text-justify lh-lg">
+      <section className="container col-8 fs-5 text-justify lh-lg ">
         <h3 className="text-center" id="contactame">
           Contactame
         </h3>
 
         <div
-        className="icono-formulario"
+          className="icono-formulario"
           title="Diligenciar formulario"
           onClick={() => verForm()}
         >
-          <img
-            src={formLogo}
-            alt="logo formulario"
-            width="32px"
-          />
+          <img src={formLogo} alt="logo formulario" width="32px" />
         </div>
         <form
-          style={{ display: viewForm ? "block" : "none" }}
           ref={form}
           name="contact"
           action="post"
           data-netlify="true"
           onSubmit={sendEmail}
-          className="container col-6 cont-Form"
+          className={
+            viewForm
+              ? "block-view container col-6 traslation"
+              : "none-view container col-6"
+          }
         >
           <input type="hidden" name="form-name" value="contact"></input>
           <div className="mb-3 ">

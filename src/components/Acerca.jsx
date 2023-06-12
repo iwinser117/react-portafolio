@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import mostrarDiploma from "../utils/modalDiploma.js"
 
+
 const Acerca = () => {
   const [selectedId, setSelectedId] = useState(null)
   const handleClick = (event) => {
@@ -45,7 +46,7 @@ const Acerca = () => {
             <p>
               Diplomado en Desarrollo de Aplicaciones Web
               <br />
-              <i className="fa-solid fa-trophy"></i>&nbsp;MisionTic2022 &nbsp;
+              <i className="fa-solid fa-trophy icon-li"></i>&nbsp;MisionTic2022 &nbsp;
               &nbsp;
               <a id="0" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
                 <i className="fa-regular fa-eye"></i>
@@ -56,7 +57,7 @@ const Acerca = () => {
             <p>
               Diplomado en Desarrollo de Software
               <br />
-              <i className="fa-solid fa-trophy"></i>&nbsp;MisionTic2022 &nbsp;
+              <i className="fa-solid fa-trophy icon-li"></i>&nbsp;MisionTic2022 &nbsp;
               &nbsp;
               <a id="1" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
                 <i className="fa-regular fa-eye"></i>
@@ -67,7 +68,7 @@ const Acerca = () => {
             <p>
               Diplomado en Programaci&oacute;n Basica Lenguaje Java
               <br />
-              <i className="fa-solid fa-trophy"></i>&nbsp;MisionTic2022 &nbsp;
+              <i className="fa-solid fa-trophy icon-li"></i>&nbsp;MisionTic2022 &nbsp;
               &nbsp;
               <a id="2" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
                 <i className="fa-regular fa-eye"></i>
@@ -84,7 +85,7 @@ const Acerca = () => {
             <p>
               Diplomado Fundamentos de Programaci&oacute;n en Lenguaje Python
               <br />
-              <i className="fa-solid fa-trophy"></i>&nbsp;MisionTic2022{" "}
+              <i className="fa-solid fa-trophy icon-li "></i>&nbsp;MisionTic2022{" "}
               <a id="3" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
                 <i className="fa-regular fa-eye"></i>
               </a>
@@ -94,7 +95,7 @@ const Acerca = () => {
             <p>
               Curso Pr&aacute;ctico Javascript
               <br />
-              <i className="fa-solid fa-trophy"></i>&nbsp;Platzi &nbsp; &nbsp;
+              <i className="fa-solid fa-trophy icon-li"></i>&nbsp;Platzi &nbsp; &nbsp;
               <a id="4" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
                 <i className="fa-regular fa-eye"></i>
               </a>
@@ -104,7 +105,7 @@ const Acerca = () => {
             <p>
               Curso Práctico de Frontend Developer
               <br />
-              <i className="fa-solid fa-trophy"></i>&nbsp;Platzi &nbsp; &nbsp;
+              <i className="fa-solid fa-trophy icon-li"></i>&nbsp;Platzi &nbsp; &nbsp;
               <a id="5" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
                 <i className="fa-regular fa-eye"></i>
               </a>
@@ -114,7 +115,7 @@ const Acerca = () => {
             <p>
               Curso Practico de React
               <br />
-              <i className="fa-solid fa-trophy"></i>&nbsp;Platzi &nbsp; &nbsp;
+              <i className="fa-solid fa-trophy icon-li"></i>&nbsp;Platzi &nbsp; &nbsp;
               <a id="6" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
                 <i className="fa-regular fa-eye"></i>
               </a>

@@ -19,7 +19,7 @@ const Reloj = () => {
 
   return (
     <>
-      <div className="card m-auto w-50 p-4">
+      <div className="card m-auto w-50 p-4 bg-dark text-white">
         <h4 className="text-center">Reloj</h4>
         <p>
           En esta ocasion haciendo uso de useEffect y useState, junto con el

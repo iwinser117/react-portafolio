@@ -43,7 +43,7 @@ const Calculadora = () => {
   }
   return (
     <>
-      <div id="calculadora" className="card w-50 m-auto p-4">
+      <div id="calculadora" className="card w-50 m-auto p-4 bg-dark text-white">
         <h4 className="text-center">Calculadora</h4>
         <p>
           Operamos con los datos obtenidos de los input del formulario y

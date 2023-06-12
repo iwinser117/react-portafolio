@@ -40,3 +40,18 @@
 .wsp-link:hover {
     color: var(--iconWsp);
 }
+
+.dark-mode .wsp-link:hover {
+    background-image: var(--iconWsp);
+    -webkit-text-fill-color: var(--iconWsp);
+    text-fill-color: #fff;
+  }
+  .dark-mode .pdf-link:hover {
+    color: var(--iconPdf);
+}
+.dark-mode .linkedin-link:hover {
+    color: var(--iconLinkedin);
+}
+.dark-mode .git-link:hover {
+    color: var(--iconGit);
+}

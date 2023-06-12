@@ -3,7 +3,7 @@ import React from "react";
 const ListaTareas = () => {
   return (
     <>
-      <div className="card m-auto w-50 p-4">
+      <div className="card m-auto w-50 p-4 bg-dark text-white">
         <h4 className="text-center">Lista de tareas</h4>
         <p>
           Esta es una Aplicacion que su Backend se Encuentra desplegada en Azure

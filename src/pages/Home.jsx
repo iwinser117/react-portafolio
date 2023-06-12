@@ -13,7 +13,7 @@ import Footer from "@components/Footer"
 const Home = () => {
   return (
     <>
-      <div className="d-grid gap-4">
+      <div className="d-grid gap-4 data-bs-theme-dark">
         <Nav />
         <Banner />
         <Acerca />

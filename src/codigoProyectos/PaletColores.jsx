@@ -7,9 +7,9 @@ function handleColorChange(event) {
   setBackgroundColor(event.target.value);
 }
     return (
-      <>
-        <div className="card m-auto w-50 p-4">
-          <div className="card  w-100 m-auto noBorder">
+      
+        <div className="card m-auto w-50 p-4 bg-dark text-white">
+          <div className="card  w-100 m-auto noBorder bg-dark text-white">
             <h4 className='text-center'>Paleta de colores</h4>
             <p>
               Se toma mediante un input el valor del color y se le agrega este
@@ -17,7 +17,7 @@ function handleColorChange(event) {
             </p>
           </div>
           <div className="card  m-auto p-3" style={{ backgroundColor }}>
-            <div className="rounded-circle w-50 d-block m-auto">
+            <div className="rounded-circle w-50 d-block m-auto bg-dark text-white">
               <p className="text-center border-palet">
                 Hola Cambio de Colores <br /> ¡Intentalo!
               </p>
@@ -29,8 +29,7 @@ function handleColorChange(event) {
             />
           </div>
         </div>
-      </>
-    );
+      );
 }
 
 export default PaletColores;

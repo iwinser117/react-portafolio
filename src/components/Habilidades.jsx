@@ -36,16 +36,18 @@ const Habilidades = () => {
           Conocimientos de estructuras de datos, y dar soluciones a problemas
           que se presenten en la parte logica de una aplicacion.
         </p>
+
         <p>
           He trabajado durante mi aprendizaje con lenguajes como{" "}
-          <strong>Python</strong>,<strong>Java</strong> y{" "}
+          <strong>Python</strong>, <strong>Java</strong> y{" "}
           <strong>Javascript</strong>. actualmente he venido profundizando en
           bases de datos <i>(postgress y mongoDB)</i>; haciendo uso de los
           metodos <small>(POST - PUT - GET)</small> que puedo usar y me estoy
           familiarizando con ellos, Consumo de APIs, Manejo de archivos{" "}
           <strong>Json</strong> conociendo su estructura y el acceso a la
-          informacion que estos contienen.
+          informacion que estos contienen; Ademas de conocimientos de SQL HANA. 
         </p>
+        
       </article>
     </section>
   )

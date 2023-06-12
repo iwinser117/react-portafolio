@@ -1,14 +1,21 @@
-const lightTheme = {
-  backgroundColor: "#fff",
-  color: "#000",
+export const lightColors = {
+  "--color-primary": "#007bff",
+  "--color-secondary": "#6c757d",
+  "--color-success": "#28a745",
+  "--color-danger": "#dc3545",
+  "--color-warning": "#ffc107",
+  "--color-info": "#17a2b8",
+  "--color-light": "#f8f9fa",
+  "--color-dark": "#343a40",
 };
 
-const darkTheme = {
-  backgroundColor: "#000",
-  color: "#fff",
+export const darkColors = {
+  "--color-primary": "#007bff",
+  "--color-secondary": "#6c757d",
+  "--color-success": "#28a745",
+  "--color-danger": "#dc3545",
+  "--color-warning": "#ffc107",
+  "--color-info": "#17a2b8",
+  "--color-light": "#343a40",
+  "--color-dark": "#f8f9fa",
 };
-const temas = {
-    ligth : lightTheme,
-    dark : darkTheme
-}
-export default temas;

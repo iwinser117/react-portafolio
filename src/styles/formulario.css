@@ -18,7 +18,23 @@
 }
 form {
     font-size: 16px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+    
 }
-/* .cont-Form {
+
+.none-view{
     display: none;
-} */
+}
+.block-view {
+    transition:35s cubic-bezier(0, 0, 0, 0.27);
+    display: block;
+    opacity: 1;
+    border: solid 1px rgb(175, 175, 175);
+    border-radius:2%;
+    -webkit-border-radius:2%;
+    -moz-border-radius:2%;
+    -ms-border-radius:2%;
+    -o-border-radius:2%;
+}
+
