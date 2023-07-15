@@ -11,21 +11,10 @@ const Habilidades = () => {
           <i className="fa-solid fa-display"></i> Front-end
         </h3>
         <p>
-          Manejo de <strong>Html</strong>, <strong>Css</strong> y{" "}
-          <strong>JavaScript</strong> para el desarrollo de este sitio web, se
-          de html; sobre su estructura semantica con el fin de realizar sitios
-          web accesibles y que sean llamativos para el usuario, tambien doy
-          estilos a mis proyectos actualmente con css, considero que tengo un
-          conocimiento intermedio, me gusta todo lo que se puede hacer como sus
-          propiedades y que puedo dar adaptablidad a las aplicaciones con un
-          diseño responsive. tambien el lenguaje <i>javascript</i> me parece que
-          es el sumamente importante tanto para el frontend, como para el
-          backend.
+          Tengo experiencia en el manejo de HTML, CSS y JavaScript para el desarrollo de sitios web. En cuanto a HTML, me especializo en la creación de estructuras semánticas que permiten la accesibilidad y generan un impacto visual atractivo para los usuarios. En CSS, poseo un nivel intermedio y disfruto explorar las propiedades que permiten estilizar mis proyectos. Además, me gusta utilizar CSS para crear diseños responsivos que se adapten a diferentes dispositivos.
         </p>
         <p>
-          Con javascript me gusta que puedo manejar los eventos, manipular el{" "}
-          <strong>DOM</strong>, su interactividad es algo que me llama la
-          atencion en el frontend.
+          Considero que JavaScript es un lenguaje sumamente importante tanto en el frontend como en el backend. Me encanta trabajar con JavaScript debido a su capacidad para manejar eventos, manipular el DOM y brindar interactividad en el frontend.
         </p>
       </article>
       <article>
@@ -33,21 +22,15 @@ const Habilidades = () => {
           <i className="fa-solid fa-server"></i> Backend
         </h3>
         <p>
-          Conocimientos de estructuras de datos, y dar soluciones a problemas
-          que se presenten en la parte logica de una aplicacion.
+          Poseo sólidos conocimientos en estructuras de datos y habilidades para brindar soluciones a problemas lógicos en la parte backend de una aplicación.
+
+
         </p>
 
         <p>
-          He trabajado durante mi aprendizaje con lenguajes como{" "}
-          <strong>Python</strong>, <strong>Java</strong> y{" "}
-          <strong>Javascript</strong>. actualmente he venido profundizando en
-          bases de datos <i>(postgress y mongoDB)</i>; haciendo uso de los
-          metodos <small>(POST - PUT - GET)</small> que puedo usar y me estoy
-          familiarizando con ellos, Consumo de APIs, Manejo de archivos{" "}
-          <strong>Json</strong> conociendo su estructura y el acceso a la
-          informacion que estos contienen; Ademas de conocimientos de SQL HANA. 
+          Durante mi proceso de aprendizaje, he trabajado con diversos lenguajes de programación como Python, Java y JavaScript. En particular, he estado enfocándome en el desarrollo y manejo de bases de datos, especialmente con Postgres y MongoDB. Me he familiarizado con los métodos POST, PUT y GET para interactuar con estas bases de datos, así como también he adquirido experiencia en el consumo de APIs. También tengo habilidades en el manejo de archivos JSON, comprendiendo su estructura y accediendo a la información que contienen. Además, cuento con conocimientos en SQL HANA.
         </p>
-        
+
       </article>
     </section>
   )
