@@ -22,22 +22,13 @@ const Acerca = () => {
       <article id="acercademi">
         <h3>Acerca de mi</h3>
         <p>
-          Desarrollador de software. Tengo conocimientos en lenguajes de
-          programación como Javascript, Python y Java; HTML, CSS y Bootstrap que
-          es con lo que está hecho este portafolio; soy una persona con ganas de
-          aprender cada día enfocado en las tareas asignadas. Apasionado por
-          programar. Soy autodidacta, me gustaría trabajar en proyectos que
-          tengan un gran impacto en la sociedad y que beneficien a muchas
-          personas.
+          Soy un desarrollador de software apasionado con experiencia en Javascript, Python y Java. También tengo habilidades en HTML, CSS y Bootstrap. Me considero autodidacta y siempre estoy enfocado en aprender y completar las tareas asignadas. Estoy interesado en proyectos que tengan un impacto positivo en la sociedad y beneficien a muchas personas.
         </p>
       </article>
       <article>
         <h4>Certificaciones</h4>
         <p>
-          Durante mi proceso de aprendizaje he logrado certificarme por medio de
-          la Facultad de ingenieria de la Universidad de Antioquia mediante el
-          programa Mision TIC 2022 y cursos en la plataforma de estudio online
-          Platzi los cuales he culminado ha satisfaccion.
+          Durante mi proceso de aprendizaje, obtuve la certificación del programa Mision TIC 2022 ofrecido por la Facultad de Ingeniería de la Universidad de Antioquia. Además, he completado satisfactoriamente varios cursos en la plataforma de estudio en línea Platzi.
         </p>
       </article>
       <div className="certificados-iconos container-sm w-75">
