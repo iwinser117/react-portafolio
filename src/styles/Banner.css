@@ -2,9 +2,10 @@
   height: 70vh;
   width: 70%;
   margin: auto;
+  display: flex;
 }
+
 .bannerItem img {
   width: 70%;
-  display: block;
   margin: auto;
 }
