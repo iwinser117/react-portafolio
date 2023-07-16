@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react"
 import emailjs from "@emailjs/browser"
 import "@styles/formulario.css"
 import formLogo from "@assets/formLogo.png"
+import formLogo2 from "@assets/close-form.png"
 import { exito, noEnviado, limpiarInput } from "../utils/sendForm"
 const Fomulario = () => {
   //const [formData, setFormData] = useState({})
@@ -47,13 +48,17 @@ const Fomulario = () => {
         <h3 className="text-center" id="contactame">
           Contactame
         </h3>
-
+        <p className="text-form">{viewForm ? "" : "Diligenciar formulario"}</p>
         <div
           className="icono-formulario"
-          title="Diligenciar formulario"
+          title={viewForm ? "Cerrar formulario" : "Diligenciar formulario"}
           onClick={() => verForm()}
         >
-          <img src={formLogo} alt="logo formulario" width="32px" />
+          {viewForm ? (
+            <img src={formLogo2} alt="logo formulario" width="32px" />
+          ) : (
+            <img src={formLogo} alt="logo formulario" width="32px" />
+          )}
         </div>
         <form
           ref={form}

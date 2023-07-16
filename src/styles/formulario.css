@@ -38,3 +38,8 @@ form {
     -o-border-radius:2%;
 }
 
+.text-form {
+    text-align: center;
+    font-size: 0.8em;
+    opacity: 0.5;
+}
