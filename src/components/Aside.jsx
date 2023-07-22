@@ -3,7 +3,7 @@ import '@styles/aside.css'
 import '@styles/root.css'
 const Aside = () => {
   return (
-    <section className="container col-8">
+    <section className="container aside-cnt col-8">
       <aside className="d-flex justify-content-around content-aside">
         <div className="card aside ">
           <div className="card-body aside-div-int ">

@@ -44,7 +44,7 @@ const Fomulario = () => {
   }
   return (
     <>
-      <section className="container col-8 fs-5 text-justify lh-lg ">
+      <section className="container form-cnt col-8 fs-5 text-justify lh-lg ">
         <h3 className="text-center" id="contactame">
           Contactame
         </h3>

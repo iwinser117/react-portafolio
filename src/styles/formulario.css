@@ -1,45 +1,156 @@
-.icono-formulario {
-    text-align: center;
-    position: relative;
-    height: 44px;
-}
-.icono-formulario img:hover{
-    position: static;
-    width: auto;
-    height: 90%;
-    padding: 3px;
-    border-radius: 50%;
-    background: #d3d3d3;
-    cursor: pointer;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-}
-form {
-    font-size: 16px;
-    padding-bottom: 12px;
-    padding-top: 12px;
+
+/* Media query para pantallas grandes */
+@media (min-width: 1200px) {
+    .icono-formulario {
+        text-align: center;
+        position: relative;
+        height: 44px;
+    }
+    .icono-formulario img:hover{
+        position: static;
+        width: auto;
+        height: 90%;
+        padding: 3px;
+        border-radius: 50%;
+        background: #d3d3d3;
+        cursor: pointer;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+    form {
+        font-size: 16px;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        
+    }
     
+    .none-view{
+        display: none;
+    }
+    .block-view {
+        transition:35s cubic-bezier(0, 0, 0, 0.27);
+        display: block;
+        opacity: 1;
+        border: solid 1px rgb(175, 175, 175);
+        border-radius:2%;
+        -webkit-border-radius:2%;
+        -moz-border-radius:2%;
+        -ms-border-radius:2%;
+        -o-border-radius:2%;
+    }
+    
+    .text-form {
+        text-align: center;
+        font-size: 0.8em;
+        opacity: 0.5;
+    }
 }
 
-.none-view{
-    display: none;
-}
-.block-view {
-    transition:35s cubic-bezier(0, 0, 0, 0.27);
-    display: block;
-    opacity: 1;
-    border: solid 1px rgb(175, 175, 175);
-    border-radius:2%;
-    -webkit-border-radius:2%;
-    -moz-border-radius:2%;
-    -ms-border-radius:2%;
-    -o-border-radius:2%;
+/* Media query para pantallas medianas */
+@media (min-width: 800px) and (max-width: 1199px) {
+    .form-cnt {
+        width:1000px !important;
+    }
+    .icono-formulario {
+        text-align: center;
+        position: relative;
+        height: 44px;
+    }
+    .icono-formulario img:hover{
+        position: static;
+        width: auto;
+        height: 90%;
+        padding: 3px;
+        border-radius: 50%;
+        background: #d3d3d3;
+        cursor: pointer;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+    form {
+        font-size: 16px;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        
+    }
+    
+    .none-view{
+        display: none;
+    }
+    .block-view {
+        transition:35s cubic-bezier(0, 0, 0, 0.27);
+        display: block;
+        opacity: 1;
+        border: solid 1px rgb(175, 175, 175);
+        border-radius:2%;
+        -webkit-border-radius:2%;
+        -moz-border-radius:2%;
+        -ms-border-radius:2%;
+        -o-border-radius:2%;
+    }
+    
+    .text-form {
+        text-align: center;
+        font-size: 0.8em;
+        opacity: 0.5;
+    }
 }
 
-.text-form {
-    text-align: center;
-    font-size: 0.8em;
-    opacity: 0.5;
+/* Media query para pantallas horizontales */
+@media (orientation: landscape) {}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 799px) {
+    .form-cnt {
+        width:1000px !important;
+    }
+    .icono-formulario {
+        text-align: center;
+        position: relative;
+        height: 44px;
+    }
+    .icono-formulario img:hover{
+        position: static;
+        width: auto;
+        height: 90%;
+        padding: 3px;
+        border-radius: 50%;
+        background: #d3d3d3;
+        cursor: pointer;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+    form {
+        font-size: 16px;
+        padding-bottom: 12px;
+        padding-top: 12px;
+        
+    }
+    
+    .none-view{
+        display: none;
+    }
+    .block-view {
+        transition:35s cubic-bezier(0, 0, 0, 0.27);
+        display: block;
+        opacity: 1;
+        border: solid 1px rgb(175, 175, 175);
+        border-radius:2%;
+        -webkit-border-radius:2%;
+        -moz-border-radius:2%;
+        -ms-border-radius:2%;
+        -o-border-radius:2%;
+    }
+    
+    .text-form {
+        text-align: center;
+        font-size: 0.8em;
+        opacity: 0.5;
+    }
 }

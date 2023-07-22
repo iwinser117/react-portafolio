@@ -1,0 +1,27 @@
+/* Media query para pantallas grandes */
+@media (min-width: 1200px) {
+
+}
+
+/* Media query para pantallas medianas */
+@media (min-width: 800px) and (max-width: 1199px) {
+    .acerca-cnt {
+        width: 100% ;
+    }
+    .certificados-iconos .fa-eye {
+        color: gray;
+    }
+}
+
+/* Media query para pantallas horizontales */
+@media (orientation: landscape) {}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 799px) {
+    .acerca-cnt {
+        width: 100% ;
+    }
+    .certificados-iconos .fa-eye {
+        color: gray;
+    }
+}
