@@ -1,11 +1,51 @@
-.banner {
-  height: 70vh;
-  width: 70%;
-  margin: auto;
-  display: flex;
+
+
+/* Media query para pantallas grandes */
+@media (min-width: 1200px) {
+  .banner {
+    height: 60vh;
+    width: 70%;
+    margin: auto;
+    display: flex;
+  }
+  
+  .bannerItem img {
+    width: 70%;
+    margin: auto;
+  }
 }
 
-.bannerItem img {
-  width: 70%;
-  margin: auto;
+/* Media query para pantallas medianas */
+@media (min-width: 800px) and (max-width: 1199px) {
+  .banner {
+    height: 50vh;
+    width: 80%;
+    margin: auto;
+    display: flex;
+  }
+  
+  .bannerItem img {
+    width: 70%;
+    margin: auto;
+  }
+}
+
+/* Media query para pantallas horizontales */
+@media (orientation: landscape) {
+  
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 799px) {
+  .banner {
+    height: 50vh;
+    width: 80%;
+    margin: auto;
+    display: flex;
+  }
+  
+  .bannerItem img {
+    width: 70%;
+    margin: auto;
+  }
 }

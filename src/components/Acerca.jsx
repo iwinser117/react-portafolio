@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import mostrarDiploma from "../utils/modalDiploma.js"
-
+import "@styles/acerca.css"
 
 const Acerca = () => {
   const [selectedId, setSelectedId] = useState(null)
@@ -18,7 +18,7 @@ const Acerca = () => {
     setIsVisible(!isVisible)
   }
   return (
-    <section className="container col-8  text-justify lh-lg">
+    <section className="container acerca-cnt col-8  text-justify lh-lg">
       <article id="acercademi">
         <h3>Acerca de mi</h3>
         <p>

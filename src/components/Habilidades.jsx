@@ -2,7 +2,7 @@ import React from "react"
 import '@styles/habilidades.css'
 const Habilidades = () => {
   return (
-    <section className="container col-8  text-justify lh-lg">
+    <section className="container habld-cnt col-8  text-justify lh-lg">
       <article id="habilidades">
         <h3>Habilidades</h3>
       </article>

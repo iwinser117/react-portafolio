@@ -10,7 +10,7 @@ const Nav = () => {
         <div className="container-fluid w-75 ">
           <img className="navbar-brand" src={logo} width="60px" />
           <button
-            className="navbar-toggler"
+            className="navbar-toggler "
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -18,7 +18,7 @@ const Nav = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon "></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav nav-ul">
