@@ -11,15 +11,6 @@
 .dark-mode a:hover{
   color:#fff;
 }
-.dark-mode .container-fluid {
-  background: #c7c7c7;
-  width: 90% !important;
-  padding: 0.5em 0.5em;
-}
-.dark-mode .container-fluid a {
-  color: black;
-  text-align: center;
-}
 body {
   transition: background-color 0.12s ease-in-out, color 0.12s ease-in-out;
   -webkit-transition: background-color 0.12s ease-in-out, color 0.12s ease-in-out;
