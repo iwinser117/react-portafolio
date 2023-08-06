@@ -1,6 +1,8 @@
 /* Media query para pantallas grandes */
 @media (min-width: 1200px) {
-
+    .certificados-iconos .fa-eye {
+        color: gray;
+    }
 }
 
 /* Media query para pantallas medianas */
@@ -23,5 +25,8 @@
     }
     .certificados-iconos .fa-eye {
         color: gray;
+    }
+    .certificados-iconos {
+        width: 100% !important;
     }
 }
