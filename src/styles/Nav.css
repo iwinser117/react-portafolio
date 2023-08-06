@@ -150,7 +150,8 @@
   }
 
   .dark-mode .container-fluid {
-    background: #c7c7c7;
+    background: #f8f9fa;
+    border-radius: 5px;
     width: 90% !important;
     padding: 0.5em 0.5em;
   }

@@ -6,7 +6,7 @@ const Nav = () => {
   const locacion = useLocation()
   return (
     <>
-      <nav className="navbar navbar-expand-lg mt-2 ">
+      <nav className="navbar navbar-expand-lg ">
         <div className="container-fluid w-75 ">
           <img className="navbar-brand" src={logo} width="60px" />
           <button
