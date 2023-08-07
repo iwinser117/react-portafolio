@@ -1,47 +1,48 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 const Contador = () => {
     const [count, setCount] = useState(0);
+    
+    const handleDecrement = () => {
+        setCount(count - 1);
+    };
+
+    const handleIncrement = () => {
+        setCount(count + 1);
+    };
+
+    const handleReset = () => {
+        setCount(0);
+    };
+
     return (
-      
         <div className="card m-auto w-50 p-4 bg-dark text-white">
-          <div className="card  m-auto w-100 noBorder bg-dark text-white">
-            <h4 className='text-center'>Contador</h4>
-            <p>
-              Interfaz en la cual cada boton se le asigna una funcion, muy
-              intuitiva, como sumar 1, restar 1 y el boton reset el cual deja el
-              contador a cero 0. Haciendo uso de "useState"
-            </p>
-          </div>
-          <div className="card  noBorder w-100 bg-dark text-white">
-            <h2 className="text-center fs-1">{count}</h2>
+            <div className="card-body">
+                <h4 className='text-center'>Contador</h4>
+                <p>
+                    Interfaz en la cual cada botón se le asigna una función, muy
+                    intuitiva, como sumar 1, restar 1 y el botón reset el cual deja el
+                    contador a cero 0. Haciendo uso de "useState"
+                </p>
 
-            <div className=" d-flex justify-content-around">
-              <button
-                className="btn btn-outline-primary"
-                onClick={() => setCount(count - 1)}
-              >
-                Decrement
-              </button>
+                <h2 className="text-center fs-1">{count}</h2>
 
-              <button
-                className="btn btn-outline-primary"
-                onClick={() => setCount(count + 1)}
-              >
-                Increment
-              </button>
+                <div className="d-flex justify-content-around">
+                    <button className="btn btn-outline-primary" onClick={handleDecrement}>
+                        Decrement
+                    </button>
+
+                    <button className="btn btn-outline-primary" onClick={handleIncrement}>
+                        Increment
+                    </button>
+                </div>
+                <div className="d-flex justify-content-center mt-4">
+                    <button className="btn btn-outline-danger" onClick={handleReset}>
+                        Reset
+                    </button>
+                </div>
             </div>
-            <div className="m-auto row pt-4">
-              <button
-                className="btn btn-outline-danger d-flex w-10"
-                onClick={() => setCount(0)}
-              >
-                Reset
-              </button>
-            </div>
-          </div>
         </div>
-      
     );
 }
 
