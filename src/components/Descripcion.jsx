@@ -1,5 +1,4 @@
 import React from "react"
-import SectionDev from "../containers/SectionDev"
 import Folder1 from "../containers/folder1"
 
 const Descripcion = () => {
@@ -22,7 +21,6 @@ const Descripcion = () => {
       </section>
       <section className="d-grid gap-4">
         <Folder1/>
-        <SectionDev/>
       </section>
     </>
   )

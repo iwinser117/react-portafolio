@@ -141,15 +141,9 @@ const Calculadora = () => {
             />
           ))}
         </div>
-        <div className="d-flex justify-content-between mb-3">
-          <button className="btn btn-danger" onClick={limpiarInput}>
-            C
-          </button>
+        <div className="d-flex justify-content-around mb-3">
           <button className="btn btn-secondary" onClick={() => handleInput({ target: { value: (operando === "" ? input1 : input2) + "0" } }, operando === "" ? setInput1 : setInput2)}>
             0
-          </button>
-          <button className="btn btn-secondary" onClick={retrocederInput}>
-            &#9003;
           </button>
         </div>
       </div>
@@ -169,6 +163,15 @@ const Calculadora = () => {
             </button>
           </div>
         </div>
+        <div className="d-flex justify-content-around mb-3">
+          <button className="btn btn-danger" onClick={limpiarInput}>
+            C
+          </button>
+          <button className="btn btn-secondary" onClick={retrocederInput}>
+            &#9003;
+          </button>
+        </div>
+
       </div>
 
       {resultado !== "" && (

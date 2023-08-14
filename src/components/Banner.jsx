@@ -14,7 +14,7 @@ const Banner = () => {
 
     fetchRandomImage();
 
-    const interval = setInterval(fetchRandomImage, 5000);
+    const interval = setInterval(fetchRandomImage, 11000);
 
     return () => {
       clearInterval(interval);

@@ -17,8 +17,8 @@ const SectionDev = () => {
         <Reloj />
         <Contador />
         <PaletColores />
-        <ListaTareas/>
-        <RickAndMorty/>
+        {/* <ListaTareas/> */}
+        {/* <RickAndMorty/> */}
       </div>
     </>
   );
