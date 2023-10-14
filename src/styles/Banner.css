@@ -1,51 +1,65 @@
+.acrostico-vertical-container {
+  display: flex;
+  margin: auto;
+  background: #ffffff;
+  color: rgb(2, 2, 2);
+  font-weight: 800;
+  text-transform: uppercase;
+  width: 50%;
+  justify-content: center;
+  height: 100%;
+}
 
+.acrostico-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 18px;
+  padding: 0 18px;
+  height: 100%;
+}
 
-/* Media query para pantallas grandes */
-@media (min-width: 1200px) {
-  .banner {
-    height: 60vh;
-    width: 70%;
-    margin: auto;
-    display: flex;
+.acrostico-vertical p {
+  margin: 0;
+  padding: 3px;
+  opacity: 0;
+  transform: translateY(1em);
+  animation: appearAnimation 0.5s forwards;
+}
+
+.rainbow-text {
+  background: linear-gradient(to right, violet, indigo, blue, green, rgb(65, 6, 92), orange, red);
+  -webkit-background-clip: text;
+  color: transparent;
+  display: inline-block;
+  animation: rainbowAnimation 1s infinite linear;
+}
+
+@keyframes rainbowAnimation {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  .bannerItem img {
-    width: 70%;
-    margin: auto;
+  100% {
+    background-position: 100% 50%;
   }
 }
 
-/* Media query para pantallas medianas */
-@media (min-width: 800px) and (max-width: 1199px) {
-  .banner {
-    height: 50vh;
-    width: 80%;
-    margin: auto;
-    display: flex;
-  }
-  
-  .bannerItem img {
-    width: 70%;
-    margin: auto;
+@keyframes appearAnimation {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Media query para pantallas horizontales */
-@media (orientation: landscape) {
-  
-}
+/* Media queries aquí... */
 
-/* Media query para pantallas pequeñas */
-@media (max-width: 799px) {
-  .banner {
-    width: 80%;
-    margin: auto;
-    display: flex;
-    margin-bottom: 8px;
-  }
-  
-  .bannerItem img {
-    width: 100%;
-    margin: auto;
-  }
+.bannerItem img {
+  max-width: 50%;  
+  height: 100%;   
+  display: block;   /* Evita el espacio adicional debajo de la imagen */
+  margin: 0 auto;   /* Centra la imagen horizontalmente */
+}
+.banner {
+  height: 350px;
+  margin: 32px 0px;
 }

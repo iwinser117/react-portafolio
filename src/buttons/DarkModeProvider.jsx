@@ -1,28 +1,28 @@
-import React, { useState } from "react"
-import "@styles/botons.css"
-import { CiDark } from "react-icons/ci";
+import React, { useState } from "react";
+import { BiSun } from "react-icons/bi";
+import { MdDarkMode } from "react-icons/md";
+import "@styles/botons.css";
 
 const DarkModeProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false)
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const handleModeChange = () => {
-    setIsDarkMode(!isDarkMode)
-  }
+    setIsDarkMode(!isDarkMode);
+  };
 
   return (
-    <div className={isDarkMode ? "dark-mode " : ""}>
+    <div className={`dark-mode-container ${isDarkMode ? "dark-mode" : ""}`}>
       <button
-        className="theme-toggle position-fixed bottom-0 right-0 m-3"
+        className="theme-toggle"
         onClick={handleModeChange}
       >
-        
-        <p className="ci-icon"><CiDark/></p>
+        <p className="ci-icon">{isDarkMode ? <MdDarkMode /> : <BiSun />}</p>
       </button>
 
       {children}
       {isDarkMode && <div className="bubbles"></div>}
     </div>
-  )
-}
+  );
+};
 
-export default DarkModeProvider
+export default DarkModeProvider;
