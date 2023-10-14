@@ -3,10 +3,10 @@ import '@styles/habilidades.css'
 const Habilidades = () => {
   return (
     <section className="container habld-cnt col-8  text-justify lh-lg">
-      <article id="habilidades">
+      <article id="habilidades" className="pt-3">
         <h3>Habilidades</h3>
       </article>
-      <article>
+      <article className="pt-3">
         <h3>
           <i className="fa-solid fa-display"></i> Front-end
         </h3>

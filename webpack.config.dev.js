@@ -71,7 +71,7 @@ module.exports = {
     historyApiFallback: {
       index: "index.html",
     },
-    port: 3006,
+    port: 3007,
     open: true, //Hace que se abra en el navegador
   },
 }
