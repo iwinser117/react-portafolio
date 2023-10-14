@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import SectionDev from "../containers/SectionDev"
+import SectionDev from "./SectionDev"
 
 import CarouselSlider from '../components/CarouselSlider';
 import { FcFolder } from "react-icons/fc";
 import img1 from '../assets/d1Python.jpg'
 
-const Folder1 = () => {
+const SectionVanilla = () => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isSectionDevVisible, setIsSectionDevVisible] = useState(false);
+  const [isSectionDevVisible, setIsSectionDevVisible] = useState(true);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -53,4 +53,4 @@ const Folder1 = () => {
   );
 };
 
-export default Folder1;
+export default SectionVanilla;

@@ -1,14 +1,4 @@
-.acrostico-vertical-container {
-  display: flex;
-  margin: auto;
-  background: #ffffff;
-  color: rgb(2, 2, 2);
-  font-weight: 800;
-  text-transform: uppercase;
-  width: 50%;
-  justify-content: center;
-  height: 100%;
-}
+
 
 .acrostico-vertical {
   display: flex;
@@ -17,6 +7,7 @@
   font-size: 18px;
   padding: 0 18px;
   height: 100%;
+  width: 100%;
 }
 
 .acrostico-vertical p {
@@ -51,15 +42,55 @@
   }
 }
 
-/* Media queries aquí... */
-
+/* Estilos base */
 .bannerItem img {
-  max-width: 50%;  
-  height: 100%;   
-  display: block;   /* Evita el espacio adicional debajo de la imagen */
-  margin: 0 auto;   /* Centra la imagen horizontalmente */
+  width: 80%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
 }
+
 .banner {
-  height: 350px;
-  margin: 32px 0px;
+  width: 70%;
+  display: flex;
+  height: 400px;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
+
+.acrostico-vertical-container {
+  display: flex;
+  margin: auto;
+  background: #ffffff;
+  color: rgb(2, 2, 2);
+  font-weight: 800;
+  text-transform: uppercase;
+  width: 100%;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Media query para pantallas pequeñas */
+@media only screen and (max-width: 800px) {
+  .bannerItem img {
+    width: 90%; 
+    height: auto; 
+  }
+
+  .banner {
+    width: 90%; 
+    height: 350px; 
+  }
+
+  .acrostico-vertical-container {
+    width: 90%; 
+  }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+}
+
