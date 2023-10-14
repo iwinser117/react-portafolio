@@ -1,3 +1,20 @@
+@media (max-width: 800px) and (min-width: 100px) {
+  .theme-toggle {
+    position: fixed;
+    bottom: 12px;
+    left: 12px; 
+    z-index: 1000;
+    background-color: transparent;
+    color: #030303;
+    border: none; 
+    border-radius: 50%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+}
+@media (min-width: 801px) and (max-width: 5000px) {
 .theme-toggle {
   position: fixed;
   top: 12px;
@@ -12,7 +29,7 @@
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-
+}
 .dark-mode .theme-toggle {
   color: #ffffff;
   background-color: #dfdfdf;
@@ -37,21 +54,8 @@
 .dark-mode .ci-icon:hover {
   color: #000000;
 }
-/* Estilos para el botón que sube */
-.btn-arriba {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-  background-color: transparent;
-  color: #030303;
-  border: none;
-  border-radius: 50%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
+
+
 
 .btn-arriba:hover {
   background-color: #fff;

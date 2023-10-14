@@ -8,9 +8,7 @@ import RickAndMorty from "@codigoProyectos/RickAndMorty";
 
 
 const SectionDev = () => {
-  
-
-  return (
+    return (
     <>
       <div className="container gap-4 d-grid ">
         <Calculadora />

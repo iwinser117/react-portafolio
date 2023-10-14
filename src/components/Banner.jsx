@@ -32,7 +32,7 @@ const Banner = () => {
       <div className="bannerItem">
         {images.map((image, index) => (
           <div key={index} style={{ display: index === imageIndex ? "block" : "none" }}>
-            {image ? <img src={image} alt={`Banner ${index}`} style={{ width: "70%" }} /> : null}
+            {image ? <img src={image} alt={`Banner ${index}`} /> : null}
           </div>
         ))}
         {imageIndex === images.length && (

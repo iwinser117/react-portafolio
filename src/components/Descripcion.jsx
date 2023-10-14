@@ -1,6 +1,5 @@
 import React from "react"
-import Folder1 from "../containers/folder1"
-
+import SectionVanilla from '../containers/SectionVanilla'
 const Descripcion = () => {
   return (
     <>
@@ -11,7 +10,7 @@ const Descripcion = () => {
             <br />
             <p className="card-text">
               A continuacion puedes ver algunas aplicaciones que se han
-              desarrollado con JavaScript, tambien haciendo uso de otras
+              desarrollado con JavaScript vanilla, haciendo uso de otras
               herramientas como React, Bootstrap, Nodejs y algunas de ellas
               estan desplegadas respectivamente. Dejo su link en la descripcion
               de cada una de ellas.
@@ -20,7 +19,7 @@ const Descripcion = () => {
         </div>
       </section>
       <section className="d-grid gap-4">
-        <Folder1/>
+        <SectionVanilla/>
       </section>
     </>
   )
