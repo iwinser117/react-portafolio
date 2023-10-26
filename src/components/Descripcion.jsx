@@ -1,5 +1,6 @@
 import React from "react"
 import SectionVanilla from '../containers/SectionVanilla'
+import Section1 from "../containers/Section1"
 const Descripcion = () => {
   return (
     <>
@@ -19,7 +20,8 @@ const Descripcion = () => {
         </div>
       </section>
       <section className="d-grid gap-4">
-        <SectionVanilla/>
+        {/* <SectionVanilla/> */}
+        <Section1/>
       </section>
     </>
   )

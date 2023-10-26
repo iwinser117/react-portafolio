@@ -22,7 +22,7 @@ const Nav = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav nav-ul">
-              {location.pathname === "/nav" ? (
+              {location.pathname === "/proyectos" ? (
                 <li className="nav-item">
                   <NavLink
                     className="nav-link"
@@ -33,7 +33,7 @@ const Nav = () => {
                   </NavLink>
                 </li>
               ) : null}
-              {location.pathname === "/nav" ? null : (
+              {location.pathname === "/proyectos" ? null : (
                 <li className="nav-item">
                   <a className="nav-link" href="#acercademi">
                     Acerca de mi
@@ -41,7 +41,7 @@ const Nav = () => {
                 </li>
               )}
 
-              {location.pathname === "/nav" ? null : (
+              {location.pathname === "/proyectos" ? null : (
                 <li className="nav-item ">
                   <a className="nav-link " href="#habilidades">
                     Habilidades
@@ -49,11 +49,11 @@ const Nav = () => {
                 </li>
               )}
 
-              {location.pathname === "/nav" ? null : (
+              {location.pathname === "/proyectos" ? null : (
                 <li className="nav-item ">
                   <NavLink
                     className="nav-link "
-                    to={"/nav"}
+                    to={"/proyectos"}
                     // onClick={() => handleNavigation("nav")}
                   >
                     Proyectos

@@ -8,7 +8,7 @@ import Formulario from "@components/Formulario"
 const Proyectos = () => {
   return (
     <>
-      <div className="d-grid gap-4">
+      <div className="d-grid gap-4 ">
         <Nav />
         <Descripcion />
         <Formulario />

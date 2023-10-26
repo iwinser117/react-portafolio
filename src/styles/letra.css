@@ -1,0 +1,23 @@
+.color-letra {
+  color: black;
+}
+
+.MDBCard:hover {
+  background-color: rgba(98, 98, 98, 0.15);
+  cursor: pointer;
+}
+.MDBCard img {
+  transition: transform 0.3s;
+}
+
+.MDBCard {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.MDBCard:hover img {
+  transition: transform 0.3s;
+  transform: scale(
+    1.03, 1.02
+  ); 
+}

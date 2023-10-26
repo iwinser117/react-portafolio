@@ -15,7 +15,7 @@ const App = () => {
       <div className="app-container">
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="nav" element={<Proyectos />} />
+          <Route exact path="/proyectos" element={<Proyectos/>} />
         </Routes>
       </div>
     </DarkModeProvider>
