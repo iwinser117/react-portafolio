@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "@styles/letra.css";
 import {
   MDBCard,
@@ -11,30 +11,23 @@ import {
   MDBCol,
 } from "mdb-react-ui-kit";
 import { Container } from "react-bootstrap";
-import Calculadora from "../codigoProyectos/Calculadora";
 export default function App() {
-  const [staticModal, setStaticModal] = useState(false);
-
-  const toggleShow = () => setStaticModal(!staticModal);
   return (
     <>
-      <h3 className="m-auto">Js Vanilla</h3>
+      <h3 className="m-auto">Node JS</h3>
       <Container className="color-letra">
         <MDBRow className="row-cols-1 row-cols-md-3 g-4">
           <MDBCol>
-            <MDBCard className="h-100 MDBCard" onClick={toggleShow}>
+            <MDBCard className="h-100 MDBCard ">
               <MDBCardImage
                 src="https://mdbootstrap.com/img/new/standard/city/044.webp"
                 alt="..."
                 position="top"
               />
               <MDBCardBody>
-                <MDBCardTitle>Calculadora</MDBCardTitle>
+                <MDBCardTitle>TableExportJS</MDBCardTitle>
                 <MDBCardText>
-                  Operamos con los datos obtenidos de los input del formulario y
-                  operamos según corresponda con las funciones asignadas a los
-                  botones de la parte inferior; se pueden realizar operaciones
-                  con números enteros y decimales.
+                  Consumimos y exportamos datos dinamicamente desde visualizarlos en una tabla.
                 </MDBCardText>
               </MDBCardBody>
               <MDBCardFooter>
@@ -50,10 +43,9 @@ export default function App() {
                 position="top"
               />
               <MDBCardBody>
-                <MDBCardTitle>Reloj</MDBCardTitle>
+                <MDBCardTitle>App de chat</MDBCardTitle>
                 <MDBCardText>
-                  Peticiones dependiendo de la ciudad y actualizacion segun
-                  corresponda.
+                  En proceso de diseño y desarrollo.
                 </MDBCardText>
               </MDBCardBody>
               <MDBCardFooter>
@@ -69,10 +61,9 @@ export default function App() {
                 position="top"
               />
               <MDBCardBody>
-                <MDBCardTitle>Paleta de colores</MDBCardTitle>
+                <MDBCardTitle>Sistema de Pagos</MDBCardTitle>
                 <MDBCardText>
-                  Se toma mediante un input el valor del color y se le agrega
-                  este estilo a un elemento contenedor.
+                En proceso de diseño y desarrollo.
                 </MDBCardText>
               </MDBCardBody>
               <MDBCardFooter>
@@ -88,30 +79,9 @@ export default function App() {
                 position="top"
               />
               <MDBCardBody>
-                <MDBCardTitle>Contador</MDBCardTitle>
+                <MDBCardTitle>Sistema de Ventas</MDBCardTitle>
                 <MDBCardText>
-                  Interfaz en la cual cada botón se le asigna una función, muy
-                  intuitiva, como sumar 1, restar 1 y el botón reset el cual
-                  deja el contador a cero 0. Haciendo uso de "useState"
-                </MDBCardText>
-              </MDBCardBody>
-              <MDBCardFooter>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </MDBCardFooter>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol>
-          <MDBCard className="h-100 MDBCard" onClick={toggleShow}>
-              <iframe
-                width="100%"
-                height="auto"
-                src="https://www.youtube.com/embed/_kxz7WX4mLU?si=r5DlgS84bpYIULlx" 
-                title="Video"
-              />
-              <MDBCardBody>
-                <MDBCardTitle>Test de Video</MDBCardTitle>
-                <MDBCardText>
-                  Test de un video previo.
+                En proceso de diseño y desarrollo.
                 </MDBCardText>
               </MDBCardBody>
               <MDBCardFooter>
@@ -120,7 +90,6 @@ export default function App() {
             </MDBCard>
           </MDBCol>
         </MDBRow>
-        {staticModal ? <Calculadora l={setStaticModal} /> : null}
       </Container>
     </>
   );
