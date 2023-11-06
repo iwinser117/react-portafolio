@@ -6,7 +6,7 @@ import { mostrarR } from "../codigoProyectos/verResultados/calculadora";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-const Calculadora = () => {
+const Calculadora = (flag) => {
   
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
@@ -76,14 +76,13 @@ const Calculadora = () => {
     setStaticModal(false);
   };
   return (
-    <Modal show={staticModal} onHide={handleClose}>
+    <Modal show={staticModal} onHide={handleClose} size="sm" >
       <Modal.Header closeButton>
         <Modal.Title>Calculadora</Modal.Title>
       </Modal.Header>
-      <Modal.Body></Modal.Body>
       <div id="calculadora" className="card w-100 m-auto p-4 ">
         <form id="forma">
-          <div className="mb-3">
+          <div className="mb-1">
             <label htmlFor="opA" className="form-label">
               Operando uno
             </label>
@@ -97,7 +96,7 @@ const Calculadora = () => {
               value={input1}
             />
           </div>
-          <div className="mb-3">
+          <div className="mb-1">
             <label htmlFor="opB" className="form-label">
               Operando dos
             </label>
@@ -114,7 +113,7 @@ const Calculadora = () => {
         </form>
 
         <div className="numeros">
-          <div className="d-flex justify-content-around mb-3">
+          <div className="d-flex justify-content-around mb-2">
             {[1, 2, 3].map((numero) => (
               <input
                 key={numero}
@@ -134,7 +133,7 @@ const Calculadora = () => {
               />
             ))}
           </div>
-          <div className="d-flex justify-content-around mb-3">
+          <div className="d-flex justify-content-around mb-2">
             {[4, 5, 6].map((numero) => (
               <input
                 key={numero}
@@ -154,7 +153,7 @@ const Calculadora = () => {
               />
             ))}
           </div>
-          <div className="d-flex justify-content-around mb-3">
+          <div className="d-flex justify-content-around mb-2">
             {[7, 8, 9].map((numero) => (
               <input
                 key={numero}
@@ -174,7 +173,7 @@ const Calculadora = () => {
               />
             ))}
           </div>
-          <div className="d-flex justify-content-around mb-3">
+          <div className="d-flex justify-content-around mb-2">
             <button
               className="btn btn-secondary btn-lg"
               onClick={() =>
@@ -194,7 +193,7 @@ const Calculadora = () => {
         </div>
 
         <div className="operaciones">
-          <div className="d-flex justify-content-around mb-3">
+          <div className="d-flex justify-content-around mb-2">
             {["+", "-", "X", "/"].map((operador) => (
               <div key={operador}>
                 <button
@@ -213,7 +212,7 @@ const Calculadora = () => {
               </button>
             </div>
           </div>
-          <div className="d-flex justify-content-around mb-3">
+          <div className="d-flex justify-content-around mb-2">
             <button className="btn btn-danger btn-lg" onClick={limpiarInput}>
               C
             </button>
