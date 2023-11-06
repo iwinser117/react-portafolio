@@ -12,20 +12,33 @@ import {
 } from "mdb-react-ui-kit";
 import { Container } from "react-bootstrap";
 import Calculadora from "../codigoProyectos/Calculadora";
+import Reloj from '../codigoProyectos/Reloj';
+import CalcImg from '../assets/imgCalculadora.png'
+import relojimg from '../assets/relojimg.png'
 export default function App() {
-  const [staticModal, setStaticModal] = useState(false);
+  const [modals, setModals] = useState({
+    modalCal: false,
+    modalReloj: false,
+    paletColor: false,
+  });
 
-  const toggleShow = () => setStaticModal(!staticModal);
-  return (
+  const toggleShow = (modalName) => {
+    setModals((prevModals) => ({
+      ...prevModals,
+      [modalName]: !prevModals[modalName],
+    }));
+  };
+    return (
     <>
       <h3 className="m-auto">Js Vanilla</h3>
       <Container className="color-letra">
         <MDBRow className="row-cols-1 row-cols-md-3 g-4">
           <MDBCol>
-            <MDBCard className="h-100 MDBCard" onClick={toggleShow}>
+            <MDBCard className="h-100 MDBCard" onClick={()=>toggleShow('modalCal')}>
               <MDBCardImage
-                src="https://mdbootstrap.com/img/new/standard/city/044.webp"
+                src={CalcImg}
                 alt="..."
+                height={'195px'}
                 position="top"
               />
               <MDBCardBody>
@@ -43,9 +56,10 @@ export default function App() {
             </MDBCard>
           </MDBCol>
           <MDBCol>
-            <MDBCard className="h-100 MDBCard">
+            <MDBCard className="h-100 MDBCard" onClick={()=>toggleShow('modalReloj')}>
               <MDBCardImage
-                src="https://mdbootstrap.com/img/new/standard/city/043.webp"
+                src={relojimg}
+                height={'195px'}
                 alt="..."
                 position="top"
               />
@@ -62,7 +76,7 @@ export default function App() {
             </MDBCard>
           </MDBCol>
           <MDBCol>
-            <MDBCard className="h-100 MDBCard">
+            <MDBCard className="h-100 MDBCard" onClick={()=>toggleShow('paletColor')}>
               <MDBCardImage
                 src="https://mdbootstrap.com/img/new/standard/city/042.webp"
                 alt="..."
@@ -101,7 +115,7 @@ export default function App() {
             </MDBCard>
           </MDBCol>
           <MDBCol>
-          <MDBCard className="h-100 MDBCard" onClick={toggleShow}>
+          <MDBCard className="h-100 MDBCard" onClick={()=>toggleShow(2)}>
               <iframe
                 width="100%"
                 height="auto"
@@ -120,7 +134,8 @@ export default function App() {
             </MDBCard>
           </MDBCol>
         </MDBRow>
-        {staticModal ? <Calculadora l={setStaticModal} /> : null}
+        {modals.modalCal  ?  <Calculadora /> : null }
+        {modals.modalReloj  ?  <Reloj /> : null }
       </Container>
     </>
   );

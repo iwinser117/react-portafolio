@@ -1,15 +1,29 @@
 import React, { useState, useEffect, useRef } from "react";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 const Reloj = () => {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   const [date, setDate] = useState("");
   const [selectedCity, setSelectedCity] = useState("America/Bogota");
   const [cityData, setCityData] = useState(null);
-  
+
+  const diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+
   const months = [
-    "enero", "febrero", "marzo", "abril", "mayo", "junio",
-    "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+    "enero",
+    "febrero",
+    "marzo",
+    "abril",
+    "mayo",
+    "junio",
+    "julio",
+    "agosto",
+    "septiembre",
+    "octubre",
+    "noviembre",
+    "diciembre",
   ];
-  
+
   const cities = [
     { name: "Seleccione una ciudad", timezone: "" },
     { name: "Nueva York", timezone: "America/New_York" },
@@ -28,65 +42,74 @@ const Reloj = () => {
     { name: "Bogotá", timezone: "America/Bogota" },
     { name: "Buenos Aires", timezone: "America/Argentina/Buenos_Aires" },
   ];
-  
-  const fetchCityData = async (timezone) => {
-    try {
-      const response = await fetch(`http://worldtimeapi.org/api/timezone/${timezone}`);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error("Error fetching city data:", error);
-      return null;
-    }
+  const handleCityChange = (event) => {
+    setSelectedCity(event.target.value);
   };
 
   useEffect(() => {
-    const fetchAndSetCityTime = async () => {
-      const data = await fetchCityData(selectedCity);
-      if (data) {
-        const cityTime = new Date(data.utc_datetime).toLocaleTimeString();
-        setTime(cityTime);
-        setDate(`${data.day} de ${months[data.month - 1]} de ${data.year}`);
-      }
-    };
-
-    fetchAndSetCityTime();
-
     const intervalId = setInterval(() => {
       const now = new Date();
-      const cityTime = new Date(now.getTime() + (now.getTimezoneOffset() * 60000)).toLocaleTimeString();
+      const cityTime = new Date(
+        now.toLocaleString("en-US", { timeZone: selectedCity })
+      ).toLocaleTimeString();
+      const cityDate = new Date(
+        now.toLocaleString("en-US", { timeZone: selectedCity })
+      );
       setTime(cityTime);
+      setDate(
+        `${diasSemana[cityDate.getUTCDay()]} ${cityDate.getDate()} de ${
+          months[cityDate.getMonth()]
+        } de ${cityDate.getFullYear()}`
+      );
     }, 1000);
 
     return () => {
       clearInterval(intervalId);
     };
-  }, [selectedCity]);
+  }, [selectedCity, months]);
 
-  const handleCityChange = (event) => {
-    setSelectedCity(event.target.value);
+  const [staticModal, setStaticModal] = useState(true);
+
+  const handleShow = () => {
+    setStaticModal(true);
+  };
+
+  const handleClose = () => {
+    setStaticModal(false);
   };
 
   return (
-    <div className="card m-auto w-50 p-4 bg-dark text-white">
-      <h4 className="text-center">Reloj Mundial</h4>
-      <p>
-        Seleccione una ciudad para ver la hora y fecha correspondiente:
-      </p>
-      <div className="d-flex justify-content-center mb-3">
-        <select className="form-select" value={selectedCity} onChange={handleCityChange}>
-          {cities.map((city) => (
-            <option key={city.name} value={city.timezone}>
-              {city.name}
-            </option>
-          ))}
-        </select>
+    <Modal show={staticModal} onHide={handleClose} size="">
+      <Modal.Header closeButton>
+        <Modal.Title>Reloj Mundial</Modal.Title>
+      </Modal.Header>
+      <div className="card m-auto w-50 p-4 bg-dark text-white text-justify">
+        <h4 className="text-center">Reloj Mundial</h4>
+        <p>Seleccione una ciudad para ver la hora y fecha correspondiente:</p>
+        <div className="d-flex justify-content-center mb-3">
+          <select
+            className="form-select"
+            value={selectedCity}
+            onChange={handleCityChange}
+          >
+            {cities.map((city) => (
+              <option key={city.timezone} value={city.timezone}>
+                {city.name}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="card-body text-center">
+          <h4>{time}</h4>
+          <h6>{date}</h6>
+        </div>
       </div>
-      <div className="card-body text-center">
-        <h4>{time}</h4>
-        <h6>{date}</h6>
-      </div>
-    </div>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={handleClose}>
+          Cerrar
+        </Button>
+      </Modal.Footer>
+    </Modal>
   );
 };
 
