@@ -205,17 +205,15 @@ export default function App() {
               <MDBCardBody>
                 <MDBCardTitle>Lista de Tareas</MDBCardTitle>
                 <MDBCardText>
-                  <p>
-                    Visitar aplicación
-                    <br />
-                    <a
-                      href="https://crudlistatareas.netlify.app "
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Link de Visita al Crud
-                    </a>
-                  </p>
+                  Visitar aplicación
+                  <br />
+                  <a
+                    href="https://crudlistatareas.netlify.app "
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Link de Visita al Crud
+                  </a>
                 </MDBCardText>
               </MDBCardBody>
               <MDBCardFooter>
