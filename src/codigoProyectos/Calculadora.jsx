@@ -76,7 +76,7 @@ const Calculadora = ({ onClose }) => {
     onClose();
   };
   return (
-    <Modal show={staticModal} onHide={handleClose} centered  >
+    <Modal show={staticModal} onHide={handleClose} centered size=""  >
       <Modal.Header closeButton>
         <Modal.Title>Calculadora</Modal.Title>
       </Modal.Header>

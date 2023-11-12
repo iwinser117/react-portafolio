@@ -95,7 +95,6 @@ export default function App() {
                   height: "220px",
                   objectFit: "",
                   marginTop: "",
-                  width: "auto",
                   borderRadius: "0px",
                 }}
                 position="top"
@@ -123,7 +122,6 @@ export default function App() {
                 src={relojimg}
                 style={{
                   height: "220px",
-                  width: "100%",
                   objectFit: "",
                   marginTop: "",
                 }}
@@ -198,7 +196,6 @@ export default function App() {
                   height: "220px",
                   objectFit: "content",
                   marginTop: "",
-                  width: "100%",
                   borderRadius: "0px",
                 }}
               />
