@@ -76,7 +76,7 @@ const Calculadora = ({ onClose }) => {
     onClose();
   };
   return (
-    <Modal show={staticModal} onHide={handleClose}  >
+    <Modal show={staticModal} onHide={handleClose} centered  >
       <Modal.Header closeButton>
         <Modal.Title>Calculadora</Modal.Title>
       </Modal.Header>
@@ -192,12 +192,12 @@ const Calculadora = ({ onClose }) => {
           </div>
         </div>
 
-        <div className="operaciones">
+        <div className="operaciones" >
           <div className="d-flex justify-content-around mb-2">
             {["+", "-", "X", "/"].map((operador) => (
               <div key={operador}>
                 <button
-                  className={`btn btn-primary btn-lg ${
+                  className={`btn btn-primary btn-lg  ${
                     operando === operador ? "active" : ""
                   }`}
                   onClick={() => handleOperandoClick(operador)}

@@ -79,7 +79,7 @@ const Reloj = ({ onClose }) => {
   };
 
   return (
-    <Modal show={staticModal} onHide={handleClose} size="">
+    <Modal show={staticModal} onHide={handleClose} size="" centered>
       <Modal.Header closeButton>
         <Modal.Title>Reloj Mundial</Modal.Title>
       </Modal.Header>

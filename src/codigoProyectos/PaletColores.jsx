@@ -14,7 +14,7 @@ const PaletColores = ({ onClose }) => {
     };
 
     return (
-        <Modal show={true} onHide={handleClose} size="">
+        <Modal show={true} onHide={handleClose} size="" centered>
             <Modal.Header closeButton>
                 <Modal.Title>Paleta de colores</Modal.Title>
             </Modal.Header>
