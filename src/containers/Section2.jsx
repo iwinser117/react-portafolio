@@ -23,7 +23,7 @@ import imgtablaExport from "../assets/imgtablaExport.png";
 
 export default function App() {
   const [modals, setModals] = useState({
-    tableExport: false
+    tableExport: false,
   });
   const [lastUpdatedData1, setLastUpdatedData1] = useState("");
   //const [lastUpdatedData2, setLastUpdatedData2] = useState("");
@@ -83,7 +83,6 @@ export default function App() {
                   height: "220px",
                   objectFit: "",
                   marginTop: "",
-                  width: "auto",
                   borderRadius: "0px",
                 }}
                 position="top"
@@ -116,7 +115,6 @@ export default function App() {
                   height: "220px",
                   objectFit: "",
                   marginTop: "",
-                  width: "auto",
                   borderRadius: "0px",
                 }}
                 position="top"
@@ -139,7 +137,6 @@ export default function App() {
                   height: "220px",
                   objectFit: "",
                   marginTop: "",
-                  width: "auto",
                   borderRadius: "0px",
                 }}
                 position="top"
@@ -162,7 +159,6 @@ export default function App() {
                   height: "220px",
                   objectFit: "",
                   marginTop: "",
-                  width: "auto",
                   borderRadius: "0px",
                 }}
                 position="top"

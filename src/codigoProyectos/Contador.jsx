@@ -22,7 +22,7 @@ const Contador = ({ onClose }) => {
     };
 
     return (
-        <Modal show={true} onHide={handleClose} size="" centered>
+        <Modal show={true} onHide={handleClose}  centered size="">
             <Modal.Header closeButton>
                 <Modal.Title>Contador</Modal.Title>
             </Modal.Header>
