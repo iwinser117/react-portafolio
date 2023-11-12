@@ -19,7 +19,7 @@ import TableExport from "@codigoProyectos/TableExport";
 import { Container } from "react-bootstrap";
 import imgProceso from "@assets/imgProceso.jpg";
 import imgProceso2 from "@assets/imgProces2.jpg";
-import imgtablaExport from "@assets/imgTablaExport.png";
+import imgtablaExport from "../assets/imgtablaExport.png";
 
 export default function App() {
   const [modals, setModals] = useState({
