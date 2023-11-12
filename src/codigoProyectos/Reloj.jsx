@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-const Reloj = () => {
+const Reloj = ({ onClose }) => {
   const [time, setTime] = useState(new Date().toLocaleTimeString());
   const [date, setDate] = useState("");
   const [selectedCity, setSelectedCity] = useState("America/Bogota");
@@ -75,7 +75,7 @@ const Reloj = () => {
   };
 
   const handleClose = () => {
-    setStaticModal(false);
+    onClose()
   };
 
   return (

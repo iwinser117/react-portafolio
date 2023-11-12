@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import SectionDev from "./SectionDev"
 
-import CarouselSlider from '../components/CarouselSlider';
+import CarouselSlider from '@components/CarouselSlider';
 import { FcFolder } from "react-icons/fc";
-import img1 from '../assets/d1Python.jpg'
+import img1 from '@assets/d1Python.jpg'
 
 const SectionVanilla = () => {
   const [isHovered, setIsHovered] = useState(false);
