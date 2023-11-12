@@ -13,11 +13,18 @@ import {
   MDBRow,
   MDBCol,
 } from "mdb-react-ui-kit";
+
+import TableExport from "@codigoProyectos/TableExport";
+
 import { Container } from "react-bootstrap";
 import imgProceso from "@assets/imgProceso.jpg";
 import imgProceso2 from "@assets/imgProces2.jpg";
 import imgtablaExport from "@assets/imgTablaExport.png";
+
 export default function App() {
+  const [modals, setModals] = useState({
+    tableExport: false
+  });
   const [lastUpdatedData1, setLastUpdatedData1] = useState("");
   //const [lastUpdatedData2, setLastUpdatedData2] = useState("");
   const owner = "iwinser117";
@@ -44,6 +51,16 @@ export default function App() {
       fetchData(repoName);
     });
   }, []);
+  const toggleShow = (modalName) => {
+    setModals((prevModals) => ({
+      ...Object.fromEntries(
+        Object.entries(prevModals).map(([key, value]) => [
+          key,
+          key === modalName ? !value : false,
+        ])
+      ),
+    }));
+  };
 
   const fechaFormateada = (dateString) => {
     const date = utcToZonedTime(new Date(dateString), "America/New_York");
@@ -55,7 +72,10 @@ export default function App() {
       <Container className="color-letra">
         <MDBRow className="row-cols-1 row-cols-md-3 g-4">
           <MDBCol>
-            <MDBCard className="h-100 MDBCard ">
+            <MDBCard
+              className="h-100 MDBCard"
+              onClick={() => toggleShow("tableExport")}
+            >
               <MDBCardImage
                 src={imgtablaExport}
                 alt="..."
@@ -74,16 +94,16 @@ export default function App() {
                   Visitar Aplicación
                   <br />
                   <a
-                      href="https://table-export-js-4zq5.vercel.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Link de Visita a la Aplicación
-                    </a>
+                    href="https://table-export-js-4zq5.vercel.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Link de Visita a la Aplicación
+                  </a>
                 </MDBCardText>
               </MDBCardBody>
               <MDBCardFooter>
-              <small className="text-muted">{`Actualizado: ${lastUpdatedData1}`}</small>
+                <small className="text-muted">{`Actualizado: ${lastUpdatedData1}`}</small>
               </MDBCardFooter>
             </MDBCard>
           </MDBCol>
@@ -157,6 +177,9 @@ export default function App() {
             </MDBCard>
           </MDBCol>
         </MDBRow>
+        {modals.tableExport ? (
+          <TableExport onClose={() => toggleShow("tableExport")} />
+        ) : null}
       </Container>
     </>
   );
