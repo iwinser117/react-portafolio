@@ -2,11 +2,11 @@
 
 
 import React, { useState } from "react";
-import { mostrarR } from "../codigoProyectos/verResultados/calculadora";
+import { mostrarR } from "@codigoProyectos/verResultados/calculadora";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
-const Calculadora = (flag) => {
+const Calculadora = ({ onClose }) => {
   
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
@@ -73,14 +73,14 @@ const Calculadora = (flag) => {
   };
 
   const handleClose = () => {
-    setStaticModal(false);
+    onClose();
   };
   return (
-    <Modal show={staticModal} onHide={handleClose} size="sm" >
+    <Modal show={staticModal} onHide={handleClose}  >
       <Modal.Header closeButton>
         <Modal.Title>Calculadora</Modal.Title>
       </Modal.Header>
-      <div id="calculadora" className="card w-100 m-auto p-4 ">
+      <div id="calculadora" className="bg-dark card w-70 m-auto p-4 ">
         <form id="forma">
           <div className="mb-1">
             <label htmlFor="opA" className="form-label">

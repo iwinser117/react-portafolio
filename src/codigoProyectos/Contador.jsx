@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 
-const Contador = () => {
+
+const Contador = ({ onClose }) => {
     const [count, setCount] = useState(0);
-    
+
     const handleDecrement = () => {
         setCount(count - 1);
     };
@@ -14,35 +17,42 @@ const Contador = () => {
     const handleReset = () => {
         setCount(0);
     };
+    const handleClose = () => {
+        onClose();
+    };
 
     return (
-        <div className="card m-auto w-50 p-4 bg-dark text-white">
-            <div className="card-body">
-                <h4 className='text-center'>Contador</h4>
-                <p>
-                    Interfaz en la cual cada botón se le asigna una función, muy
-                    intuitiva, como sumar 1, restar 1 y el botón reset el cual deja el
-                    contador a cero 0. Haciendo uso de "useState"
-                </p>
+        <Modal show={true} onHide={handleClose} size="">
+            <Modal.Header closeButton>
+                <Modal.Title>Contador</Modal.Title>
+            </Modal.Header>
+            <div className="card m-auto p-4 bg-dark text-white">
+                <div className="card-body">
 
-                <h2 className="text-center fs-1">{count}</h2>
+                    <h2 className="text-center fs-1">{count}</h2>
 
-                <div className="d-flex justify-content-around">
-                    <button className="btn btn-outline-primary" onClick={handleDecrement}>
-                        Decrement
-                    </button>
+                    <div className="d-flex ">
+                        <button className="btn btn-outline-primary m-2" onClick={handleDecrement}>
+                            Decrement
+                        </button>
 
-                    <button className="btn btn-outline-primary" onClick={handleIncrement}>
-                        Increment
-                    </button>
-                </div>
-                <div className="d-flex justify-content-center mt-4">
-                    <button className="btn btn-outline-danger" onClick={handleReset}>
-                        Reset
-                    </button>
+                        <button className="btn btn-outline-primary m-2" onClick={handleIncrement}>
+                            Increment
+                        </button>
+                    </div>
+                    <div className="d-flex justify-content-center mt-4">
+                        <button className="btn btn-outline-danger" onClick={handleReset}>
+                            Reset
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
+            <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose}>
+                    Cerrar
+                </Button>
+            </Modal.Footer>
+        </Modal>
     );
 }
 
