@@ -8,7 +8,7 @@ const ListaTareas = ({ onClose }) => {
   };
 
   return (
-    <Modal show={true} onHide={handleClose} size="">
+    <Modal show={true} onHide={handleClose} size="" centered>
       <Modal.Header closeButton>
         <Modal.Title>Lista de tareas</Modal.Title>
       </Modal.Header>
