@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
-import "@styles/Banner.css"; // Asegúrate de tener los estilos CSS definidos
+import "@styles/Banner.css"; 
 import gifImage from "@assets/iwinser.gif";
-import gifImage1 from "@assets/banner1.gif";
+//import gifImage1 from "@assets/imagAlgoritmos.jpeg";
+//import gifImage1 from "@assets/imgb3.png";
+//import gifImage1 from "@assets/imgia3.png";
+import gifImage1 from "@assets/bannr4.jpeg";
+
 
 const Banner = () => {
   const [imageIndex, setImageIndex] = useState(0);
-  const images = [gifImage, gifImage1]; // Agrega más imágenes según sea necesario
+  const images = [gifImage1]; // Agrega más imágenes según sea necesario
 
   const acrostico = [
     "Idea",
@@ -28,11 +32,11 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className="banner align-items-center ">
+    <div className="banner align-items-center data-bs-theme-dark">
       <div className="bannerItem">
         {images.map((image, index) => (
           <div key={index} style={{ display: index === imageIndex ? "block" : "none" }}>
-            {image ? <img src={image} alt={`Banner ${index}`} /> : null}
+            {image ? <img className='imgEs' src={image} alt={`Banner ${index}`} /> : null}
           </div>
         ))}
         {imageIndex === images.length && (
@@ -44,7 +48,7 @@ const Banner = () => {
                     <p
                       key={charIndex}
                       style={{
-                        animationDelay: `${index * 0.5 + charIndex * 0.2}s`, 
+                        animationDelay: `${index * 0.5 + charIndex * 0.2}s`,
                       }}
                       className="rainbow-text"
                     >

@@ -31,3 +31,12 @@
     1.03, 1.02
   ); 
 }
+
+
+.img {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+  margin-top: "";
+  border-radius: "0px";
+}

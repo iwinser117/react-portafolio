@@ -91,12 +91,7 @@ export default function App() {
               <MDBCardImage
                 src={CalcImg}
                 alt="..."
-                style={{
-                  height: "220px",
-                  objectFit: "",
-                  marginTop: "",
-                  borderRadius: "0px",
-                }}
+                className="img"
                 position="top"
               />
               <MDBCardBody>
@@ -120,11 +115,7 @@ export default function App() {
             >
               <MDBCardImage
                 src={relojimg}
-                style={{
-                  height: "220px",
-                  objectFit: "",
-                  marginTop: "",
-                }}
+                className="img"
                 alt="..."
                 position="top"
               />
@@ -147,7 +138,7 @@ export default function App() {
             >
               <MDBCardImage
                 src={paletaColoresimg}
-                style={{ height: "220px", objectFit: "", marginTop: "" }}
+                className="img"
                 position="top"
               />
               <MDBCardBody>
@@ -169,7 +160,7 @@ export default function App() {
             >
               <MDBCardImage
                 src={imgcontador}
-                style={{ height: "220px", objectFit: "cover", marginTop: "" }}
+                className="img"
                 position="top"
               />
               <MDBCardBody>
@@ -192,12 +183,7 @@ export default function App() {
             >
               <MDBCardImage
                 src={listtareas}
-                style={{
-                  height: "220px",
-                  objectFit: "content",
-                  marginTop: "",
-                  borderRadius: "0px",
-                }}
+                className="img"
               />
               <MDBCardBody>
                 <MDBCardTitle>Lista de Tareas</MDBCardTitle>
