@@ -4,12 +4,12 @@ import gifImage from "@assets/iwinser.gif";
 //import gifImage1 from "@assets/imagAlgoritmos.jpeg";
 //import gifImage1 from "@assets/imgb3.png";
 //import gifImage1 from "@assets/imgia3.png";
-import gifImage1 from "@assets/bannr4.jpeg";
+//import gifImage1 from "@assets/bannr4.jpeg";
 
 
 const Banner = () => {
   const [imageIndex, setImageIndex] = useState(0);
-  const images = [gifImage1]; // Agrega más imágenes según sea necesario
+  const images = []; 
 
   const acrostico = [
     "Idea",

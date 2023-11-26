@@ -3,7 +3,6 @@ import logo from "@assets/ok.svg"
 import '@styles/Nav.css'
 import { NavLink, useLocation } from "react-router-dom"
 const Nav = () => {
-  const locacion = useLocation()
   return (
     <>
       <nav className="navbar navbar-expand-lg ">

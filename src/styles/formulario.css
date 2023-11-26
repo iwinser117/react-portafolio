@@ -30,7 +30,7 @@
         display: none;
     }
     .block-view {
-        transition:35s cubic-bezier(0, 0, 0, 0.27);
+        transition:5s cubic-bezier(0, 0, 0, 0.27);
         display: block;
         opacity: 1;
         border: solid 1px rgb(175, 175, 175);
@@ -44,7 +44,7 @@
     .text-form {
         text-align: center;
         font-size: 0.8em;
-        opacity: 0.5;
+        font-family: 'Lato', sans-serif;
     }
 }
 
@@ -80,7 +80,7 @@
         display: none;
     }
     .block-view {
-        transition:35s cubic-bezier(0, 0, 0, 0.27);
+        transition:5s cubic-bezier(0, 0, 0, 0.27);
         display: block;
         opacity: 1;
         border: solid 1px rgb(175, 175, 175);
@@ -94,7 +94,7 @@
     .text-form {
         text-align: center;
         font-size: 0.8em;
-        opacity: 0.5;
+        font-family: 'Lato', sans-serif;
     }
 }
 
@@ -136,7 +136,7 @@
     }
     .block-view {
         width: 100%;
-        transition:35s cubic-bezier(0, 0, 0, 0.27);
+        transition:5s cubic-bezier(0, 0, 0, 0.27);
         display: block;
         opacity: 1;
         border: solid 1px rgb(175, 175, 175);
@@ -150,6 +150,13 @@
     .text-form {
         text-align: center;
         font-size: 0.8em;
-        opacity: 0.5;
+        font-family: 'Lato', sans-serif;
     }
 }
+
+  .dark-mode .form-label {
+    color: white
+  }
+  .dark-mode .form-cnt p {
+    color: white;
+  }
