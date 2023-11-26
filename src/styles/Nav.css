@@ -7,9 +7,7 @@
   nav {
     width: 100%;
   }
-
   .nav-ul {
-
     z-index: inherit;
     height: 40px;
     width: 90%;
@@ -66,7 +64,6 @@
 
   .container-fluid {
     width: 90% !important;
-
   }
 
   .navbar-collapse {
@@ -127,7 +124,8 @@
 }
 
 /* Media query para pantallas horizontales */
-@media (orientation: landscape) {}
+@media (orientation: landscape) {
+}
 
 /* Media query para pantallas pequeñas */
 @media (max-width: 799px) {
@@ -160,4 +158,8 @@
     color: black;
     text-align: center;
   }
+}
+nav li {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
 }

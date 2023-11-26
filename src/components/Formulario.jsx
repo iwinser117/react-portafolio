@@ -57,7 +57,7 @@ const Fomulario = () => {
           {viewForm ? (
             <img src={formLogo2} alt="logo formulario" width="32px" />
           ) : (
-            <img src={formLogo} alt="logo formulario" width="32px" />
+            <img src={formLogo} alt="logo formulario" width="32px" className="mb-4"/>
           )}
         </div>
         <form
@@ -68,7 +68,7 @@ const Fomulario = () => {
           onSubmit={sendEmail}
           className={
             viewForm
-              ? "block-view container col-6 traslation"
+              ? "block-view container col-6 traslation mb-4"
               : "none-view container col-6"
           }
         >

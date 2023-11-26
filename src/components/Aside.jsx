@@ -1,14 +1,14 @@
-import React from "react"
-import '@styles/aside.css'
-import '@styles/root.css'
+import React from "react";
+import "@styles/aside.css";
+import "@styles/root.css";
 const Aside = () => {
   return (
-    <section className="container aside-cnt col-8 data-bs-theme-dark">
+    <section className="container aside-cnt col-8 ">
       <aside className="d-flex justify-content-around content-aside">
-        <div className="card aside ">
+        <div className="aside">
           <div className="card-body aside-div-int ">
-            <h6 className="card-title">Trabajemos juntos</h6>
-            <div className="card-body d-flex cont-int-aside ">
+            <h6 className="">Trabajemos juntos</h6>
+            <div className="card-body d-flex cont-int-aside">
               <a
                 className="email-link"
                 href="mailto:iwinser.sanchez47@gmail.com"
@@ -19,7 +19,7 @@ const Aside = () => {
                 </p>
               </a>
             </div>
-            <div className="card-body d-flex cont-int-aside">
+            <div className="cont-int-aside">
               <a
                 className="wsp-link"
                 target="_blank"
@@ -34,9 +34,10 @@ const Aside = () => {
             </div>
           </div>
         </div>
-        <div className="card aside">
-          <div className="card-body aside-div-int">
-            <h6 className="card-title">Encuentrame</h6>
+
+        <div className="aside">
+          <div className="aside-div-int">
+            <h6 className="">Encuentrame</h6>
             <div className="card-body d-flex cont-int-aside">
               <a
                 className="git-link"
@@ -45,7 +46,7 @@ const Aside = () => {
                 rel="noopener noreferrer"
               >
                 <p>
-                  <i className="fa-brands fa-github "></i>&nbsp; GitHub
+                  <i className="fa-brands fa-github  "></i>&nbsp; GitHub
                 </p>
               </a>
             </div>
@@ -76,7 +77,7 @@ const Aside = () => {
         </div>
       </aside>
     </section>
-  )
-}
+  );
+};
 
-export default Aside
+export default Aside;
