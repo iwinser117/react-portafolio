@@ -1,7 +1,7 @@
-import React, { useState } from "react"
-import logo from "@assets/ok.svg"
-import '@styles/Nav.css'
-import { NavLink, useLocation } from "react-router-dom"
+import React, { useState } from "react";
+import logo from "@assets/ok.svg";
+import "@styles/Nav.css";
+import { NavLink, useLocation } from "react-router-dom";
 const Nav = () => {
   return (
     <>
@@ -70,7 +70,7 @@ const Nav = () => {
         </div>
       </nav>
     </>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;

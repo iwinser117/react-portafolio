@@ -1,3 +1,19 @@
+.img-skill-front {
+  width: 100%;
+  flex-wrap: wrap;
+  margin: auto;
+  display: flex;
+  align-content: center;
+  justify-content: space-around;
+}
+.img-skill-front a {
+  padding: 12px;
+  text-align: center;
+}
+.img-skill-front a img{
+  height: 60px;
+  margin: auto;
+}
 @media (min-width: 1200px) {
   .certificados-iconos li:hover {
     background: #e7e7e7;

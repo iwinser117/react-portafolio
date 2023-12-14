@@ -1,4 +1,7 @@
 /* Media query para pantallas grandes */
+nav .container-fluid .collapse{
+  justify-content: end;
+}
 @media (min-width: 1200px) {
   .collapse {
     position: relative;
@@ -10,7 +13,7 @@
   .nav-ul {
     z-index: inherit;
     height: 40px;
-    width: 90%;
+    width: 100%;
     justify-content: space-around;
     position: relative;
     margin-left: 50px;

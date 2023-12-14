@@ -2,17 +2,18 @@
 .content-aside {
   width: 100%;
   text-align: center;
+  margin-top: 32px;
 }
 
 .aside-div-int h6 {
-  margin-left: 52px;
   color: rgb(0, 0, 0);
 }
 
 .cont-int-aside {
-  display: flex;
+  display: inline-block;
   justify-content: center;
   padding: 6px 0px 6px 0;
+  width: 100%;
 }
 
 .cont-int-aside a {
