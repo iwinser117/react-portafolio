@@ -1,7 +1,9 @@
 .dark-mode .color-letra {
   color: rgb(0, 0, 0);
 }
-
+.dark-mode p {
+  color: white;
+}
 .MDBCard:hover {
   background-color: rgba(98, 98, 98, 0.15);
   cursor: pointer;

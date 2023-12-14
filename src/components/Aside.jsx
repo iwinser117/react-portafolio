@@ -5,35 +5,6 @@ const Aside = () => {
   return (
     <section className="container aside-cnt col-8 ">
       <aside className="d-flex justify-content-around content-aside">
-        <div className="aside">
-          <div className="card-body aside-div-int ">
-            <h6 className="">Trabajemos juntos</h6>
-            <div className="card-body d-flex cont-int-aside">
-              <a
-                className="email-link"
-                href="mailto:iwinser.sanchez47@gmail.com"
-              >
-                <p>
-                  <i className="fa-regular fa-envelope"></i>&nbsp;
-                  iwinser.sanchez47@gmail.com
-                </p>
-              </a>
-            </div>
-            <div className="cont-int-aside">
-              <a
-                className="wsp-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://api.whatsapp.com/send?phone=3197954808&text=Hola,%20cordial%20saludo.%20Gracias%20por%20contactarme%20en%20que%20puedo%20ayudarte?%20"
-              >
-                <p>
-                  <i className="fa-brands fa-whatsapp"></i>&nbsp; + 57
-                  3197954808
-                </p>
-              </a>
-            </div>
-          </div>
-        </div>
 
         <div className="aside">
           <div className="aside-div-int">
