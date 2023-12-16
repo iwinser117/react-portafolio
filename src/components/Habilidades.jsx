@@ -52,23 +52,28 @@ const Habilidades = () => {
             HTML
           </a>
           <a>
-            <img src={bootstrap} width={"50px"} alt="" /><br />
+            <img src={bootstrap} width={"50px"} alt="" />
+            <br />
             Bootstrap
           </a>
           <a>
-            <img src={ui5} width={"50px"} alt="" /><br />
+            <img src={ui5} width={"50px"} alt="" />
+            <br />
             Sapui5
           </a>
           <a>
-            <img src={css} width={"50px"} alt="" /><br />
+            <img src={css} width={"50px"} alt="" />
+            <br />
             CSS
           </a>
           <a>
-            <img src={xml} width={"50px"} alt="" /><br />
+            <img src={xml} width={"50px"} alt="" />
+            <br />
             XML
           </a>
           <a>
-            <img src={logojavascript} width={"50px"} alt="" /><br />
+            <img src={logojavascript} width={"50px"} alt="" />
+            <br />
             JavaScript
           </a>
         </div>
@@ -87,12 +92,12 @@ const Habilidades = () => {
           Durante mi proceso de aprendizaje, he trabajado con diversos lenguajes
           de programación como Python, Java y JavaScript. En particular, he
           estado enfocándome en el desarrollo y manejo de bases de datos,
-          especialmente con Postgres y MongoDB. Me he familiarizado con los
-          métodos POST, PUT y GET para interactuar con estas bases de datos, así
-          como también he adquirido experiencia en el consumo de APIs. También
-          tengo habilidades en el manejo de archivos JSON, comprendiendo su
-          estructura y accediendo a la información que contienen. Además, cuento
-          con conocimientos en SQL HANA.
+          especialmente con SQL y MongoDB. Me he familiarizado con los distintos
+          métodos para interactuar con estas bases de datos, así como también he
+          adquirido experiencia en el consumo de APIs y consumo de datos
+          mediante oDatas. También tengo habilidades en el manejo de archivos
+          JSON, comprendiendo su estructura y accediendo a la información que
+          contienen.
         </p>
         <div className="img-skill-front">
           <a>
@@ -104,27 +109,33 @@ const Habilidades = () => {
             ODATA
           </a>
           <a>
-            <img src={node} width={"50px"} alt="" /><br />
+            <img src={node} width={"50px"} alt="" />
+            <br />
             Node JS
           </a>
           <a>
-            <img src={express} width={"50px"} alt="" /><br />
-            Express
+            <img src={express} width={"50px"} alt="" />
+            <br />
+            Express JS
           </a>
           <a>
-            <img src={mongodb} width={"50px"} alt="" /><br />
+            <img src={mongodb} width={"50px"} alt="" />
+            <br />
             MongoDB
           </a>
           <a>
-            <img src={btp} width={"50px"} alt="" /><br />
+            <img src={btp} width={"50px"} alt="" />
+            <br />
             HANA SQL
           </a>
           <a>
-            <img src={postgresql} width={"50px"} alt="" /><br />
+            <img src={postgresql} width={"50px"} alt="" />
+            <br />
             PostgreSQL
           </a>
           <a>
-            <img src={wjt} width={"50px"} alt="" /><br />
+            <img src={wjt} width={"50px"} alt="" />
+            <br />
             JSON Web Tokens
           </a>
         </div>
