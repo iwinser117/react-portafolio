@@ -111,7 +111,7 @@ const Fomulario = () => {
               type="text"
               className="form-control"
               id="asunto"
-              placeholder="Escribe una breve descripcion del motivo de contacto."
+              placeholder="Escribe una breve descripción del motivo de contacto."
               required
             />
           </div>

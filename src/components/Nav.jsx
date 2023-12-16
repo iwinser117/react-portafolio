@@ -1,12 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "@assets/ok.svg";
 import "@styles/Nav.css";
 import { NavLink, useLocation } from "react-router-dom";
 const Nav = () => {
+  let prevScrollpos = window.pageYOffset;
+  window.onscroll = function () {
+    let currentScrollPos = window.pageYOffset;
+
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("navbar").style.top = "0";
+    } else {
+      document.getElementById("navbar").style.top = "-50px";
+    }
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("n2").style.top = "0";
+    } else {
+      document.getElementById("n2").style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
+  };
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg ">
-        <div className="container-fluid w-75 ">
+      <nav id="navbar" className="navbar navbar-expand-lg">
+        <div className="container-fluid w-75" id="n2">
           <img className="navbar-brand" src={logo} width="60px" />
           <button
             className="navbar-toggler "

@@ -32,7 +32,7 @@ const Acerca = () => {
         <h4>Certificaciones</h4>
         <p>
           Durante mi proceso de aprendizaje, obtuve la certificación del
-          programa Mision TIC 2022 ofrecido por la Facultad de Ingeniería de la
+          programa Misión TIC 2022 ofrecido por la Facultad de Ingeniería de la
           Universidad de Antioquia. Además, he completado satisfactoriamente
           varios cursos en la plataforma de estudio en línea Platzi.
         </p>
@@ -101,7 +101,7 @@ const Acerca = () => {
           </li>
           <li className="list-group-item list-group-item-action">
             <p>
-              Curso Práctico de Frontend Developer
+              Curso Practico de Frontend Developer
               <br />
               <i className="fa-solid fa-trophy icon-li"></i>&nbsp;Platzi &nbsp;
               &nbsp;

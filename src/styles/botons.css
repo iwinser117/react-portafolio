@@ -1,7 +1,7 @@
 @media (max-width: 800px) and (min-width: 100px) {
   .theme-toggle {
     position: fixed;
-    bottom: 12px;
+    bottom: 18px;
     left: 12px;
     z-index: 1000;
     background-color: transparent;
@@ -13,11 +13,14 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
   }
+  .dark-mode .ci-icon {
+    color: rgb(0, 0, 0) !important;
+  }
 }
-@media (min-width: 801px) and (max-width: 5000px) {
+@media (min-width: 801px) and (max-width: 1200px) {
   .theme-toggle {
     position: fixed;
-    top: 4px;
+    top: 5px;
     right: 12px;
     z-index: 1000;
     background-color: transparent;
@@ -29,16 +32,30 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
   }
-}
-.dark-mode .theme-toggle p {
-  color: #ffffff;
+  .dark-mode .theme-toggle p {
+    color: #ffffff !important;
+  }
 }
 
-.ci-icon {
-  color: rgb(122, 60, 60);
-  font-size: 18px;
-  padding: 0;
-  margin: 0;
+
+@media (min-width: 1201px) {
+  .theme-toggle {
+    position: fixed;
+    top: -2px;
+    right: 12px;
+    z-index: 1000;
+    background-color: transparent;
+    color: #030303;
+    border: none;
+    border-radius: 50%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  .dark-mode .theme-toggle p {
+    color: #ffffff !important;
+  }
 }
 
 .btn-arriba:hover {
@@ -67,8 +84,8 @@
   color: #ffffff;
 }
 
-.dark-mode .ci-icon:hover {
-  color: rgb(255, 230, 0);
+.dark-mode .ci-icon {
+  color: rgb(0, 0, 0) !important;
 }
 button .ci-icon:hover {
   color: rgb(0, 0, 0);
