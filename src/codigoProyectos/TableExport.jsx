@@ -11,7 +11,7 @@ const TableExport = ({ onClose }) => {
         <Modal.Title>Table Export</Modal.Title>
       </Modal.Header>
       <Modal.Body className="bg-dark text-white">
-        <p>
+        <p className="text-white">
           Esta es una Aplicación la cual hace peticiones a urls predeterminadas
           en el select de la lista desplegable, Además cuenta con un input donde
           podemos ingresar nuestras propias url de Apis a consumir. <br /> los

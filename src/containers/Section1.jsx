@@ -96,11 +96,8 @@ export default function App() {
               />
               <MDBCardBody>
                 <MDBCardTitle>Calculadora</MDBCardTitle>
-                <MDBCardText>
-                  Operamos con los datos obtenidos de los input del formulario y
-                  operamos según corresponda con las funciones asignadas a los
-                  botones de la parte inferior; se pueden realizar operaciones
-                  con números enteros y decimales.
+                <MDBCardText className="text-align-div-inter">
+                  Operaciones básicas incluidos decimales 
                 </MDBCardText>
               </MDBCardBody>
               <MDBCardFooter>
@@ -121,9 +118,8 @@ export default function App() {
               />
               <MDBCardBody>
                 <MDBCardTitle>Reloj</MDBCardTitle>
-                <MDBCardText>
-                  Peticiones dependiendo de la ciudad y
-                  actualizacpaletaColoresion segun corresponda.
+                <MDBCardText className="text-align-div-inter">
+                  Peticiones dependiendo de la ciudad segun corresponda.
                 </MDBCardText>
               </MDBCardBody>
               <MDBCardFooter>
@@ -143,7 +139,7 @@ export default function App() {
               />
               <MDBCardBody>
                 <MDBCardTitle>Paleta de colores</MDBCardTitle>
-                <MDBCardText>
+                <MDBCardText className="text-align-div-inter">
                   Se toma mediante un input el valor del color y se le agrega
                   este estilo a un elemento contenedor.
                 </MDBCardText>
@@ -158,17 +154,11 @@ export default function App() {
               className="h-100 MDBCard"
               onClick={() => toggleShow("contador")}
             >
-              <MDBCardImage
-                src={imgcontador}
-                className="img"
-                position="top"
-              />
+              <MDBCardImage src={imgcontador} className="img" position="top" />
               <MDBCardBody>
                 <MDBCardTitle>Contador</MDBCardTitle>
-                <MDBCardText>
-                  Interfaz en la cual cada botón se le asigna una función, muy
-                  intuitiva, como sumar 1, restar 1 y el botón reset el cual
-                  deja el contador a cero 0. Haciendo uso de "useState"
+                <MDBCardText className="text-align-div-inter">
+                  Haciendo uso de "useState" se incrementa o decrementa el valor
                 </MDBCardText>
               </MDBCardBody>
               <MDBCardFooter>
@@ -181,10 +171,7 @@ export default function App() {
               className="h-100 MDBCard"
               onClick={() => toggleShow("listatareas")}
             >
-              <MDBCardImage
-                src={listtareas}
-                className="img"
-              />
+              <MDBCardImage src={listtareas} className="img" />
               <MDBCardBody>
                 <MDBCardTitle>Lista de Tareas</MDBCardTitle>
                 <MDBCardText>

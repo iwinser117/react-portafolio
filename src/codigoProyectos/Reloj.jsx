@@ -85,7 +85,7 @@ const Reloj = ({ onClose }) => {
       </Modal.Header>
       <div className="card m-auto w-50 p-4 bg-dark text-white text-justify">
         <h4 className="text-center">Reloj Mundial</h4>
-        <p>Seleccione una ciudad para ver la hora y fecha correspondiente:</p>
+        <p className="text-white">Seleccione una ciudad para ver la hora y fecha correspondiente:</p>
         <div className="d-flex justify-content-center mb-3">
           <select
             className="form-select"

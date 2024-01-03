@@ -35,14 +35,6 @@
     justify-content: center;
     align-items: center;
   }
-
-  .aside-div-int h6 {
-    margin-left: 32px;
-  }
-
-  .cont-int-aside {
-    margin-left: 32px;
-  }
 }
 
 /* Media query para pantallas pequeñas */
@@ -54,9 +46,6 @@
     align-items: center;
   }
 
-  .cont-int-aside {
-    margin-left: 32px;
-  }
 }
 
 /* Media query para pantallas muy pequeñas */
