@@ -19,7 +19,7 @@ import mongodb from "../assets/mongodb.svg";
 import wjt from "../assets/wjt.svg";
 const Habilidades = () => {
   return (
-    <section className="container habld-cnt acerca-cnt col-8  text-justify lh-lg">
+    <section className="container  acerca-cnt col-8  text-justify lh-lg">
       <article id="habilidades" className="pt-3">
         <h3>Habilidades</h3>
       </article>

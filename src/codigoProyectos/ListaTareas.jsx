@@ -14,12 +14,12 @@ const ListaTareas = ({ onClose }) => {
       </Modal.Header>
       <div className="card m-auto p-4 bg-dark text-white">
         <h4 className="text-center"></h4>
-        <p>
+        <p className="text-white">
           Esta es una Aplicacion que su Backend se Encuentra desplegado en Railway
           y su Frontend en Netlify. Posee las Caracteristicas de CRUD (Create,
           Read, Update, Delete) y fue desarrollada con NodeJs, Express, React y
           MongoDB (MERN). <br />
-          <a
+          <a className="text-white"
             href="https://crudlistatareas.netlify.app "
             target="_blank"
             rel="noopener noreferrer"
