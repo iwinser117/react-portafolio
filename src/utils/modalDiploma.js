@@ -1,10 +1,10 @@
 const Swal = require("sweetalert2");
 const imgs = [
-  "../assets/d4Web.jpg",
   "../assets/d3Soft.jpg",
+  "../assets/d4Web.jpg",
   "../assets/d2Java.jpg",
   "../assets/d1Python.jpg",
-  '../assets/d5JsPrac.jpg',
+  '../assets/fullstack.jpg',
   '../assets/d6FronDev.jpg',
   '../assets/d7ReactPractico.jpg'
 

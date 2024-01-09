@@ -22,10 +22,10 @@ const Acerca = () => {
       <article id="acercademi">
         <h3>Acerca de mi</h3>
         <p>
-          Hola soy Iwinser Sanchez. Desarrollador de software con experiencia en Lenguajes como
-          Javascript, Python y Java. También tengo habilidades en HTML, CSS y
-          Bootstrap. Me considero autodidacta y siempre estoy enfocado en
-          aprender y completar las tareas asignadas.
+          Hola soy Iwinser Sanchez. Desarrollador de software con experiencia en
+          Lenguajes como Javascript, Python y Java. También tengo habilidades en
+          HTML, CSS y Bootstrap. Me considero autodidacta y siempre estoy
+          enfocado en aprender y completar las tareas asignadas.
         </p>
       </article>
       <article>
@@ -41,17 +41,6 @@ const Acerca = () => {
         <ul className="list-group ">
           <li className="list-group-item list-group-item-action">
             <p>
-              Diplomado en Desarrollo de Aplicaciones Web
-              <br />
-              <i className="fa-solid fa-trophy icon-li"></i>&nbsp;MisionTic2022
-              &nbsp; &nbsp;
-              <a id="0" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
-                <i className="fa-regular fa-eye"></i>
-              </a>
-            </p>
-          </li>
-          <li className="list-group-item list-group-item-action">
-            <p>
               Diplomado en Desarrollo de Software
               <br />
               <i className="fa-solid fa-trophy icon-li"></i>&nbsp;MisionTic2022
@@ -61,6 +50,18 @@ const Acerca = () => {
               </a>
             </p>
           </li>
+          <li className="list-group-item list-group-item-action">
+            <p>
+              Diplomado en Desarrollo de Aplicaciones Web
+              <br />
+              <i className="fa-solid fa-trophy icon-li"></i>&nbsp;MisionTic2022
+              &nbsp; &nbsp;
+              <a id="0" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
+                <i className="fa-regular fa-eye"></i>
+              </a>
+            </p>
+          </li>
+
           <li className="list-group-item list-group-item-action">
             <p>
               Diplomado en Programaci&oacute;n Basica Lenguaje Java
@@ -90,33 +91,11 @@ const Acerca = () => {
           </li>
           <li className="list-group-item list-group-item-action">
             <p>
-              Curso Pr&aacute;ctico Javascript
+              Full Stack Developer con JavaScript
               <br />
               <i className="fa-solid fa-trophy icon-li"></i>&nbsp;Platzi &nbsp;
               &nbsp;
               <a id="4" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
-                <i className="fa-regular fa-eye"></i>
-              </a>
-            </p>
-          </li>
-          <li className="list-group-item list-group-item-action">
-            <p>
-              Curso Practico de Frontend Developer
-              <br />
-              <i className="fa-solid fa-trophy icon-li"></i>&nbsp;Platzi &nbsp;
-              &nbsp;
-              <a id="5" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
-                <i className="fa-regular fa-eye"></i>
-              </a>
-            </p>
-          </li>
-          <li className="list-group-item list-group-item-action">
-            <p>
-              Curso Practico de React
-              <br />
-              <i className="fa-solid fa-trophy icon-li"></i>&nbsp;Platzi &nbsp;
-              &nbsp;
-              <a id="6" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
                 <i className="fa-regular fa-eye"></i>
               </a>
             </p>
