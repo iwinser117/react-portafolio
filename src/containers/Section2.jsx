@@ -26,9 +26,10 @@ export default function App() {
     tableExport: false,
   });
   const [lastUpdatedData1, setLastUpdatedData1] = useState("");
+  const [lastUpdatedData2, setLastUpdatedData2] = useState("");
   //const [lastUpdatedData2, setLastUpdatedData2] = useState("");
   const owner = "iwinser117";
-  const repositories = ["TableExportJS"];
+  const repositories = ["TableExportJS", 'autenticate'];
 
   const fetchData = async (repoName) => {
     try {
@@ -37,6 +38,9 @@ export default function App() {
       const data = await response.json();
       if (repoName === "TableExportJS") {
         setLastUpdatedData1(fechaFormateada(new Date(data.pushed_at)));
+      }
+      if (repoName === "autenticate") {
+        setLastUpdatedData2(fechaFormateada(new Date(data.pushed_at)));
       }
     } catch (error) {
       console.error(
@@ -103,6 +107,28 @@ export default function App() {
               </MDBCardBody>
               <MDBCardFooter>
                 <small className="text-muted">{`Actualizado: ${lastUpdatedData1}`}</small>
+              </MDBCardFooter>
+            </MDBCard>
+          </MDBCol>
+          <MDBCol>
+            <MDBCard className="h-100 MDBCard">
+              <MDBCardImage
+                src={imgProceso}
+                alt="..."
+                style={{
+                  height: "220px",
+                  objectFit: "",
+                  marginTop: "",
+                  borderRadius: "0px",
+                }}
+                position="top"
+              />
+              <MDBCardBody>
+                <MDBCardTitle>Autenticación</MDBCardTitle>
+                <MDBCardText>Proximo a despliegue.</MDBCardText>
+              </MDBCardBody>
+              <MDBCardFooter>
+              <small className="text-muted">{`Actualizado: ${lastUpdatedData2}`}</small>
               </MDBCardFooter>
             </MDBCard>
           </MDBCol>
