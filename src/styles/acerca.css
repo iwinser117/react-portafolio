@@ -12,6 +12,7 @@
 @media (min-width: 800px) and (max-width: 1199px) {
   .acerca-cnt {
     width: 80%;
+    padding-top: 20px;
   }
   .certificados-iconos .fa-eye {
     color: gray;
@@ -27,6 +28,7 @@
   .acerca-cnt {
     width: 100%;
     margin: auto !important;
+    padding-top: 20px;
   }
   .certificados-iconos .fa-eye {
     color: gray;
