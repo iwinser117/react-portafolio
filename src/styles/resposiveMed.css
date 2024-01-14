@@ -13,6 +13,21 @@ body {
   transition: background-color 0.12s ease-in-out, color 0.12s ease-in-out;
   -webkit-transition: background-color 0.12s ease-in-out, color 0.12s ease-in-out;
   -moz-transition: background-color 0.12s ease-in-out, color 0.12s ease-in-out;
-  -ms-transition: background-color 0.12s ease-in-out, color 0.12s ease-in-out;
+  -ms-transition: background-color z;
   -o-transition: background-color 0.12s ease-in-out, color 0.12s ease-in-out;
+
+  margin: 0;
+  padding: 0;
 }
+
+header {
+  background: #ffffff; /* Fondo blanco en la parte superior */
+  height: 50px; /* Ajusta la altura según tu diseño */
+}
+
+body {
+  background: linear-gradient(to bottom, #ffffff, #ffffff 0%, #858c929a);
+  background-attachment: fixed;
+}
+
+/* Resto de tus estilos... */
