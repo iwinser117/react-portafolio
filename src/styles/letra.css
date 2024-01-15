@@ -38,10 +38,17 @@
 .img {
   height: 220px;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   margin-top: "";
-  border-radius: "0px";
 }
 .text-align-div-inter{
   text-align: justify;
+}
+
+.title-card {
+  color: #ffffff !important;
+  text-align: center;
+  font-weight: 700;
+  font-family: sans-serif;
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 }

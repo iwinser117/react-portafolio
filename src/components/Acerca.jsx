@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import mostrarDiploma from "../utils/modalDiploma.js";
 import "@styles/acerca.css";
+import iwinserPerfil from "@assets/iwinserPerfil.png";
+import { MDBIcon } from "mdb-react-ui-kit";
 
 const Acerca = () => {
   const [selectedId, setSelectedId] = useState(null);
@@ -20,13 +22,51 @@ const Acerca = () => {
   return (
     <section className="container acerca-cnt col-8  text-justify lh-lg">
       <article id="acercademi">
-        <h3>Acerca de mi</h3>
+        <h3>Iwinser Sanchez</h3>
         <p>
-          Hola soy Iwinser Sanchez. Desarrollador de software con experiencia en
-          Lenguajes como Javascript, Python y Java. También tengo habilidades en
-          HTML, CSS y Bootstrap. Me considero autodidacta y siempre estoy
-          enfocado en aprender y completar las tareas asignadas.
+          Hola, Soy Desarrollador de software con experiencia en Lenguajes como
+          Javascript, Python y Java. También tengo habilidades en HTML, CSS y
+          Bootstrap. Me considero autodidacta y siempre estoy enfocado en
+          aprender y completar las tareas asignadas.
         </p>
+        <div className="d-flex justify-content-around align-items-center p-4 ">
+          <div className="iwinserPerfil">
+            <img src={iwinserPerfil} alt="" />
+          </div>
+          <div className="logos-contact">
+            <div className="card-body d-flex logos-contact">
+              <a
+                className="pdf-link"
+                download="CurriculumDeveloperIwinserSanchez"
+                href="../assets/CurriculumDeveloperIwinserSanchez.pdf"
+              >
+                <p>
+                  <MDBIcon far icon="file-pdf" size='2x' className="ms-1"/>
+                </p>
+              </a>
+              <a
+                className="git-link"
+                href="https://github.com/iwinser117"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p>
+                  <MDBIcon fab icon="github" size='2x' className="ms-1" />
+                </p>
+              </a>
+              <a
+                className="linkedin-link"
+                href="https://www.linkedin.com/in/iwinser-aljadys-sanchez-0a62a0234/?originalSubdomain=co"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <p>
+                  <MDBIcon fab icon="linkedin" size='2x' className="ms-1" />
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
       </article>
       <article>
         <h4>Certificaciones</h4>
@@ -37,7 +77,7 @@ const Acerca = () => {
           varios cursos en la plataforma de estudio en línea Platzi.
         </p>
       </article>
-      <div className="certificados-iconos container-sm w-75">
+      <div className="certificados-iconos container-sm w-50">
         <ul className="list-group ">
           <li className="list-group-item list-group-item-action">
             <p>

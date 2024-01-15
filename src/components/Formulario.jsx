@@ -66,6 +66,7 @@ const Fomulario = () => {
           action="post"
           data-netlify="true"
           onSubmit={sendEmail}
+          id='form-contact'
           className={
             viewForm
               ? "block-view container col-6 traslation mb-4"

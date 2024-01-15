@@ -20,10 +20,10 @@ import Reloj from "@codigoProyectos/Reloj";
 import PaletColores from "@codigoProyectos/PaletColores";
 import ListaTareas from "@codigoProyectos/ListaTareas";
 import Contador from "@codigoProyectos/Contador";
-import CalcImg from "@assets/imgCalculadora.png";
-import relojimg from "@assets/relojimg.png";
-import paletaColoresimg from "@assets/imgPaletaColores.png";
-import imgcontador from "@assets/contadoimg.png";
+import CalcImg from "@assets/calcu.png";
+import relojimg from "@assets/relojimg1.png";
+import paletaColoresimg from "@assets/paletaColores.png";
+import imgcontador from "@assets/contador.png";
 import listtareas from "@assets/listtareas.png";
 export default function App() {
   const [modals, setModals] = useState({
@@ -77,7 +77,11 @@ export default function App() {
     const date = utcToZonedTime(new Date(dateString), "America/New_York");
     return format(date, "d 'de' MMMM 'de' yyyy, h:mm:ss a", { locale: es });
   };
-
+  const cardStyle = {
+    background: "rgb(255,255,255)",
+    background:
+      "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(16,87,132,1) 100%)",
+  };
   return (
     <>
       <h3 className="m-auto">Js Vanilla</h3>
@@ -87,6 +91,7 @@ export default function App() {
             <MDBCard
               className="h-100 MDBCard"
               onClick={() => toggleShow("modalCal")}
+              style={cardStyle}
             >
               <MDBCardImage
                 src={CalcImg}
@@ -95,9 +100,9 @@ export default function App() {
                 position="top"
               />
               <MDBCardBody>
-                <MDBCardTitle>Calculadora</MDBCardTitle>
+                <MDBCardTitle className="title-card">Calculadora</MDBCardTitle>
                 <MDBCardText className="text-align-div-inter">
-                  Operaciones básicas incluidos decimales 
+                  Operaciones básicas incluidos decimales
                 </MDBCardText>
               </MDBCardBody>
               <MDBCardFooter>
@@ -109,6 +114,7 @@ export default function App() {
             <MDBCard
               className="h-100 MDBCard"
               onClick={() => toggleShow("modalReloj")}
+              style={cardStyle}
             >
               <MDBCardImage
                 src={relojimg}
@@ -117,7 +123,7 @@ export default function App() {
                 position="top"
               />
               <MDBCardBody>
-                <MDBCardTitle>Reloj</MDBCardTitle>
+                <MDBCardTitle className="title-card">Reloj</MDBCardTitle>
                 <MDBCardText className="text-align-div-inter">
                   Peticiones dependiendo de la ciudad segun corresponda.
                 </MDBCardText>
@@ -131,6 +137,7 @@ export default function App() {
             <MDBCard
               className="h-100 MDBCard"
               onClick={() => toggleShow("paletaColores")}
+              style={cardStyle}
             >
               <MDBCardImage
                 src={paletaColoresimg}
@@ -138,7 +145,9 @@ export default function App() {
                 position="top"
               />
               <MDBCardBody>
-                <MDBCardTitle>Paleta de colores</MDBCardTitle>
+                <MDBCardTitle className="title-card">
+                  Paleta de colores
+                </MDBCardTitle>
                 <MDBCardText className="text-align-div-inter">
                   Se toma mediante un input el valor del color y se le agrega
                   este estilo a un elemento contenedor.
@@ -153,10 +162,11 @@ export default function App() {
             <MDBCard
               className="h-100 MDBCard"
               onClick={() => toggleShow("contador")}
+              style={cardStyle}
             >
               <MDBCardImage src={imgcontador} className="img" position="top" />
               <MDBCardBody>
-                <MDBCardTitle>Contador</MDBCardTitle>
+                <MDBCardTitle className="title-card">Contador</MDBCardTitle>
                 <MDBCardText className="text-align-div-inter">
                   Haciendo uso de "useState" se incrementa o decrementa el valor
                 </MDBCardText>
@@ -170,10 +180,13 @@ export default function App() {
             <MDBCard
               className="h-100 MDBCard"
               onClick={() => toggleShow("listatareas")}
+              style={cardStyle}
             >
               <MDBCardImage src={listtareas} className="img" />
               <MDBCardBody>
-                <MDBCardTitle>Lista de Tareas</MDBCardTitle>
+                <MDBCardTitle className="title-card">
+                  Lista de Tareas
+                </MDBCardTitle>
                 <MDBCardText>
                   Visitar aplicación
                   <br />
