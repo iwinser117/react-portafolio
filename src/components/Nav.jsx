@@ -49,13 +49,13 @@ const Nav = () => {
                   </NavLink>
                 </li>
               ) : null}
-              {location.pathname === "/proyectos" ? null : (
+              {/* {location.pathname === "/proyectos" ? null : (
                 <li className="nav-item">
                   <a className="nav-link" href="#acercademi">
                     Acerca de mi
                   </a>
                 </li>
-              )}
+              )} */}
 
               {location.pathname === "/proyectos" ? null : (
                 <li className="nav-item ">
