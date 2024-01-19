@@ -98,6 +98,7 @@ export default function App() {
                 alt="..."
                 className="img"
                 position="top"
+                loading="lazy"
               />
               <MDBCardBody>
                 <MDBCardTitle className="title-card">Calculadora</MDBCardTitle>
@@ -121,6 +122,7 @@ export default function App() {
                 className="img"
                 alt="..."
                 position="top"
+                loading="lazy"
               />
               <MDBCardBody>
                 <MDBCardTitle className="title-card">Reloj</MDBCardTitle>
@@ -143,6 +145,7 @@ export default function App() {
                 src={paletaColoresimg}
                 className="img"
                 position="top"
+                loading="lazy"
               />
               <MDBCardBody>
                 <MDBCardTitle className="title-card">
@@ -164,7 +167,12 @@ export default function App() {
               onClick={() => toggleShow("contador")}
               style={cardStyle}
             >
-              <MDBCardImage src={imgcontador} className="img" position="top" />
+              <MDBCardImage
+                src={imgcontador}
+                className="img"
+                position="top"
+                loading="lazy"
+              />
               <MDBCardBody>
                 <MDBCardTitle className="title-card">Contador</MDBCardTitle>
                 <MDBCardText className="text-align-div-inter">

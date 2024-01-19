@@ -31,7 +31,7 @@ const Acerca = () => {
         </p>
         <div className="d-flex justify-content-around align-items-center p-4 ">
           <div className="iwinserPerfil">
-            <img src={iwinserPerfil} alt="" />
+            <img src={iwinserPerfil} alt="" loading="lazy"/>
           </div>
           <div className="logos-contact">
             <div className="card-body d-flex logos-contact">

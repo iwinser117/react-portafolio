@@ -84,10 +84,16 @@
   .certificados-iconos li:hover p {
     color: aliceblue !important;
   }
+  .cnt-detalle-perfil {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    align-content: space-between;
+  }
   .iwinserPerfil {
     border-radius: 12px;
     background: #ffffff;
-    width: 45%;
+    width: 60%;
   }
   .iwinserPerfil img {
     width: 100%;
@@ -95,9 +101,10 @@
     border-bottom-left-radius: 12px;
   }
   .logos-contact {
-    width: 35%;
+    width: 80%;
     display: flex;
-    justify-content: space-around !important;
+    justify-content: space-around;
+    
   }
 }
 p {

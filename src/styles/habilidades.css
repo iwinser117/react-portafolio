@@ -1,19 +1,18 @@
+
 .img-skill-front {
-  width: 100%;
-  flex-wrap: wrap;
-  margin: auto;
-  display: flex;
-  align-content: center;
-  justify-content: space-around;
-}
-.img-skill-front a {
+  height: 200px;
   padding: 12px;
   text-align: center;
   font-family: cursive;
 }
-.img-skill-front a img{
-  height: 60px;
-  margin: auto;
+.carousel-item.active {
+  display: flex;
+  justify-content: space-around;
+}
+
+.carousel-item-next, .carousel-item-prev{
+  display: flex;
+  justify-content: space-around;
 }
 @media (min-width: 1200px) {
   .certificados-iconos li:hover {
