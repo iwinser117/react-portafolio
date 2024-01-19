@@ -1,4 +1,5 @@
 import React from "react";
+import Carousel from "react-bootstrap/Carousel";
 import "@styles/habilidades.css";
 import { FaReact } from "react-icons/fa";
 import react from "../assets/react.svg";
@@ -42,41 +43,29 @@ const Habilidades = () => {
           debido a su capacidad para manejar eventos, manipular el DOM y brindar
           interactividad en el frontend.
         </p>
-        <div className="img-skill-front">
-          <a>
-            <img src={react} width={"50px"} alt="" /> <br />
-            React
-          </a>
-          <a>
-            <img src={htmlimg} width={"50px"} alt="" /> <br />
-            HTML
-          </a>
-          <a>
+        <Carousel data-bs-theme="dark">
+          <Carousel.Item className="img-skill-front">
+            <img src={react} width={"50px"} alt="" />
             <img src={bootstrap} width={"50px"} alt="" />
-            <br />
-            Bootstrap
-          </a>
-          <a>
+            <img src={htmlimg} width={"50px"} alt="" />
             <img src={ui5} width={"50px"} alt="" />
-            <br />
-            Sapui5
-          </a>
-          <a>
             <img src={css} width={"50px"} alt="" />
-            <br />
-            CSS
-          </a>
-          <a>
-            <img src={xml} width={"50px"} alt="" />
-            <br />
-            XML
-          </a>
-          <a>
+          </Carousel.Item>
+          <Carousel.Item className="img-skill-front">
+            <img src={htmlimg} width={"50px"} alt="" />
+            <img src={ui5} width={"50px"} alt="" />
             <img src={logojavascript} width={"50px"} alt="" />
-            <br />
-            JavaScript
-          </a>
-        </div>
+            <img src={xml} width={"50px"} alt="" />
+            <img src={css} width={"50px"} alt="" />
+          </Carousel.Item>
+          <Carousel.Item className="img-skill-front">
+            <img src={bootstrap} width={"50px"} alt="" />
+            <img src={ui5} width={"50px"} alt="" />
+            <img src={react} width={"50px"} alt="" />
+            <img src={logojavascript} width={"50px"} alt="" />
+            <img src={xml} width={"50px"} alt="" />
+          </Carousel.Item>
+        </Carousel>
       </article>
       <article>
         <h3>
@@ -99,46 +88,29 @@ const Habilidades = () => {
           JSON, comprendiendo su estructura y accediendo a la información que
           contienen.
         </p>
-        <div className="img-skill-front">
-          <a>
-            <img src={sql} width={"50px"} alt="" /> <br />
-            SQL
-          </a>
-          <a>
-            <img src={odata} width={"50px"} alt="" /> <br />
-            ODATA
-          </a>
-          <a>
-            <img src={node} width={"50px"} alt="" />
-            <br />
-            Node JS
-          </a>
-          <a>
+        <Carousel data-bs-theme="dark" >
+          <Carousel.Item className="img-skill-front">
+            <img src={odata} width={"40px"} height={"40px"} alt="" />
             <img src={express} width={"50px"} alt="" />
-            <br />
-            Express JS
-          </a>
-          <a>
+            <img src={sql} width={"50px"} alt="" />
             <img src={mongodb} width={"50px"} alt="" />
-            <br />
-            MongoDB
-          </a>
-          <a>
-            <img src={btp} width={"50px"} alt="" />
-            <br />
-            HANA SQL
-          </a>
-          <a>
-            <img src={postgresql} width={"50px"} alt="" />
-            <br />
-            PostgreSQL
-          </a>
-          <a>
+            <img src={node} width={"50px"} alt="" />
+          </Carousel.Item>
+         {/*  <Carousel.Item className="img-skill-front">
             <img src={wjt} width={"50px"} alt="" />
-            <br />
-            JSON Web Tokens
-          </a>
-        </div>
+            <img src={mongodb} width={"50px"} alt="" />
+            <img src={btp} width={"50px"} alt="" />
+            <img src={mongodb} width={"50px"} alt="" />
+            <img src={mongodb} width={"50px"} alt="" />
+          </Carousel.Item>
+          <Carousel.Item className="img-skill-front">
+            <img src={mongodb} width={"50px"} alt="" />
+            <img src={mongodb} width={"50px"} alt="" />
+            <img src={postgresql} width={"50px"} alt="" />
+            <img src={mongodb} width={"50px"} alt="" />
+            <img src={mongodb} width={"50px"} alt="" />
+          </Carousel.Item> */}
+        </Carousel>
       </article>
     </section>
   );

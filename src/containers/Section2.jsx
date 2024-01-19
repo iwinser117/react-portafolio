@@ -29,7 +29,7 @@ export default function App() {
   const [lastUpdatedData2, setLastUpdatedData2] = useState("");
   //const [lastUpdatedData2, setLastUpdatedData2] = useState("");
   const owner = "iwinser117";
-  const repositories = ["TableExportJS", 'autenticate'];
+  const repositories = ["TableExportJS", "autenticate"];
 
   const fetchData = async (repoName) => {
     try {
@@ -90,6 +90,7 @@ export default function App() {
                   borderRadius: "0px",
                 }}
                 position="top"
+                loading="lazy"
               />
               <MDBCardBody>
                 <MDBCardTitle>TableExportJS</MDBCardTitle>
@@ -122,13 +123,14 @@ export default function App() {
                   borderRadius: "0px",
                 }}
                 position="top"
+                loading="lazy"
               />
               <MDBCardBody>
                 <MDBCardTitle>Autenticación</MDBCardTitle>
                 <MDBCardText>Proximo a despliegue.</MDBCardText>
               </MDBCardBody>
               <MDBCardFooter>
-              <small className="text-muted">{`Actualizado: ${lastUpdatedData2}`}</small>
+                <small className="text-muted">{`Actualizado: ${lastUpdatedData2}`}</small>
               </MDBCardFooter>
             </MDBCard>
           </MDBCol>
@@ -144,6 +146,7 @@ export default function App() {
                   borderRadius: "0px",
                 }}
                 position="top"
+                loading="lazy"
               />
               <MDBCardBody>
                 <MDBCardTitle>App de chat</MDBCardTitle>
@@ -166,6 +169,7 @@ export default function App() {
                   borderRadius: "0px",
                 }}
                 position="top"
+                loading="lazy"
               />
               <MDBCardBody>
                 <MDBCardTitle>Sistema de Pagos</MDBCardTitle>
@@ -188,6 +192,7 @@ export default function App() {
                   borderRadius: "0px",
                 }}
                 position="top"
+                loading="lazy"
               />
               <MDBCardBody>
                 <MDBCardTitle>Sistema de Ventas</MDBCardTitle>
