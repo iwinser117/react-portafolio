@@ -70,6 +70,12 @@ export default function App() {
     const date = utcToZonedTime(new Date(dateString), "America/New_York");
     return format(date, "d 'de' MMMM 'de' yyyy, h:mm:ss a", { locale: es });
   };
+
+  const cardStyle = {
+    background: "rgb(255,255,255)",
+    background:
+      "linear-gradient(180deg, rgba(128,177,121,0.8297443977591037) 22%, rgba(73,144,63,0.9698004201680672) 62%, rgba(33,87,50,0.9501925770308123) 90%)",
+  };
   return (
     <>
       <h3 className="m-auto">Node JS</h3>
@@ -79,6 +85,7 @@ export default function App() {
             <MDBCard
               className="h-100 MDBCard"
               onClick={() => toggleShow("tableExport")}
+              style={cardStyle}
             >
               <MDBCardImage
                 src={imgtablaExport}
@@ -112,7 +119,7 @@ export default function App() {
             </MDBCard>
           </MDBCol>
           <MDBCol>
-            <MDBCard className="h-100 MDBCard">
+            <MDBCard className="h-100 MDBCard" style={cardStyle}>
               <MDBCardImage
                 src={imgProceso}
                 alt="..."
@@ -135,7 +142,7 @@ export default function App() {
             </MDBCard>
           </MDBCol>
           <MDBCol>
-            <MDBCard className="h-100 MDBCard">
+            <MDBCard className="h-100 MDBCard" style={cardStyle}>
               <MDBCardImage
                 src={imgProceso}
                 alt="..."
@@ -158,7 +165,7 @@ export default function App() {
             </MDBCard>
           </MDBCol>
           <MDBCol>
-            <MDBCard className="h-100 MDBCard">
+            <MDBCard className="h-100 MDBCard" style={cardStyle}>
               <MDBCardImage
                 src={imgProceso2}
                 alt="..."
@@ -181,7 +188,7 @@ export default function App() {
             </MDBCard>
           </MDBCol>
           <MDBCol>
-            <MDBCard className="h-100 MDBCard">
+            <MDBCard className="h-100 MDBCard" style={cardStyle}>
               <MDBCardImage
                 src="https://mdbootstrap.com/img/new/standard/city/042.webp"
                 alt="..."

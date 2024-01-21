@@ -24,14 +24,16 @@ const Acerca = () => {
       <article id="acercademi">
         <h3>Iwinser Sanchez</h3>
         <p>
-          Hola, Soy Desarrollador de software con experiencia en Lenguajes como
-          Javascript, Python y Java. También tengo habilidades en HTML, CSS y
-          Bootstrap. Me considero autodidacta y siempre estoy enfocado en
-          aprender y completar las tareas asignadas.
+          Hola, un gusto que estés aquí. Desde la secundaria me he interesado
+          por la tecnología y todo lo que respecta al Software, empece por
+          indagar sobre lo que corre detrás de las aplicaciones y como se hacen
+          estas. Luego de entender cual es la estructura de una aplicación
+          continue de forma autodidacta en la ruta de aprendizaje para el dia de
+          hoy hacer software de calidad y en mi mejora continua.
         </p>
         <div className="d-flex justify-content-around align-items-center p-4 ">
           <div className="iwinserPerfil">
-            <img src={iwinserPerfil} alt="" loading="lazy"/>
+            <img src={iwinserPerfil} alt="" loading="lazy" />
           </div>
           <div className="logos-contact">
             <div className="card-body d-flex logos-contact">
@@ -41,7 +43,7 @@ const Acerca = () => {
                 href="../assets/CurriculumDeveloperIwinserSanchez.pdf"
               >
                 <p>
-                  <MDBIcon far icon="file-pdf" size='2x' className="ms-1"/>
+                  <MDBIcon far icon="file-pdf" size="2x" className="ms-1" />
                 </p>
               </a>
               <a
@@ -51,7 +53,7 @@ const Acerca = () => {
                 rel="noopener noreferrer"
               >
                 <p>
-                  <MDBIcon fab icon="github" size='2x' className="ms-1" />
+                  <MDBIcon fab icon="github" size="2x" className="ms-1" />
                 </p>
               </a>
               <a
@@ -61,7 +63,7 @@ const Acerca = () => {
                 rel="noopener noreferrer"
               >
                 <p>
-                  <MDBIcon fab icon="linkedin" size='2x' className="ms-1" />
+                  <MDBIcon fab icon="linkedin" size="2x" className="ms-1" />
                 </p>
               </a>
             </div>
@@ -71,10 +73,12 @@ const Acerca = () => {
       <article>
         <h4>Certificaciones</h4>
         <p>
-          Durante mi proceso de aprendizaje, obtuve la certificación del
-          programa Misión TIC 2022 ofrecido por la Facultad de Ingeniería de la
-          Universidad de Antioquia. Además, he completado satisfactoriamente
-          varios cursos en la plataforma de estudio en línea Platzi.
+          Durante mi proceso de aprendizaje, hice parte del programa
+           <strong> Misión TIC 2022</strong> ofrecido por la Facultad de
+          Ingeniería de la Universidad de Antioquia obteniendo las
+          certificaciones correspondientes a dicho programa. Además, actualmente
+          continuo aprendiendo a traves de los cursos en la plataforma de
+          estudio en línea Platzi y recursos a mi disposición.
         </p>
       </article>
       <div className="certificados-iconos container-sm w-50">

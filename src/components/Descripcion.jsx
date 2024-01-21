@@ -20,8 +20,8 @@ const Descripcion = () => {
         </div>
       </section>
       <section className="d-grid gap-4">
-        <Section1 />
         <Section2 />
+        <Section1 />
       </section>
     </>
   );
