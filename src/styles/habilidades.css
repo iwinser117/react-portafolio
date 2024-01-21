@@ -191,3 +191,49 @@
     }
   }
 }
+
+.slider {
+  height: 60px;
+  width: 70%;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+
+  &::before,
+  &::after {
+    content: "";
+    height: 60px;
+    position: absolute;
+    width: 150px;
+    z-index: 2;
+  }
+
+  &::before {
+    left: 0;
+    top: 0;
+    background: linear-gradient(to right,rgba(133, 140, 146,1) 0, rgba(255, 255, 255, 0) 100%);
+  }
+
+  &::after {
+    right: 0;
+    top: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0, rgba(255, 255, 255, 0) 100%);
+    transform: rotateZ(180deg);
+  }
+
+  .slide-track {
+    animation: scroll 40s linear infinite;
+    display: flex;
+    width: calc(150px * 14);
+  }
+
+  .slide {
+    height: 60px;
+    width: 200px;
+  }
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-150px * 7)); }
+}
