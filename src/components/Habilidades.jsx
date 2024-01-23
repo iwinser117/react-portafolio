@@ -9,10 +9,11 @@ import ui5 from "../assets/ui5.svg";
 import css from "../assets/css.svg";
 import xml from "../assets/xml.svg";
 import odata from "../assets/odata.png";
-import sql from "../assets/sql.png";
-import node from "../assets/node.png";
-import json from "../assets/json.png";
-import postgresql from "../assets/postgresql.png";
+import sap from "../assets/sap.svg";
+import sql from "../assets/mysql.svg";
+import node from "../assets/nodejs.svg";
+import json from "../assets/json.svg";
+import postgresql from "../assets/postgresql.svg";
 import btp from "../assets/btp.png";
 import logojavascript from "../assets/logojavascript.svg";
 import express from "../assets/express.svg";
@@ -21,10 +22,10 @@ import wjt from "../assets/wjt.svg";
 const Habilidades = () => {
   return (
     <section className="container  acerca-cnt col-8  text-justify lh-lg">
-      <article id="habilidades" className="pt-3">
+      <article id="habilidades" className="pt-3 art-seccion">
         <h3>Habilidades</h3>
       </article>
-      <article className="pt-3">
+      <article className="pt-3 art-seccion">
         <h3>
           <i className="fa-solid fa-display"></i> Front-end
         </h3>
@@ -94,7 +95,7 @@ const Habilidades = () => {
           </div>
         </div>
       </article>
-      <article>
+      <article className="art-seccion">
         <h3>
           <i className="fa-solid fa-server"></i> Backend
         </h3>
@@ -118,7 +119,7 @@ const Habilidades = () => {
         <div className="slider">
           <div className="slide-track">
             <div className="slide">
-              <img src={odata} height="60" width="150" alt="" />
+              <img src={wjt} height="60" width="150" alt="" />
             </div>
             <div className="slide">
               <img src={express} height="60" width="150" alt="" />
@@ -133,7 +134,13 @@ const Habilidades = () => {
               <img src={node} height="60" width="150" alt="" />
             </div>
             <div className="slide">
-              <img src={odata} height="60" width="150" alt="" />
+              <img src={sap} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={postgresql} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={wjt} height="60" width="150" alt="" />
             </div>
             <div className="slide">
               <img src={express} height="60" width="150" alt="" />
@@ -148,16 +155,10 @@ const Habilidades = () => {
               <img src={node} height="60" width="150" alt="" />
             </div>
             <div className="slide">
-              <img src={express} height="60" width="150" alt="" />
+              <img src={sap} height="60" width="150" alt="" />
             </div>
             <div className="slide">
-              <img src={sql} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={mongodb} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={node} height="60" width="150" alt="" />
+              <img src={postgresql} height="60" width="150" alt="" />
             </div>
           </div>
         </div>
