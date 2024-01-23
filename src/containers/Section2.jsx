@@ -20,6 +20,7 @@ import { Container } from "react-bootstrap";
 import imgProceso from "@assets/imgProceso.jpg";
 import imgProceso2 from "@assets/imgProces2.jpg";
 import imgtablaExport from "../assets/imgtablaExport.png";
+import login from "../assets/login.png";
 
 export default function App() {
   const [modals, setModals] = useState({
@@ -27,7 +28,7 @@ export default function App() {
   });
   const [lastUpdatedData1, setLastUpdatedData1] = useState("");
   const [lastUpdatedData2, setLastUpdatedData2] = useState("");
-  //const [lastUpdatedData2, setLastUpdatedData2] = useState("");
+
   const owner = "iwinser117";
   const repositories = ["TableExportJS", "autenticate"];
 
@@ -55,164 +56,101 @@ export default function App() {
       fetchData(repoName);
     });
   }, []);
-  const toggleShow = (modalName) => {
-    setModals((prevModals) => ({
-      ...Object.fromEntries(
-        Object.entries(prevModals).map(([key, value]) => [
-          key,
-          key === modalName ? !value : false,
-        ])
-      ),
-    }));
-  };
 
   const fechaFormateada = (dateString) => {
     const date = utcToZonedTime(new Date(dateString), "America/New_York");
     return format(date, "d 'de' MMMM 'de' yyyy, h:mm:ss a", { locale: es });
   };
 
-  const cardStyle = {
-    background: "rgb(255,255,255)",
-    background:
-      "linear-gradient(180deg, rgba(128,177,121,0.8297443977591037) 22%, rgba(73,144,63,0.9698004201680672) 62%, rgba(33,87,50,0.9501925770308123) 90%)",
+  const Card = ({ imgSrc, title, text, lastUpdatedData, onClick }) => {
+    const [hover, setHover] = useState(false);
+
+    const cardStyle = {
+      background: "linear-gradient(135deg, #8DD7CF, #64A07D, #3E517A)",
+      borderRadius: "10px",
+      padding: "20px",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+      transition: "background 0.3s ease-in-out",
+    };
+
+    const hoverCardStyle = {
+      background: "linear-gradient(135deg, #3E517A, #64A07D, #8DD7CF)",
+    };
+
+    const formattedText = {
+      __html: text,
+    };
+
+    return (
+      <MDBCard
+        className="h-100 MDBCard"
+        style={hover ? { ...cardStyle, ...hoverCardStyle } : cardStyle}
+        onMouseOver={() => setHover(true)}
+        onMouseOut={() => setHover(false)}
+        onClick={onClick}
+      >
+        <MDBCardImage
+          src={imgSrc}
+          alt="..."
+          style={{
+            height: "220px",
+            objectFit: "contain",
+            marginTop: "",
+            borderRadius: "0px",
+          }}
+          position="top"
+          loading="lazy"
+        />
+        <MDBCardBody>
+          <MDBCardTitle className="text-center">{title}</MDBCardTitle>
+          <MDBCardText dangerouslySetInnerHTML={formattedText} />
+        </MDBCardBody>
+        <MDBCardFooter>
+          <small className="text-muted">{`Actualizado: ${lastUpdatedData}`}</small>
+        </MDBCardFooter>
+      </MDBCard>
+    );
   };
+
   return (
     <>
       <h3 className="m-auto">Node JS</h3>
       <Container className="color-letra">
         <MDBRow className="row-cols-1 row-cols-md-3 g-4">
           <MDBCol>
-            <MDBCard
-              className="h-100 MDBCard"
-              onClick={() => toggleShow("tableExport")}
-              style={cardStyle}
+            <Card
+              imgSrc={imgtablaExport}
+              title="TableExportJS"
+              text='Visitar aplicación <br> <a
+              href="https://crudlistatareas.netlify.app "
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <MDBCardImage
-                src={imgtablaExport}
-                alt="..."
-                style={{
-                  height: "220px",
-                  objectFit: "",
-                  marginTop: "",
-                  borderRadius: "0px",
-                }}
-                position="top"
-                loading="lazy"
-              />
-              <MDBCardBody>
-                <MDBCardTitle>TableExportJS</MDBCardTitle>
-                <MDBCardText>
-                  Visitar Aplicación
-                  <br />
-                  <a
-                    href="https://table-export-js-4zq5.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Link de Visita a la Aplicación
-                  </a>
-                </MDBCardText>
-              </MDBCardBody>
-              <MDBCardFooter>
-                <small className="text-muted">{`Actualizado: ${lastUpdatedData1}`}</small>
-              </MDBCardFooter>
-            </MDBCard>
+              Link de Visita al Crud
+            </a>'
+              lastUpdatedData={lastUpdatedData1}
+              onClick={() => setModals({ tableExport: true })}
+            />
           </MDBCol>
           <MDBCol>
-            <MDBCard className="h-100 MDBCard" style={cardStyle}>
-              <MDBCardImage
-                src={imgProceso}
-                alt="..."
-                style={{
-                  height: "220px",
-                  objectFit: "",
-                  marginTop: "",
-                  borderRadius: "0px",
-                }}
-                position="top"
-                loading="lazy"
-              />
-              <MDBCardBody>
-                <MDBCardTitle>Autenticación</MDBCardTitle>
-                <MDBCardText>Proximo a despliegue.</MDBCardText>
-              </MDBCardBody>
-              <MDBCardFooter>
-                <small className="text-muted">{`Actualizado: ${lastUpdatedData2}`}</small>
-              </MDBCardFooter>
-            </MDBCard>
+            <Card
+              imgSrc={login}
+              title="Autenticación"
+              text='App de login con JWT. <br>
+              <a
+              href="https://autenticate.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Aplicación Login 
+            </a>'
+              lastUpdatedData={lastUpdatedData2}
+            />
           </MDBCol>
-          <MDBCol>
-            <MDBCard className="h-100 MDBCard" style={cardStyle}>
-              <MDBCardImage
-                src={imgProceso}
-                alt="..."
-                style={{
-                  height: "220px",
-                  objectFit: "",
-                  marginTop: "",
-                  borderRadius: "0px",
-                }}
-                position="top"
-                loading="lazy"
-              />
-              <MDBCardBody>
-                <MDBCardTitle>App de chat</MDBCardTitle>
-                <MDBCardText>En proceso de diseño y desarrollo.</MDBCardText>
-              </MDBCardBody>
-              <MDBCardFooter>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </MDBCardFooter>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol>
-            <MDBCard className="h-100 MDBCard" style={cardStyle}>
-              <MDBCardImage
-                src={imgProceso2}
-                alt="..."
-                style={{
-                  height: "220px",
-                  objectFit: "",
-                  marginTop: "",
-                  borderRadius: "0px",
-                }}
-                position="top"
-                loading="lazy"
-              />
-              <MDBCardBody>
-                <MDBCardTitle>Sistema de Pagos</MDBCardTitle>
-                <MDBCardText>En proceso de diseño y desarrollo.</MDBCardText>
-              </MDBCardBody>
-              <MDBCardFooter>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </MDBCardFooter>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol>
-            <MDBCard className="h-100 MDBCard" style={cardStyle}>
-              <MDBCardImage
-                src="https://mdbootstrap.com/img/new/standard/city/042.webp"
-                alt="..."
-                style={{
-                  height: "220px",
-                  objectFit: "",
-                  marginTop: "",
-                  borderRadius: "0px",
-                }}
-                position="top"
-                loading="lazy"
-              />
-              <MDBCardBody>
-                <MDBCardTitle>Sistema de Ventas</MDBCardTitle>
-                <MDBCardText>En proceso de diseño y desarrollo.</MDBCardText>
-              </MDBCardBody>
-              <MDBCardFooter>
-                <small className="text-muted">Last updated 3 mins ago</small>
-              </MDBCardFooter>
-            </MDBCard>
-          </MDBCol>
+          {/* Otras tarjetas aquí */}
         </MDBRow>
         {modals.tableExport ? (
-          <TableExport onClose={() => toggleShow("tableExport")} />
+          <TableExport onClose={() => setModals({ tableExport: false })} />
         ) : null}
       </Container>
     </>
