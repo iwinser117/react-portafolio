@@ -33,7 +33,11 @@
     1.03, 1.02
   ); 
 }
-
+@media (min-width: 430px) and (max-width: 769px) {
+  .row-cols-1>* {
+    width: 50%;
+}
+}
 
 .img {
   height: 220px;

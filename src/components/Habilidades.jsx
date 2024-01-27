@@ -8,16 +8,14 @@ import bootstrap from "../assets/bootstrap.svg";
 import ui5 from "../assets/ui5.svg";
 import css from "../assets/css.svg";
 import xml from "../assets/xml.svg";
-import odata from "../assets/odata.png";
-import sql from "../assets/sql.png";
-import node from "../assets/node.png";
-import json from "../assets/json.png";
-import postgresql from "../assets/postgresql.png";
-import btp from "../assets/btp.png";
-import logojavascript from "../assets/logojavascript.svg";
+import sql from "../assets/mysql.svg";
+import node from "../assets/nodejs.svg";
+import json from "../assets/json.svg";
+import postgresql from "../assets/postgresql.svg";
 import express from "../assets/express.svg";
 import mongodb from "../assets/mongodb.svg";
 import wjt from "../assets/wjt.svg";
+import sap from "../assets/sap.svg";
 const Habilidades = () => {
   return (
     <section className="container  acerca-cnt col-8  text-justify lh-lg">
@@ -29,43 +27,70 @@ const Habilidades = () => {
           <i className="fa-solid fa-display"></i> Front-end
         </h3>
         <p>
-          Tengo experiencia en el manejo de HTML, CSS y JavaScript para el
-          desarrollo de sitios web. En cuanto a HTML, me especializo en la
-          creación de estructuras semánticas que permiten la accesibilidad y
-          generan un impacto visual atractivo para los usuarios. En CSS, poseo
-          un nivel intermedio y disfruto explorar las propiedades que permiten
-          estilizar mis proyectos. Además, me gusta utilizar CSS para crear
-          diseños responsivos que se adapten a diferentes dispositivos.
+          Tengo experiencia en HTML, CSS y JavaScript para el desarrollo de
+          sitios web. En cuanto a HTML, me especializo en la creación de
+          estructuras semánticas que permiten la accesibilidad y generan un
+          impacto visual atractivo para los usuarios. En CSS, poseo un nivel
+          intermedio y disfruto explorar las propiedades que permiten estilizar
+          mis proyectos. Además, me gusta utilizar CSS para crear diseños
+          responsivos que se adapten a diferentes dispositivos.
         </p>
         <p>
           Considero que JavaScript es un lenguaje sumamente importante tanto en
           el frontend como en el backend. Me encanta trabajar con JavaScript
           debido a su capacidad para manejar eventos, manipular el DOM y brindar
-          interactividad en el frontend.
+          interactividad en el frontend. <br />
         </p>
-        <Carousel data-bs-theme="dark">
-          <Carousel.Item className="img-skill-front">
-            <img src={react} width={"50px"} alt="" />
-            <img src={bootstrap} width={"50px"} alt="" />
-            <img src={htmlimg} width={"50px"} alt="" />
-            <img src={ui5} width={"50px"} alt="" />
-            <img src={css} width={"50px"} alt="" />
-          </Carousel.Item>
-          <Carousel.Item className="img-skill-front">
-            <img src={htmlimg} width={"50px"} alt="" />
-            <img src={ui5} width={"50px"} alt="" />
-            <img src={logojavascript} width={"50px"} alt="" />
-            <img src={xml} width={"50px"} alt="" />
-            <img src={css} width={"50px"} alt="" />
-          </Carousel.Item>
-          <Carousel.Item className="img-skill-front">
-            <img src={bootstrap} width={"50px"} alt="" />
-            <img src={ui5} width={"50px"} alt="" />
-            <img src={react} width={"50px"} alt="" />
-            <img src={logojavascript} width={"50px"} alt="" />
-            <img src={xml} width={"50px"} alt="" />
-          </Carousel.Item>
-        </Carousel>
+        <p>
+          En continua formación para mantenerme al dia con las nuevas
+          tecnologias.
+        </p>
+        <div className="slider">
+          <div className="slide-track">
+            <div className="slide">
+              <img src={react} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={htmlimg} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={bootstrap} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={ui5} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={css} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={xml} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={json} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={react} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={htmlimg} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={bootstrap} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={ui5} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={css} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={xml} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={json} height="60" width="150" alt="" />
+            </div>
+          </div>
+        </div>
       </article>
       <article>
         <h3>
@@ -74,43 +99,66 @@ const Habilidades = () => {
         <p>
           Poseo sólidos conocimientos en estructuras de datos y habilidades para
           brindar soluciones a problemas lógicos en la parte backend de una
-          aplicación.
+          aplicación o servicio.
         </p>
 
         <p>
-          Durante mi proceso de aprendizaje, he trabajado con diversos lenguajes
-          de programación como Python, Java y JavaScript. En particular, he
-          estado enfocándome en el desarrollo y manejo de bases de datos,
-          especialmente con SQL y MongoDB. Me he familiarizado con los distintos
-          métodos para interactuar con estas bases de datos, así como también he
-          adquirido experiencia en el consumo de APIs y consumo de datos
-          mediante oDatas. También tengo habilidades en el manejo de archivos
-          JSON, comprendiendo su estructura y accediendo a la información que
+          He trabajado con diversos lenguajes de programación como Python, Java
+          y JavaScript (NodeJs). En particular, he estado enfocándome en el
+          desarrollo y manejo de bases de datos, especialmente con SQL y
+          MongoDB. Me he familiarizado con los distintos métodos para
+          interactuar con estas bases de datos, así como también he adquirido
+          experiencia en el consumo de APIs (REST) y consumo de datos mediante
+          oDatas. También tengo habilidades en el manejo de archivos JSON,
+          comprendiendo su estructura y accediendo a la información que
           contienen.
         </p>
-        <Carousel data-bs-theme="dark" >
-          <Carousel.Item className="img-skill-front">
-            <img src={odata} width={"40px"} height={"40px"} alt="" />
-            <img src={express} width={"50px"} alt="" />
-            <img src={sql} width={"50px"} alt="" />
-            <img src={mongodb} width={"50px"} alt="" />
-            <img src={node} width={"50px"} alt="" />
-          </Carousel.Item>
-         {/*  <Carousel.Item className="img-skill-front">
-            <img src={wjt} width={"50px"} alt="" />
-            <img src={mongodb} width={"50px"} alt="" />
-            <img src={btp} width={"50px"} alt="" />
-            <img src={mongodb} width={"50px"} alt="" />
-            <img src={mongodb} width={"50px"} alt="" />
-          </Carousel.Item>
-          <Carousel.Item className="img-skill-front">
-            <img src={mongodb} width={"50px"} alt="" />
-            <img src={mongodb} width={"50px"} alt="" />
-            <img src={postgresql} width={"50px"} alt="" />
-            <img src={mongodb} width={"50px"} alt="" />
-            <img src={mongodb} width={"50px"} alt="" />
-          </Carousel.Item> */}
-        </Carousel>
+        <div className="slider">
+          <div className="slide-track">
+            <div className="slide">
+              <img src={wjt} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={express} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={sql} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={mongodb} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={node} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={sap} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={postgresql} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={wjt} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={express} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={sql} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={mongodb} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={node} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={sap} height="60" width="150" alt="" />
+            </div>
+            <div className="slide">
+              <img src={postgresql} height="60" width="150" alt="" />
+            </div>
+          </div>
+        </div>
       </article>
     </section>
   );
