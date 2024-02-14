@@ -40,7 +40,7 @@ const Acerca = () => {
               <a
                 className="pdf-link"
                 download="CurriculumDeveloperIwinserSanchez"
-                href="../assets/CurriculumDeveloperIwinserSanchez.pdf"
+                href="../assets/IwinserSanchez.pdf"
               >
                 <p>
                   <MDBIcon far icon="file-pdf" size="2x" className="ms-1" />
