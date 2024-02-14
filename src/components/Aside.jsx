@@ -37,7 +37,7 @@ const Aside = () => {
               <a
                 className="pdf-link"
                 download="CurriculumDeveloperIwinserSanchez"
-                href="../assets/CurriculumDeveloperIwinserSanchez.pdf"
+                href="../assets/IwinserSanchez.pdf"
               >
                 <p>
                   <i className="fa-solid fa-file-pdf "></i>&nbsp; Curriculum
