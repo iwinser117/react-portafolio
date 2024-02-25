@@ -8,7 +8,7 @@ const Aside = () => {
 
         <div className="aside">
           <div className="aside-div-int">
-            <h6 className="">Encuentrame</h6>
+            <h4 className="">Encuentrame</h4>
             <div className="card-body d-flex cont-int-aside">
               <a
                 className="git-link"
