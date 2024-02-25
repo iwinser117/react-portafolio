@@ -12,7 +12,7 @@ const DarkModeProvider = ({ children }) => {
 
   return (
     <div className={`dark-mode-container ${isDarkMode ? "dark-mode" : ""}`}>
-      <button className="theme-toggle" onClick={handleModeChange}>
+      <button  aria-label="change_theme" className="theme-toggle" onClick={handleModeChange}>
         <p className="ci-icon">{isDarkMode ? <BiSun /> : <MdDarkMode />}</p>
       </button>
 

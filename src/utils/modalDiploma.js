@@ -1,4 +1,4 @@
-const Swal = require("sweetalert2");
+import Swal from "sweetalert2";
 
 const imgs = [
   require("../assets/d4Web.jpg"),
@@ -11,9 +11,7 @@ const imgs = [
 ];
 
 function mostrarDiploma(idImg) {
-  if (idImg == null) {
-    return;
-  }
+  if (idImg === null) return;
 
   const imgElement = new Image();
   imgElement.src = imgs[idImg];

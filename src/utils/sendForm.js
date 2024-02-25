@@ -1,13 +1,14 @@
-const Swal = require("sweetalert2")
+import Swal from "sweetalert2";
+
 function exito() {
   Swal.fire({
     position: "center",
     icon: "success",
-    title: "Mensaje enviado con exito",
+    title: "Mensaje enviado con éxito",
     showConfirmButton: false,
     timer: 2000,
     text: "Pronto nos pondremos en contacto",
-  })
+  });
 }
 
 function noEnviado() {
@@ -15,17 +16,11 @@ function noEnviado() {
     title: "Vaya! algo ha salido mal",
     text: "Por favor, rellene todos los campos",
     icon: "error",
-  })
+  });
 }
 
 function limpiarInput() {
-  document.querySelectorAll("input").forEach((input) => (input.value = ""))
-  document
-    .querySelectorAll("textarea")
-    .forEach((textarea) => (textarea.value = ""))
+  document.querySelectorAll("input, textarea").forEach((input) => (input.value = ""));
 }
-module.exports = {
-  exito: exito,
-  noEnviado: noEnviado,
-  limpiarInput: limpiarInput,
-}
+
+export { exito, noEnviado, limpiarInput };
