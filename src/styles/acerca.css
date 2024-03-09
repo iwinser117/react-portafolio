@@ -104,7 +104,6 @@
     width: 80%;
     display: flex;
     justify-content: space-around;
-    
   }
 }
 p {
@@ -116,4 +115,59 @@ p {
 }
 .dark-mode .acerca-cnt ul li p {
   color: rgb(7, 7, 7);
+}
+
+.pdf-link p {
+  border-radius: 2rem;
+  padding: 8px;
+  box-shadow: -1px 12px 18px 3px rgba(179, 14, 14, 0.38);
+  -webkit-box-shadow: -1px 12px 18px 3px rgba(179, 14, 14, 0.38);
+  -moz-box-shadow: -1px 12px 18px 3px rgba(179, 14, 14, 0.38);
+}
+.git-link p {
+  border-radius: 2rem;
+  padding: 8px;
+  box-shadow: -1px 12px 18px 3px rgba(117, 19, 126, 0.38);
+  -webkit-box-shadow: -1px 12px 18px 3px rgba(117, 19, 126, 0.38);
+  -moz-box-shadow: -1px 12px 18px 3px rgba(117, 19, 126, 0.38);
+}
+.linkedin-link p {
+  border-radius: 2rem;
+  padding: 8px;
+  margin: auto;
+  box-shadow: -1px 12px 18px 3px rgba(28, 34, 208, 0.38);
+  -webkit-box-shadow: -1px 12px 18px 3px rgba(28, 34, 208, 0.38);
+  -moz-box-shadow: -1px 12px 18px 3px rgba(28, 34, 208, 0.38);
+}
+.dark-mode .pdf-link p {
+  border-radius: 2rem;
+  padding: 8px;
+  box-shadow: -1px 12px 18px -6px rgba(179, 14, 14, 0.38);
+  -webkit-box-shadow: -1px 12px 18px -6px rgba(179, 14, 14, 0.38);
+  -moz-box-shadow: -1px 12px 18px -6px rgba(179, 14, 14, 0.38);
+}
+.dark-mode .git-link p {
+  border-radius: 2rem;
+  padding: 8px;
+  box-shadow: -1px 12px 18px -6px rgba(117, 19, 126, 0.38);
+  -webkit-box-shadow: -1px 12px 18px -6px rgba(117, 19, 126, 0.38);
+  -moz-box-shadow: -1px 12px 18px -6px rgba(117, 19, 126, 0.38);
+}
+.dark-mode .linkedin-link p {
+  border-radius: 2rem;
+  padding: 8px;
+  margin: auto;
+  box-shadow: -1px 12px 18px -6px rgba(28, 34, 208, 0.38);
+  -webkit-box-shadow: -1px 12px 18px -6px rgba(28, 34, 208, 0.38);
+  -moz-box-shadow: -1px 12px 18px -6px rgba(28, 34, 208, 0.38);
+}
+.dark-mode .certificados-iconos ul {
+  box-shadow: -1px 12px 18px -6px rgba(239, 239, 239, 0.38);
+-webkit-box-shadow: -1px 12px 18px -6px rgba(234, 234, 234, 0.38);
+-moz-box-shadow: -1px 12px 18px -6px rgba(238, 238, 238, 0.38);
+}
+.certificados-iconos ul {
+  box-shadow: -1px 12px 18px 3px rgba(0, 0, 0, 0.38);
+  -webkit-box-shadow: -1px 12px 18px 3px rgba(0, 0, 0, 0.38);
+  -moz-box-shadow: -1px 12px 18px 3px rgba(0, 0, 0, 0.38);
 }

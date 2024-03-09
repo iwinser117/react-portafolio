@@ -9,6 +9,9 @@ nav .container-fluid .collapse{
 
   nav {
     width: 100%;
+    box-shadow: 1px -26px 11px -12px rgba(0,0,0,0.54) inset;
+-webkit-box-shadow: 1px -12px 11px -12px rgba(0,0,0,0.54) inset;
+-moz-box-shadow: 1px -26px 11px -12px rgba(0,0,0,0.54) inset;
   }
   .nav-ul {
     z-index: inherit;
@@ -238,3 +241,7 @@ nav li {
 }
 
 
+.navbar-brand svg {
+  border-radius: 2rem;
+  color: aqua !important;
+}

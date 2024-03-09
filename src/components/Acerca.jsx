@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import mostrarDiploma from "../utils/modalDiploma.js";
 import "@styles/acerca.css";
-import iwinserPerfil from "@assets/iwinserPerfil.png";
+import iwinserPerfil from "@assets/iwinserPerfil.webp";
 import { MDBIcon } from "mdb-react-ui-kit";
 
 const Acerca = () => {
@@ -22,9 +22,9 @@ const Acerca = () => {
   return (
     <section className="container acerca-cnt col-8  text-justify lh-lg">
       <article id="acercademi">
-        <h3>Iwinser Sanchez</h3>
+        <h3>Hola soy Iwinser Sanchez</h3>
         <p>
-          Hola, un gusto que estés aquí. Desde la secundaria me he interesado
+          Un gusto que estés aquí. Desde la secundaria me he interesado
           por la tecnología y todo lo que respecta al Software, empece por
           indagar sobre lo que corre detrás de las aplicaciones y como se hacen
           estas. Luego de entender cual es la estructura de una aplicación
@@ -43,7 +43,7 @@ const Acerca = () => {
                 href="../assets/CurriculumDeveloperIwinserSanchez.pdf"
               >
                 <p>
-                  <MDBIcon far icon="file-pdf" size="2x" className="ms-1" />
+                  <MDBIcon far icon="file-pdf" size="2x" className="" />
                 </p>
               </a>
               <a
@@ -53,7 +53,7 @@ const Acerca = () => {
                 rel="noopener noreferrer"
               >
                 <p>
-                  <MDBIcon fab icon="github" size="2x" className="ms-1" />
+                  <MDBIcon fab icon="github" size="2x" className="" />
                 </p>
               </a>
               <a
@@ -63,13 +63,18 @@ const Acerca = () => {
                 rel="noopener noreferrer"
               >
                 <p>
-                  <MDBIcon fab icon="linkedin" size="2x" className="ms-1" />
+                  <MDBIcon fab icon="linkedin" size="2x" className="" />
                 </p>
               </a>
             </div>
           </div>
         </div>
       </article>
+      <section>
+        <main>
+        <h3>Experiencia</h3>
+        </main>
+      </section>
       <article>
         <h4>Certificaciones</h4>
         <p>
