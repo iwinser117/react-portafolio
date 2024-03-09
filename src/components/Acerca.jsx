@@ -40,7 +40,8 @@ const Acerca = () => {
               <a
                 className="pdf-link"
                 download="CurriculumDeveloperIwinserSanchez"
-                href="../assets/CurriculumDeveloperIwinserSanchez.pdf"
+                href="../assets/IwinserSanchez.pdf"
+                aria-label="Descargar currículum en formato PDF"
               >
                 <p>
                   <MDBIcon far icon="file-pdf" size="2x" className="" />
@@ -51,6 +52,7 @@ const Acerca = () => {
                 href="https://github.com/iwinser117"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visitar perfil de GitHub"
               >
                 <p>
                   <MDBIcon fab icon="github" size="2x" className="" />
@@ -61,12 +63,14 @@ const Acerca = () => {
                 href="https://www.linkedin.com/in/iwinser-aljadys-sanchez-0a62a0234/?originalSubdomain=co"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visitar perfil de LinkedIn"
               >
                 <p>
                   <MDBIcon fab icon="linkedin" size="2x" className="" />
                 </p>
               </a>
             </div>
+
           </div>
         </div>
       </article>
@@ -79,7 +83,7 @@ const Acerca = () => {
         <h4>Certificaciones</h4>
         <p>
           Durante mi proceso de aprendizaje, hice parte del programa
-           <strong> Misión TIC 2022</strong> ofrecido por la Facultad de
+          <strong> Misión TIC 2022</strong> ofrecido por la Facultad de
           Ingeniería de la Universidad de Antioquia obteniendo las
           certificaciones correspondientes a dicho programa. Además, actualmente
           continuo aprendiendo a traves de los cursos en la plataforma de
@@ -87,14 +91,19 @@ const Acerca = () => {
         </p>
       </article>
       <div className="certificados-iconos container-sm w-50">
-        <ul className="list-group ">
+        <ul className="list-group">
           <li className="list-group-item list-group-item-action">
             <p>
               Diplomado en Desarrollo de Software
               <br />
-              <i className="fa-solid fa-trophy icon-li"></i>&nbsp;MisionTic2022
-              &nbsp; &nbsp;
-              <a id="1" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
+              <i className="fa-solid fa-trophy icon-li"></i> MisionTic2022
+
+              <a
+                id="1"
+                href="#ViewCertficado"
+                onClick={(e) => handleClick(e)}
+                aria-label="Ver certificado del Diplomado en Desarrollo de Software"
+              >
                 <i className="fa-regular fa-eye"></i>
               </a>
             </p>
@@ -103,32 +112,42 @@ const Acerca = () => {
             <p>
               Diplomado en Desarrollo de Aplicaciones Web
               <br />
-              <i className="fa-solid fa-trophy icon-li"></i>&nbsp;MisionTic2022
-              &nbsp; &nbsp;
-              <a id="0" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
+              <i className="fa-solid fa-trophy icon-li"></i> MisionTic2022
+
+              <a
+                id="0"
+                href="#ViewCertficado"
+                onClick={(e) => handleClick(e)}
+                aria-label="Ver certificado del Diplomado en Desarrollo de Aplicaciones Web"
+              >
                 <i className="fa-regular fa-eye"></i>
               </a>
             </p>
           </li>
-
           <li className="list-group-item list-group-item-action">
             <p>
-              Diplomado en Programaci&oacute;n Basica Lenguaje Java
+              Diplomado en Programación Básica Lenguaje Java
               <br />
-              <i className="fa-solid fa-trophy icon-li"></i>&nbsp;MisionTic2022
-              &nbsp; &nbsp;
-              <a id="2" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
+              <i className="fa-solid fa-trophy icon-li"></i> MisionTic2022
+
+              <a
+                id="2"
+                href="#ViewCertficado"
+                onClick={(e) => handleClick(e)}
+                aria-label="Ver certificado del Diplomado en Programación Básica Lenguaje Java"
+              >
                 <i className="fa-regular fa-eye"></i>
               </a>
             </p>
           </li>
         </ul>
+
         <ul
           className="mostrarList list-group "
           id="mostrarList"
           style={{ display: isVisible ? "block" : "none" }}
         >
-          <li className="list-group-item list-group-item-action" id="0">
+          <li className="list-group-item list-group-item-action" id="7">
             <p>
               Diplomado Fundamentos de Programaci&oacute;n en Lenguaje Python
               <br />
