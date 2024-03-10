@@ -143,14 +143,14 @@ p {
   border-radius: 2rem;
   padding: 8px;
   box-shadow: -1px 12px 18px -6px rgba(179, 14, 14, 0.38);
-  -webkit-box-shadow: -1px 12px 18px -6px rgba(179, 14, 14, 0.38);
+  -webkit-box-shadow: -1px 12px 18px 8px rgba(179, 14, 14, 0.38);
   -moz-box-shadow: -1px 12px 18px -6px rgba(179, 14, 14, 0.38);
 }
 .dark-mode .git-link p {
   border-radius: 2rem;
   padding: 8px;
   box-shadow: -1px 12px 18px -6px rgba(117, 19, 126, 0.38);
-  -webkit-box-shadow: -1px 12px 18px -6px rgba(117, 19, 126, 0.38);
+  -webkit-box-shadow: -1px 18px 18px 8px rgba(117, 19, 126, 0.38);
   -moz-box-shadow: -1px 12px 18px -6px rgba(117, 19, 126, 0.38);
 }
 .dark-mode .linkedin-link p {
@@ -158,16 +158,58 @@ p {
   padding: 8px;
   margin: auto;
   box-shadow: -1px 12px 18px -6px rgba(28, 34, 208, 0.38);
-  -webkit-box-shadow: -1px 12px 18px -6px rgba(28, 34, 208, 0.38);
+  -webkit-box-shadow: -1px 12px 18px 8px rgba(28, 34, 208, 0.38);
   -moz-box-shadow: -1px 12px 18px -6px rgba(28, 34, 208, 0.38);
 }
 .dark-mode .certificados-iconos ul {
   box-shadow: -1px 12px 18px -6px rgba(239, 239, 239, 0.38);
--webkit-box-shadow: -1px 12px 18px -6px rgba(234, 234, 234, 0.38);
--moz-box-shadow: -1px 12px 18px -6px rgba(238, 238, 238, 0.38);
+  -webkit-box-shadow: -1px 12px 18px -6px rgba(234, 234, 234, 0.38);
+  -moz-box-shadow: -1px 12px 18px -6px rgba(238, 238, 238, 0.38);
 }
 .certificados-iconos ul {
   box-shadow: -1px 12px 18px 3px rgba(0, 0, 0, 0.38);
   -webkit-box-shadow: -1px 12px 18px 3px rgba(0, 0, 0, 0.38);
   -moz-box-shadow: -1px 12px 18px 3px rgba(0, 0, 0, 0.38);
+}
+
+
+/* Seccion .experiencia */
+.container-experiencia{
+  margin-top: 24px;
+}
+.experiencia {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+}
+.imagenes-exp {
+  gap: 3rem;
+  border-radius: 2rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "imagenes-card2  imagenes-card1 imagenes-card4"
+    "imagenes-card3  imagenes-card3 imagenes-card3";
+}
+
+.imagenes-card1 {
+  border: solid 1px;
+  place-self: center;
+  grid-area: imagenes-card1;
+}
+.imagenes-card2 {
+  border: solid 1px;
+  place-self: center;
+  grid-area: imagenes-card2;
+}
+.imagenes-card3 {
+  border: solid 1px;
+  grid-area: imagenes-card3;
+  place-self: center;
+}
+.imagenes-card4 {
+  border: solid 1px;
+  grid-area: imagenes-card4;
 }

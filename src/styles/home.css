@@ -10,6 +10,7 @@
 
 .text-justify {
   text-wrap: balance;
-  font-weight: 300;
-  font-size: 17px;
+}
+.letra-home p {
+  text-wrap: wrap;  
 }
