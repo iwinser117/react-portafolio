@@ -84,7 +84,7 @@ const Acerca = () => {
             </div>
             <div className="experiencia">
               <h5 className="encabezado">Proyectos Personales</h5>
-              <div className="imagenes-exp">
+              <div>
                 <GridExperiencia />
               </div>
             </div>

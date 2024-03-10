@@ -1,19 +1,31 @@
 import React from "react";
+import Card from 'react-bootstrap/Card';
+import js from '@assets/logojavascript.svg';
+import node from '@assets/nodejs.svg';
+import css from '@assets/css.svg';
+import html from '@assets/html.svg';
+import react from '@assets/react.svg';
+
 const AcercaExperiencia = () => {
   return (
     <>
-      {/* <div className="imagenes-card1">
-        <img width={'200px'} src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2F0b3MlMjBncmFjaW9zb3N8ZW58MHx8MHx8fDA%3D" alt="" />
+      <div className="imagenes-exp">
+        <Card className="imagenes-card1">
+          <Card.Img variant="top" src={js} width={'120px'} height={'120px'} />
+        </Card>
+        <Card className="imagenes-card2">
+          <Card.Img variant="top" src={node} width={'120px'} height={'120px'} />
+        </Card>
+        <Card className="imagenes-card3">
+          <Card.Img variant="top" src={css} width={'120px'} height={'120px'} />
+        </Card>
+        <Card className="imagenes-card4">
+          <Card.Img variant="top" src={html} width={'120px'} height={'120px'} />
+        </Card>
+        <Card className="imagenes-card5">
+          <Card.Img variant="top" src={react} width={'120px'} height={'120px'} />
+        </Card>
       </div>
-      <div className="imagenes-card2">
-        <img width={'200px'} src="http://localhost:3007/7a5bba3d1088fc962e8c.webp" alt="" />
-      </div>
-      <div className="imagenes-card3">
-        <img width={'200px'} src="http://localhost:3007/7a5bba3d1088fc962e8c.webp" alt="" />
-      </div>
-      <div className="imagenes-card4">
-        <img width={'200px'} src="http://localhost:3007/7a5bba3d1088fc962e8c.webp" alt="" />
-      </div> */}
     </>
   );
 };
