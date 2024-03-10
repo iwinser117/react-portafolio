@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import mostrarDiploma from "../utils/modalDiploma.js";
+import GridExperiencia from "./AcercaExperiencias";
 import "@styles/acerca.css";
 import iwinserPerfil from "@assets/iwinserPerfil.webp";
 import { MDBIcon } from "mdb-react-ui-kit";
@@ -24,12 +25,12 @@ const Acerca = () => {
       <article id="acercademi">
         <h3>Hola soy Iwinser Sanchez</h3>
         <p>
-          Un gusto que estés aquí. Desde la secundaria me he interesado
-          por la tecnología y todo lo que respecta al Software, empece por
-          indagar sobre lo que corre detrás de las aplicaciones y como se hacen
-          estas. Luego de entender cual es la estructura de una aplicación
-          continue de forma autodidacta en la ruta de aprendizaje para el dia de
-          hoy hacer software de calidad y en mi mejora continua.
+          Un gusto que estés aquí. Desde la secundaria me he interesado por la
+          tecnología y todo lo que respecta al Software, empece por indagar
+          sobre lo que corre detrás de las aplicaciones y como se hacen estas.
+          Luego de entender cual es la estructura de una aplicación continue de
+          forma autodidacta en la ruta de aprendizaje para el dia de hoy hacer
+          software de calidad y en mi mejora continua.
         </p>
         <div className="d-flex justify-content-around align-items-center p-4 ">
           <div className="iwinserPerfil">
@@ -70,13 +71,24 @@ const Acerca = () => {
                 </p>
               </a>
             </div>
-
           </div>
         </div>
       </article>
-      <section>
+      <section className="container-experiencia">
         <main>
-        <h3>Experiencia</h3>
+          <h4>Experiencia</h4>
+          <section>
+            <div className="experiencia">
+              <h5>MQA</h5>
+              <p> - Enero 2023 - Actualmente</p>
+            </div>
+            <div className="experiencia">
+              <h5 className="encabezado">Proyectos Personales</h5>
+              <div className="imagenes-exp">
+                <GridExperiencia />
+              </div>
+            </div>
+          </section>
         </main>
       </section>
       <article>
@@ -97,7 +109,6 @@ const Acerca = () => {
               Diplomado en Desarrollo de Software
               <br />
               <i className="fa-solid fa-trophy icon-li"></i> MisionTic2022
-
               <a
                 id="1"
                 href="#ViewCertficado"
@@ -113,7 +124,6 @@ const Acerca = () => {
               Diplomado en Desarrollo de Aplicaciones Web
               <br />
               <i className="fa-solid fa-trophy icon-li"></i> MisionTic2022
-
               <a
                 id="0"
                 href="#ViewCertficado"
@@ -129,7 +139,6 @@ const Acerca = () => {
               Diplomado en Programación Básica Lenguaje Java
               <br />
               <i className="fa-solid fa-trophy icon-li"></i> MisionTic2022
-
               <a
                 id="2"
                 href="#ViewCertficado"

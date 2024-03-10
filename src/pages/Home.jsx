@@ -13,7 +13,7 @@ import Footer from "@components/Footer"
 const Home = () => {
   return (
     <>
-      <div className="data-bs-theme-dark">
+      <div className="data-bs-theme-dark letra-home">
         <Nav />
         <Banner />
         <Acerca />

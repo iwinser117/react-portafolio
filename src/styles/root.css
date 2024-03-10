@@ -8,3 +8,6 @@
   --iconEmail :linear-gradient(to right, #D44638, #FF5B32);
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
