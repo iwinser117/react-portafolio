@@ -6,7 +6,7 @@ import formLogo2 from "@assets/close-form.png"
 import { exito, noEnviado, limpiarInput } from "../utils/sendForm"
 const Fomulario = () => {
   //const [formData, setFormData] = useState({})
-  const [viewForm, setViewForm] = useState(false)
+  const [viewForm, setViewForm] = useState(true)
 
   const verForm = () => {
     setViewForm(!viewForm)

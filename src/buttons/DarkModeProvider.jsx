@@ -4,7 +4,7 @@ import { MdDarkMode } from "react-icons/md";
 import "@styles/botons.css";
 
 const DarkModeProvider = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const handleModeChange = () => {
     setIsDarkMode(!isDarkMode);
