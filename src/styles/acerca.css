@@ -188,6 +188,24 @@ p {
   -webkit-box-shadow: -1px 12px 18px 8px rgba(28, 34, 208, 0.38);
   -moz-box-shadow: -1px 12px 18px -6px rgba(28, 34, 208, 0.38);
 }
+.linkedin-link p:hover, 
+.git-link p:hover, 
+.pdf-link p:hover {
+  box-shadow: -1px 12px 18px -6px rgba(109, 109, 109, 0.38);
+  -webkit-box-shadow: -1px 12px 18px 8px rgba(73, 73, 73, 0.38);
+  -moz-box-shadow: -1px 12px 18px -6px rgba(85, 85, 85, 0.38);
+  transition: box-shadow 0.5s ease-in-out;
+}
+.dark-mode .linkedin-link p:hover, 
+.dark-mode .git-link p:hover, 
+.dark-mode .pdf-link p:hover {
+  box-shadow: -1px 12px 18px -6px rgba(237, 237, 238, 0.38);
+  -webkit-box-shadow: -1px 12px 18px 8px rgba(226, 226, 226, 0.38);
+  -moz-box-shadow: -1px 12px 18px -6px rgba(226, 226, 226, 0.38);
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+
 
 .dark-mode .certificados-iconos ul {
   box-shadow: -1px 12px 18px -6px rgba(239, 239, 239, 0.38);
@@ -222,7 +240,7 @@ p {
   height: 400px;
   grid-template-areas:
     "imagenes-card2 imagenes-card2  imagenes-card5 imagenes-card5 imagenes-card3 imagenes-card3"
-    "imagenes-card4 imagenes-card4 imagenes-card4 imagenes-card1  imagenes-card1 imagenes-card1";
+    ". imagenes-card4 imagenes-card4 imagenes-card1  imagenes-card1 .";
   box-shadow: -1px 12px 18px 3px rgba(0, 0, 0, 0.38);
   -webkit-box-shadow: -1px 12px 18px 3px rgba(0, 0, 0, 0.38);
   -moz-box-shadow: -1px 12px 18px 3px rgba(0, 0, 0, 0.38);
@@ -308,3 +326,4 @@ p {
   -moz-box-shadow: inset 3px 0px 41px 9px rgba(122, 198, 255, 0.56);
   box-shadow: inset 3px 0px 41px 9px rgba(122, 198, 255, 0.56);
 }
+

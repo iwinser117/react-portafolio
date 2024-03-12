@@ -59,17 +59,17 @@
 }
 
 .btn-arriba:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: #020202;
+  color: #ffffff;
   font-size: 1.2rem;
 }
 
 .dark-mode .btn-arriba {
-  color: #000000;
+  color: #ffffff;
 }
 
 .dark-mode .btn-arriba:hover {
-  background-color: #dfdfdf;
+  background-color: #000000;
 }
 
 /* Otras clases de estilo que mencionaste anteriormente */
