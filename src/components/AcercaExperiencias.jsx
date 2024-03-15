@@ -1,33 +1,50 @@
-import React from "react";
-import Card from 'react-bootstrap/Card';
-import js from '@assets/logojavascript.svg';
-import node from '@assets/nodejs.svg';
-import css from '@assets/css.svg';
-import html from '@assets/html.svg';
-import react from '@assets/react.svg';
+import React, { useState, useEffect } from 'react';
+import Carousel from 'react-bootstrap/Carousel';
+import { imagesData, secondImages } from '../utils/galerimages.js';
 
-const AcercaExperiencia = () => {
+function AcercaExperiencia() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
-    <>
-      <div className="imagenes-exp">
-        <Card className="imagenes-card1">
-          <Card.Img variant="top" src={js} width={'120px'} height={'120px'} />
-        </Card>
-        <Card className="imagenes-card2">
-          <Card.Img variant="top" src={node} width={'120px'} height={'120px'} />
-        </Card>
-        <Card className="imagenes-card3">
-          <Card.Img variant="top" src={css} width={'120px'} height={'120px'} />
-        </Card>
-        <Card className="imagenes-card4">
-          <Card.Img variant="top" src={html} width={'120px'} height={'120px'} />
-        </Card>
-        <Card className="imagenes-card5">
-          <Card.Img variant="top" src={react} width={'120px'} height={'120px'} />
-        </Card>
-      </div>
-    </>
+    <div className='imagenes-exp'>
+      {windowWidth < 862 ? (
+        <Carousel data-bs-theme="dark">
+          {imagesData.map((image, index) => (
+            <Carousel.Item key={index} interval={index === 0 ? 2500 : 2500}>
+              <img src={image.src} alt={image.alt} className='imgActual3' />
+              <Carousel.Caption>
+                <h2>{image.alt}</h2>
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      ) : (
+        <Carousel>
+          {imagesData.map((image, index) => (
+            <Carousel.Item key={index} interval={index === 0 ? 2500 : 2500}>
+              <img src={image.src} alt={image.alt} className='imgActual1' />
+              <Carousel.Caption>
+                <h3>{image.alt}</h3>
+              </Carousel.Caption>
+              <img src={secondImages[index].src} alt={secondImages[index].alt} className='imgActual2' />
+            </Carousel.Item>
+          ))}
+        </Carousel>
+      )}
+    </div>
   );
-};
+}
 
 export default AcercaExperiencia;
