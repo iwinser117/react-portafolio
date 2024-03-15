@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import { utcToZonedTime } from "date-fns-tz";
-
+import {imagesTodowebp} from '../utils/galerimages';
 import "@styles/letra.css";
 import {
   MDBCard,
@@ -20,11 +20,7 @@ import Reloj from "@codigoProyectos/Reloj";
 import PaletColores from "@codigoProyectos/PaletColores";
 import ListaTareas from "@codigoProyectos/ListaTareas";
 import Contador from "@codigoProyectos/Contador";
-import CalcImg from "@assets/calcu.png";
-import relojimg from "@assets/relojimg1.png";
-import paletaColoresimg from "@assets/paletaColores.png";
-import imgcontador from "@assets/contador.png";
-import listtareas from "@assets/listtareas.png";
+
 export default function App() {
   const [modals, setModals] = useState({
     modalCal: false,
@@ -94,7 +90,7 @@ export default function App() {
               style={cardStyle}
             >
               <MDBCardImage
-                src={CalcImg}
+                src={imagesTodowebp.calcu}
                 alt="..."
                 className="img"
                 position="top"
@@ -118,7 +114,7 @@ export default function App() {
               style={cardStyle}
             >
               <MDBCardImage
-                src={relojimg}
+                src={imagesTodowebp.relojimg}
                 className="img"
                 alt="..."
                 position="top"
@@ -142,7 +138,7 @@ export default function App() {
               style={cardStyle}
             >
               <MDBCardImage
-                src={paletaColoresimg}
+                src={imagesTodowebp.imgPaletaColores}
                 className="img"
                 position="top"
                 loading="lazy"
@@ -168,7 +164,7 @@ export default function App() {
               style={cardStyle}
             >
               <MDBCardImage
-                src={imgcontador}
+                src={imagesTodowebp.contador}
                 className="img"
                 position="top"
                 loading="lazy"
@@ -190,7 +186,7 @@ export default function App() {
               onClick={() => toggleShow("listatareas")}
               style={cardStyle}
             >
-              <MDBCardImage src={listtareas} className="img" />
+              <MDBCardImage src={imagesTodowebp.listtareas} className="img" />
               <MDBCardBody>
                 <MDBCardTitle className="title-card">
                   Lista de Tareas

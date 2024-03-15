@@ -91,7 +91,7 @@ const Acerca = () => {
           </section>
         </main>
       </section>
-      <article>
+      <article className="cert-container">
         <h4>Certificaciones</h4>
         <p>
           Durante mi proceso de aprendizaje, hice parte del programa
