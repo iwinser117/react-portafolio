@@ -82,12 +82,12 @@ const Acerca = () => {
               <h5>MQA</h5>
               <p> - Enero 2023 - Actualmente</p>
             </div>
-            {/* <div className="experiencia">
+             <div className="experiencia">
               <h5 className="encabezado">Proyectos Personales</h5>
               <div>
                 <GridExperiencia />
               </div>
-            </div> */}
+            </div>
           </section>
         </main>
       </section>
