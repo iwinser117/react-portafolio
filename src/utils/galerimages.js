@@ -21,14 +21,15 @@ const imagesData = [
   { src: react, alt: 'Contador' },
   { src: js, alt: 'Calculadora' },
 ];
+
 const secondImages = [
-    { src: loginImg, alt: '' },
-    { src: listtareas, alt: '' },
-    { src: imgPaletaColores, alt: '' },
-    { src: cimgtablaExport, alt: '' },
-    { src: contador, alt: '' },
-    { src: calcu, alt: '' },
-  ];
+  { src: loginImg, alt: 'Login con JS' },
+  { src: listtareas, alt: 'CRUD Lista tareas' },
+  { src: imgPaletaColores, alt: 'Input colors' },
+  { src: cimgtablaExport, alt: 'Node Js Export' },
+  { src: contador, alt: 'State React' },
+  { src: calcu, alt: 'Calculadora Js vanilla' },
+];
 
   const imagesTodowebp = {
     calcu: calcu,
