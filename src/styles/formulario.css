@@ -70,8 +70,8 @@ label {
 
 /* Media query para pantallas pequeñas */
 @media (max-width: 799px) {
-  .form-cnt {
-    width: 100%;
+  #form-contact  {
+    width: 100% !important;
   }
 }
 
