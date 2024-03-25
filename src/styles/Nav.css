@@ -245,3 +245,10 @@ nav li {
   border-radius: 2rem;
   color: aqua !important;
 }
+
+.nav-ul a {
+  color: black;
+}
+.dark-mode .nav-ul a {
+  color: rgb(255, 255, 255);
+}
