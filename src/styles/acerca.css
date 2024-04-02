@@ -253,7 +253,7 @@ p {
 
 .image-item {
   position: relative;
-  border: solid 1px ;
+  background: #2b2b2b;
   border-radius: 12px;
 }
 .image-item:hover .image-overlay {
