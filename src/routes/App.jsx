@@ -11,7 +11,7 @@ import Proyectos from "@pages/Proyectos";
 const App = () => {
   return (
     <DarkModeProvider>
-      <div className="app-container">
+      <div className="app-container main-container">
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route  path="/proyectos" element={<Proyectos />} />
