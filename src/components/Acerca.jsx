@@ -79,7 +79,7 @@ const Acerca = () => {
           <h4>Experiencia</h4>
           <section>
             <div className="experiencia">
-              <h5>MQA</h5>
+              <h5>MQA Suramérica</h5>
               <p> - Enero 2023 - Actualmente</p>
             </div>
              <div className="experiencia">
