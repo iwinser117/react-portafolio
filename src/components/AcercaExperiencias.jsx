@@ -111,9 +111,9 @@ export default function TitlebarImageList() {
                 Ir a proyectos
               </Link>
               <img
-                style={{ width: "auto", height: "auto", maxHeight: "100%" }}
-                srcSet={`${item.src} 2x`}
-                src={`${item.src}2x`}
+                style={{ width: "200px", height: "auto", maxHeight: "100%" }}
+                srcSet={`${item.src}`}
+                src={`${item.src}`}
                 alt={item.alt}
                 loading="lazy"
               />
