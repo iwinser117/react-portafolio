@@ -1,0 +1,6 @@
+# Robots.txt for iwinsersanchez.netlify.app
+
+User-agent: *
+Disallow:
+
+Sitemap: https://iwinsersanchez.netlify.app/sitemap.xml

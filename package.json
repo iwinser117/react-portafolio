@@ -33,6 +33,8 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "@cloudinary/react": "^1.13.0",
+    "@cloudinary/url-gen": "^1.19.0",
     "@emailjs/browser": "^3.10.0",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
