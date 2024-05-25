@@ -11,6 +11,7 @@ import listtareas from '@assets/listtareas.webp';
 import imgPaletaColores from '@assets/imgPaletaColores.webp';
 import calcu from '@assets/calcu.webp';
 import relojimg from '@assets/relojimg.webp';
+import generatePassword from '@assets/generatePassword.webp';
 
 
 const imagesData = [
@@ -38,6 +39,7 @@ const secondImages = [
     imgPaletaColores: imgPaletaColores,
     cimgtablaExport: cimgtablaExport,
     loginImg: loginImg,
-    relojimg: relojimg
+    relojimg: relojimg,
+    generatePassword: generatePassword
   };
 export { imagesData, secondImages, imagesTodowebp }; 
