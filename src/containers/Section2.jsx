@@ -17,8 +17,7 @@ import {
 import TableExport from "@codigoProyectos/TableExport";
 
 import { Container } from "react-bootstrap";
-import imgProceso from "@assets/imgProceso.jpg";
-import imgProceso2 from "@assets/imgProces2.jpg";
+import generatePassword from "@assets/generatePassword.webp";
 import imgtablaExport from "../assets/imgtablaExport.png";
 import login from "../assets/login.png";
 
@@ -28,9 +27,10 @@ export default function App() {
   });
   const [lastUpdatedData1, setLastUpdatedData1] = useState("");
   const [lastUpdatedData2, setLastUpdatedData2] = useState("");
+  const [lastUpdatedData3, setLastUpdatedData3] = useState("");
 
   const owner = "iwinser117";
-  const repositories = ["TableExportJS", "autenticate"];
+  const repositories = ["TableExportJS", "autenticate", "generatepassword"];
 
   const fetchData = async (repoName) => {
     try {
@@ -42,6 +42,9 @@ export default function App() {
       }
       if (repoName === "autenticate") {
         setLastUpdatedData2(fechaFormateada(new Date(data.pushed_at)));
+      }
+      if (repoName === "generatepassword") {
+        setLastUpdatedData3(fechaFormateada(new Date(data.pushed_at)));
       }
     } catch (error) {
       console.error(
@@ -145,6 +148,21 @@ export default function App() {
               Aplicación Login 
             </a>'
               lastUpdatedData={lastUpdatedData2}
+            />
+          </MDBCol>
+          <MDBCol>
+            <Card
+              imgSrc={generatePassword}
+              title="Genereación Password"
+              text='Sitio web de generación de Password <br>
+              <a
+              href="https://generatepassword-theta.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Generate Password
+            </a>'
+              lastUpdatedData={lastUpdatedData3}
             />
           </MDBCol>
           {/* Otras tarjetas aquí */}
