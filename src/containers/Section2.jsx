@@ -153,7 +153,7 @@ export default function App() {
           <MDBCol>
             <Card
               imgSrc={generatePassword}
-              title="Genereación Password"
+              title="Generación Password"
               text='Sitio web de generación de Password <br>
               <a
               href="https://generatepassword-theta.vercel.app/"

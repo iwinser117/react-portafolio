@@ -119,7 +119,7 @@ export default function TitlebarImageList() {
               />
             </Box>
 
-            <ImageListItemBar title={item.alt} subtitle={item.alt} />
+            <ImageListItemBar title={item.alt} subtitle={item.subtitle} />
           </ImageListItem>
         ))}
       </ImageList>

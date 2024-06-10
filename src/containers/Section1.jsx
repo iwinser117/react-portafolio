@@ -83,6 +83,34 @@ export default function App() {
       <h3 className="m-auto">Js Vanilla</h3>
       <Container className="color-letra">
         <MDBRow className="row-cols-1 row-cols-md-3 g-4">
+        <MDBCol>
+            <MDBCard
+              className="h-100 MDBCard"
+              onClick={() => toggleShow("listatareas")}
+              style={cardStyle}
+            >
+              <MDBCardImage src={imagesTodowebp.listtareas} className="img" />
+              <MDBCardBody>
+                <MDBCardTitle className="title-card">
+                  Lista de Tareas
+                </MDBCardTitle>
+                <MDBCardText>
+                  Visitar aplicación
+                  <br />
+                  <a
+                    href="https://crudlistatareas.netlify.app "
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Link de Visita al Crud
+                  </a>
+                </MDBCardText>
+              </MDBCardBody>
+              <MDBCardFooter>
+                <small className="text-muted">{`Actualizado: ${lastUpdatedData2}`}</small>
+              </MDBCardFooter>
+            </MDBCard>
+          </MDBCol>
           <MDBCol>
             <MDBCard
               className="h-100 MDBCard"
@@ -177,34 +205,6 @@ export default function App() {
               </MDBCardBody>
               <MDBCardFooter>
                 <small className="text-muted">{`Actualizado: ${lastUpdatedData1}`}</small>
-              </MDBCardFooter>
-            </MDBCard>
-          </MDBCol>
-          <MDBCol>
-            <MDBCard
-              className="h-100 MDBCard"
-              onClick={() => toggleShow("listatareas")}
-              style={cardStyle}
-            >
-              <MDBCardImage src={imagesTodowebp.listtareas} className="img" />
-              <MDBCardBody>
-                <MDBCardTitle className="title-card">
-                  Lista de Tareas
-                </MDBCardTitle>
-                <MDBCardText>
-                  Visitar aplicación
-                  <br />
-                  <a
-                    href="https://crudlistatareas.netlify.app "
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Link de Visita al Crud
-                  </a>
-                </MDBCardText>
-              </MDBCardBody>
-              <MDBCardFooter>
-                <small className="text-muted">{`Actualizado: ${lastUpdatedData2}`}</small>
               </MDBCardFooter>
             </MDBCard>
           </MDBCol>

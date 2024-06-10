@@ -24,12 +24,12 @@ const imagesData = [
 ];
 
 const secondImages = [
-  { src: loginImg, alt: 'Login con JS' },
-  { src: listtareas, alt: 'CRUD Lista tareas' },
-  { src: imgPaletaColores, alt: 'Input colors' },
-  { src: cimgtablaExport, alt: 'Node Js Export' },
-  { src: contador, alt: 'State React' },
-  { src: calcu, alt: 'Calculadora Js vanilla' },
+  { src: loginImg, alt: 'Login con JS', subtitle: 'NodeJs - ExpressJs - oAuth' },
+  { src: listtareas, alt: 'CRUD Lista tareas' , subtitle: 'NodeJs - HTML - MongoDB'},
+  { src: generatePassword, alt: 'Generador Contraseñas' , subtitle: 'Tailwind - NextJs'},
+  { src: cimgtablaExport, alt: 'API Export', subtitle: 'NodeJs - React' },
+  { src: contador, alt: 'State React' , subtitle: 'React - Css'},
+  { src: calcu, alt: 'Calculadora Js vanilla', subtitle:'Js Vanilla' },
 ];
 
   const imagesTodowebp = {
