@@ -1,24 +1,36 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import logo from "@assets/ok.svg";
 import "@styles/Nav.css";
 import { NavLink, useLocation } from "react-router-dom";
-const Nav = () => {
-  let prevScrollpos = window.pageYOffset;
-  window.onscroll = function () {
-    let currentScrollPos = window.pageYOffset;
 
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("navbar").style.top = "0";
-    } else {
-      document.getElementById("navbar").style.top = "-50px";
-    }
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("n2").style.top = "0";
-    } else {
-      document.getElementById("n2").style.top = "-50px";
-    }
-    prevScrollpos = currentScrollPos;
-  };
+const Nav = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+
+    let prevScrollpos = window.pageYOffset;
+    const handleScroll = () => {
+      let currentScrollPos = window.pageYOffset;
+      const navbar = document.getElementById("navbar");
+      const n2 = document.getElementById("n2");
+
+      if (prevScrollpos > currentScrollPos) {
+        navbar.style.top = "0";
+        n2.style.top = "0";
+      } else {
+        navbar.style.top = "-50px";
+        n2.style.top = "-50px";
+      }
+      prevScrollpos = currentScrollPos;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [location.pathname]);
 
   return (
     <>
