@@ -71,8 +71,8 @@ export default function App() {
     const cardStyle = {
       background: "linear-gradient(135deg, #8DD7CF, #64A07D, #3E517A)",
       borderRadius: "10px",
-      padding: "20px",
-      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+      padding: "10px",
+      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
       transition: "background 0.3s ease-in-out",
     };
 
@@ -154,7 +154,7 @@ export default function App() {
             <Card
               imgSrc={generatePassword}
               title="Generación Password"
-              text='Sitio web de generación de Password <br>
+              text='Visitar aplicación <br>
               <a
               href="https://generatepassword-theta.vercel.app/"
               target="_blank"

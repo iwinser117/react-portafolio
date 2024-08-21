@@ -167,16 +167,16 @@ p {
 .dark-mode .pdf-link p {
   border-radius: 2rem;
   padding: 8px;
-  box-shadow: -1px 8px 12x -6px rgba(179, 14, 14, 0.38);
-  -webkit-box-shadow: -1px 8px 12px 8px rgba(179, 14, 14, 0.38);
+  box-shadow: -1px 2px 12x -6px rgba(179, 14, 14, 0.38);
+  -webkit-box-shadow: -1px 2px 12px 8px rgba(179, 14, 14, 0.38);
   -moz-box-shadow: -1px 12px 18px -6px rgba(179, 14, 14, 0.38);
 }
 
 .dark-mode .git-link p {
   border-radius: 2rem;
   padding: 8px;
-  box-shadow: -1px 8px 12px -6px rgba(117, 19, 126, 0.38);
-  -webkit-box-shadow: -1px 8px 12px 8px rgba(117, 19, 126, 0.38);
+  box-shadow: -1px 2px 12px -6px rgba(117, 19, 126, 0.38);
+  -webkit-box-shadow: -1px 2px 12px 8px rgba(117, 19, 126, 0.38);
   -moz-box-shadow: -1px 12px 18px -6px rgba(117, 19, 126, 0.38);
 }
 
@@ -184,8 +184,8 @@ p {
   border-radius: 2rem;
   padding: 8px;
   margin: auto;
-  box-shadow: -1px 8px 12px -6px rgba(28, 34, 208, 0.38);
-  -webkit-box-shadow: -1px 8px 12px 8px rgba(28, 34, 208, 0.38);
+  box-shadow: -1px 2px 12px -6px rgba(28, 34, 208, 0.38);
+  -webkit-box-shadow: -1px 2px 12px 8px rgba(28, 34, 208, 0.38);
   -moz-box-shadow: -1px 12px 18px -6px rgba(28, 34, 208, 0.38);
 }
 .linkedin-link p:hover, 
