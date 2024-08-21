@@ -79,4 +79,7 @@ module.exports = {
     minimize: true,
     minimizer: [new CssMinimizerWebpackPlugin(), new TerserWebpackPlugin()],
   },
+  devServer: {
+    historyApiFallback: true,
+  }  
 }
