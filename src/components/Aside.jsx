@@ -1,6 +1,7 @@
 import React from "react";
 import "@styles/aside.css";
 import "@styles/root.css";
+
 const Aside = () => {
   return (
     <section className="container aside-cnt col-8 ">
