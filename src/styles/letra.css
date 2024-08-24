@@ -56,3 +56,8 @@
   font-family: sans-serif;
   text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
 }
+
+.text-color_excp{
+  color: #000000 !important;
+  font-weight: 700;
+}

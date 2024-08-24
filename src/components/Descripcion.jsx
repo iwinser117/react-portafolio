@@ -2,6 +2,7 @@ import React from "react";
 import SectionVanilla from "../containers/SectionVanilla";
 import Section1 from "@containers/Section1";
 import Section2 from "@containers/Section2";
+import ButtonGit from "../buttons/ButtonGit";
 import "@styles/descripcionapps.css";
 const Descripcion = () => {
   return (
@@ -24,6 +25,7 @@ const Descripcion = () => {
         <Section2 />
         <Section1 />
       </section>
+      <ButtonGit />
     </>
   );
 };
