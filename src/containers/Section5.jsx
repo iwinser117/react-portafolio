@@ -34,32 +34,32 @@ export default function App() {
   const repositories = ["TableExportJS", "autenticate", "generatepassword"];
 
   const fetchData = async (repoName) => {
+    const cachedData = localStorage.getItem(repoName);
+    if (cachedData) {
+      setLastUpdatedData((prevState) => ({
+        ...prevState,
+        [repoName]: cachedData,
+      }));
+      return;
+    }
+  
     try {
       const apiUrl = `https://api.github.com/repos/${owner}/${repoName}`;
       const response = await fetch(apiUrl);
       const data = await response.json();
-      if (repoName === "TableExportJS") {
-        if(!data.message){
-          setLastUpdatedData1(fechaFormateada(new Date(data.pushed_at)));
-        }
-      }
-      if (repoName === "autenticate") {
-        if(!data.message){
-          setLastUpdatedData2(fechaFormateada(new Date(data.pushed_at)));
-        }
-      }
-      if (repoName === "generatepassword") {
-        if(!data.message){
-          setLastUpdatedData3(fechaFormateada(new Date(data.pushed_at)));
-        }
+      if (!data.message) {
+        const formattedDate = fechaFormateada(new Date(data.pushed_at));
+        localStorage.setItem(repoName, formattedDate);
+        setLastUpdatedData((prevState) => ({
+          ...prevState,
+          [repoName]: formattedDate,
+        }));
       }
     } catch (error) {
-      console.error(
-        `Error al obtener información del repositorio ${repoName}`,
-        error
-      );
+      console.error(`Error al obtener información del repositorio ${repoName}`, error);
     }
   };
+  
 
   useEffect(() => {
     repositories.forEach((repoName) => {
