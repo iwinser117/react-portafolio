@@ -32,7 +32,7 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className="banner align-items-center data-bs-theme-dark">
+    <div className="banner align-items-center data-bs-theme-dark container">
       <div className="bannerItem">
         {images.map((image, index) => (
           <div key={index} style={{ display: index === imageIndex ? "block" : "none" }}>

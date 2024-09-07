@@ -46,14 +46,27 @@ export default function App() {
   };
 
   const fetchData = async (repoName) => {
+    // Verifica si la data ya está en localStorage
+    const cachedData = localStorage.getItem(`lastUpdatedData-${repoName}`);
+    if (cachedData) {
+      setLastUpdatedData(prev => ({
+        ...prev,
+        [repoName]: cachedData
+      }));
+      return; // La data ya está en localStorage, no es necesario hacer la llamada a la API
+    }
+
     try {
       const apiUrl = `https://api.github.com/repos/${owner}/${repoName}`;
       const response = await fetch(apiUrl);
       const data = await response.json();
       if (!data.message) {
+        const formattedDate = fechaFormateada(new Date(data.pushed_at));
+        // Guarda los datos en localStorage y en el estado
+        localStorage.setItem(`lastUpdatedData-${repoName}`, formattedDate);
         setLastUpdatedData(prev => ({
           ...prev,
-          [repoName]: fechaFormateada(new Date(data.pushed_at))
+          [repoName]: formattedDate
         }));
       }
     } catch (error) {
@@ -62,7 +75,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    repositories.forEach(fetchData);
+    repositories.forEach(repoName => fetchData(repoName));
   }, []);
 
   const fechaFormateada = (dateString) => {
@@ -86,7 +99,7 @@ export default function App() {
   }), []);
 
   const renderCard = (title, imageSrc, text, modalName, repoName) => (
-    <MDBCol>
+    <MDBCol key={repoName}>
       <MDBCard
         className="h-100 MDBCard"
         onClick={() => toggleShow(modalName)}

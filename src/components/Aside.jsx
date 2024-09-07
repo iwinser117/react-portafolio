@@ -8,7 +8,9 @@ const Aside = () => {
       <aside className="d-flex justify-content-around content-aside">
         <div className="aside">
           <div className="aside-div-int">
-            <h6 className="">Encuentrame</h6>
+            <h3>
+              Encuentrame
+            </h3>
             <div className="aside-div-int1">
               <div className="card-body d-flex cont-int-aside">
                 <a

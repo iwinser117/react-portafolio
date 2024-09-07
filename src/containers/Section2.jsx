@@ -33,30 +33,31 @@ export default function App() {
   const repositories = ["TableExportJS", "autenticate", "generatepassword"];
 
   const fetchData = async (repoName) => {
+    const cacheKey = `lastUpdatedData-${repoName}`;
+    const cachedData = localStorage.getItem(cacheKey);
+    
+    if (cachedData) {
+      // Si los datos están en caché, actualiza el estado con los datos de caché
+      if (repoName === "TableExportJS") setLastUpdatedData1(cachedData);
+      if (repoName === "autenticate") setLastUpdatedData2(cachedData);
+      if (repoName === "generatepassword") setLastUpdatedData3(cachedData);
+      return; // No hace falta hacer la llamada a la API
+    }
+
     try {
       const apiUrl = `https://api.github.com/repos/${owner}/${repoName}`;
       const response = await fetch(apiUrl);
       const data = await response.json();
-      if (repoName === "TableExportJS") {
-        if (!data.message) {
-          setLastUpdatedData1(fechaFormateada(new Date(data.pushed_at)));
-        }
-      }
-      if (repoName === "autenticate") {
-        if (!data.message) {
-          setLastUpdatedData2(fechaFormateada(new Date(data.pushed_at)));
-        }
-      }
-      if (repoName === "generatepassword") {
-        if (!data.message) {
-          setLastUpdatedData3(fechaFormateada(new Date(data.pushed_at)));
-        }
+      if (!data.message) {
+        const formattedDate = fechaFormateada(new Date(data.pushed_at));
+        // Guarda los datos en localStorage y en el estado
+        localStorage.setItem(cacheKey, formattedDate);
+        if (repoName === "TableExportJS") setLastUpdatedData1(formattedDate);
+        if (repoName === "autenticate") setLastUpdatedData2(formattedDate);
+        if (repoName === "generatepassword") setLastUpdatedData3(formattedDate);
       }
     } catch (error) {
-      console.error(
-        `Error al obtener información del repositorio ${repoName}`,
-        error
-      );
+      console.error(`Error al obtener información del repositorio ${repoName}`, error);
     }
   };
 
@@ -145,7 +146,7 @@ export default function App() {
               <a href="https://crudlistatareas.netlify.app" target="_blank" rel="noopener noreferrer" style="color: #64ffda; text-decoration: none;">
                 Visitar aplicación <FaExternalLinkAlt style="margin-left: 5px;" />
               </a>`}
-
+              lastUpdatedData={lastUpdatedData1}
               onClick={() => setModals({ tableExport: true })}
             />
           </MDBCol>
