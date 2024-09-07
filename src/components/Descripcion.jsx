@@ -2,6 +2,9 @@ import React from "react";
 import SectionVanilla from "../containers/SectionVanilla";
 import Section1 from "@containers/Section1";
 import Section2 from "@containers/Section2";
+import Section3 from "@containers/Section3";
+import Section4 from "@containers/Section4";
+import Section5 from "@containers/Section5";
 import ButtonGit from "../buttons/ButtonGit";
 import "@styles/descripcionapps.css";
 const Descripcion = () => {
@@ -23,7 +26,10 @@ const Descripcion = () => {
       </section>
       <section className="d-grid gap-4">
         <Section2 />
+        <Section5 />
+        <Section3 />
         <Section1 />
+        <Section4 />
       </section>
       <ButtonGit />
     </>

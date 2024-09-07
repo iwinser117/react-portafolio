@@ -15,6 +15,7 @@ import {
   MDBCol,
 } from "mdb-react-ui-kit";
 import { Container } from "react-bootstrap";
+import { FaJsSquare, FaExternalLinkAlt } from 'react-icons/fa';
 import Calculadora from "@codigoProyectos/Calculadora";
 import Reloj from "@codigoProyectos/Reloj";
 import PaletColores from "@codigoProyectos/PaletColores";
@@ -49,10 +50,12 @@ export default function App() {
       const apiUrl = `https://api.github.com/repos/${owner}/${repoName}`;
       const response = await fetch(apiUrl);
       const data = await response.json();
-      setLastUpdatedData(prev => ({
-        ...prev,
-        [repoName]: fechaFormateada(new Date(data.pushed_at))
-      }));
+      if (!data.message) {
+        setLastUpdatedData(prev => ({
+          ...prev,
+          [repoName]: fechaFormateada(new Date(data.pushed_at))
+        }));
+      }
     } catch (error) {
       console.error(`Error al obtener información del repositorio ${repoName}`, error);
     }
@@ -68,13 +71,18 @@ export default function App() {
   };
 
   const cardStyle = useMemo(() => ({
-    background: 'rgb(233,241,147)',
-    background: 'radial-gradient(circle, rgba(233,241,147,1) 0%, rgba(246,249,107,1) 49%, rgba(235,235,13,1) 84%)'
+    background: 'linear-gradient(135deg, #f0db4f 0%, #f7df1e 100%)',
+    borderRadius: '15px',
+    boxShadow: '0 10px 20px rgba(0, 0, 0, 0.1)',
+    transition: 'all 0.3s ease',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
   }), []);
 
   const hoverCardStyle = useMemo(() => ({
-    background: "linear-gradient(135deg, #f0db4f, #f7df1e, #ffff00)",
-    transition: "all 0.3s ease",
+    transform: 'translateY(-5px)',
+    boxShadow: '0 15px 30px rgba(0, 0, 0, 0.2)',
   }), []);
 
   const renderCard = (title, imageSrc, text, modalName, repoName) => (
@@ -86,28 +94,62 @@ export default function App() {
         onMouseEnter={() => setHoveredCard(modalName)}
         onMouseLeave={() => setHoveredCard(null)}
       >
-        <MDBCardImage src={imageSrc} className="img" alt={title} position="top" loading="lazy" />
-        <MDBCardBody>
-          <MDBCardTitle className="title-card">{title}</MDBCardTitle>
-          <MDBCardText className="text-align-div-inter text-color_excp">{text}</MDBCardText>
+        <MDBCardImage
+          src={imageSrc}
+          alt="..."
+          style={{
+            height: "200px",
+            objectFit: "contain",
+            borderRadius: "10px",
+            marginBottom: "15px",
+          }}
+          position="top"
+          loading="lazy"
+        />
+        <MDBCardBody style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
+          <MDBCardTitle className="title-card" style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem' }}>{title}</MDBCardTitle>
+          <MDBCardText className="text-align-div-inter text-color_excp" style={{ flex: 1 }}>{text}</MDBCardText>
+          <div style={{ marginTop: 'auto' }}>
+            <button
+              style={{
+                background: '#323330',
+                color: '#f0db4f',
+                border: 'none',
+                padding: '8px 15px',
+                borderRadius: '5px',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={(e) => e.target.style.background = '#000000'}
+              onMouseLeave={(e) => e.target.style.background = '#323330'}
+            >
+              Ver Proyecto <FaExternalLinkAlt style={{ marginLeft: '5px' }} />
+            </button>
+          </div>
         </MDBCardBody>
-        <MDBCardFooter>
-          <small className="text-muted">{`Actualizado: ${lastUpdatedData[repoName] || ''}`}</small>
+        <MDBCardFooter style={{ background: 'rgba(0,0,0,0.05)', borderTop: 'none' }}>
+          <small style={{ color: '#323330' }}>{`Actualizado: ${lastUpdatedData[repoName] || ''}`}</small>
         </MDBCardFooter>
       </MDBCard>
     </MDBCol>
   );
 
   return (
-    <>
-      <h3 className="m-auto">Js Vanilla</h3>
-      <Container className="color-letra">
+    <div>
+      <Container>
+        <h2 className="mb-4 text-center" style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#00ccff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <FaJsSquare style={{ marginRight: '10px', color: '#f0db4f' }} />
+          Proyectos JavaScript Vanilla
+        </h2>
         <MDBRow className="row-cols-1 row-cols-md-3 g-4">
-          {renderCard("Lista de Tareas", imagesTodowebp.listtareas, "Visitar aplicación", "listatareas", "lista-Tareas")}
+          {renderCard("Lista de Tareas", imagesTodowebp.listtareas, "Aplicación para gestionar tareas diarias", "listatareas", "lista-Tareas")}
           {renderCard("Calculadora", imagesTodowebp.calcu, "Operaciones básicas incluidos decimales", "modalCal", "proyectoPaginaWeb")}
-          {renderCard("Reloj", imagesTodowebp.relojimg, "Peticiones dependiendo de la ciudad según corresponda.", "modalReloj", "proyectoPaginaWeb")}
-          {renderCard("Paleta de colores", imagesTodowebp.imgPaletaColores, "Se toma mediante un input el valor del color y se le agrega este estilo a un elemento contenedor.", "paletaColores", "proyectoPaginaWeb")}
-          {renderCard("Contador", imagesTodowebp.contador, "Haciendo uso de \"useState\" se incrementa o decrementa el valor", "contador", "proyectoPaginaWeb")}
+          {renderCard("Reloj", imagesTodowebp.relojimg, "Muestra la hora actual según la ciudad seleccionada", "modalReloj", "proyectoPaginaWeb")}
+          {renderCard("Paleta de colores", imagesTodowebp.imgPaletaColores, "Selecciona y aplica colores a elementos", "paletaColores", "proyectoPaginaWeb")}
+          {renderCard("Contador", imagesTodowebp.contador, "Incrementa o decrementa un valor usando useState", "contador", "proyectoPaginaWeb")}
         </MDBRow>
         {modals.modalCal && <Calculadora onClose={() => toggleShow("modalCal")} />}
         {modals.modalReloj && <Reloj onClose={() => toggleShow("modalReloj")} />}
@@ -115,6 +157,6 @@ export default function App() {
         {modals.contador && <Contador onClose={() => toggleShow("contador")} />}
         {modals.listatareas && <ListaTareas onClose={() => toggleShow("listatareas")} />}
       </Container>
-    </>
+    </div>
   );
 }
