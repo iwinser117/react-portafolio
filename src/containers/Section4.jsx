@@ -13,13 +13,14 @@ import {
   MDBRow,
   MDBCol,
 } from "mdb-react-ui-kit";
-import { Container } from "react-bootstrap";
-import { FaNodeJs, FaExternalLinkAlt } from 'react-icons/fa';
+
 import TableExport from "@codigoProyectos/TableExport";
 
+import { Container } from "react-bootstrap";
 import generatePassword from "@assets/generatePassword.webp";
 import imgtablaExport from "../assets/imgtablaExport.png";
 import login from "../assets/login.png";
+import { color } from "@cloudinary/url-gen/qualifiers/background";
 
 export default function App() {
   const [modals, setModals] = useState({
@@ -38,17 +39,17 @@ export default function App() {
       const response = await fetch(apiUrl);
       const data = await response.json();
       if (repoName === "TableExportJS") {
-        if (!data.message) {
+        if(!data.message){
           setLastUpdatedData1(fechaFormateada(new Date(data.pushed_at)));
         }
       }
       if (repoName === "autenticate") {
-        if (!data.message) {
+        if(!data.message){
           setLastUpdatedData2(fechaFormateada(new Date(data.pushed_at)));
         }
       }
       if (repoName === "generatepassword") {
-        if (!data.message) {
+        if(!data.message){
           setLastUpdatedData3(fechaFormateada(new Date(data.pushed_at)));
         }
       }
@@ -75,21 +76,18 @@ export default function App() {
     const [hover, setHover] = useState(false);
 
     const cardStyle = {
-      background: "linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)",
-      borderRadius: "15px",
-      padding: "20px",
-      boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
-      transition: "all 0.3s ease-in-out",
-      color: "#ffffff",
-      height: "100%",
-      display: "flex",
-      flexDirection: "column",
+      background: "linear-gradient(135deg, #87CEEB, #C7D2FE)",
+      borderRadius: "10px",
+      padding: "10px",
+      boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
+      transition: "background 0.3s ease-in-out, transform 0.3s ease-in-out",
+      color: "black"
+    };
+    
+    const hoverCardStyle = {
+      background: "linear-gradient(135deg, #ADD8E6, #E4E9F5)",
     };
 
-    const hoverCardStyle = {
-      transform: "translateY(-5px)",
-      boxShadow: "0 15px 30px rgba(0, 0, 0, 0.3)",
-    };
 
     const formattedText = {
       __html: text,
@@ -99,81 +97,97 @@ export default function App() {
       <MDBCard
         className="h-100 MDBCard"
         style={hover ? { ...cardStyle, ...hoverCardStyle } : cardStyle}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
+        onMouseOver={() => setHover(true)}
+        onMouseOut={() => setHover(false)}
         onClick={onClick}
       >
         <MDBCardImage
           src={imgSrc}
           alt="..."
           style={{
-            height: "200px",
-            objectFit: "cover",
-            borderRadius: "10px",
-            marginBottom: "15px",
+            height: "220px",
+            objectFit: "contain",
+            marginTop: "",
+            borderRadius: "0px",
           }}
           position="top"
           loading="lazy"
         />
-        <MDBCardBody style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-          <MDBCardTitle className="text-center mb-3" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>{title}</MDBCardTitle>
-          <MDBCardText
-            dangerouslySetInnerHTML={formattedText}
-            style={{ flex: 1, fontSize: "1rem", lineHeight: "1.5" }}
-          />
+        <MDBCardBody>
+          <MDBCardTitle className="text-center">{title}</MDBCardTitle>
+          <MDBCardText dangerouslySetInnerHTML={formattedText} className="color-letra-black"/>
         </MDBCardBody>
-        <MDBCardFooter style={{ background: "rgba(255,255,255,0.1)", borderTop: "none" }}>
-          <small style={{ color: "#a8b2d1" }}>{`Actualizado: ${lastUpdatedData}`}</small>
+        <MDBCardFooter>
+          <small className="text-muted">{`Actualizado: ${lastUpdatedData}`}</small>
         </MDBCardFooter>
       </MDBCard>
     );
   };
 
   return (
-    <div>
-      <Container>
-        <h2 className="mb-4 text-center" style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#64ffda" }}>
-          <FaNodeJs style={{ marginRight: "10px" }} />
-          Proyectos Node.js
+    <>
+      
+      <Container className="color-letra-black">
+      <h2 className="mb-4 text-center" style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#b38600" }}>
+          SAPUI5
         </h2>
         <MDBRow className="row-cols-1 row-cols-md-3 g-4">
           <MDBCol>
             <Card
               imgSrc={imgtablaExport}
-              title="TableExportJS"
-              text={`Herramienta para exportar tablas en diversos formatos. <br/><br/>
-              <a href="https://crudlistatareas.netlify.app" target="_blank" rel="noopener noreferrer" style="color: #64ffda; text-decoration: none;">
-                Visitar aplicación <FaExternalLinkAlt style="margin-left: 5px;" />
-              </a>`}
-
+              title="Landing Page Extintores"
+              text='Visitar aplicación <br> <a
+              href="https://crudlistatareas.netlify.app "
+              target="_blank"
+              rel="noopener noreferrer"
+              id="link2"
+            >
+              Link de Visita al Crud
+            </a>'
+              lastUpdatedData={lastUpdatedData1}
               onClick={() => setModals({ tableExport: true })}
             />
           </MDBCol>
           <MDBCol>
             <Card
               imgSrc={login}
-              title="Autenticación JWT"
-              text={`Implementación de login seguro con JSON Web Tokens. <br/><br/>
-              <a href="https://autenticate.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: #64ffda; text-decoration: none;">
-                Probar aplicación <FaExternalLinkAlt style="margin-left: 5px;" />
-              </a>`}
+              title="Reporte Demo"
+              text='Aplcacion de reportes usando API SDK<br>
+              <a
+              href="https://autenticate.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              id="link3"
+            >
+              Reporte
+            </a>'
               lastUpdatedData={lastUpdatedData2}
             />
           </MDBCol>
           <MDBCol>
             <Card
               imgSrc={generatePassword}
-              title="Generador de Contraseñas"
-              text={`Crea contraseñas seguras con parámetros personalizables. <br/><br/>
-              <a href="https://generatepassword-theta.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: #64ffda; text-decoration: none;">
-                Generar contraseña <FaExternalLinkAlt style="margin-left: 5px;" />
-              </a>`}
+              title="Theme SAP"
+              text='Visitar aplicación <br>
+              <a
+              href="https://generatepassword-theta.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              id="link1"
+            >
+              Preview Themes
+            </a>'
               lastUpdatedData={lastUpdatedData3}
             />
           </MDBCol>
+          
+          {/* Otras tarjetas aquí */}
         </MDBRow>
+
+        {modals.tableExport ? (
+          <TableExport onClose={() => setModals({ tableExport: false })} />
+        ) : null}
       </Container>
-      {modals.tableExport && <TableExport onClose={() => setModals({ tableExport: false })} />}
-    </div>
+    </>
   );
 }

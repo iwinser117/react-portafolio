@@ -21,12 +21,11 @@ body {
 }
 
 header {
-  background: #ffffff; /* Fondo blanco en la parte superior */
-  height: 50px; /* Ajusta la altura según tu diseño */
+  background: #ffffff; 
+  height: 50px;
 }
 
 body {
-  
   background-attachment: fixed;
 }
 

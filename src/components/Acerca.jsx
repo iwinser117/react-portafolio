@@ -7,15 +7,53 @@ import { MDBIcon } from "mdb-react-ui-kit";
 
 const Acerca = () => {
   const [selectedId, setSelectedId] = useState(null);
+  const [text, setText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [loopNum, setLoopNum] = useState(0);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  const translations = [
+    "Hola, soy ",
+    "Hello, I am ",
+    "Bonjour, je suis ",
+    "Hallo, ich bin ",
+    "Ciao, sono ",
+    "こんにちは、私は ",
+  ];
+
   const handleClick = (event) => {
     mostrarDiploma(selectedId);
     setSelectedId(event.currentTarget.id);
   };
   useEffect(() => {
-    console.log(selectedId);
     mostrarDiploma(selectedId);
   }, [selectedId]);
 
+  useEffect(() => {
+    const handleTyping = () => {
+      const i = loopNum % translations.length;
+      const currentText = translations[i];
+
+      setText(
+        isDeleting
+          ? currentText.substring(0, text.length - 1)
+          : currentText.substring(0, text.length + 1)
+      );
+
+      setTypingSpeed(isDeleting ? 100 : 150);
+
+      if (!isDeleting && text === currentText) {
+        setTimeout(() => setIsDeleting(true), 1000); // Pausa antes de borrar
+      } else if (isDeleting && text === "") {
+        setIsDeleting(false);
+        setLoopNum(loopNum + 1);
+      }
+    };
+
+    const typingTimer = setTimeout(handleTyping, typingSpeed);
+
+    return () => clearTimeout(typingTimer);
+  }, [text, isDeleting, loopNum, typingSpeed, translations]);
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => {
     setIsVisible(!isVisible);
@@ -23,7 +61,10 @@ const Acerca = () => {
   return (
     <section className="container acerca-cnt col-8  text-justify lh-lg">
       <article id="acercademi">
-        <h3>Hola soy Iwinser Sanchez</h3>
+        <h3>
+          {text}
+          <span>Iwinser Sanchez</span>
+        </h3>
         <p>
           Un gusto que estés aquí. Desde la secundaria me he interesado por la
           tecnología y todo lo que respecta al Software, empece por indagar
@@ -82,7 +123,7 @@ const Acerca = () => {
               <h5>MQA Suramérica</h5>
               <p> - Enero 2023 - Actualmente</p>
             </div>
-             <div className="experiencia">
+            <div className="experiencia">
               <h5 className="encabezado">Proyectos Personales</h5>
               <div>
                 <GridExperiencia />

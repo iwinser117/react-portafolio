@@ -1,6 +1,13 @@
 .dark-mode .color-letra {
   color: rgb(0, 0, 0);
 }
+.dark-mode .color-letra-black {
+  color: black;
+}
+
+.color-letra-black {
+  color: black;
+}
 .dark-mode p {
   color: white;
 }
@@ -60,4 +67,8 @@
 .text-color_excp{
   color: #000000 !important;
   font-weight: 700;
+}
+
+#link1, #link2, #link3{
+  color: #000 !important;
 }
