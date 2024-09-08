@@ -16,7 +16,6 @@ import {
 } from "mdb-react-ui-kit";
 
 import TableExport from "@codigoProyectos/TableExport";
-
 import { Container } from "react-bootstrap";
 import generatePassword from "@assets/generatePassword.webp";
 import imgtablaExport from "../assets/imgtablaExport.png";
@@ -26,9 +25,7 @@ export default function App() {
   const [modals, setModals] = useState({
     tableExport: false,
   });
-  const [lastUpdatedData1, setLastUpdatedData1] = useState("");
-  const [lastUpdatedData2, setLastUpdatedData2] = useState("");
-  const [lastUpdatedData3, setLastUpdatedData3] = useState("");
+  const [lastUpdatedData, setLastUpdatedData] = useState({});
 
   const owner = "iwinser117";
   const repositories = ["TableExportJS", "autenticate", "generatepassword"];
@@ -42,7 +39,7 @@ export default function App() {
       }));
       return;
     }
-  
+
     try {
       const apiUrl = `https://api.github.com/repos/${owner}/${repoName}`;
       const response = await fetch(apiUrl);
@@ -59,12 +56,9 @@ export default function App() {
       console.error(`Error al obtener información del repositorio ${repoName}`, error);
     }
   };
-  
 
   useEffect(() => {
-    repositories.forEach((repoName) => {
-      fetchData(repoName);
-    });
+    repositories.forEach(fetchData);
   }, []);
 
   const fechaFormateada = (dateString) => {
@@ -143,45 +137,30 @@ export default function App() {
   };
 
   return (
-    <>
+    <Container>
+      <h2 className="mb-4 text-center" style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#e67300" }}>
+        <SiThealgorithms style={{ marginRight: "10px" }} />
+        Algoritmos
+      </h2>
+      <MDBRow className="row-cols-1 row-cols-md-3 g-4">
+        {repositories.map((repo, index) => (
+          <MDBCol key={index}>
+            <Card
+              imgSrc={[imgtablaExport, login, generatePassword][index]}
+              title={["Organizador de Json", "Algoritmos de búsqueda", "Torre de Hanoi"][index]}
+              text={[
+                'Visitar aplicación <br> <a href="https://crudlistatareas.netlify.app" target="_blank" rel="noopener noreferrer" id="link2" style="color: #64ffda;">Link de Visita al Crud</a>',
+                'Aplicación de reportes usando API SDK<br><a href="https://autenticate.vercel.app/" target="_blank" rel="noopener noreferrer" id="link3" style="color: #64ffda;">Reporte</a>',
+                'Visitar aplicación <br><a href="https://generatepassword-theta.vercel.app/" target="_blank" rel="noopener noreferrer" id="link1" style="color: #64ffda;">Preview Themes</a>',
+              ][index]}
+              lastUpdatedData={lastUpdatedData[repo]}
+              onClick={() => index === 0 && setModals({ tableExport: true })}
+            />
+          </MDBCol>
+        ))}
+      </MDBRow>
 
-      <Container>
-        <h2 className="mb-4 text-center" style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#e67300" }}>
-          <SiThealgorithms style={{ marginRight: "10px" }} />
-          Algoritmos
-        </h2>
-        <MDBRow className="row-cols-1 row-cols-md-3 g-4">
-          <MDBCol>
-            <Card
-              imgSrc={imgtablaExport}
-              title="Organizador de Json"
-              text='Visitar aplicación <br> <a href="https://crudlistatareas.netlify.app" target="_blank" rel="noopener noreferrer" id="link2" style="color: #64ffda;">Link de Visita al Crud</a>'
-              lastUpdatedData={lastUpdatedData1}
-              onClick={() => setModals({ tableExport: true })}
-            />
-          </MDBCol>
-          <MDBCol>
-            <Card
-              imgSrc={login}
-              title="Algoritmos de busqueda"
-              text='Aplcacion de reportes usando API SDK<br><a href="https://autenticate.vercel.app/" target="_blank" rel="noopener noreferrer" id="link3" style="color: #64ffda;">Reporte</a>'
-              lastUpdatedData={lastUpdatedData2}
-            />
-          </MDBCol>
-          <MDBCol>
-            <Card
-              imgSrc={generatePassword}
-              title="Torre de Hanoi"
-              text='Visitar aplicación <br><a href="https://generatepassword-theta.vercel.app/" target="_blank" rel="noopener noreferrer" id="link1" style="color: #64ffda;">Preview Themes</a>'
-              lastUpdatedData={lastUpdatedData3}
-            />
-          </MDBCol>
-        </MDBRow>
-
-        {modals.tableExport ? (
-          <TableExport onClose={() => setModals({ tableExport: false })} />
-        ) : null}
-      </Container>
-    </>
+      {modals.tableExport ? <TableExport onClose={() => setModals({ tableExport: false })} /> : null}
+    </Container>
   );
 }

@@ -19,6 +19,7 @@ import TableExport from "@codigoProyectos/TableExport";
 import { Container } from "react-bootstrap";
 import generatePassword from "@assets/generatePassword.webp";
 import imgtablaExport from "../assets/imgtablaExport.png";
+import fondocss from "../assets/fondocss.png";
 import login from "../assets/login.png";
 
 export default function App() {
@@ -32,7 +33,7 @@ export default function App() {
   });
 
   const owner = "iwinser117";
-  const repositories = ["TableExportJS", "autenticate", "generatepassword"];
+  const repositories = ["TableExportJS", "autenticate", "css_background"];
 
   const fetchData = async (repoName) => {
     const cachedData = localStorage.getItem(repoName);
@@ -144,10 +145,10 @@ export default function App() {
         </MDBCol>
         <MDBCol>
           <Card
-            imgSrc={generatePassword}
+            imgSrc={fondocss}
             title="Animación Background"
-            text='Visitar aplicación <br><a href="https://generatepassword-theta.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: #FFC107; text-decoration: none;">Generate Password</a>'
-            lastUpdatedData={lastUpdatedData.generatepassword}
+            text='Sitio que muestra 4 distintos temas para tu web <br><a href="https://iwinser117.github.io/https---github.com-iwinser117-css_background/" target="_blank" rel="noopener noreferrer" style="color: #FFC107; text-decoration: none;">Visualizar fondos CSS</a>'
+            lastUpdatedData={lastUpdatedData.css_background}
           />
         </MDBCol>
         <MDBCol>
@@ -155,7 +156,7 @@ export default function App() {
             imgSrc={generatePassword}
             title="Galería de arte"
             text='Visitar aplicación <br><a href="https://generatepassword-theta.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: #FFC107; text-decoration: none;">Generate Password</a>'
-            lastUpdatedData={lastUpdatedData.generatepassword}
+            lastUpdatedData={`${lastUpdatedData.css_background}`}
           />
         </MDBCol>
       </MDBRow>
