@@ -36,11 +36,11 @@ const Nav = () => {
     <>
       <nav id="navbar" className="navbar navbar-expand-lg">
         <div className="container-fluid w-75" id="n2">
-          <img className="navbar-brand" src={logo} width="60px" alt="logoIS" style={{
+          {/* <img className="navbar-brand" src={logo} width="60px" alt="logoIS" style={{
             background: "linear-gradient(135deg, white, #f0f0f0)",
             borderRadius: "50%",
             boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)"
-          }} />
+          }} /> */}
           <button
             className="navbar-toggler "
             type="button"

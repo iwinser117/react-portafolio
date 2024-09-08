@@ -99,7 +99,7 @@ export default function App() {
   }), []);
 
   const renderCard = (title, imageSrc, text, modalName, repoName) => (
-    <MDBCol key={repoName}>
+    <MDBCol key={`${repoName}-${modalName}`}>
       <MDBCard
         className="h-100 MDBCard"
         onClick={() => toggleShow(modalName)}
@@ -149,6 +149,7 @@ export default function App() {
       </MDBCard>
     </MDBCol>
   );
+  
 
   return (
     <div>
