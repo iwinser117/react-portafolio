@@ -21,6 +21,7 @@ import generatePassword from "@assets/generatePassword.webp";
 import imgtablaExport from "../assets/imgtablaExport.png";
 import fondocss from "../assets/fondocss.png";
 import login from "../assets/login.png";
+import semanticpage from "../assets/semanticpage.png";
 
 export default function App() {
   const [modals, setModals] = useState({
@@ -33,7 +34,7 @@ export default function App() {
   });
 
   const owner = "iwinser117";
-  const repositories = ["TableExportJS", "autenticate", "css_background"];
+  const repositories = ["TableExportJS", "autenticate", "responsivetemplate", "css_background"];
 
   const fetchData = async (repoName) => {
     const cachedData = localStorage.getItem(repoName);
@@ -137,10 +138,10 @@ export default function App() {
         </MDBCol>
         <MDBCol>
           <Card
-            imgSrc={login}
+            imgSrc={semanticpage}
             title="Plantilla Responsive"
-            text='App de login con JWT. <br><a href="https://autenticate.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: #FFC107; text-decoration: none;">Aplicación Login</a>'
-            lastUpdatedData={lastUpdatedData.autenticate}
+            text='Ejemplo de una plantilla resposive con CSS. <br><a href="https://responsivetemplatecss.netlify.app/" target="_blank" rel="noopener noreferrer" style="color: #FFC107; text-decoration: none;">Ver Demo</a>'
+            lastUpdatedData={lastUpdatedData.responsivetemplate}
           />
         </MDBCol>
         <MDBCol>
