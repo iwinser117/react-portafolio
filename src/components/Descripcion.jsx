@@ -26,10 +26,10 @@ const Descripcion = () => {
       </section>
       <section className="d-grid gap-4">
         <Section2 />
-        <Section5 />
+        {/* <Section5 /> */}
         <Section3 />
         <Section1 />
-        <Section4 />
+        {/* <Section4 /> */}
       </section>
       <ButtonGit />
     </>
