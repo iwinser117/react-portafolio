@@ -18,7 +18,7 @@ const BtnArriba = () => {
 
   return (
     <button
-      className=" position-fixed bottom-0 end-0 translate-middle translate-middle btn  btn-arriba"
+      className="position-fixed bottom-0 end-0 translate-middle translate-middle btn  btn-arriba"
       onClick={() => handleClick()}
       style={{ display: showButton ? "block" : "none" }}
     >

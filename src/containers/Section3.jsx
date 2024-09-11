@@ -19,6 +19,7 @@ import TableExport from "@codigoProyectos/TableExport";
 import { Container } from "react-bootstrap";
 import generatePassword from "@assets/generatePassword.webp";
 import imgtablaExport from "../assets/imgtablaExport.png";
+import css_extint from "../assets/css_extint.png";
 import fondocss from "../assets/fondocss.png";
 import login from "../assets/login.png";
 import semanticpage from "../assets/semanticpage.png";
@@ -34,7 +35,7 @@ export default function App() {
   });
 
   const owner = "iwinser117";
-  const repositories = ["TableExportJS", "autenticate", "responsivetemplate", "css_background"];
+  const repositories = ["TableExportJS", "autenticate", "responsivetemplate", "css_background", "fireExtinguishers"];
 
   const fetchData = async (repoName) => {
     const cachedData = localStorage.getItem(repoName);
@@ -129,10 +130,10 @@ export default function App() {
       <MDBRow className="row-cols-1 row-cols-md-3 g-4">
         <MDBCol>
           <Card
-            imgSrc={imgtablaExport}
-            title="Landin Page Extintores"
-            text='Visitar aplicación <br> <a href="https://crudlistatareas.netlify.app" target="_blank" rel="noopener noreferrer" style="color: #FFC107; text-decoration: none;">Link de Visita al Crud</a>'
-            lastUpdatedData={lastUpdatedData.TableExportJS}
+            imgSrc={css_extint}
+            title="Demo Sitio Extintores"
+            text='Visitar aplicación <br> <a href="https://fire-extinguishers.vercel.app" target="_blank" rel="noopener noreferrer" style="color: #FFC107; text-decoration: none;">Ir a ver demo Ahora</a>'
+            lastUpdatedData={lastUpdatedData.fireExtinguishers}
             onClick={() => setModals({ tableExport: true })}
           />
         </MDBCol>
@@ -152,14 +153,14 @@ export default function App() {
             lastUpdatedData={lastUpdatedData.css_background}
           />
         </MDBCol>
-        <MDBCol>
+        {/* <MDBCol>
           <Card
             imgSrc={generatePassword}
             title="Galería de arte"
             text='Visitar aplicación <br><a href="https://generatepassword-theta.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: #FFC107; text-decoration: none;">Generate Password</a>'
             lastUpdatedData={`${lastUpdatedData.css_background}`}
           />
-        </MDBCol>
+        </MDBCol> */}
       </MDBRow>
       {modals.tableExport && <TableExport onClose={() => setModals({ tableExport: false })} />}
     </Container>
