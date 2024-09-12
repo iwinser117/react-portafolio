@@ -35,7 +35,7 @@ const Banner = () => {
     <div className="banner align-items-center data-bs-theme-dark container">
       <div className="bannerItem">
         {images.map((image, index) => (
-          <div key={index} style={{ display: index === imageIndex ? "block" : "none" }}>
+          <div key={index} style={{ display: index === imageIndex ? "block w-full" : "none" }}>
             {image ? <img className='imgEs' src={image} alt={`Banner ${index}`} /> : null}
           </div>
         ))}

@@ -162,7 +162,7 @@ export default function App() {
           />
         </MDBCol> */}
       </MDBRow>
-      {modals.tableExport && <TableExport onClose={() => setModals({ tableExport: false })} />}
+      {/* {modals.tableExport && <TableExport onClose={() => setModals({ tableExport: false })} />} */}
     </Container>
   );
 }
