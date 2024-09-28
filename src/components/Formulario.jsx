@@ -128,7 +128,7 @@ const Fomulario = () => {
               rows="3"
             ></textarea>
           </div>
-          <button type="submit" className="btn btn-success m-auto d-block">
+          <button type="submit" className="btn btn-success m-auto d-block color-letra">
             Enviar
           </button>
         </form>

@@ -5,9 +5,7 @@ import iwinserPerfil from "@assets/iwinserPerfil.webp";
 
 const Banner = () => {
   return (
-    <section>
-
-
+    <section className="sectionbanner">
       <div className="d-flex justify-content-around align-items-center p-4 container banner">
         <div className="iwinserPerfil">
           <img src={iwinserPerfil} alt="Perfil" loading="lazy" />
@@ -16,7 +14,8 @@ const Banner = () => {
           <h2 className="text-center nametitle">Iwinser Sanchez</h2>
           <h4 className="text-center">FullStack Developer</h4>
           <p className="text-center">
-            Desarrollador de software y diseñador web con experiencia en crear sitios web atractivos y funcionales.
+            Desarrollador de software y diseñador web con experiencia en crear
+            sitios web atractivos y funcionales.
           </p>
           <div className="logos-contact m-auto">
             <div className="card-body d-flex logos-contact">
