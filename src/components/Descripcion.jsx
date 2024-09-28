@@ -16,7 +16,7 @@ const Descripcion = () => {
             <h3 className="card-title text-center">Aplicaciones</h3>
             <br />
             <p className="card-text-descrip">
-              A continuation puedes ver algunas aplicaciones que se han
+              A continuación puedes ver algunas aplicaciones que se han
               desarrollado haciendo uso de distintas tecnologías y herramientas;
               algunas de ellas están desplegadas respectivamente. Dejo su link
               en la descripción de cada una de ellas.

@@ -16,17 +16,7 @@
     color: aliceblue !important;
   }
 
-  .iwinserPerfil {
-    border-radius: 12px;
-    background: #ffffff;
-    width: 25%;
-  }
 
-  .iwinserPerfil img {
-    width: 100%;
-    border-bottom-right-radius: 12px;
-    border-bottom-left-radius: 12px;
-  }
 
   .logos-contact {
     width: 35%;
@@ -54,17 +44,7 @@
     color: aliceblue !important;
   }
 
-  .iwinserPerfil {
-    border-radius: 12px;
-    background: #ffffff;
-    width: 30%;
-  }
-
-  .iwinserPerfil img {
-    width: 100%;
-    border-bottom-right-radius: 12px;
-    border-bottom-left-radius: 12px;
-  }
+  
 
   .logos-contact {
     width: 55%;
@@ -105,18 +85,6 @@
     flex-direction: column;
     height: 500px;
     align-content: space-between;
-  }
-
-  .iwinserPerfil {
-    border-radius: 12px;
-    background: #ffffff;
-    width: 60%;
-  }
-
-  .iwinserPerfil img {
-    width: 100%;
-    border-bottom-right-radius: 12px;
-    border-bottom-left-radius: 12px;
   }
 
   .logos-contact {
@@ -229,6 +197,10 @@ p {
   display: flex;
   flex-direction: column;
   align-content: flex-start;
+}
+.experiencia h4 {
+  font-size: 2rem;
+  font-weight: bold;
 }
 .cert-container {
   margin-top: 3rem;
