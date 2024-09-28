@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import mostrarDiploma from "../utils/modalDiploma.js";
 import GridExperiencia from "./AcercaExperiencias";
 import "@styles/acerca.css";
-import iwinserPerfil from "@assets/iwinserPerfil.webp";
-import { MDBIcon } from "mdb-react-ui-kit";
 
 const Acerca = () => {
   const [selectedId, setSelectedId] = useState(null);
@@ -43,7 +41,7 @@ const Acerca = () => {
       setTypingSpeed(isDeleting ? 100 : 150);
 
       if (!isDeleting && text === currentText) {
-        setTimeout(() => setIsDeleting(true), 1000); // Pausa antes de borrar
+        setTimeout(() => setIsDeleting(true), 2000); // Pausa antes de borrar
       } else if (isDeleting && text === "") {
         setIsDeleting(false);
         setLoopNum(loopNum + 1);
@@ -73,47 +71,6 @@ const Acerca = () => {
           forma autodidacta en la ruta de aprendizaje para el dia de hoy hacer
           software de calidad y en mi mejora continua.
         </p>
-        <div className="d-flex justify-content-around align-items-center p-4 ">
-          <div className="iwinserPerfil">
-            <img src={iwinserPerfil} alt="" loading="lazy" />
-          </div>
-          <div className="logos-contact">
-            <div className="card-body d-flex logos-contact">
-              <a
-                className="pdf-link"
-                download="CurriculumDeveloperIwinserSanchez"
-                href="../assets/IwinserSanchez.pdf"
-                aria-label="Descargar currículum en formato PDF"
-              >
-                <p>
-                  <MDBIcon far icon="file-pdf" size="2x" className="" />
-                </p>
-              </a>
-              <a
-                className="git-link"
-                href="https://github.com/iwinser117"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visitar perfil de GitHub"
-              >
-                <p>
-                  <MDBIcon fab icon="github" size="2x" className="" />
-                </p>
-              </a>
-              <a
-                className="linkedin-link"
-                href="https://www.linkedin.com/in/iwinser-aljadys-sanchez-0a62a0234/?originalSubdomain=co"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visitar perfil de LinkedIn"
-              >
-                <p>
-                  <MDBIcon fab icon="linkedin" size="2x" className="" />
-                </p>
-              </a>
-            </div>
-          </div>
-        </div>
       </article>
       <section className="container-experiencia">
         <main>
@@ -124,7 +81,7 @@ const Acerca = () => {
               <p> - Enero 2023 - Actualmente</p>
             </div>
             <div className="experiencia">
-              <h5 className="encabezado">Proyectos Personales</h5>
+              <h4 className="encabezado">Proyectos Personales</h4>
               <div>
                 <GridExperiencia />
               </div>

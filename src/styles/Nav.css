@@ -2,6 +2,7 @@
 nav .container-fluid .collapse {
   justify-content: end;
 }
+
 @media (min-width: 1200px) {
   .collapse {
     position: relative;
@@ -11,6 +12,7 @@ nav .container-fluid .collapse {
     max-width: 1200px;
     width: 100%;
   }
+
   .nav-ul {
     z-index: inherit;
     height: 40px;
@@ -21,55 +23,58 @@ nav .container-fluid .collapse {
   }
 
   .nav-ul li {
-    margin-right: 70px;
+    margin-right: 10px;
+    /* Reducido para dar espacio a los óvalos */
     position: static;
-    width: 20%;
+    width: auto;
+    /* Cambiado de 20% a auto */
     text-align: center;
   }
 
   .nav-ul a {
     position: relative;
-    display: block;
-    padding: 5px;
+    display: inline-block;
+    padding: 5px 15px;
+    /* Ajustado para el óvalo */
+    border-radius: 20px;
+    /* Crea el efecto ovalado */
+    background-color: #f0f0f0;
+    /* Color de fondo del óvalo */
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-ul a:hover {
+    background-color: #e0e0e0;
+    /* Color de fondo al pasar el mouse */
   }
 
   .nav-ul a::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, #032158, #107906, #0a2391);
-    z-index: 1;
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.5s ease-in-out;
-  }
-
-  .nav-ul a:hover::before {
-    transform: scaleX(1);
+    display: none;
+    /* Removemos la línea de subrayado existente */
   }
 
   .dark-mode #navbar {
     z-index: 100;
-    position: fixed; /* Make it stick/fixed */
+    position: fixed;
+    /* Make it stick/fixed */
     top: 0;
     height: 50px;
     transition: top 0.5s;
-    background-color: #20252C;
+    /* background-color: #20252C; */
   }
+
   #navbar {
     z-index: 100;
-    position: fixed; /* Make it stick/fixed */
+    position: fixed;
+    /* Make it stick/fixed */
     top: 0;
     height: 50px;
     transition: top 0.5s;
-    background-color: rgba(255, 255, 255, 0.8);
+    /* background-color: rgba(255, 255, 255, 0.8); */
   }
 
   .dark-mode nav {
-    background-color: #20252C;
+    /* background-color: #20252C; */
   }
 }
 
@@ -114,7 +119,7 @@ nav .container-fluid .collapse {
     height: 40px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     position: relative;
     align-items: center;
   }
@@ -122,56 +127,53 @@ nav .container-fluid .collapse {
   .nav-ul li {
     position: static;
     text-align: center;
+    margin: 0 5px;
   }
 
   .nav-ul a {
     position: relative;
-    display: block;
-    padding: 5px;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+  }
+
+  .nav-ul a:hover {
+    background-color: #e0e0e0;
   }
 
   .nav-ul a::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(to right, #032158, #107906, #0a2391);
-    z-index: 1;
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 0.5s ease-in-out;
+    display: none;
   }
 
-  .nav-ul a:hover::before {
-    transform: scaleX(1);
-  }
   .dark-mode #navbar {
     z-index: 100;
-    position: fixed; /* Make it stick/fixed */
+    position: fixed;
+    /* Make it stick/fixed */
     top: 0;
     height: 50px;
     transition: top 0.5s;
-    background-color: #20252C;
+    /* background-color: #20252C; */
   }
+
   #navbar {
     z-index: 100;
-    position: fixed; /* Make it stick/fixed */
+    position: fixed;
+    /* Make it stick/fixed */
     top: 0;
     height: 50px;
     transition: top 0.5s;
-    background-color: rgba(255, 255, 255, 0.8);
+    /* background-color: rgba(255, 255, 255, 0.8); */
   }
 
   .dark-mode nav {
-    background-color: #20252C;
+    /* background-color: #20252C; */
   }
 }
 
 /* Media query para pantallas horizontales */
-@media (orientation: landscape) {
-}
+@media (orientation: landscape) {}
 
 /* Media query para pantallas pequeñas */
 @media (max-width: 799px) {
@@ -194,7 +196,7 @@ nav .container-fluid .collapse {
   }
 
   .dark-mode .container-fluid {
-    background: #f8f9fa;
+    /* background: #f8f9fa; */
     border-radius: 5px;
     width: 90% !important;
     padding: 0.5em 0.5em;
@@ -204,37 +206,57 @@ nav .container-fluid .collapse {
     color: black;
     text-align: center;
   }
+
   .dark-mode #n2 {
     z-index: 100;
-    position: fixed; /* Make it stick/fixed */
+    position: fixed;
+    /* Make it stick/fixed */
     top: 0;
     height: 52px;
     transition: top 0.5s;
     background-color: #20252C;
     width: 100% !important;
   }
+
   .dark-mode #n2 a {
     color: white;
     background-color: #20252C;
     z-index: 200;
   }
+
   #n2 {
     width: 100% !important;
     z-index: 100;
-    position: fixed; /* Make it stick/fixed */
+    position: fixed;
+    /* Make it stick/fixed */
     top: 0;
     height: 50px;
     transition: top 0.5s;
     background-color: rgba(255, 255, 255, 0.8);
   }
+
   #n2 a {
     background-color: rgba(255, 255, 255, 0.8);
     z-index: 200;
   }
+
   .dark-mode button {
     background: white;
   }
+
+  .nav-ul a {
+    display: block;
+    margin-bottom: 5px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+  }
+
+  .nav-ul a:hover {
+    background-color: #e0e0e0;
+  }
 }
+
 nav li {
   font-family: "Lato", sans-serif;
   font-weight: 900;
@@ -248,6 +270,12 @@ nav li {
 .nav-ul a {
   color: black;
 }
+
 .dark-mode .nav-ul a {
-  color: rgb(255, 255, 255);
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode .nav-ul a:hover {
+  background-color: #444;
 }

@@ -12,6 +12,7 @@ import imgPaletaColores from '@assets/imgPaletaColores.webp';
 import calcu from '@assets/calcu.webp';
 import relojimg from '@assets/relojimg.webp';
 import generatePassword from '@assets/generatePassword.webp';
+import css_extint from "@assets/css_extint.png";
 
 
 const imagesData = [
@@ -28,7 +29,7 @@ const secondImages = [
   { src: listtareas, alt: 'CRUD Lista tareas' , subtitle: 'NodeJs - HTML - MongoDB'},
   { src: generatePassword, alt: 'Generador Contraseñas' , subtitle: 'Tailwind - NextJs'},
   { src: cimgtablaExport, alt: 'API Export', subtitle: 'NodeJs - React' },
-  { src: contador, alt: 'State React' , subtitle: 'React - Css'},
+  { src: css_extint, alt: 'Sitio extintores' , subtitle: 'React - Css - Tailwind'},
   { src: calcu, alt: 'Calculadora Js vanilla', subtitle:'Js Vanilla' },
 ];
 

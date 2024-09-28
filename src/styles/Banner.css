@@ -1,82 +1,50 @@
-
-
-.acrostico-vertical {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 18px;
-  padding: 0 18px;
-  height: 100%;
-  width: 100%;
-}
-
-.acrostico-vertical p {
-  margin: 0;
-  padding: 3px;
-  opacity: 0;
-  transform: translateY(1em);
-  animation: appearAnimation 0.5s forwards;
-}
-
-.rainbow-text {
-  background: linear-gradient(to right, violet, indigo, blue, green, rgb(65, 6, 92), orange, red);
-  -webkit-background-clip: text;
-  color: transparent;
-  display: inline-block;
-  animation: rainbowAnimation 1s infinite linear;
-}
-
-@keyframes rainbowAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-@keyframes appearAnimation {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Estilos base */
-.imgEs{
-  width: 40%;
-  float: left;
-  max-height: 100%;
-  object-fit: cover;
-  display: flex;
-  margin: 0 auto;
-}
-
 .banner {
   width: 70%;
-  height: 400px;
+  min-height: 400px;
   align-items: center;
   justify-content: center;
   margin: auto;
-  padding-top: 80px;
-  margin-bottom: 50px;
+  padding-top: 90px;
+  margin-bottom: 40px;
+  /* margin-top: 20px; */
 }
-.dark-mode .rainbow-text {
-  color: white;
-}
-.acrostico-vertical-container {
-  display: flex;
+.iwinserPerfil {
   margin: auto;
-  color: rgb(2, 2, 2);
-  font-weight: 800;
-  text-transform: uppercase;
-  width: 100%;
-  justify-content: center;
-  height: 100%;
+  border-radius: 12px;
+  background: #ffffff;
 }
 
-/* Media query para pantallas pequeñas */
-@media only screen and (max-width: 800px) {
+.iwinserPerfil img {
+  margin: auto;
+  width: 100%;
+  border-bottom-right-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+.nametitle {
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+
+/* Estilos para pantallas grandes */
+@media (min-width: 992px) {
+ 
+}
+
+/* Estilos para pantallas medianas */
+@media (min-width: 768px) and (max-width: 991px) {
+  
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 767px) {
+  .iwinserPerfil img {
+    width: 270px;
+  }
+  .logos-contact {
+    justify-content: center;
+  }
   .bannerItem img {
     width: 90%; 
     height: 300px; 
@@ -84,24 +52,8 @@
 
   .banner {
     width: 90%; 
-    height: 350px; 
+    min-height: 450px; 
+    flex-direction: column;
   }
-
-  .acrostico-vertical-container {
-    width: 90%; 
-  }
-  .imgEs{
-    width: 20%;
-    float: left;
-    height: 200px;
-    display: flex;
-    margin: 0 auto;
-  }
-}
-
-@media only screen and (min-width: 601px) and (max-width: 1024px) {
-}
-
-@media only screen and (min-width: 1025px) and (max-width: 1440px) {
 }
 

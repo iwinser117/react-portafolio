@@ -1,67 +1,62 @@
-import React, { useState, useEffect } from "react";
-import "@styles/Banner.css"; 
-import gifImage from "@assets/iwinser.gif";
-//import gifImage1 from "@assets/imagAlgoritmos.jpeg";
-//import gifImage1 from "@assets/imgb3.png";
-//import gifImage1 from "@assets/imgia3.png";
-//import gifImage1 from "@assets/bannr4.jpeg";
-
+import React from "react";
+import { MDBIcon } from "mdb-react-ui-kit";
+import "@styles/Banner.css";
+import iwinserPerfil from "@assets/iwinserPerfil.webp";
 
 const Banner = () => {
-  const [imageIndex, setImageIndex] = useState(0);
-  const images = []; 
-
-  const acrostico = [
-    "Idea",
-    "Web",
-    "Innovación",
-    "Navegación",
-    "Soluciones",
-    "Esfuerzo",
-    "Resultados",
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setImageIndex((prevIndex) => (prevIndex + 1) % (images.length + 1));
-    }, 7000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-
   return (
-    <div className="banner align-items-center data-bs-theme-dark container">
-      <div className="bannerItem">
-        {images.map((image, index) => (
-          <div key={index} style={{ display: index === imageIndex ? "block w-full" : "none" }}>
-            {image ? <img className='imgEs' src={image} alt={`Banner ${index}`} /> : null}
-          </div>
-        ))}
-        {imageIndex === images.length && (
-          <div className="">
-            <div className="acrostico-vertical-container">
-              {acrostico.map((text, index) => (
-                <div key={index} className="acrostico-vertical">
-                  {text.split("").map((char, charIndex) => (
-                    <p
-                      key={charIndex}
-                      style={{
-                        animationDelay: `${index * 0.5 + charIndex * 0.2}s`,
-                      }}
-                      className="rainbow-text"
-                    >
-                      {char}
-                    </p>
-                  ))}
-                </div>
-              ))}
+    <section>
+
+
+      <div className="d-flex justify-content-around align-items-center p-4 container banner">
+        <div className="iwinserPerfil">
+          <img src={iwinserPerfil} alt="Perfil" loading="lazy" />
+        </div>
+        <div className="p-4">
+          <h2 className="text-center nametitle">Iwinser Sanchez</h2>
+          <h4 className="text-center">FullStack Developer</h4>
+          <p className="text-center">
+            Desarrollador de software y diseñador web con experiencia en crear sitios web atractivos y funcionales.
+          </p>
+          <div className="logos-contact m-auto">
+            <div className="card-body d-flex logos-contact">
+              <a
+                className="pdf-link"
+                download="CurriculumDeveloperIwinserSanchez"
+                href="../assets/IwinserSanchez.pdf"
+                aria-label="Descargar currículum en formato PDF"
+              >
+                <p>
+                  <MDBIcon far icon="file-pdf" size="2x" />
+                </p>
+              </a>
+              <a
+                className="git-link"
+                href="https://github.com/iwinser117"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar perfil de GitHub"
+              >
+                <p>
+                  <MDBIcon fab icon="github" size="2x" />
+                </p>
+              </a>
+              <a
+                className="linkedin-link"
+                href="https://www.linkedin.com/in/iwinser-aljadys-sanchez-0a62a0234/?originalSubdomain=co"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visitar perfil de LinkedIn"
+              >
+                <p>
+                  <MDBIcon fab icon="linkedin" size="2x" />
+                </p>
+              </a>
             </div>
           </div>
-        )}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
