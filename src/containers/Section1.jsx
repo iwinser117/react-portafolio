@@ -154,7 +154,7 @@ export default function App() {
   return (
     <div>
       <Container>
-        <h2 className="mb-4 text-center" style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '#00ccff', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <h2 className="mb-4 text-center" style={{ fontSize: '2.5rem', fontWeight: 'bold', color: '', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <FaJsSquare style={{ marginRight: '10px', color: '#f0db4f' }} />
           Proyectos JavaScript Vanilla
         </h2>
