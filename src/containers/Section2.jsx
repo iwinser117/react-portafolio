@@ -143,7 +143,7 @@ export default function App() {
               imgSrc={imgtablaExport}
               title="TableExportJS"
               text={`Herramienta para exportar tablas en diversos formatos. <br/><br/>
-              <a href="https://crudlistatareas.netlify.app" target="_blank" rel="noopener noreferrer" style="color: #64ffda; text-decoration: none;">
+              <a href="https://table-export-js-4zq5.vercel.app" target="_blank" rel="noopener noreferrer" style="color: #64ffda; text-decoration: none;">
                 Visitar aplicación <FaExternalLinkAlt style="margin-left: 5px;" />
               </a>`}
               lastUpdatedData={lastUpdatedData1}
