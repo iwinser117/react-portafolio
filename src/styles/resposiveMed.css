@@ -1,6 +1,8 @@
 .dark-mode {
-  background: -webkit-linear-gradient(90deg, #0f1116, #1a1b22);
-  background: linear-gradient(90deg, #0f1116, #1a1b22);
+  background: -webkit-linear-gradient(90deg, #0f1116, #2b2c36, #2c2e3a);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(90deg, #0f1116, #2b2c36, #2c2e3a);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: #fff;
 }
 

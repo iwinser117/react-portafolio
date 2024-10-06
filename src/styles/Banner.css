@@ -8,6 +8,14 @@
   margin-bottom: 40px;
   /* margin-top: 20px; */
 }
+
+.sectionbanner {
+  height: 75vh !important;
+  display: flex;
+  justify-items: center !important;
+  position: relative;
+}
+
 .iwinserPerfil {
   margin: auto;
   border-radius: 12px;
@@ -20,6 +28,7 @@
   border-bottom-right-radius: 12px;
   border-bottom-left-radius: 12px;
 }
+
 .nametitle {
   font-family: monospace;
   font-weight: bold;
@@ -29,12 +38,24 @@
 
 /* Estilos para pantallas grandes */
 @media (min-width: 992px) {
- 
+  .sectionbanner {
+    min-height: 480px !important;
+    padding-top: 44px !important;
+    display: block;
+    justify-items: center !important;
+    position: relative;
+  }
 }
 
 /* Estilos para pantallas medianas */
 @media (min-width: 768px) and (max-width: 991px) {
-  
+  .sectionbanner {
+    min-height: 480px !important;
+    padding-top: 34px !important;
+    display: block;
+    justify-items: center !important;
+    position: relative;
+  }
 }
 
 /* Estilos para pantallas pequeñas */
@@ -42,18 +63,27 @@
   .iwinserPerfil img {
     width: 270px;
   }
+
   .logos-contact {
     justify-content: center;
   }
+
   .bannerItem img {
-    width: 90%; 
-    height: 300px; 
+    width: 90%;
+    height: 300px;
   }
 
   .banner {
-    width: 90%; 
-    min-height: 450px; 
+    width: 90%;
+    min-height: 450px;
     flex-direction: column;
   }
-}
 
+  .sectionbanner {
+    min-height: 680px !important;
+    padding-top: 24px;
+    display: block;
+    justify-items: center !important;
+    position: relative;
+  }
+}
