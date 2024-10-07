@@ -28,10 +28,11 @@ const initialModals = {
   paletaColores: false,
   contador: false,
   listatareas: false,
+  rickandmorty: false,
 };
 
 const owner = "iwinser117";
-const repositories = ["proyectoPaginaWeb", "lista-Tareas"];
+const repositories = ["proyectoPaginaWeb", "lista-Tareas", "Api-Rick-and-Morty"];
 
 export default function App() {
   const [modals, setModals] = useState(initialModals);
@@ -102,7 +103,13 @@ export default function App() {
     <MDBCol key={`${repoName}-${modalName}`}>
       <MDBCard
         className="h-100 MDBCard"
-        onClick={() => toggleShow(modalName)}
+        onClick={() => {
+          if (modalName === "rickandmorty") {
+            window.open('https://api-rick-and-morty-17j9.vercel.app/', '_blank'); // Abrir la URL
+          } else {
+            toggleShow(modalName); // Mostrar el modal si no es "rickandmorty"
+          }
+        }}
         style={hoveredCard === modalName ? { ...cardStyle, ...hoverCardStyle } : cardStyle}
         onMouseEnter={() => setHoveredCard(modalName)}
         onMouseLeave={() => setHoveredCard(null)}
@@ -164,6 +171,7 @@ export default function App() {
           {renderCard("Reloj", imagesTodowebp.relojimg, "Muestra la hora actual según la ciudad seleccionada", "modalReloj", "proyectoPaginaWeb")}
           {renderCard("Paleta de colores", imagesTodowebp.imgPaletaColores, "Selecciona y aplica colores a elementos", "paletaColores", "proyectoPaginaWeb")}
           {renderCard("Contador", imagesTodowebp.contador, "Incrementa o decrementa un valor usando useState", "contador", "proyectoPaginaWeb")}
+          {renderCard("Rick and Morty", imagesTodowebp.rickandmorty, "Consumo de la api de rick and morty https://rickandmortyapi.com/api/", "rickandmorty", "Api-Rick-and-Morty")}
         </MDBRow>
         {modals.modalCal && <Calculadora onClose={() => toggleShow("modalCal")} />}
         {modals.modalReloj && <Reloj onClose={() => toggleShow("modalReloj")} />}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import { utcToZonedTime } from "date-fns-tz";
-import { FaCss3 } from "react-icons/fa";
+import { FaCss3, FaExternalLinkAlt } from "react-icons/fa";
 import "@styles/letra.css";
 import {
   MDBCard,
@@ -13,6 +13,7 @@ import {
   MDBCardFooter,
   MDBRow,
   MDBCol,
+  MDBBtn
 } from "mdb-react-ui-kit";
 
 import TableExport from "@codigoProyectos/TableExport";
@@ -74,7 +75,7 @@ export default function App() {
     return format(zonedDate, "d 'de' MMMM 'de' yyyy, h:mm:ss a", { locale: es });
   };
 
-  const Card = ({ imgSrc, title, text, lastUpdatedData, onClick }) => {
+  const Card = ({ imgSrc, title, text, lastUpdatedData, onClick, url }) => {
     const [hover, setHover] = useState(false);
 
     const cardStyle = {
@@ -95,6 +96,28 @@ export default function App() {
       background: "linear-gradient(135deg, #8E24AA, #3949AB)",
     };
 
+    const buttonStyle = {
+      background: '#323330',
+      color: '#f0db4f',
+      border: 'none',
+      padding: '8px 15px',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textDecoration: 'none',
+      fontSize: '14px',
+      fontWeight: '500',
+      width: 'fit-content',
+      margin: '0 auto',
+      transition: 'all 0.2s ease-in-out',
+    };
+
+    const handleVisitClick = (e) => {
+      e.stopPropagation();
+    };
+
     return (
       <MDBCard
         className="h-100"
@@ -113,6 +136,16 @@ export default function App() {
         <MDBCardBody style={{ flex: 1, display: "flex", flexDirection: "column" }}>
           <MDBCardTitle style={{ fontSize: "1.5rem", fontWeight: "bold", marginBottom: "10px", textAlign: "center" }}>{title}</MDBCardTitle>
           <MDBCardText style={{ fontSize: "1rem", lineHeight: "1.5", marginBottom: "15px" }} dangerouslySetInnerHTML={{ __html: text }} />
+          <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={buttonStyle}
+          onClick={handleVisitClick}
+          className="visit-button"
+        >
+          Visitar Sitio <FaExternalLinkAlt style={{ marginLeft: '5px' }} />
+        </a>
           <MDBCardFooter style={{ fontSize: "0.8rem", color: "rgba(255, 255, 255, 0.7)", marginTop: "auto" }}>
             <small>{`Actualizado: ${lastUpdatedData}`}</small>
           </MDBCardFooter>
@@ -129,19 +162,20 @@ export default function App() {
       </h2>
       <MDBRow className="row-cols-1 row-cols-md-3 g-4">
         <MDBCol>
-          <Card
+        <Card
             imgSrc={css_extint}
             title="Demo Sitio Extintores"
-            text='Visitar aplicación <br> <a href="https://fire-extinguishers.vercel.app" target="_blank" rel="noopener noreferrer" style="color: #FFC107; text-decoration: none;">Ir a ver demo Ahora</a>'
+            text="Visitar aplicación"
+            url="https://fire-extinguishers.vercel.app"
             lastUpdatedData={lastUpdatedData.fireExtinguishers}
-            onClick={() => setModals({ tableExport: true })}
           />
         </MDBCol>
         <MDBCol>
           <Card
             imgSrc={semanticpage}
             title="Plantilla Responsive"
-            text='Ejemplo de una plantilla resposive con CSS. <br><a href="https://responsivetemplatecss.netlify.app/" target="_blank" rel="noopener noreferrer" style="color: #FFC107; text-decoration: none;">Ver Demo</a>'
+            text="Ejemplo de una plantilla resposive con CSS."
+            url="https://responsivetemplatecss.netlify.app/"
             lastUpdatedData={lastUpdatedData.responsivetemplate}
           />
         </MDBCol>
@@ -149,7 +183,8 @@ export default function App() {
           <Card
             imgSrc={fondocss}
             title="Animación Background"
-            text='Sitio que muestra 4 distintos temas para tu web <br><a href="https://iwinser117.github.io/https---github.com-iwinser117-css_background/" target="_blank" rel="noopener noreferrer" style="color: #FFC107; text-decoration: none;">Visualizar fondos CSS</a>'
+            text="Sitio que muestra 4 distintos temas para tu web"
+            url="https://iwinser117.github.io/https---github.com-iwinser117-css_background/"
             lastUpdatedData={lastUpdatedData.css_background}
           />
         </MDBCol>

@@ -13,6 +13,8 @@ import calcu from '@assets/calcu.webp';
 import relojimg from '@assets/relojimg.webp';
 import generatePassword from '@assets/generatePassword.webp';
 import css_extint from "@assets/css_extint.png";
+import rickandmorty from "@assets/rickandmorty.png";
+
 
 
 const imagesData = [
@@ -41,6 +43,7 @@ const secondImages = [
     cimgtablaExport: cimgtablaExport,
     loginImg: loginImg,
     relojimg: relojimg,
-    generatePassword: generatePassword
+    generatePassword: generatePassword,
+    rickandmorty: rickandmorty
   };
 export { imagesData, secondImages, imagesTodowebp }; 
