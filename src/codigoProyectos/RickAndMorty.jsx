@@ -1,5 +1,5 @@
 import React from "react"
-import rickFoto from "../assets/RickandMorty.png"
+import rickFoto from "../assets/RickandMorty1.png"
 const RickAndMorty = () => {
   return (
     <div className="card m-auto w-50 p-4 bg-dark text-white">
