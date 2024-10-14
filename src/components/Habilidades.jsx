@@ -27,10 +27,10 @@ const Habilidades = () => {
           <i className="fa-solid fa-display"></i> Front-end
         </h3>
         <p>
-          Tengo experiencia en HTML, CSS y JavaScript para el desarrollo de
+          Tengo experiencia en <strong>HTML, CSS y JavaScript</strong> para el desarrollo de
           sitios web. En cuanto a HTML, me especializo en la creación de
           estructuras semánticas que permiten la accesibilidad y generan un
-          impacto visual atractivo para los usuarios. En CSS, poseo un nivel
+          impacto visual atractivo para los usuarios. En <strong>CSS</strong>, poseo un nivel
           intermedio y disfruto explorar las propiedades que permiten estilizar
           mis proyectos. Además, me gusta utilizar CSS para crear diseños
           responsivos que se adapten a diferentes dispositivos.
@@ -38,7 +38,7 @@ const Habilidades = () => {
         <p>
           Considero que JavaScript es un lenguaje sumamente importante tanto en
           el frontend como en el backend. Me encanta trabajar con JavaScript
-          debido a su capacidad para manejar eventos, manipular el DOM y brindar
+          debido a su capacidad para manejar eventos, manipular el <strong>DOM</strong> y brindar
           interactividad en el frontend. <br />
         </p>
         <p>
@@ -103,10 +103,10 @@ const Habilidades = () => {
         </p>
 
         <p>
-          He trabajado con diversos lenguajes de programación como Python, Java
-          y JavaScript (NodeJs). En particular, he estado enfocándome en el
-          desarrollo y manejo de bases de datos, especialmente con SQL y
-          MongoDB. Me he familiarizado con los distintos métodos para
+          He trabajado con diversos lenguajes de programación como <strong>Python, Java
+            y JavaScript (NodeJs)</strong>. En particular, he estado enfocándome en el
+          desarrollo y manejo de bases de datos, especialmente con <strong>SQL</strong>
+          y <strong>MongoDB</strong>. Me he familiarizado con los distintos métodos para
           interactuar con estas bases de datos, así como también he adquirido
           experiencia en el consumo de APIs (REST) y consumo de datos mediante
           oDatas. También tengo habilidades en el manejo de archivos JSON,

@@ -6,7 +6,7 @@ import "@codigoProyectos/verResultados/calculadora";
 
 import DarkModeProvider from "../buttons/DarkModeProvider";
 import Home from "@pages/Home";
-import Proyectos from "@pages/Proyectos";
+import Proyectos from "@pages/aplicaciones";
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
       <div className="app-container main-container">
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route  path="/proyectos" element={<Proyectos />} />
+          <Route  path="/aplicaciones" element={<Proyectos />} />
         </Routes>
       </div>
     </DarkModeProvider>

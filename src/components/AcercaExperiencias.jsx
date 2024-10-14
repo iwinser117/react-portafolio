@@ -63,7 +63,7 @@ export default function TitlebarImageList() {
               }}
             >
               <Link
-                href={"/proyectos"}
+                href={"/aplicaciones"}
                 underline="none"
                 sx={{
                   position: "absolute",
