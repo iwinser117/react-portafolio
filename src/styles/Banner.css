@@ -1,6 +1,6 @@
 .banner {
   width: 70%;
-  min-height: 400px;
+  min-height: 440px;
   align-items: center;
   justify-content: center;
   margin: auto;
@@ -10,7 +10,6 @@
 }
 
 .sectionbanner {
-  height: 75vh !important;
   display: flex;
   justify-items: center !important;
   position: relative;
@@ -39,7 +38,7 @@
 /* Estilos para pantallas grandes */
 @media (min-width: 992px) {
   .sectionbanner {
-    min-height: 480px !important;
+    min-height: 490px !important;
     padding-top: 44px !important;
     display: block;
     justify-items: center !important;
@@ -50,7 +49,7 @@
 /* Estilos para pantallas medianas */
 @media (min-width: 768px) and (max-width: 991px) {
   .sectionbanner {
-    min-height: 480px !important;
+    min-height: 490px !important;
     padding-top: 34px !important;
     display: block;
     justify-items: center !important;
@@ -75,12 +74,12 @@
 
   .banner {
     width: 90%;
-    min-height: 450px;
+    min-height: 470px;
     flex-direction: column;
   }
 
   .sectionbanner {
-    min-height: 680px !important;
+    min-height: 760px !important;
     padding-top: 24px;
     display: block;
     justify-items: center !important;

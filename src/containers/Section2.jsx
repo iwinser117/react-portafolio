@@ -135,7 +135,7 @@ export default function App() {
       <Container>
         <h2 className="mb-4 text-center" style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#64ffda" }}>
           <FaNodeJs style={{ marginRight: "10px" }} />
-          Proyectos Node.js
+          Aplicaciones Node.js
         </h2>
         <MDBRow className="row-cols-1 row-cols-md-3 g-4">
           <MDBCol>

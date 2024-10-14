@@ -77,8 +77,10 @@ const Acerca = () => {
           <h4>Experiencia</h4>
           <section>
             <div className="experiencia">
-              <h5>MQA Suramérica</h5>
-              <p> - Enero 2023 - Actualmente</p>
+              <h5>SAP Consultor BTP NEO - CF</h5>
+              <ul>
+                <li>Enero 2023 - Actualmente</li>
+              </ul>
             </div>
             <div className="experiencia">
               <h4 className="encabezado">Proyectos Personales</h4>

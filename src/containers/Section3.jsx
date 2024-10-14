@@ -24,6 +24,8 @@ import css_extint from "../assets/css_extint.png";
 import fondocss from "../assets/fondocss.png";
 import login from "../assets/login.png";
 import semanticpage from "../assets/semanticpage.png";
+import galeryart from "../assets/galeryart.png";
+
 
 export default function App() {
   const [modals, setModals] = useState({
@@ -33,10 +35,11 @@ export default function App() {
     TableExportJS: "",
     autenticate: "",
     generatepassword: "",
+    galery_art: ""
   });
 
   const owner = "iwinser117";
-  const repositories = ["TableExportJS", "autenticate", "responsivetemplate", "css_background", "fireExtinguishers"];
+  const repositories = ["TableExportJS", "autenticate", "responsivetemplate", "css_background", "fireExtinguishers", "galery_art"];
 
   const fetchData = async (repoName) => {
     const cachedData = localStorage.getItem(repoName);
@@ -155,10 +158,10 @@ export default function App() {
   };
 
   return (
-    <Container style={{ padding: "30px", borderRadius: "20px", boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)" }}>
+    <Container style={{ padding: "30px", borderRadius: "20px"}}>
       <h2 className="mb-4 text-center" style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#944dff", textShadow: "2px 2px 4px rgba(0,0,0,0.3)" }}>
         <FaCss3 style={{ marginRight: "10px" }} />
-        Proyectos Css
+        Aplicaciones Css
       </h2>
       <MDBRow className="row-cols-1 row-cols-md-3 g-4">
         <MDBCol>
@@ -172,11 +175,11 @@ export default function App() {
         </MDBCol>
         <MDBCol>
           <Card
-            imgSrc={semanticpage}
-            title="Plantilla Responsive"
-            text="Ejemplo de una plantilla resposive con CSS."
-            url="https://responsivetemplatecss.netlify.app/"
-            lastUpdatedData={lastUpdatedData.responsivetemplate}
+            imgSrc={galeryart}
+            title="Galeria de Arte"
+            text="Sitio web de imagenes de un gran artista en desarrollo."
+            url="https://galery-art-rho.vercel.app/"
+            lastUpdatedData={lastUpdatedData.galery_art}
           />
         </MDBCol>
         <MDBCol>
@@ -186,6 +189,15 @@ export default function App() {
             text="Sitio que muestra 4 distintos temas para tu web"
             url="https://iwinser117.github.io/https---github.com-iwinser117-css_background/"
             lastUpdatedData={lastUpdatedData.css_background}
+          />
+        </MDBCol>
+        <MDBCol>
+          <Card
+            imgSrc={semanticpage}
+            title="Plantilla Responsive"
+            text="Ejemplo de una plantilla resposive con CSS."
+            url="https://responsivetemplatecss.netlify.app/"
+            lastUpdatedData={lastUpdatedData.responsivetemplate}
           />
         </MDBCol>
         {/* <MDBCol>
