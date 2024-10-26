@@ -13,10 +13,21 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
   }
+
   .dark-mode .ci-icon {
     color: rgb(0, 0, 0) !important;
   }
+
+  .dark-mode .theme-toggle p {
+    color: #ffffff !important;
+  }
+
+  .dark-mode .btn-arriba {
+    background-color: #ffffff;
+    color: #000000;
+  }
 }
+
 @media (min-width: 801px) and (max-width: 1200px) {
   .theme-toggle {
     position: fixed;
@@ -32,8 +43,14 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
   }
+
   .dark-mode .theme-toggle p {
     color: #ffffff !important;
+  }
+
+  .dark-mode .btn-arriba {
+    background-color: #ffffff;
+    color: #000000;
   }
 }
 
@@ -53,8 +70,14 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
   }
+
   .dark-mode .theme-toggle p {
     color: #ffffff !important;
+  }
+
+  .dark-mode .btn-arriba {
+    background-color: #ffffff;
+    color: #000000;
   }
 }
 
@@ -85,6 +108,7 @@
 .dark-mode .ci-icon {
   color: rgb(0, 0, 0) !important;
 }
+
 button .ci-icon:hover {
   color: rgb(0, 0, 0);
 }

@@ -1,4 +1,4 @@
-/* Media query para pantallas grandes */
+/* Estructura y colores originales */
 nav .container-fluid .collapse {
   justify-content: end;
 }
@@ -20,14 +20,15 @@ nav .container-fluid .collapse {
     justify-content: space-around;
     position: relative;
     margin-left: 50px;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
   }
 
   .nav-ul li {
     margin-right: 10px;
-    /* Reducido para dar espacio a los óvalos */
     position: static;
     width: auto;
-    /* Cambiado de 20% a auto */
     text-align: center;
   }
 
@@ -35,51 +36,59 @@ nav .container-fluid .collapse {
     position: relative;
     display: inline-block;
     padding: 5px 15px;
-    /* Ajustado para el óvalo */
     border-radius: 20px;
-    /* Crea el efecto ovalado */
     background-color: #f0f0f0;
-    /* Color de fondo del óvalo */
     transition: background-color 0.3s ease;
+    color: black;
   }
 
   .nav-ul a:hover {
     background-color: #e0e0e0;
-    /* Color de fondo al pasar el mouse */
-  }
-
-  .nav-ul a::before {
-    display: none;
-    /* Removemos la línea de subrayado existente */
   }
 
   .dark-mode #navbar {
     z-index: 100;
     position: fixed;
-    /* Make it stick/fixed */
     top: 0;
     height: 50px;
     transition: top 0.5s;
-    /* background-color: #20252C; */
   }
 
   #navbar {
     z-index: 100;
     position: fixed;
-    /* Make it stick/fixed */
     top: 0;
     height: 50px;
     transition: top 0.5s;
-    /* background-color: rgba(255, 255, 255, 0.8); */
-  }
-
-  .dark-mode nav {
-    /* background-color: #20252C; */
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
   }
 }
 
-/* Media query para pantallas medianas */
+/* Ajustes de modo oscuro, solo cambiando colores */
+.dark-mode #navbar {
+  background-color: #20252c;
+}
+
+.dark-mode .nav-ul {
+  background-color: #20252c;
+}
+
+.dark-mode .nav-ul a {
+  color: #f0f0f0;
+  background-color: #20252c;
+}
+
+.dark-mode .nav-ul a:hover {
+  background-color: #555;
+}
+
 @media (min-width: 800px) and (max-width: 1199px) {
+  .dark-mode #navbar {
+    background-color: transparent;
+  }
+  
   .navbar-brand {
     display: none;
   }
@@ -119,9 +128,12 @@ nav .container-fluid .collapse {
     height: 40px;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     position: relative;
     align-items: center;
+    border-radius: 20px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
   }
 
   .nav-ul li {
@@ -137,57 +149,47 @@ nav .container-fluid .collapse {
     border-radius: 20px;
     background-color: #f0f0f0;
     transition: background-color 0.3s ease;
+    color: black;
   }
 
   .nav-ul a:hover {
     background-color: #e0e0e0;
   }
 
-  .nav-ul a::before {
-    display: none;
+  .dark-mode .container-fluid {
+    color: white;
   }
 
-  .dark-mode #navbar {
-    z-index: 100;
-    position: fixed;
-    /* Make it stick/fixed */
-    top: 0;
-    height: 50px;
-    transition: top 0.5s;
-    /* background-color: #20252C; */
+  .dark-mode .nav-ul a {
+    color: white;
+    background-color: #333;
   }
 
-  #navbar {
-    z-index: 100;
-    position: fixed;
-    /* Make it stick/fixed */
-    top: 0;
-    height: 50px;
-    transition: top 0.5s;
-    /* background-color: rgba(255, 255, 255, 0.8); */
-  }
-
-  .dark-mode nav {
-    /* background-color: #20252C; */
+  .dark-mode .nav-ul a:hover {
+    background-color: #20252c;
   }
 }
 
-/* Media query para pantallas horizontales */
-@media (orientation: landscape) {}
-
-/* Media query para pantallas pequeñas */
 @media (max-width: 799px) {
+  .dark-mode #navbar {
+    background-color: transparent;
+  }
   nav {
     border-radius: 5%;
   }
 
   .navbar-toggler {
-    color: #c7c7c7;
+    color: #c7c7c7 !important;
   }
+  .navbar-toggler {
+    background-color: white;
+  }
+  
 
   .container-fluid {
     width: 90% !important;
     padding: 0.5em 0.5em;
+    
   }
 
   .container-fluid a {
@@ -196,39 +198,33 @@ nav .container-fluid .collapse {
   }
 
   .dark-mode .container-fluid {
-    /* background: #f8f9fa; */
     border-radius: 5px;
     width: 90% !important;
     padding: 0.5em 0.5em;
   }
 
-  .dark-mode .container-fluid a {
-    color: black;
-    text-align: center;
-  }
-
   .dark-mode #n2 {
     z-index: 100;
     position: fixed;
-    /* Make it stick/fixed */
     top: 0;
     height: 52px;
     transition: top 0.5s;
-    background-color: #20252C;
     width: 100% !important;
+    background: transparent;
   }
+  .dark-mode .nav-ul {
+    background-color: transparent;
+}
 
   .dark-mode #n2 a {
     color: white;
-    background-color: #20252C;
-    z-index: 200;
+    background-color: #20252c;
   }
 
   #n2 {
     width: 100% !important;
     z-index: 100;
     position: fixed;
-    /* Make it stick/fixed */
     top: 0;
     height: 50px;
     transition: top 0.5s;
@@ -237,11 +233,6 @@ nav .container-fluid .collapse {
 
   #n2 a {
     background-color: rgba(255, 255, 255, 0.8);
-    z-index: 200;
-  }
-
-  .dark-mode button {
-    background: white;
   }
 
   .nav-ul a {
@@ -250,32 +241,19 @@ nav .container-fluid .collapse {
     padding: 5px 15px;
     border-radius: 20px;
     background-color: #f0f0f0;
+    color: black;
   }
 
   .nav-ul a:hover {
     background-color: #e0e0e0;
   }
-}
 
-nav li {
-  font-family: "Lato", sans-serif;
-  font-weight: 900;
-}
+  .dark-mode .nav-ul a {
+    color: white;
+    background-color: #20252c;
+  }
 
-.navbar-brand svg {
-  border-radius: 2rem;
-  color: aqua !important;
-}
-
-.nav-ul a {
-  color: black;
-}
-
-.dark-mode .nav-ul a {
-  background-color: #333;
-  color: white;
-}
-
-.dark-mode .nav-ul a:hover {
-  background-color: #444;
+  .dark-mode .nav-ul a:hover {
+    background-color: #20252c;
+  }
 }
