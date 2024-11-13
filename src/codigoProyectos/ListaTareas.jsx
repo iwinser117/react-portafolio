@@ -26,14 +26,17 @@ const ListaTareas = ({ onClose }) => {
           >Link de Visita al Crud</a>
         </p>
         <div className="m-auto">
-          <video
-            src="../assets/CrudTareas.mp4"
-            controls
+          <iframe
             width="320"
             height="240"
+            src="https://www.youtube.com/embed/JOjaPiqHS-c"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
           >
-            Tu navegador no soporta el elemento de video
-          </video>
+          </iframe>
+
         </div>
       </div>
       <Modal.Footer>
