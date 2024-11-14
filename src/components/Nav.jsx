@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
-import logo from "@assets/ok.svg";
+import logowhite from "@assets/ok.svg";
+import logoblack from "@assets/ok_white_bgsvg.svg";
 import "@styles/Nav.css";
 import { NavLink, useLocation } from "react-router-dom";
+import { useDarkMode } from "../buttons/DarkModeProvider";
+import { FaHome, FaUser, FaLaptopCode, FaEnvelope } from "react-icons/fa";
 
 const Nav = () => {
   const location = useLocation();
+  const isDarkMode = useDarkMode();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -36,11 +40,7 @@ const Nav = () => {
     <>
       <nav id="navbar" className="navbar navbar-expand-lg">
         <div className="container-fluid w-75" id="n2">
-          {/* <img className="navbar-brand" src={logo} width="60px" alt="logoIS" style={{
-            background: "linear-gradient(135deg, white, #f0f0f0)",
-            borderRadius: "50%",
-            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)"
-          }} /> */}
+          <img className="navbar-brand" src={isDarkMode ? logoblack : logowhite} width="60px" alt="logoIS" />
           <button
             className="navbar-toggler "
             type="button"
@@ -56,12 +56,8 @@ const Nav = () => {
             <ul className="navbar-nav nav-ul">
               {location.pathname === "/aplicaciones" ? (
                 <li className="nav-item">
-                  <NavLink
-                    className="nav-link"
-                    to={"/"}
-                  // onClick={() => handleNavigation("nav")}
-                  >
-                    Inicio
+                  <NavLink className="nav-link" to={"/"}>
+                    <FaHome style={{ marginRight: '5px' }} /> Inicio
                   </NavLink>
                 </li>
               ) : null}
@@ -83,19 +79,15 @@ const Nav = () => {
 
               {location.pathname === "/aplicaciones" ? null : (
                 <li className="nav-item ">
-                  <NavLink
-                    className="nav-link "
-                    to={"/aplicaciones"}
-                  // onClick={() => handleNavigation("nav")}
-                  >
-                    Aplicaciones
+                  <NavLink className="nav-link" to={"/aplicaciones"}>
+                    <FaLaptopCode style={{ marginRight: '5px' }} /> Aplicaciones
                   </NavLink>
                 </li>
               )}
 
               <li className="nav-item ">
                 <a className="nav-link" href="#contactame">
-                  Contactame
+                  <FaEnvelope style={{ marginRight: '5px' }} /> Contactame
                 </a>
               </li>
             </ul>
