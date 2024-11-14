@@ -2,6 +2,12 @@
 nav .container-fluid .collapse {
   justify-content: end;
 }
+.nav-link {
+  display: flex !important;
+  justify-items: center !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
 
 @media (min-width: 1200px) {
   .collapse {
@@ -67,7 +73,7 @@ nav .container-fluid .collapse {
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
 }
 
 /* Ajustes de modo oscuro, solo cambiando colores */
@@ -91,10 +97,6 @@ nav .container-fluid .collapse {
 @media (min-width: 800px) and (max-width: 1199px) {
   .dark-mode #navbar {
     background-color: transparent;
-  }
-
-  .navbar-brand {
-    display: none;
   }
 
   .navbar-nav-scroll {
@@ -130,7 +132,7 @@ nav .container-fluid .collapse {
   .nav-ul {
     z-index: inherit;
     height: 40px;
-    width: 70%;
+    width: 90%;
     display: flex;
     justify-content: space-around;
     position: relative;
@@ -174,18 +176,7 @@ nav .container-fluid .collapse {
     background-color: #20252c;
   }
 
-  #navbar {
-    z-index: 100;
-    position: fixed;
-    top: 0;
-    height: 50px;
-    border-radius: 20px;
-    background-color: #f0f0f0;
-    transition: all 0.3s ease;
-    width: 70%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+ 
 }
 
 @media (max-width: 799px) {
@@ -237,7 +228,7 @@ nav .container-fluid .collapse {
     background-color: transparent;
   }
 
-  .dark-mode #n2 a {
+  .dark-mode #n2 {
     color: white;
     background-color: #20252c;
   }
@@ -249,14 +240,14 @@ nav .container-fluid .collapse {
     top: 0;
     height: 50px;
     transition: top 0.5s;
+    background: transparent;
+  }
+
+  #n2 {
     background-color: rgba(255, 255, 255, 0.8);
   }
 
-  #n2 a {
-    background-color: rgba(255, 255, 255, 0.8);
-  }
-
-  .nav-ul a {
+  .nav-ul {
     display: block;
     margin-bottom: 5px;
     padding: 5px 15px;
@@ -265,16 +256,24 @@ nav .container-fluid .collapse {
     color: black;
   }
 
-  .nav-ul a:hover {
+  .nav-ul:hover {
     background-color: #e0e0e0;
   }
 
-  .dark-mode .nav-ul a {
+  .dark-mode .nav-ul {
     color: white;
     background-color: #20252c;
   }
 
-  .dark-mode .nav-ul a:hover {
+  .dark-mode .nav-ul:hover {
     background-color: #20252c;
+  }
+  .navbar li {
+    width: 100% !important;
+    border-bottom: solid 1px #747577;
+  }
+  .dark-mode .navbar li {
+    width: 100% !important;
+    border-bottom: solid 0.8px #a4a5a8;
   }
 }
