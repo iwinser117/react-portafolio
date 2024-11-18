@@ -10,23 +10,25 @@ nav .container-fluid .collapse {
 }
 
 @media (min-width: 1200px) {
+  .dark-mode #navbar {
+    /* background-color: transparent; */
+  }
   .collapse {
     position: relative;
   }
 
-  nav {
+  /* nav {
     max-width: 1200px;
     width: 100%;
-  }
+  } */
 
   .nav-ul {
     z-index: inherit;
     height: 40px;
-    width: 70%;
-    justify-content: space-around;
+    /* width: 100%; */
+    justify-content: flex-start;
     position: relative;
     margin-left: 50px;
-    border-radius: 20px;
     background-color: #f0f0f0;
     transition: background-color 0.3s ease;
     margin: auto;
@@ -43,14 +45,14 @@ nav .container-fluid .collapse {
     position: relative;
     display: inline-block;
     padding: 5px 15px;
-    border-radius: 20px;
     background-color: #f0f0f0;
     transition: background-color 0.3s ease;
     color: black;
   }
 
   .nav-ul a:hover {
-    background-color: #e0e0e0;
+    /* background-color: #e0e0e0; */
+    
   }
 
   .dark-mode #navbar {
@@ -66,10 +68,9 @@ nav .container-fluid .collapse {
     position: fixed;
     top: 0;
     height: 50px;
-    border-radius: 20px;
     background-color: #f0f0f0;
     transition: all 0.3s ease;
-    width: 70%;
+    width: 100%;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -78,25 +79,26 @@ nav .container-fluid .collapse {
 
 /* Ajustes de modo oscuro, solo cambiando colores */
 .dark-mode #navbar {
-  background-color: #20252c;
+  background-color: #1D232A;
 }
 
 .dark-mode .nav-ul {
-  background-color: #20252c;
+  background-color: #1D232A;
 }
 
 .dark-mode .nav-ul a {
   color: #f0f0f0;
-  background-color: #20252c;
+  background-color: #1D232A;
 }
 
 .dark-mode .nav-ul a:hover {
-  background-color: #555;
+  /* background-color: #555; */
+  color: #4DB1FF;
 }
 
 @media (min-width: 800px) and (max-width: 1199px) {
   .dark-mode #navbar {
-    background-color: transparent;
+    /* background-color: transparent; */
   }
 
   .navbar-nav-scroll {
@@ -134,10 +136,9 @@ nav .container-fluid .collapse {
     height: 40px;
     width: 90%;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     position: relative;
     align-items: center;
-    border-radius: 20px;
     background-color: #f0f0f0;
     transition: background-color 0.3s ease;
     margin: auto;
@@ -153,14 +154,13 @@ nav .container-fluid .collapse {
     position: relative;
     display: inline-block;
     padding: 5px 15px;
-    border-radius: 20px;
     background-color: #f0f0f0;
     transition: background-color 0.3s ease;
     color: black;
   }
 
   .nav-ul a:hover {
-    background-color: #e0e0e0;
+    /* background-color: #e0e0e0; */
   }
 
   .dark-mode .container-fluid {
@@ -169,11 +169,12 @@ nav .container-fluid .collapse {
 
   .dark-mode .nav-ul a {
     color: white;
-    background-color: #333;
+    /* background-color: #333; */
   }
 
   .dark-mode .nav-ul a:hover {
-    background-color: #20252c;
+    /* background-color: #1D232A; */
+    color: #4DB1FF;
   }
 
  
@@ -181,11 +182,11 @@ nav .container-fluid .collapse {
 
 @media (max-width: 799px) {
   .dark-mode #navbar {
-    background-color: transparent;
+    /* background-color: transparent; */
   }
 
   nav {
-    border-radius: 5%;
+    /* border-radius: 5%; */
   }
 
   .navbar-toggler {
@@ -209,7 +210,6 @@ nav .container-fluid .collapse {
   }
 
   .dark-mode .container-fluid {
-    border-radius: 5px;
     width: 90% !important;
     padding: 0.5em 0.5em;
   }
@@ -225,12 +225,12 @@ nav .container-fluid .collapse {
   }
 
   .dark-mode .nav-ul {
-    background-color: transparent;
+    /* background-color: transparent; */
   }
 
   .dark-mode #n2 {
     color: white;
-    background-color: #20252c;
+    background-color: #1D232A;
   }
 
   #n2 {
@@ -251,22 +251,22 @@ nav .container-fluid .collapse {
     display: block;
     margin-bottom: 5px;
     padding: 5px 15px;
-    border-radius: 20px;
     background-color: #f0f0f0;
     color: black;
   }
 
   .nav-ul:hover {
-    background-color: #e0e0e0;
+    /* background-color: #e0e0e0; */
   }
 
   .dark-mode .nav-ul {
     color: white;
-    background-color: #20252c;
+    background-color: #1D232A;
   }
 
   .dark-mode .nav-ul:hover {
-    background-color: #20252c;
+    /* background-color: #1D232A; */
+    color: #4DB1FF;
   }
   .navbar li {
     width: 100% !important;
