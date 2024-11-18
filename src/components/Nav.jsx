@@ -4,7 +4,7 @@ import logoblack from "@assets/ok_white_bgsvg.svg";
 import "@styles/Nav.css";
 import { NavLink, useLocation } from "react-router-dom";
 import { useDarkMode } from "../buttons/DarkModeProvider";
-import { FaHome, FaUser, FaLaptopCode, FaEnvelope } from "react-icons/fa";
+import { FaHome, FaUser,FaBrain, FaLaptopCode, FaEnvelope } from "react-icons/fa";
 
 const Nav = () => {
   const location = useLocation();
@@ -72,7 +72,7 @@ const Nav = () => {
               {location.pathname === "/aplicaciones" ? null : (
                 <li className="nav-item ">
                   <a className="nav-link " href="#habilidades">
-                    Habilidades
+                  <FaBrain style={{ marginRight: '5px' }}/> Habilidades
                   </a>
                 </li>
               )}
