@@ -37,11 +37,10 @@ export default function App() {
     const cachedData = localStorage.getItem(cacheKey);
     
     if (cachedData) {
-      // Si los datos están en caché, actualiza el estado con los datos de caché
       if (repoName === "TableExportJS") setLastUpdatedData1(cachedData);
       if (repoName === "autenticate") setLastUpdatedData2(cachedData);
       if (repoName === "generatepassword") setLastUpdatedData3(cachedData);
-      return; // No hace falta hacer la llamada a la API
+      return;
     }
 
     try {
@@ -50,7 +49,6 @@ export default function App() {
       const data = await response.json();
       if (!data.message) {
         const formattedDate = fechaFormateada(new Date(data.pushed_at));
-        // Guarda los datos en localStorage y en el estado
         localStorage.setItem(cacheKey, formattedDate);
         if (repoName === "TableExportJS") setLastUpdatedData1(formattedDate);
         if (repoName === "autenticate") setLastUpdatedData2(formattedDate);
@@ -72,7 +70,15 @@ export default function App() {
     return format(date, "d 'de' MMMM 'de' yyyy, h:mm:ss a", { locale: es });
   };
 
-  const Card = ({ imgSrc, title, text, lastUpdatedData, onClick }) => {
+  const Card = ({ 
+    imgSrc, 
+    title, 
+    text, 
+    lastUpdatedData, 
+    onCardClick, 
+    projectUrl, 
+    buttonText = "Ir al Proyecto" 
+  }) => {
     const [hover, setHover] = useState(false);
 
     const cardStyle = {
@@ -85,6 +91,7 @@ export default function App() {
       height: "100%",
       display: "flex",
       flexDirection: "column",
+      cursor: "pointer", // Añadido para indicar que la card es clickeable
     };
 
     const hoverCardStyle = {
@@ -96,13 +103,47 @@ export default function App() {
       __html: text,
     };
 
+    const buttonStyle = {
+      background: 'rgba(255,255,255,0.1)', 
+      color: '#64ffda', 
+      border: 'none',
+      padding: '8px 15px',
+      borderRadius: '5px',
+      cursor: 'pointer',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      transition: 'all 0.3s ease',
+      width: '100%',
+      marginTop: '10px', // Añadido para separar un poco del texto
+    };
+
+    const handleCardClick = (e) => {
+      // Verificar que el click no sea en el botón
+      if (e.target.closest('button')) return;
+      
+      // Si hay un manejador de click para la card, ejecutarlo
+      if (onCardClick) {
+        onCardClick();
+      }
+    };
+
+    const handleButtonClick = (e) => {
+      // Prevenir que el evento de click se propague a la card
+      e.stopPropagation();
+      
+      if (projectUrl) {
+        window.open(projectUrl, '_blank', 'noopener,noreferrer');
+      }
+    };
+
     return (
       <MDBCard
         className="h-100 MDBCard"
         style={hover ? { ...cardStyle, ...hoverCardStyle } : cardStyle}
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
-        onClick={onClick}
+        onClick={handleCardClick}
       >
         <MDBCardImage
           src={imgSrc}
@@ -122,6 +163,16 @@ export default function App() {
             dangerouslySetInnerHTML={formattedText}
             style={{ flex: 1, fontSize: "1rem", lineHeight: "1.5" }}
           />
+          <div style={{ marginTop: 'auto', width: '100%' }}>
+            <button
+              style={buttonStyle}
+              onClick={handleButtonClick}
+              onMouseEnter={(e) => e.target.style.background = 'rgba(255,255,255,0.2)'}
+              onMouseLeave={(e) => e.target.style.background = 'rgba(255,255,255,0.1)'}
+            >
+              {buttonText} <FaExternalLinkAlt style={{ marginLeft: '5px' }} />
+            </button>
+          </div>
         </MDBCardBody>
         <MDBCardFooter style={{ background: "rgba(255,255,255,0.1)", borderTop: "none" }}>
           <small style={{ color: "#a8b2d1" }}>{`Actualizado: ${lastUpdatedData}`}</small>
@@ -142,34 +193,31 @@ export default function App() {
             <Card
               imgSrc={imgtablaExport}
               title="TableExportJS"
-              text={`Herramienta para exportar tablas en diversos formatos. <br/><br/>
-              <a href="https://table-export-js-4zq5.vercel.app" target="_blank" rel="noopener noreferrer" style="color: #64ffda; text-decoration: none;">
-                Visitar aplicación <FaExternalLinkAlt style="margin-left: 5px;" />
-              </a>`}
+              text={`Herramienta para exportar tablas en diversos formatos.`}
               lastUpdatedData={lastUpdatedData1}
-              onClick={() => setModals({ tableExport: true })}
+              onCardClick={() => setModals({ tableExport: true })}
+              projectUrl="https://table-export-js-4zq5.vercel.app"
+              buttonText="Explorar Herramienta"
             />
           </MDBCol>
           <MDBCol>
             <Card
               imgSrc={login}
               title="Autenticación JWT"
-              text={`Implementación de login seguro con JSON Web Tokens. <br/><br/>
-              <a href="https://autenticate.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: #64ffda; text-decoration: none;">
-                Probar aplicación <FaExternalLinkAlt style="margin-left: 5px;" />
-              </a>`}
+              text={`Implementación de login seguro con JSON Web Tokens.`}
               lastUpdatedData={lastUpdatedData2}
+              projectUrl="https://autenticate.vercel.app/"
+              buttonText="Probar Login"
             />
           </MDBCol>
           <MDBCol>
             <Card
               imgSrc={generatePassword}
               title="Generador de Contraseñas"
-              text={`Crea contraseñas seguras con parámetros personalizables. <br/><br/>
-              <a href="https://generatepassword-theta.vercel.app/" target="_blank" rel="noopener noreferrer" style="color: #64ffda; text-decoration: none;">
-                Generar contraseña <FaExternalLinkAlt style="margin-left: 5px;" />
-              </a>`}
+              text={`Crea contraseñas seguras con parámetros personalizables.`}
               lastUpdatedData={lastUpdatedData3}
+              projectUrl="https://generatepassword-theta.vercel.app/"
+              buttonText="Generar Contraseña"
             />
           </MDBCol>
         </MDBRow>
