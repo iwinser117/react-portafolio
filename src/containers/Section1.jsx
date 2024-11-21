@@ -142,6 +142,8 @@ export default function App() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 transition: 'all 0.3s ease',
+                width: '100%',
+                marginTop: '10px',
               }}
               onMouseEnter={(e) => e.target.style.background = '#000000'}
               onMouseLeave={(e) => e.target.style.background = '#323330'}
@@ -156,7 +158,7 @@ export default function App() {
       </MDBCard>
     </MDBCol>
   );
-  
+
 
   return (
     <div>

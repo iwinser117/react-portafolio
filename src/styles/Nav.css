@@ -22,13 +22,15 @@ nav .container-fluid .collapse {
     width: 100%;
   } */
 
+    
   .nav-ul {
     z-index: inherit;
     height: 40px;
-    /* width: 100%; */
+    width: 90%;
+    display: flex;
     justify-content: flex-start;
     position: relative;
-    margin-left: 50px;
+    align-items: center;
     background-color: #f0f0f0;
     transition: background-color 0.3s ease;
     margin: auto;
@@ -177,6 +179,17 @@ nav .container-fluid .collapse {
     color: #4DB1FF;
   }
 
+  #navbar {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    height: 50px;
+    background-color: #f0f0f0;
+    transition: all 0.3s ease;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
  
 }
 
