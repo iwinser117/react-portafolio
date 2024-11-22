@@ -152,7 +152,7 @@ export default function App() {
             </button>
           </div>
         </MDBCardBody>
-        <MDBCardFooter style={{ background: 'rgba(0,0,0,0.05)', borderTop: 'none' }}>
+        <MDBCardFooter style={{ background: 'rgba(0,0,0,0.05)', borderTop: 'none', fontSize: "0.8rem" }}>
           <small style={{ color: '#323330' }}>{`Actualizado: ${lastUpdatedData[repoName] || ''}`}</small>
         </MDBCardFooter>
       </MDBCard>

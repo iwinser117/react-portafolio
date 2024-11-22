@@ -44,7 +44,7 @@
     color: aliceblue !important;
   }
 
-  
+
 
   .logos-contact {
     width: 55%;
@@ -107,74 +107,6 @@ p {
   color: rgb(7, 7, 7);
 }
 
-.pdf-link p {
-  border-radius: 2rem;
-  padding: 8px;
-  box-shadow: -1px 12px 18px 3px rgba(179, 14, 14, 0.38);
-  -webkit-box-shadow: -1px 12px 18px 3px rgba(179, 14, 14, 0.38);
-  -moz-box-shadow: -1px 12px 18px 3px rgba(179, 14, 14, 0.38);
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.git-link p {
-  border-radius: 2rem;
-  padding: 8px;
-  box-shadow: -1px 12px 18px 3px rgba(117, 19, 126, 0.38);
-  -webkit-box-shadow: -1px 12px 18px 3px rgba(117, 19, 126, 0.38);
-  -moz-box-shadow: -1px 12px 18px 3px rgba(117, 19, 126, 0.38);
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.linkedin-link p {
-  border-radius: 2rem;
-  padding: 8px;
-  margin: auto;
-  box-shadow: -1px 12px 18px 3px rgba(28, 34, 208, 0.38);
-  -webkit-box-shadow: -1px 12px 18px 3px rgba(28, 34, 208, 0.38);
-  -moz-box-shadow: -1px 12px 18px 3px rgba(28, 34, 208, 0.38);
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.dark-mode .pdf-link p {
-  border-radius: 2rem;
-  padding: 8px;
-  box-shadow: none;
-}
-
-.dark-mode .git-link p {
-  border-radius: 2rem;
-  padding: 8px;
-  box-shadow: none;
-}
-
-.dark-mode .linkedin-link p {
-  border-radius: 2rem;
-  padding: 8px;
-  margin: auto;
-  box-shadow: none;
-}
-.linkedin-link p:hover, 
-.git-link p:hover, 
-.pdf-link p:hover {
-  box-shadow: -1px 12px 18px -6px rgba(109, 109, 109, 0.38);
-  -webkit-box-shadow: -1px 12px 18px 8px rgba(73, 73, 73, 0.38);
-  -moz-box-shadow: -1px 12px 18px -6px rgba(85, 85, 85, 0.38);
-  transition: box-shadow 0.5s ease-in-out;
-}
-.dark-mode .linkedin-link p:hover, 
-.dark-mode .git-link p:hover, 
-.dark-mode .pdf-link p:hover {
-  box-shadow: -1px 2px 8px -2px rgba(237, 237, 238, 0.38);
-  -webkit-box-shadow: -1px 2px 8px 8px rgba(226, 226, 226, 0.38);
-  -moz-box-shadow: -1px 2px 8px -6px rgba(226, 226, 226, 0.38);
-  transition: box-shadow 0.5s ease-in-out;
-}
-
-
-
 .dark-mode .certificados-iconos ul {
   box-shadow: -1px 12px 18px -6px rgba(239, 239, 239, 0.38);
   -webkit-box-shadow: -1px 12px 18px -6px rgba(234, 234, 234, 0.38);
@@ -198,13 +130,16 @@ p {
   flex-direction: column;
   align-content: flex-start;
 }
+
 .experiencia h4 {
   font-size: 2rem;
   font-weight: bold;
 }
+
 .cert-container {
   margin-top: 3rem;
 }
+
 .imagenes-exp {
   margin: 12px;
   box-shadow: -1px 12px 18px -6px rgba(239, 239, 239, 0.38);
@@ -220,7 +155,7 @@ p {
   grid-auto-rows: minmax(240px, auto);
   grid-gap: 20px;
   padding: 10px;
-  
+
 }
 
 .image-item {
@@ -228,11 +163,13 @@ p {
   background: #2b2b2b;
   border-radius: 12px;
 }
+
 .image-item:hover .image-overlay {
   opacity: 1;
 
   border-radius: 12px;
 }
+
 .image-overlay {
   position: absolute;
   top: 0;
@@ -245,18 +182,22 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  opacity: 0; /* Comienza oculto */
+  opacity: 0;
+  /* Comienza oculto */
   transition: opacity 0.3s ease;
 }
+
 .imgActual3 {
   width: 100%;
   height: 240px;
   object-fit: contain;
 }
+
 .nav-link {
   color: white;
   text-decoration: none;
 }
+
 .name-alt {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
@@ -264,4 +205,103 @@ p {
   width: 100%;
   padding: 10px;
   margin: 0;
+}
+
+
+.dark-mode .pdf-link p,
+.dark-mode .git-link p,
+.dark-mode .linkedin-link p {
+  border-radius: 0.25rem;
+  /* SAP Fiori tiene bordes más sutiles */
+  padding: 8px;
+  /* Espaciado proporcional */
+  background-color: #2a2a2a;
+  /* Color oscuro para fondo en modo oscuro */
+  color: #ffffff;
+  /* Texto en color claro */
+  font-family: "SAP Fiori", sans-serif;
+  /* Fuente sugerida */
+  font-size: 14px;
+  /* Tamaño estándar de texto */
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+  /* Sombra ligera */
+  border: 1px solid #0a6ed1;
+  /* Borde tenue para contraste */
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-right: 10px;
+}
+
+.dark-mode .pdf-link p:hover,
+.dark-mode .git-link p:hover,
+.dark-mode .linkedin-link p:hover {
+  background-color: #0a6ed1;
+  /* Color azul SAP Fiori */
+  color: #ffffff;
+  /* Mantén el texto claro */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-color: #0a6ed1;
+  /* Cambia el color del borde */
+}
+
+.pdf-link p,
+.git-link p,
+.linkedin-link p {
+  border-radius: 0.25rem;
+  padding: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid #6a6d70;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  cursor: pointer;
+}
+
+.pdf-link p {
+  border-radius: 0.4rem;
+  background-color: #f9e5e5;
+  color: #b32020;
+  border: 1px solid rgba(179, 32, 32, 0.2);
+}
+
+.pdf-link p:hover {
+  background-color: #f3d6d6;
+  box-shadow: 0 4px 6px rgba(179, 32, 32, 0.2);
+  transform: translateY(-1px);
+}
+
+.git-link p {
+  border-radius: 0.4rem;
+  background-color: #f4e5f9;
+  color: #75137e;
+  border: 1px solid rgba(117, 19, 126, 0.2);
+}
+
+.git-link p:hover {
+  background-color: #ecd6f3;
+  box-shadow: 0 4px 6px rgba(117, 19, 126, 0.2);
+  transform: translateY(-1px);
+}
+
+.linkedin-link p {
+  border-radius: 0.4rem;
+  background-color: #e5e9f9;
+  color: #1c22d0;
+  border: 1px solid rgba(28, 34, 208, 0.2);
+}
+
+.linkedin-link p:hover {
+  background-color: #d6e0f3;
+  box-shadow: 0 4px 6px rgba(28, 34, 208, 0.2);
+  transform: translateY(-1px);
+}
+
+.pdf-link p:hover,
+.git-link p:hover,
+.linkedin-link p:hover {
+  transition: all 0.3s ease-in-out;
 }

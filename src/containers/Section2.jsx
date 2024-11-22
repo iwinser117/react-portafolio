@@ -18,6 +18,8 @@ import { FaNodeJs, FaExternalLinkAlt } from 'react-icons/fa';
 import TableExport from "@codigoProyectos/TableExport";
 
 import generatePassword from "@assets/generatePassword.webp";
+import odontoweb from "@assets/odontoweb.webp";
+import imgdevist from "@assets/imgdevist.webp";
 import imgtablaExport from "../assets/imgtablaExport.png";
 import login from "../assets/login.png";
 
@@ -28,18 +30,22 @@ export default function App() {
   const [lastUpdatedData1, setLastUpdatedData1] = useState("");
   const [lastUpdatedData2, setLastUpdatedData2] = useState("");
   const [lastUpdatedData3, setLastUpdatedData3] = useState("");
+  const [lastUpdatedData4, setLastUpdatedData4] = useState("");
+  const [lastUpdatedData5, setLastUpdatedData5] = useState("");
 
   const owner = "iwinser117";
-  const repositories = ["TableExportJS", "autenticate", "generatepassword"];
+  const repositories = ["TableExportJS", "autenticate", "generatepassword", 'odonto_web', 'reservas'];
 
   const fetchData = async (repoName) => {
     const cacheKey = `lastUpdatedData-${repoName}`;
     const cachedData = localStorage.getItem(cacheKey);
-    
+
     if (cachedData) {
       if (repoName === "TableExportJS") setLastUpdatedData1(cachedData);
       if (repoName === "autenticate") setLastUpdatedData2(cachedData);
       if (repoName === "generatepassword") setLastUpdatedData3(cachedData);
+      if (repoName === "odonto_web") setLastUpdatedData4(cachedData);
+      if (repoName === "reservas") setLastUpdatedData5(cachedData);
       return;
     }
 
@@ -53,6 +59,8 @@ export default function App() {
         if (repoName === "TableExportJS") setLastUpdatedData1(formattedDate);
         if (repoName === "autenticate") setLastUpdatedData2(formattedDate);
         if (repoName === "generatepassword") setLastUpdatedData3(formattedDate);
+        if (repoName === "odonto_web") setLastUpdatedData4(formattedDate);
+        if (repoName === "reservas") setLastUpdatedData5(formattedDate);
       }
     } catch (error) {
       console.error(`Error al obtener información del repositorio ${repoName}`, error);
@@ -70,14 +78,14 @@ export default function App() {
     return format(date, "d 'de' MMMM 'de' yyyy, h:mm:ss a", { locale: es });
   };
 
-  const Card = ({ 
-    imgSrc, 
-    title, 
-    text, 
-    lastUpdatedData, 
-    onCardClick, 
-    projectUrl, 
-    buttonText = "Ir al Proyecto" 
+  const Card = ({
+    imgSrc,
+    title,
+    text,
+    lastUpdatedData,
+    onCardClick,
+    projectUrl,
+    buttonText = "Ir al Proyecto"
   }) => {
     const [hover, setHover] = useState(false);
 
@@ -104,8 +112,8 @@ export default function App() {
     };
 
     const buttonStyle = {
-      background: 'rgba(255,255,255,0.1)', 
-      color: '#64ffda', 
+      background: 'rgba(255,255,255,0.1)',
+      color: '#64ffda',
       border: 'none',
       padding: '8px 15px',
       borderRadius: '5px',
@@ -121,7 +129,7 @@ export default function App() {
     const handleCardClick = (e) => {
       // Verificar que el click no sea en el botón
       if (e.target.closest('button')) return;
-      
+
       // Si hay un manejador de click para la card, ejecutarlo
       if (onCardClick) {
         onCardClick();
@@ -131,7 +139,7 @@ export default function App() {
     const handleButtonClick = (e) => {
       // Prevenir que el evento de click se propague a la card
       e.stopPropagation();
-      
+
       if (projectUrl) {
         window.open(projectUrl, '_blank', 'noopener,noreferrer');
       }
@@ -174,7 +182,7 @@ export default function App() {
             </button>
           </div>
         </MDBCardBody>
-        <MDBCardFooter style={{ background: "rgba(255,255,255,0.1)", borderTop: "none" }}>
+        <MDBCardFooter style={{ background: "rgba(255,255,255,0.1)", borderTop: "none" ,fontSize: "0.8rem"}}>
           <small style={{ color: "#a8b2d1" }}>{`Actualizado: ${lastUpdatedData}`}</small>
         </MDBCardFooter>
       </MDBCard>
@@ -191,15 +199,25 @@ export default function App() {
         <MDBRow className="row-cols-1 row-cols-md-3 g-4">
           <MDBCol>
             <Card
-              imgSrc={imgtablaExport}
-              title="TableExportJS"
-              text={`Herramienta para exportar tablas en diversos formatos.`}
-              lastUpdatedData={lastUpdatedData1}
-              onCardClick={() => setModals({ tableExport: true })}
-              projectUrl="https://table-export-js-4zq5.vercel.app"
-              buttonText="Explorar Herramienta"
+              imgSrc={odontoweb}
+              title="OdontoWeb"
+              text={`Sitio web para presencia online de odontologos.`}
+              lastUpdatedData={lastUpdatedData4}
+              projectUrl="https://odonto-web-red.vercel.app/"
+              buttonText="Visitar sitio"
             />
           </MDBCol>
+          <MDBCol>
+            <Card
+              imgSrc={imgdevist}
+              title="Reservas D´visita"
+              text={`Sitio web que emula un sistema de reservas.`}
+              lastUpdatedData={lastUpdatedData5}
+              projectUrl="https://reservas-eta.vercel.app/"
+              buttonText="Visitar sitio"
+            />
+          </MDBCol>
+
           <MDBCol>
             <Card
               imgSrc={login}
@@ -218,6 +236,17 @@ export default function App() {
               lastUpdatedData={lastUpdatedData3}
               projectUrl="https://generatepassword-theta.vercel.app/"
               buttonText="Generar Contraseña"
+            />
+          </MDBCol>
+          <MDBCol>
+            <Card
+              imgSrc={imgtablaExport}
+              title="TableExportJS"
+              text={`Herramienta para exportar tablas en diversos formatos.`}
+              lastUpdatedData={lastUpdatedData1}
+              onCardClick={() => setModals({ tableExport: true })}
+              projectUrl="https://table-export-js-4zq5.vercel.app"
+              buttonText="Explorar Herramienta"
             />
           </MDBCol>
         </MDBRow>
