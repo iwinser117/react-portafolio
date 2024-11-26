@@ -1,8 +1,8 @@
 import Swal from "sweetalert2";
 
 const imgs = [
-  require("../assets/d4Web.jpg"),
   require("../assets/d3Soft.jpg"),
+  require("../assets/d4Web.jpg"),
   require("../assets/d2Java.jpg"),
   require("../assets/d1Python.jpg"),
   require('../assets/fullstack.jpg'),
