@@ -19,11 +19,15 @@ function mostrarDiploma(idImg) {
 
   Swal.fire({
     imageUrl: imgElement.src,
-    image: imgElement,
-    imageWidth: 1200,
-    width: 600,
-    imageHeight: 400,
-    imageAlt: "Custom image",
+    imageWidth: 600,  
+    imageHeight: 400, 
+    imageAlt: 'Diploma', 
+    showCloseButton: true, 
+    customClass: {
+      popup: 'modal-content',
+      image: 'modal-image' 
+    },
+    showConfirmButton: false, 
   });
 }
 

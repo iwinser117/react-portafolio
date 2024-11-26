@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import mostrarDiploma from "../utils/modalDiploma.js";
 import GridExperiencia from "./AcercaExperiencias";
+import Certifications from "./Certifications.jsx";
 import "@styles/acerca.css";
 
 const Acerca = () => {
@@ -91,6 +92,7 @@ const Acerca = () => {
           </section>
         </main>
       </section>
+      
       <article className="cert-container">
         <h4>Certificaciones</h4>
         <p>
@@ -102,89 +104,8 @@ const Acerca = () => {
           estudio en línea Platzi y recursos a mi disposición.
         </p>
       </article>
-      <div className="certificados-iconos container-sm w-50">
-        <ul className="list-group">
-          <li className="list-group-item list-group-item-action">
-            <p>
-              Diplomado en Desarrollo de Software
-              <br />
-              <i className="fa-solid fa-trophy icon-li"></i> MisionTic2022
-              <a
-                id="1"
-                href="#ViewCertficado"
-                onClick={(e) => handleClick(e)}
-                aria-label="Ver certificado del Diplomado en Desarrollo de Software"
-              >
-                <i className="fa-regular fa-eye"></i>
-              </a>
-            </p>
-          </li>
-          <li className="list-group-item list-group-item-action">
-            <p>
-              Diplomado en Desarrollo de Aplicaciones Web
-              <br />
-              <i className="fa-solid fa-trophy icon-li"></i> MisionTic2022
-              <a
-                id="0"
-                href="#ViewCertficado"
-                onClick={(e) => handleClick(e)}
-                aria-label="Ver certificado del Diplomado en Desarrollo de Aplicaciones Web"
-              >
-                <i className="fa-regular fa-eye"></i>
-              </a>
-            </p>
-          </li>
-          <li className="list-group-item list-group-item-action">
-            <p>
-              Diplomado en Programación Básica Lenguaje Java
-              <br />
-              <i className="fa-solid fa-trophy icon-li"></i> MisionTic2022
-              <a
-                id="2"
-                href="#ViewCertficado"
-                onClick={(e) => handleClick(e)}
-                aria-label="Ver certificado del Diplomado en Programación Básica Lenguaje Java"
-              >
-                <i className="fa-regular fa-eye"></i>
-              </a>
-            </p>
-          </li>
-        </ul>
-
-        <ul
-          className="mostrarList list-group "
-          id="mostrarList"
-          style={{ display: isVisible ? "block" : "none" }}
-        >
-          <li className="list-group-item list-group-item-action" id="7">
-            <p>
-              Diplomado Fundamentos de Programaci&oacute;n en Lenguaje Python
-              <br />
-              <i className="fa-solid fa-trophy icon-li "></i>&nbsp;MisionTic2022{" "}
-              <a id="3" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
-                <i className="fa-regular fa-eye"></i>
-              </a>
-            </p>
-          </li>
-          <li className="list-group-item list-group-item-action">
-            <p>
-              Full Stack Developer con JavaScript
-              <br />
-              <i className="fa-solid fa-trophy icon-li"></i>&nbsp;Platzi &nbsp;
-              &nbsp;
-              <a id="4" href="#ViewCertficado" onClick={(e) => handleClick(e)}>
-                <i className="fa-regular fa-eye"></i>
-              </a>
-            </p>
-          </li>
-        </ul>
-        <button
-          onClick={toggleVisibility}
-          className="btn btn-light position-relative bottom-0  start-50 m-2"
-        >
-          {isVisible ? "Ver menos" : "Ver mas"}
-        </button>
-      </div>
+    
+      <Certifications/>
     </section>
   );
 };
