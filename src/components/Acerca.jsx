@@ -65,13 +65,9 @@ const Acerca = () => {
           <span>Iwinser Sanchez</span>
         </h3>
         <p>
-          Un gusto que estés aquí. Desde la secundaria me he interesado por la
-          tecnología y todo lo que respecta al Software, empece por indagar
-          sobre lo que corre detrás de las aplicaciones y como se hacen estas.
-          Luego de entender cual es la estructura de una aplicación continue de
-          forma autodidacta en la ruta de aprendizaje para el dia de hoy hacer
-          software de calidad y en mi mejora continua.
+          ¡Bienvenido! Mi interés por la tecnología y el desarrollo de software comenzó desde mis años en la secundaria, cuando empecé a explorar cómo funcionan las aplicaciones y qué hay detrás de ellas. Este interés me llevó a profundizar en su estructura y funcionamiento, adoptando un enfoque autodidacta que hasta hoy me impulsa a crear software de alta calidad. Mi compromiso es con la mejora continua y con soluciones que marcan la diferencia.
         </p>
+
       </article>
       <section className="container-experiencia">
         <main>
@@ -92,7 +88,7 @@ const Acerca = () => {
           </section>
         </main>
       </section>
-      
+
       <article className="cert-container">
         <h4>Certificaciones</h4>
         <p>
@@ -104,8 +100,8 @@ const Acerca = () => {
           estudio en línea Platzi y recursos a mi disposición.
         </p>
       </article>
-    
-      <Certifications/>
+
+      <Certifications />
     </section>
   );
 };
