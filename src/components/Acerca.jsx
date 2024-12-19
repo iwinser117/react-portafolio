@@ -73,12 +73,24 @@ const Acerca = () => {
         <main>
           <h4>Experiencia</h4>
           <section>
-            <div className="experiencia">
-              <h5>SAP Consultor BTP NEO - CF</h5>
+            <div className="experiencia-detail">
+              <h5>SAP Consultor BTP - MQA Suramérica</h5>
               <ul>
                 <li>Enero 2023 - Actualmente</li>
+                <li>Desarrollo de aplicaciones en SAP BTP con CAP y UI5.</li>
+                <li>Integración con SAP Fiori y SAP S/4HANA.</li>
+                <li>Soluciones en la nube para optimizar procesos empresariales.</li>
+              </ul>
+              <h5>Desarrollador Fullstack JavaScript</h5>
+              <ul>
+                <li>Marzo 2020 - Actualmente (Proyectos propios)</li>
+                <li>Desarrollo de aplicaciones con React, Node.js y MongoDB.</li>
+                <li>Creación de interfaces responsivas y accesibles.</li>
+                <li>Integración de APIs RESTful y autenticación segura.</li>
               </ul>
             </div>
+
+
             <div className="experiencia">
               <h4 className="encabezado">Proyectos Personales</h4>
               <div>

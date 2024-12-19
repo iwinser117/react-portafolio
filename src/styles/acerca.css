@@ -130,6 +130,35 @@ p {
   flex-direction: column;
   align-content: flex-start;
 }
+.experiencia-detail {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.5;
+}
+.experiencia-detail h5 {
+  font-size: 1.25rem;
+  color: #0a6ed1; /* Azul estilo SAP */
+  margin-bottom: 10px;
+}
+
+.experiencia-detail ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.experiencia-detail ul li {
+  margin-bottom: 5px;
+}
+.dark-mode .experiencia-detail h5 {
+  color: white
+}
+.dark-mode .experiencia-detail {
+  color: white;
+}
 
 .experiencia h4 {
   font-size: 2rem;
