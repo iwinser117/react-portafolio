@@ -11,13 +11,6 @@ const Fomulario = () => {
   const verForm = () => {
     setViewForm(!viewForm)
   }
-  /* const handleChange = (e) => {
-    console.log(e.target.value)
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  } */
 
   const form = useRef()
   const sendEmail = (e) => {
@@ -57,7 +50,7 @@ const Fomulario = () => {
           {viewForm ? (
             <img src={formLogo2} alt="logo formulario" width="32px" />
           ) : (
-            <img src={formLogo} alt="logo formulario" width="32px" className="mb-4"/>
+            <img src={formLogo} alt="logo formulario" width="32px" className="mb-4" />
           )}
         </div>
         <form
@@ -79,7 +72,6 @@ const Fomulario = () => {
               Nombre:
             </label>
             <input
-              // onChange={(e) => handleChange(e)}
               type="text"
               className="form-control"
               id="user_name"
@@ -93,7 +85,6 @@ const Fomulario = () => {
               Email:
             </label>
             <input
-              // onChange={(e) => handleChange(e)}
               type="email"
               className="form-control"
               id="user_email"
@@ -108,7 +99,6 @@ const Fomulario = () => {
             </label>
             <input
               name="asunto"
-              // onChange={(e) => handleChange(e)}
               type="text"
               className="form-control"
               id="asunto"
@@ -122,13 +112,12 @@ const Fomulario = () => {
             </label>
             <textarea
               name="message"
-              // onChange={(e) => handleChange(e)}
               className="form-control"
               id="message"
               rows="3"
             ></textarea>
           </div>
-          <button type="submit" className="btn btn-success m-auto d-block color-letra">
+          <button type="submit" className="btn m-auto d-block color-letra  btn-primary">
             Enviar
           </button>
         </form>
