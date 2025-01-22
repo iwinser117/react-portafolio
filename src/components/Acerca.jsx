@@ -92,15 +92,16 @@ const Acerca = () => {
             </div>
 
 
-            <div className="experiencia">
-              <h4 className="encabezado">Proyectos Personales</h4>
-              <div>
-                <GridExperiencia />
-              </div>
-            </div>
+            
           </section>
         </main>
       </section> */}
+      <div className="experiencia">
+        <h4 className="encabezado">Proyectos Personales</h4>
+        <div>
+          <GridExperiencia />
+        </div>
+      </div>
 
       <article className="cert-container">
         <h4>Certificaciones</h4>
