@@ -82,6 +82,9 @@
     justify-items: center !important;
     position: relative;
   }
+  .iwinserPerfil {  
+    width: 35%;
+  }
 }
 
 /* Estilos para pantallas medianas */
@@ -92,6 +95,9 @@
     display: block;
     justify-items: center !important;
     position: relative;
+  }
+  .iwinserPerfil {  
+    width: 35%;
   }
 }
 

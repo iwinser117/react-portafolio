@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { MDBIcon } from "mdb-react-ui-kit";
 import "@styles/Banner.css";
 import iwinserPerfil from "@assets/iwinserPerfil.webp";
@@ -9,20 +9,20 @@ const Banner = () => {
     <section className="sectionbanner">
       <div className="d-flex justify-content-around align-items-center p-2 container banner">
         <div className="iwinserPerfil">
-        <div 
-            className={`image-placeholder ${imageLoaded ? 'loaded' : ''}`}
+          <div
+            className={`image-placeholder ${imageLoaded ? "loaded" : ""}`}
             style={{
-              backgroundColor: '#f0f0f0'
+              backgroundColor: "#f0f0f0",
             }}
           >
-            <img 
-              src={iwinserPerfil} 
-              alt="Perfil" 
+            <img
+              src={iwinserPerfil}
+              alt="Perfil"
               loading="lazy"
               onLoad={() => setImageLoaded(true)}
               style={{
                 opacity: imageLoaded ? 1 : 0,
-                transition: 'opacity 0.3s ease-in-out'
+                transition: "opacity 0.3s ease-in-out",
               }}
             />
           </div>
@@ -31,9 +31,10 @@ const Banner = () => {
           <h4 className="text-center nametitle">Iwinser Sanchez</h4>
           <h2 className="text-center">FullStack Developer JavaScript</h2>
           <p className="text-center">
-            Desarrollador de software full-stack con experiencia en JavaScript y pasión por crear
-            sitios web atractivos, funcionales y optimizados. Especializado en soluciones web
-            innovadoras y experiencias de usuario excepcionales.
+            Desarrollador de software full-stack con experiencia en JavaScript y
+            pasión por crear sitios web atractivos, funcionales y optimizados.
+            Especializado en soluciones web innovadoras y experiencias de
+            usuario excepcionales.
           </p>
           <div className="logos-contact m-auto">
             <div className="card-body d-flex logos-contact">
