@@ -31,30 +31,46 @@
   z-index: 1;
 }
 
+.iwinserPerfil {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.iwinserPerfil::before, 
+.iwinserPerfil::after {
+  content: ''; 
+  position: absolute; 
+  left: 0; 
+  right: 0; 
+  height: 250px; 
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.06) 0%, transparent 50%); 
+  z-index: 2; 
+}
+
 .iwinserPerfil::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.06) 0%, transparent 50%);
-  transform: skewY(-5deg);
-  transform-origin: top left;
-  z-index: 2;
+  top: 0; 
+  transform: skewY(-5deg); 
+  transform-origin: top left; 
 }
 
 .iwinserPerfil::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background: linear-gradient(-45deg, rgba(0, 0, 0, 0.06) 0%, transparent 50%);
-  transform: skewY(5deg);
-  transform-origin: bottom right;
-  z-index: 2;
+  bottom: 0; 
+  background: linear-gradient(-45deg, rgba(0, 0, 0, 0.06) 0%, transparent 50%); 
+  transform: skewY(5deg); 
+  transform-origin: bottom right; 
+}
+
+.iwinserPerfil:hover::before {
+  background: linear-gradient(135deg, rgba(33, 33, 33, 0.06) 0%, transparent 50%);
+  transform: skewY(-5deg) translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.iwinserPerfil:hover::after {
+  background: linear-gradient(-45deg, rgba(33, 33, 33, 0.06) 0%, transparent 50%);
+  transform: skewY(5deg) translateY(10px); 
+  transition: all 0.3s ease;
 }
 
 /* Estilo para tema oscuro */
@@ -83,7 +99,7 @@
     position: relative;
   }
   .iwinserPerfil {  
-    width: 35%;
+    width: 30%;
   }
 }
 
