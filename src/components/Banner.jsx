@@ -11,9 +11,6 @@ const Banner = () => {
         <div className="iwinserPerfil">
           <div
             className={`image-placeholder ${imageLoaded ? "loaded" : ""}`}
-            style={{
-              backgroundColor: "#f0f0f0",
-            }}
           >
             <img
               src={iwinserPerfil}
@@ -29,47 +26,47 @@ const Banner = () => {
         </div>
         <div className="p-2 w-75">
           <h4 className="text-center nametitle">Iwinser Sanchez</h4>
-          <h2 className="text-center">FullStack Developer JavaScript</h2>
+          <h2 className="text-center">Desarrollador FullStack</h2>
           <p className="text-center">
-            Desarrollador de software full-stack con experiencia en JavaScript y
-            pasión por crear sitios web atractivos, funcionales y optimizados.
-            Especializado en soluciones web innovadoras y experiencias de
-            usuario excepcionales.
+          Experiencia en JavaScript y <br />desarrollo web front-end y back-end.
           </p>
           <div className="logos-contact m-auto">
             <div className="card-body d-flex logos-contact">
-              <a
-                className="pdf-link"
-                download="CurriculumDeveloperIwinserSanchez"
-                href="../assets/IwinserSanchez.pdf"
-                aria-label="Descargar currículum en formato PDF"
-              >
-                <p>
-                  <MDBIcon far icon="file-pdf" size="2x" />
-                </p>
-              </a>
-              <a
-                className="git-link"
-                href="https://github.com/iwinser117"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visitar perfil de GitHub"
-              >
-                <p>
-                  <MDBIcon fab icon="github" size="2x" />
-                </p>
-              </a>
-              <a
-                className="linkedin-link"
-                href="https://www.linkedin.com/in/iwinser-aljadys-sanchez-0a62a0234/?originalSubdomain=co"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visitar perfil de LinkedIn"
-              >
-                <p>
-                  <MDBIcon fab icon="linkedin" size="2x" />
-                </p>
-              </a>
+            <div className="card-body d-flex cont-int-aside">
+                <a
+                  className="git-link"
+                  href="https://github.com/iwinser117"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p>
+                    <i className="fa-brands fa-github  "></i><br /> GitHub
+                  </p>
+                </a>
+              </div>
+              <div className="card-body d-flex cont-int-aside">
+                <a
+                  className="linkedin-link"
+                  href="https://www.linkedin.com/in/iwinser-aljadys-sanchez-0a62a0234/?originalSubdomain=co"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <p>
+                    <i className="fa-brands fa-linkedin "></i><br /> Linkedin
+                  </p>
+                </a>
+              </div>
+              <div className="card-body d-flex cont-int-aside">
+                <a
+                  className="pdf-link"
+                  download="CurriculumDeveloperIwinserSanchez"
+                  href="../assets/IwinserSanchez.pdf  "
+                >
+                  <p>
+                    <i className="fa-solid fa-file-pdf "></i><br /> Curriculum
+                  </p>
+                </a>
+              </div>
             </div>
           </div>
         </div>
