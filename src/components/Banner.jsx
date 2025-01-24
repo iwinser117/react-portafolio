@@ -24,7 +24,7 @@ const Banner = () => {
             />
           </div>
         </div>
-        <div className="p-2 w-75">
+        <div className="p-2">
           <h4 className="text-center nametitle">Iwinser Sanchez</h4>
           <h2 className="text-center">Desarrollador FullStack</h2>
           <p className="text-center">
@@ -40,7 +40,7 @@ const Banner = () => {
                   rel="noopener noreferrer"
                 >
                   <p>
-                    <i className="fa-brands fa-github  "></i><br /> GitHub
+                    <i className="fa-brands fa-github  "></i><br /> <small className="">GitHub</small>
                   </p>
                 </a>
               </div>
@@ -52,7 +52,7 @@ const Banner = () => {
                   rel="noopener noreferrer"
                 >
                   <p>
-                    <i className="fa-brands fa-linkedin "></i><br /> Linkedin
+                    <i className="fa-brands fa-linkedin "></i><br /> <small className="">Linkedin</small>
                   </p>
                 </a>
               </div>
@@ -63,7 +63,7 @@ const Banner = () => {
                   href="../assets/IwinserSanchez.pdf  "
                 >
                   <p>
-                    <i className="fa-solid fa-file-pdf "></i><br /> Curriculum
+                    <i className="fa-solid fa-file-pdf "></i><br /> <small className="">Curriculum</small>
                   </p>
                 </a>
               </div>

@@ -14,6 +14,7 @@ import relojimg from '@assets/relojimg.webp';
 import generatePassword from '@assets/generatePassword.webp';
 import css_extint from "@assets/css_extint.png";
 import rickandmorty from "@assets/rickandmorty.png";
+import odontoweb from "@assets/odontoweb.webp";
 
 
 
@@ -27,12 +28,12 @@ const imagesData = [
 ];
 
 const secondImages = [
-  { src: loginImg, alt: 'Login con JS', subtitle: 'NodeJs - ExpressJs - oAuth' },
+  { src: odontoweb, alt: 'Odonto web', subtitle:'React Next UI' },
+  { src: css_extint, alt: 'Sitio extintores' , subtitle: 'React - Css - Tailwind'},
   { src: listtareas, alt: 'CRUD Lista tareas' , subtitle: 'NodeJs - HTML - MongoDB'},
+  { src: loginImg, alt: 'Login con JS', subtitle: 'NodeJs - ExpressJs - oAuth' },
   { src: generatePassword, alt: 'Generador Contraseñas' , subtitle: 'Tailwind - NextJs'},
   { src: cimgtablaExport, alt: 'API Export', subtitle: 'NodeJs - React' },
-  { src: css_extint, alt: 'Sitio extintores' , subtitle: 'React - Css - Tailwind'},
-  { src: calcu, alt: 'Calculadora Js vanilla', subtitle:'Js Vanilla' },
 ];
 
   const imagesTodowebp = {
