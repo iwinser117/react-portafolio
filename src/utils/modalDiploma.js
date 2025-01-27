@@ -1,5 +1,3 @@
-import Swal from "sweetalert2";
-
 const imgs = [
   require("../assets/d3Soft.jpg"),
   require("../assets/d4Web.jpg"),
@@ -13,22 +11,30 @@ const imgs = [
 function mostrarDiploma(idImg) {
   if (idImg === null) return;
 
-  const imgElement = new Image();
-  imgElement.src = imgs[idImg];
-  imgElement.loading = 'lazy';
+  // Obtener el modal y la imagen dentro del modal
+  const modal = document.getElementById("diplomaModal");
+  const modalImg = document.getElementById("modalImage");
 
-  Swal.fire({
-    imageUrl: imgElement.src,
-    imageWidth: 600,  
-    imageHeight: 400, 
-    imageAlt: 'Diploma', 
-    showCloseButton: true, 
-    customClass: {
-      popup: 'modal-content',
-      image: 'modal-image' 
-    },
-    showConfirmButton: false, 
-  });
+  // Asignar la imagen al modal
+  modalImg.src = imgs[idImg];
+
+  // Mostrar el modal
+  modal.style.display = "block";
+
+  // Obtener el elemento <span> que cierra el modal
+  const span = document.getElementsByClassName("close")[0];
+
+  // Cuando el usuario hace clic en <span> (x), cerrar el modal
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+
+  // Cuando el usuario hace clic fuera de la imagen, cerrar el modal
+  modal.onclick = function(event) {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  }
 }
 
 export default mostrarDiploma;

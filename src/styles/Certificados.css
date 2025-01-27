@@ -1,133 +1,109 @@
+.dark-mode .certificados-container p {
+    color: #fff !important;
+}
+
 .certificados-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    /* Two columns */
-    gap: 16px;
-    padding: 16px;
+    padding: 8px; 
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-@media (max-width: 768px) {
-    .certificados-container {
-        /*  grid-template-columns: 2fr; /* One column on smaller screens */
-    }
+.timeline-content {
+    padding: 4px 8px; 
+    text-align: left;
 }
 
-.cert-card {
-    border: 1px solid #ccc;
-    padding: 16px;
-    text-align: center;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.cert-card:hover {
-    transform: translateY(-4px);
-}
-
-.cert-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 8px;
+.timeline-content .title {
+    font-size: 0.9rem; 
+    margin-bottom: 4px;
     color: #333;
+    font-weight: bold; 
 }
 
-.cert-card p {
-    margin-bottom: 12px;
+.timeline-content .institucion {
+    font-size: 0.8rem; 
+    margin-bottom: 4px;
     color: #666;
+}
+
+.timeline-content .fecha {
+    font-size: 0.75rem; 
+    color: #888;
+    margin-bottom: 8px;
 }
 
 .view-link {
     display: inline-block;
-  padding: 6px 12px;
-  font-size: 0.9rem;
-  background-color: #007bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+    padding: 3px 6px; 
+    font-size: 0.75rem; 
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px; 
+    transition: background-color 0.3s ease;
 }
 
 .view-link:hover {
     background-color: #0056b3;
 }
 
-/* Modal Style */
-.modal-overlay {
-    position: fixed;
-    top: 0;
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .timeline-content .title {
+        font-size: 0.85rem; 
+    }
+
+    .timeline-content .institucion {
+        font-size: 0.75rem; 
+    }
+
+    .view-link {
+        font-size: 0.7rem; 
+        padding: 2px 4px; 
+    }
+}
+
+
+
+/* modal */
+
+/* Estilos para el modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija */
+    z-index: 1; /* Encima de todo */
+    padding-top: 60px; /* Ubicación del contenido */
     left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    background: white;
-    padding: 24px;
-    border-radius: 8px;
+    overflow: auto; /* Habilitar scroll si es necesario */
+    background-color: rgb(0,0,0); /* Color de fondo */
+    background-color: rgba(0,0,0,0.9); /* Color de fondo con transparencia */
+  }
+  
+  /* Estilos para la imagen dentro del modal */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
     max-width: 600px;
-    width: 90%;
-    text-align: center;
-}
-
-.modal-content img {
-    max-width: 100%;
-    height: auto;
-    margin: 16px 0;
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.close-button {
+  }
+  
+  /* Estilos para el botón de cerrar */
+  .close {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    border: none;
-    background: none;
-    font-size: 1.5rem;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
     cursor: pointer;
-}
-
-.dark-mode .cert-card {
-    background-color: #2b2b2b;
-    border-color: #444;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.dark-mode .cert-card h3 {
-    color: #e0e0e0;
-}
-
-.dark-mode .cert-card p {
-    color: #b3b3b3;
-}
-
-.dark-mode .view-link {
-    background-color: #4d9bff;
-  color: #1a1a1a;
-}
-
-.dark-mode .view-link:hover {
-    background-color: #2979ff;
-}
-
-.dark-mode .modal-content {
-    background-color: #2b2b2b;
-    color: #f1f1f1;
-}
-
-.dark-mode .close-button {
-    color: #f1f1f1;
-}
-
-@media (max-width: 576px) {
-    .cert-card .view-link {
-      font-size: 0.8rem;
-      padding: 4px 10px;
-    }
   }
