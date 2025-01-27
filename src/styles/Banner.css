@@ -5,7 +5,7 @@
   justify-content: center;
   margin: auto;
   padding-top: 90px;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
   /* margin-top: 20px; */
 }
 
@@ -92,7 +92,7 @@
 /* Estilos para pantallas grandes */
 @media (min-width: 992px) {
   .sectionbanner {
-    min-height: 490px !important;
+    min-height: 450px !important;
     padding-top: 44px !important;
     display: block;
     justify-items: center !important;
@@ -106,7 +106,7 @@
 /* Estilos para pantallas medianas */
 @media (min-width: 768px) and (max-width: 991px) {
   .sectionbanner {
-    min-height: 490px !important;
+    min-height: 450px !important;
     padding-top: 34px !important;
     display: block;
     justify-items: center !important;
@@ -139,7 +139,7 @@
   }
 
   .sectionbanner {
-    min-height: 760px !important;
+    min-height: 260px !important;
     padding-top: 24px;
     display: block;
     justify-items: center !important;
