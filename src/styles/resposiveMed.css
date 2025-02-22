@@ -31,8 +31,7 @@ header {
 
 body {
   background-attachment: fixed;
-  background: -webkit-linear-gradient(90deg, #fff0fe, #f0fcff, #fafafa, #fffeeb);
-  background: linear-gradient(90deg, #fff0fe, #f0fcff, #fafafa, #fffeeb);
+  background-color: (255, 255, 255)
 }
 
 * p {

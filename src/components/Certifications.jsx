@@ -69,7 +69,7 @@ const Certificados = () => {
                 <p className="institucion">
                   <i className="fa-solid fa-trophy"></i> {cert.institucion}
                 </p>
-                <p className="fecha">{cert.fecha}</p>
+                {/* <p className="fecha">{cert.fecha}</p> */}
                 <button
                   className="view-link"
                   onClick={() => mostrarDiploma(cert.id)}

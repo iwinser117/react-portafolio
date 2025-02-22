@@ -2,6 +2,11 @@
 nav .container-fluid .collapse {
   justify-content: end;
 }
+
+.nav-ul a {
+  color: #354A5F;
+}
+
 .nav-link {
   display: flex !important;
   justify-items: center !important;
@@ -13,6 +18,7 @@ nav .container-fluid .collapse {
   .dark-mode #navbar {
     /* background-color: transparent; */
   }
+
   .collapse {
     position: relative;
   }
@@ -22,7 +28,7 @@ nav .container-fluid .collapse {
     width: 100%;
   } */
 
-    
+
   .nav-ul {
     z-index: inherit;
     height: 40px;
@@ -31,9 +37,10 @@ nav .container-fluid .collapse {
     justify-content: flex-start;
     position: relative;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: #F5F6F7;
     transition: background-color 0.3s ease;
     margin: auto;
+    color: #354A5F;
   }
 
   .nav-ul li {
@@ -47,14 +54,12 @@ nav .container-fluid .collapse {
     position: relative;
     display: inline-block;
     padding: 5px 15px;
-    background-color: #f0f0f0;
+    background-color: #F5F6F7;
     transition: background-color 0.3s ease;
-    color: black;
   }
 
   .nav-ul a:hover {
-    /* background-color: #e0e0e0; */
-    
+    color: #0040B0;
   }
 
   .dark-mode #navbar {
@@ -70,7 +75,7 @@ nav .container-fluid .collapse {
     position: fixed;
     top: 0;
     height: 50px;
-    background-color: #f0f0f0;
+    background-color: #F5F6F7;
     transition: all 0.3s ease;
     width: 100%;
     left: 50%;
@@ -89,7 +94,7 @@ nav .container-fluid .collapse {
 }
 
 .dark-mode .nav-ul a {
-  color: #f0f0f0;
+  color: #F5F6F7;
   background-color: #1D232A;
 }
 
@@ -141,9 +146,10 @@ nav .container-fluid .collapse {
     justify-content: flex-start;
     position: relative;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: #F5F6F7;
     transition: background-color 0.3s ease;
     margin: auto;
+    color: #354A5F;
   }
 
   .nav-ul li {
@@ -156,13 +162,12 @@ nav .container-fluid .collapse {
     position: relative;
     display: inline-block;
     padding: 5px 15px;
-    background-color: #f0f0f0;
+    background-color: #F5F6F7;
     transition: background-color 0.3s ease;
-    color: black;
   }
 
   .nav-ul a:hover {
-    /* background-color: #e0e0e0; */
+    color: #0040B0;
   }
 
   .dark-mode .container-fluid {
@@ -184,13 +189,13 @@ nav .container-fluid .collapse {
     position: fixed;
     top: 0;
     height: 50px;
-    background-color: #f0f0f0;
+    background-color: #F5F6F7;
     transition: all 0.3s ease;
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
   }
- 
+
 }
 
 @media (max-width: 799px) {
@@ -218,7 +223,7 @@ nav .container-fluid .collapse {
   }
 
   .container-fluid a {
-    color: black;
+    color: #354A5F;
     text-align: center;
   }
 
@@ -264,12 +269,12 @@ nav .container-fluid .collapse {
     display: block;
     margin-bottom: 5px;
     padding: 5px 15px;
-    background-color: #f0f0f0;
-    color: black;
+    background-color: #F5F6F7;
+    color: #354A5F;
   }
 
   .nav-ul:hover {
-    /* background-color: #e0e0e0; */
+    color: #0040B0;
   }
 
   .dark-mode .nav-ul {
@@ -281,10 +286,12 @@ nav .container-fluid .collapse {
     /* background-color: #1D232A; */
     color: #4DB1FF;
   }
+
   .navbar li {
     width: 100% !important;
     border-bottom: solid 1px #747577;
   }
+
   .dark-mode .navbar li {
     width: 100% !important;
     border-bottom: solid 0.8px #a4a5a8;

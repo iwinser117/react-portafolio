@@ -33,24 +33,17 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "@cloudinary/react": "^1.13.0",
-    "@cloudinary/url-gen": "^1.19.0",
     "@emailjs/browser": "^3.10.0",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@mui/lab": "^6.0.0-beta.24",
-    "@mui/material": "^6.4.1",
-    "@react-icons/all-files": "^4.1.0",
+    "@mui/material": "^6.4.5",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",
-    "flat-color-icons": "^1.1.0",
-    "local": "^0.3.3",
-    "npm": "^10.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
     "react-router-dom": "^6.6.2",
-    "run": "^1.5.0",
     "sweetalert2": "^11.6.13"
   }
 }

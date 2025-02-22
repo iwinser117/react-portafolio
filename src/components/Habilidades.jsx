@@ -27,13 +27,7 @@ const Habilidades = () => {
           <i className="fa-solid fa-display"></i> Front-end
         </h3>
         <p>
-          Tengo experiencia en <strong>HTML, CSS y JavaScript</strong> para el desarrollo de
-          sitios web. En cuanto a HTML, me especializo en la creación de
-          estructuras semánticas que permiten la accesibilidad y generan un
-          impacto visual atractivo para los usuarios. En <strong>CSS</strong>, poseo un nivel
-          intermedio y disfruto explorar las propiedades que permiten estilizar
-          mis proyectos. Además, me gusta utilizar CSS para crear diseños
-          responsivos que se adapten a diferentes dispositivos.
+          Poseo un alto nivel de experiencia en Desarrollo FrontEnd haciendo uso de frameworks y librerías de JavaScript, como <strong>React</strong>, <strong>NextJs</strong> y <strong>UI5</strong>. También tengo experiencia en el desarrollo de aplicaciones web con <strong>HTML5</strong>, <strong>CSS3</strong> e implementación de componentes. <br />
         </p>
         <p>
           Considero que JavaScript es un lenguaje sumamente importante tanto en
@@ -43,7 +37,7 @@ const Habilidades = () => {
         </p>
         <p>
           En continua formación para mantenerme al dia con las nuevas
-          tecnologias.
+          tecnologías.
         </p>
         <div className="slider">
           <div className="slide-track">
