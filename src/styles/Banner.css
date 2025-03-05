@@ -35,6 +35,7 @@
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
+  
 }
 
 .iwinserPerfil::before, 
@@ -99,7 +100,7 @@
     position: relative;
   }
   .iwinserPerfil {  
-    width: 30%;
+    width: 24%;
   }
 }
 
@@ -113,14 +114,14 @@
     position: relative;
   }
   .iwinserPerfil {  
-    width: 35%;
+    width: 25%;
   }
 }
 
 /* Estilos para pantallas pequeñas */
 @media (max-width: 767px) {
   .iwinserPerfil img {
-    width: 270px;
+    width: 210px;
   }
 
   .logos-contact {
@@ -136,6 +137,7 @@
     width: 90%;
     min-height: 470px;
     flex-direction: column;
+    margin-top: 2rem;
   }
 
   .sectionbanner {
