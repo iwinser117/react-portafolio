@@ -9,9 +9,7 @@ const Banner = () => {
     <section className="sectionbanner">
       <div className="d-flex justify-content-around align-items-center p-2 container banner">
         <div className="iwinserPerfil">
-          <div
-            className={`image-placeholder ${imageLoaded ? "loaded" : ""}`}
-          >
+          <div className={`image-placeholder ${imageLoaded ? "loaded" : ""}`}>
             <img
               src={iwinserPerfil}
               alt="Perfil"
@@ -28,11 +26,12 @@ const Banner = () => {
           <h4 className="text-center nametitle">Iwinser Sanchez</h4>
           <h2 className="text-center">Desarrollador FullStack</h2>
           <p className="text-center">
-          Experiencia en JavaScript y <br />desarrollo web front-end y back-end.
+            Experiencia en JavaScript y <br />
+            desarrollo web front-end y back-end.
           </p>
           <div className="logos-contact m-auto">
             <div className="card-body d-flex logos-contact">
-            <div className="card-body d-flex cont-int-aside">
+              <div className="card-body d-flex cont-int-aside">
                 <a
                   className="git-link"
                   href="https://github.com/iwinser117"
@@ -40,7 +39,8 @@ const Banner = () => {
                   rel="noopener noreferrer"
                 >
                   <p>
-                    <i className="fa-brands fa-github  "></i><br /> <small className="">GitHub</small>
+                    <i className="fa-brands fa-github  "></i>
+                    <br /> <span className="sizeIconBanner">GitHub</span>
                   </p>
                 </a>
               </div>
@@ -52,7 +52,9 @@ const Banner = () => {
                   rel="noopener noreferrer"
                 >
                   <p>
-                    <i className="fa-brands fa-linkedin "></i><br /> <small className="">Linkedin</small>
+                    <i className="fa-brands fa-linkedin "></i>
+                    <br />
+                    <span className="sizeIconBanner">Linkedin</span>
                   </p>
                 </a>
               </div>
@@ -63,7 +65,8 @@ const Banner = () => {
                   href="../assets/IwinserSanchez.pdf  "
                 >
                   <p>
-                    <i className="fa-solid fa-file-pdf "></i><br /> <small className="">Curriculum</small>
+                    <i className="fa-solid fa-file-pdf "></i>
+                    <br /> <span className="sizeIconBanner">Curriculum</span>
                   </p>
                 </a>
               </div>
