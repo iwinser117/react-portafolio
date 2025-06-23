@@ -94,3 +94,9 @@
     margin: 4px 0;
   }
 }
+
+
+/* tamaño de la letra de los botones de git, curriculum y linkedin */
+.sizeIcon {
+  font-size: 14px !important; 
+}
