@@ -8,9 +8,7 @@ const Aside = () => {
       <aside className="d-flex justify-content-around content-aside">
         <div className="aside">
           <div className="aside-div-int">
-            <h3>
-              Encuentrame
-            </h3>
+            <h3>Encuentrame</h3>
             <div className="aside-div-int1">
               <div className="card-body d-flex cont-int-aside">
                 <a
@@ -19,8 +17,9 @@ const Aside = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <p>
-                    <i className="fa-brands fa-github  "></i>&nbsp; GitHub
+                  <p className="">
+                    <i className="fa-brands fa-github "></i>&nbsp;{" "}
+                    <span className="sizeIcon">GitHub</span>
                   </p>
                 </a>
               </div>
@@ -32,7 +31,8 @@ const Aside = () => {
                   rel="noopener noreferrer"
                 >
                   <p>
-                    <i className="fa-brands fa-linkedin "></i>&nbsp; Linkedin
+                    <i className="fa-brands fa-linkedin "></i>&nbsp;
+                    <span className="sizeIcon">Linkedin</span>
                   </p>
                 </a>
               </div>
@@ -43,7 +43,8 @@ const Aside = () => {
                   href="../assets/IwinserSanchez.pdf  "
                 >
                   <p>
-                    <i className="fa-solid fa-file-pdf "></i>&nbsp; Curriculum
+                    <i className="fa-solid fa-file-pdf "></i>&nbsp;{" "}
+                    <span className="sizeIcon">Curriculum</span>
                   </p>
                 </a>
               </div>
