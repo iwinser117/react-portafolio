@@ -2,7 +2,8 @@
  
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: #eaecee;
-  background-color: #12171C;
+  background-color: #12171C;  background-image: linear-gradient(to bottom right, #12171C, #333d4a);
+
 }
 
 .dark-mode a {

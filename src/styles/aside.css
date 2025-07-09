@@ -100,3 +100,85 @@
 .sizeIcon {
   font-size: 14px !important; 
 }
+
+/* Estilos modernos para los botones sociales */
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+  width: 100%;
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.social-button i {
+  font-size: 1.5rem;
+  margin-right: 12px;
+}
+
+.social-button span {
+  font-size: 1rem;
+}
+
+.social-button.github {
+  background-color: #24292e;
+  color: white;
+}
+
+.social-button.linkedin {
+  background-color: #0077b5;
+  color: white;
+}
+
+.social-button.cv {
+  background-color: #dc3545;
+  color: white;
+}
+
+.social-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.social-button.github:hover {
+  background-color: #2f363d;
+  box-shadow: 0 0 12px 2px #6e5494, 0 4px 16px rgba(0,0,0,0.25);
+}
+
+.social-button.linkedin:hover {
+  background-color: #006396;
+  box-shadow: 0 0 12px 2px #00a0dc, 0 4px 16px rgba(0,0,0,0.25);
+}
+
+.social-button.cv:hover {
+  background-color: #c82333;
+  box-shadow: 0 0 12px 2px #ff4b5c, 0 4px 16px rgba(0,0,0,0.25);
+}
+
+/* Estilos para modo oscuro */
+.dark-mode .social-button {
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .social-button:hover {
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Media query para pantallas medianas y grandes */
+@media (min-width: 800px) {
+  .social-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+}

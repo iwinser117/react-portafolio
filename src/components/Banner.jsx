@@ -29,48 +29,33 @@ const Banner = () => {
             Experiencia en JavaScript y <br />
             desarrollo web front-end y back-end.
           </p>
-          <div className="logos-contact m-auto">
-            <div className="card-body d-flex logos-contact">
-              <div className="card-body d-flex cont-int-aside">
-                <a
-                  className="git-link"
-                  href="https://github.com/iwinser117"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <p>
-                    <i className="fa-brands fa-github  "></i>
-                    <br /> <span className="sizeIconBanner">GitHub</span>
-                  </p>
-                </a>
-              </div>
-              <div className="card-body d-flex cont-int-aside">
-                <a
-                  className="linkedin-link"
-                  href="https://www.linkedin.com/in/iwinser-aljadys-sanchez-0a62a0234/?originalSubdomain=co"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <p>
-                    <i className="fa-brands fa-linkedin "></i>
-                    <br />
-                    <span className="sizeIconBanner">Linkedin</span>
-                  </p>
-                </a>
-              </div>
-              <div className="card-body d-flex cont-int-aside">
-                <a
-                  className="pdf-link"
-                  download="CurriculumDeveloperIwinserSanchez"
-                  href="../assets/IwinserSanchez.pdf  "
-                >
-                  <p>
-                    <i className="fa-solid fa-file-pdf "></i>
-                    <br /> <span className="sizeIconBanner">Curriculum</span>
-                  </p>
-                </a>
-              </div>
-            </div>
+          <div className="social-buttons social-buttons-small m-auto">
+            <a
+              className="social-button github small"
+              href="https://github.com/iwinser117"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a
+              className="social-button linkedin small"
+              href="https://www.linkedin.com/in/iwinser-aljadys-sanchez-0a62a0234/?originalSubdomain=co"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className="fa-brands fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a
+              className="social-button cv small"
+              download="CurriculumDeveloperIwinserSanchez"
+              href="../assets/IwinserSanchez.pdf"
+            >
+              <i className="fa-solid fa-file-pdf"></i>
+              <span>Curriculum</span>
+            </a>
           </div>
         </div>
       </div>

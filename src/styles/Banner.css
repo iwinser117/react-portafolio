@@ -153,3 +153,42 @@
 .sizeIconBanner {
   font-size: 12px !important; 
 }
+
+/* Estilos compactos para los botones sociales en Banner */
+.social-buttons.social-buttons-small {
+  flex-direction: row;
+  gap: 10px;
+  padding: 0;
+  justify-content: center;
+}
+
+.social-button.small {
+  padding: 6px 14px;
+  font-size: 0.95rem;
+  border-radius: 6px;
+  min-width: 90px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+
+.social-button.small i {
+  font-size: 1.1rem;
+  margin-right: 7px;
+}
+
+.social-button.small span {
+  font-size: 0.97rem;
+}
+
+.social-button.small:hover {
+  transform: translateY(-1px) scale(1.04);
+}
+
+.social-button.github.small:hover {
+  box-shadow: 0 0 8px 1px #6e5494, 0 2px 8px rgba(0,0,0,0.18);
+}
+.social-button.linkedin.small:hover {
+  box-shadow: 0 0 8px 1px #00a0dc, 0 2px 8px rgba(0,0,0,0.18);
+}
+.social-button.cv.small:hover {
+  box-shadow: 0 0 8px 1px #ff4b5c, 0 2px 8px rgba(0,0,0,0.18);
+}
