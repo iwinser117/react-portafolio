@@ -17,17 +17,45 @@
   
   .view-toggle-btn {
     padding: 8px 16px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
+    background-color: #004085;
+    color: #ffffff;
+    border: 1px solid #004085;
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.9rem;
-    transition: background-color 0.3s ease;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
   }
   
   .view-toggle-btn:hover {
-    background-color: #0056b3;
+    background-color: #002752;
+    border-color: #002752;
+  }
+
+  .view-toggle-btn:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #004085;
+  }
+
+  .view-toggle-btn i {
+    font-size: 1rem;
+  }
+
+  /* Estilos para modo oscuro con mejor contraste */
+  .dark-mode .view-toggle-btn {
+    /* Color más claro para contraste con fondo oscuro */
+    background-color: #1a75ff;
+    border-color: #1a75ff;
+    color: #000000;
+  }
+
+  .dark-mode .view-toggle-btn:hover {
+    background-color: #3385ff;
+    border-color: #3385ff;
   }
   
   /* Estilos para Timeline */
@@ -101,20 +129,34 @@
   }
   
   .view-link {
-    display: inline-block;
-    padding: 3px 6px;
-    font-size: 0.75rem;
-    background-color: #007bff;
-    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    background-color: #004085;
+    color: #ffffff;
     text-decoration: none;
-    border-radius: 3px;
-    border: none;
+    border-radius: 4px;
+    border: 1px solid #004085;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    font-weight: 600;
   }
   
   .view-link:hover {
-    background-color: #0056b3;
+    background-color: #002752;
+    border-color: #002752;
+  }
+
+  .view-link:focus {
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px #004085;
+  }
+
+  .view-link i {
+    font-size: 0.9rem;
   }
   
   /* Ajustes para móviles */

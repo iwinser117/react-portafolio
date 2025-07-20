@@ -68,14 +68,14 @@ const Certificados = () => {
         <button
           className="view-toggle-btn"
           onClick={toggleView}
-          aria-label="Cambiar vista"
+          aria-label={`Cambiar a vista de ${viewMode === "timeline" ? "tarjetas" : "línea de tiempo"}`}
+          title={`Cambiar a vista de ${viewMode === "timeline" ? "tarjetas" : "línea de tiempo"}`}
         >
-          {viewMode === "timeline" ? (
-            <i className="fa-solid fa-table-cells-large"></i>
-          ) : (
-            <i className="fa-solid fa-timeline"></i>
-          )}{" "}
-          {viewMode === "timeline" ? "Cards" : "Timeline"}
+          <i 
+            className={viewMode === "timeline" ? "fa-solid fa-table-cells-large" : "fa-solid fa-timeline"}
+            aria-hidden="true"
+          />
+          <span>{viewMode === "timeline" ? "Tarjetas" : "Línea de tiempo"}</span>
         </button>
       </div>
 
