@@ -10,18 +10,40 @@ import "@styles/descripcionapps.css";
 const Descripcion = () => {
   return (
     <>
-      <section className="w-50 m-auto descripcionEncabezado">
-        <div>
-          <div className="text-center">
-            <h3 className="card-title text-center">Aplicaciones</h3>
-            <br />
-            <p className="card-text-descrip">
-              A continuación puedes ver algunas aplicaciones que se han
-              desarrollado haciendo uso de distintas tecnologías y herramientas;
-              algunas de ellas están desplegadas respectivamente. Dejo su link
-              en la descripción de cada una de ellas.
-            </p>
-          </div>
+      <section className="descripcionEncabezado" style={{margin: '90px auto 16px auto', maxWidth: 700, minHeight: '20vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'none', boxShadow: 'none', border: 'none', padding: '0 24px'}}>
+        <div className="text-center" style={{width: '100%', maxWidth: '600px', margin: '0 auto'}}>
+          <h2
+            style={{
+              fontWeight: 800,
+              letterSpacing: '0.5px',
+              fontSize: '2rem',
+              marginBottom: 8,
+              position: 'relative',
+              display: 'inline-block',
+              color: 'black !important',
+              textShadow: 'none !important',
+              backgroundColor: 'transparent !important'
+            }}
+          >
+            ¡Bienvenido a mi portafolio!
+            <span className="underline-gradient"></span>
+          </h2>
+          <p
+            style={{
+              lineHeight: 1.7,
+              maxWidth: '100%',
+              fontSize: '1.13rem',
+              margin: '0 auto',
+              fontWeight: 600,
+              padding: '0 16px',
+              color: 'black !important',
+              textShadow: 'none !important',
+              backgroundColor: 'transparent !important'
+            }}
+          >
+            Descubre proyectos desarrollados con pasión, creatividad y tecnología actual.<br />
+            Cada uno refleja mi compromiso con la calidad y la experiencia de usuario.
+          </p>
         </div>
       </section>
       <section className="d-grid gap-4">
