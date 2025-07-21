@@ -18,9 +18,14 @@ const BtnArriba = () => {
 
   return (
     <button
-      className="position-fixed bottom-0 end-0 translate-middle translate-middle btn  btn-arriba"
-      onClick={() => handleClick()}
-      style={{ display: showButton ? "block" : "none" }}
+      className="position-fixed bottom-0 end-0 btn btn-arriba"
+      onClick={handleClick}
+      style={{
+        opacity: showButton ? 1 : 0,
+        visibility: showButton ? "visible" : "hidden",
+        transition: "opacity 0.3s, visibility 0.3s"
+      }}
+      aria-label="Volver arriba"
     >
       <i className="fa-regular fa-circle-up"></i>
     </button>

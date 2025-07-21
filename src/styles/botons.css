@@ -81,16 +81,48 @@
   }
 }
 
-.btn-arriba:hover {
-  background-color: #020202;
+.btn-arriba {
+  background-color: rgba(0, 0, 0, 0.85);
   color: #ffffff;
-  font-size: 1.2rem;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin: 0 1rem 1rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
 }
 
+.btn-arriba:hover {
+  background-color: rgb(0, 0, 0);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.btn-arriba i {
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  line-height: 0;
+}
+
+.btn-arriba:hover i {
+  transform: scale(1.1);
+  color: #ffffff;
+}
+
+.dark-mode .btn-arriba {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.2);
+}
 
 .dark-mode .btn-arriba:hover {
-  background-color: #000000;
+  background-color: rgba(255, 255, 255, 0.3);
   color: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
 }
 
 /* Otras clases de estilo que mencionaste anteriormente */
