@@ -72,6 +72,19 @@ module.exports = {
           from: path.resolve(__dirname, "src", "assets"),
           to: "assets",
         },
+        {
+          from: path.resolve(__dirname, "robots.txt"),
+          to: path.resolve(__dirname, "dist", "robots.txt"),
+        },
+        {
+          from: path.resolve(__dirname, "sitemap.xml"),
+          to: path.resolve(__dirname, "dist", "sitemap.xml"),
+        },
+        {
+          from: path.resolve(__dirname, "_redirects"),
+          to: path.resolve(__dirname, "dist"),
+          noErrorOnMissing: true,
+        },
       ],
     }),
   ],

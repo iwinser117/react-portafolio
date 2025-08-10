@@ -1,14 +1,22 @@
 {
   "name": "portafolio-react",
   "version": "1.0.0",
-  "description": "",
+  "description": "Portafolio de Iwinser Sanchez, Desarrollador Web FullStack especializado en JavaScript, React, HTML y CSS.",
   "main": "index.js",
   "scripts": {
     "start": "webpack --config webpack.config.dev.js",
     "build": "webpack --mode production --config webpack.config.js",
     "local": "webpack server --config webpack.config.dev.js"
   },
-  "keywords": [],
+  "keywords": [
+    "iwinser",
+    "Iwinser Sanchez",
+    "portafolio",
+    "desarrollador web",
+    "FullStack",
+    "JavaScript",
+    "React"
+  ],
   "author": "iwinser sanchez",
   "license": "IMT",
   "devDependencies": {
@@ -44,6 +52,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.9.0",
     "react-router-dom": "^6.6.2",
-    "sweetalert2": "^11.6.13"
+    "sweetalert2": "^11.6.13",
+    "react-helmet-async": "^1.3.0"
   }
 }
