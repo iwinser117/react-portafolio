@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import App from "./routes/App";
+import { HelmetProvider } from "react-helmet-async";
 
 
 // (async function app() {
@@ -12,6 +13,8 @@ import App from "./routes/App";
 const root = ReactDOM.createRoot(document.getElementById("main"));
 root.render(
   <BrowserRouter>
-    <App />
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
   </BrowserRouter>
 );
