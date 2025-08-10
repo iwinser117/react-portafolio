@@ -12,7 +12,7 @@ const Descripcion = () => {
     <>
       <section className="descripcionEncabezado" style={{margin: '90px auto 16px auto', maxWidth: 700, minHeight: '20vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', background: 'none', boxShadow: 'none', border: 'none', padding: '0 24px'}}>
         <div className="text-center" style={{width: '100%', maxWidth: '600px', margin: '0 auto'}}>
-          <h2
+          {/* <h2
             style={{
               fontWeight: 800,
               letterSpacing: '0.5px',
@@ -27,7 +27,7 @@ const Descripcion = () => {
           >
             ¡Bienvenido a mi portafolio!
             <span className="underline-gradient"></span>
-          </h2>
+          </h2> */}
           <p
             style={{
               lineHeight: 1.7,
