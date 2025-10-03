@@ -23,29 +23,21 @@ import imgdevist from "@assets/imgdevist.webp";
 import imgtablaExport from "../assets/imgtablaExport.png";
 import login from "../assets/login.png";
 
-export default function App() {
+const owner = "iwinser117";
+const repositories = ["TableExportJS", "autenticate", "generatepassword", 'odonto_web', 'reservas'];
+
+export default function ProyectosNodeJS() {
   const [modals, setModals] = useState({
     tableExport: false,
   });
-  const [lastUpdatedData1, setLastUpdatedData1] = useState("");
-  const [lastUpdatedData2, setLastUpdatedData2] = useState("");
-  const [lastUpdatedData3, setLastUpdatedData3] = useState("");
-  const [lastUpdatedData4, setLastUpdatedData4] = useState("");
-  const [lastUpdatedData5, setLastUpdatedData5] = useState("");
-
-  const owner = "iwinser117";
-  const repositories = ["TableExportJS", "autenticate", "generatepassword", 'odonto_web', 'reservas'];
+  const [lastUpdatedData, setLastUpdatedData] = useState({});
 
   const fetchData = async (repoName) => {
     const cacheKey = `lastUpdatedData-${repoName}`;
-    const cachedData = localStorage.getItem(cacheKey);
+    const cachedData = sessionStorage.getItem(cacheKey);
 
     if (cachedData) {
-      if (repoName === "TableExportJS") setLastUpdatedData1(cachedData);
-      if (repoName === "autenticate") setLastUpdatedData2(cachedData);
-      if (repoName === "generatepassword") setLastUpdatedData3(cachedData);
-      if (repoName === "odonto_web") setLastUpdatedData4(cachedData);
-      if (repoName === "reservas") setLastUpdatedData5(cachedData);
+      setLastUpdatedData(prev => ({ ...prev, [repoName]: cachedData }));
       return;
     }
 
@@ -55,12 +47,8 @@ export default function App() {
       const data = await response.json();
       if (!data.message) {
         const formattedDate = fechaFormateada(new Date(data.pushed_at));
-        localStorage.setItem(cacheKey, formattedDate);
-        if (repoName === "TableExportJS") setLastUpdatedData1(formattedDate);
-        if (repoName === "autenticate") setLastUpdatedData2(formattedDate);
-        if (repoName === "generatepassword") setLastUpdatedData3(formattedDate);
-        if (repoName === "odonto_web") setLastUpdatedData4(formattedDate);
-        if (repoName === "reservas") setLastUpdatedData5(formattedDate);
+        sessionStorage.setItem(cacheKey, formattedDate);
+        setLastUpdatedData(prev => ({ ...prev, [repoName]: formattedDate }));
       }
     } catch (error) {
       console.error(`Error al obtener información del repositorio ${repoName}`, error);
@@ -68,78 +56,68 @@ export default function App() {
   };
 
   useEffect(() => {
-    repositories.forEach((repoName) => {
-      fetchData(repoName);
-    });
+    repositories.forEach(repoName => fetchData(repoName));
   }, []);
 
   const fechaFormateada = (dateString) => {
     const date = utcToZonedTime(new Date(dateString), "America/New_York");
-    return format(date, "d 'de' MMMM 'de' yyyy, h:mm:ss a", { locale: es });
+    return format(date, "d 'de' MMMM 'de' yyyy, h:mm a", { locale: es });
   };
 
   const Card = ({
     imgSrc,
     title,
     text,
-    lastUpdatedData,
+    repoName,
     onCardClick,
     projectUrl,
     buttonText = "Ir al Proyecto"
   }) => {
-    const [hover, setHover] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
 
     const cardStyle = {
       background: "linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)",
-      borderRadius: "15px",
-      padding: "20px",
-      boxShadow: "0 10px 20px rgba(0, 0, 0, 0.2)",
-      transition: "all 0.3s ease-in-out",
+      borderRadius: "16px",
+      boxShadow: "0 4px 16px rgba(0, 0, 0, 0.1)",
+      transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
       color: "#ffffff",
       height: "100%",
       display: "flex",
       flexDirection: "column",
-      cursor: "pointer", // Añadido para indicar que la card es clickeable
+      overflow: "hidden",
+      cursor: onCardClick ? "pointer" : "default",
     };
 
     const hoverCardStyle = {
-      transform: "translateY(-5px)",
-      boxShadow: "0 15px 30px rgba(0, 0, 0, 0.3)",
-    };
-
-    const formattedText = {
-      __html: text,
+      transform: "translateY(-8px)",
+      boxShadow: "0 12px 24px rgba(0, 0, 0, 0.15)",
     };
 
     const buttonStyle = {
-      background: 'rgba(255,255,255,0.1)',
+      background: 'rgba(100, 255, 218, 0.1)',
       color: '#64ffda',
-      border: 'none',
-      padding: '8px 15px',
-      borderRadius: '5px',
+      border: '1px solid rgba(100, 255, 218, 0.3)',
+      padding: '12px 20px',
+      borderRadius: '8px',
       cursor: 'pointer',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
+      gap: '8px',
       transition: 'all 0.3s ease',
       width: '100%',
-      marginTop: '10px', // Añadido para separar un poco del texto
+      fontWeight: '600',
+      fontSize: '0.95rem',
+      marginTop: 'auto'
     };
 
     const handleCardClick = (e) => {
-      // Verificar que el click no sea en el botón
       if (e.target.closest('button')) return;
-
-      // Si hay un manejador de click para la card, ejecutarlo
-      if (onCardClick) {
-        onCardClick();
-      }
+      if (onCardClick) onCardClick();
     };
 
     const handleButtonClick = (e) => {
-      // Prevenir que el evento de click se propague a la card
       e.stopPropagation();
-
       if (projectUrl) {
         window.open(projectUrl, '_blank', 'noopener,noreferrer');
       }
@@ -148,61 +126,102 @@ export default function App() {
     return (
       <MDBCard
         className="h-100 MDBCard"
-        style={hover ? { ...cardStyle, ...hoverCardStyle } : cardStyle}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
+        style={isHovered ? { ...cardStyle, ...hoverCardStyle } : cardStyle}
+        onMouseEnter={() => setHoveredCard(repoName)}
+        onMouseLeave={() => setHoveredCard(null)}
         onClick={handleCardClick}
       >
         <MDBCardImage
           src={imgSrc}
-          alt="..."
+          alt={title}
           style={{
             height: "200px",
             objectFit: "cover",
-            borderRadius: "10px",
-            marginBottom: "15px",
+            padding: "16px",
+            borderRadius: "16px",
           }}
           position="top"
           loading="lazy"
         />
-        <MDBCardBody style={{ flex: 1, display: "flex", flexDirection: "column" }}>
-          <MDBCardTitle className="text-center mb-3" style={{ fontSize: "1.5rem", fontWeight: "bold" }}>{title}</MDBCardTitle>
-          <MDBCardText
-            dangerouslySetInnerHTML={formattedText}
-            style={{ flex: 1, fontSize: "1rem", lineHeight: "1.5" }}
-          />
-          <div style={{ marginTop: 'auto', width: '100%' }}>
-            <button
-              style={buttonStyle}
-              onClick={handleButtonClick}
-              onMouseEnter={(e) => e.target.style.background = 'rgba(255,255,255,0.2)'}
-              onMouseLeave={(e) => e.target.style.background = 'rgba(255,255,255,0.1)'}
-            >
-              {buttonText} <FaExternalLinkAlt style={{ marginLeft: '5px' }} />
-            </button>
-          </div>
+        <MDBCardBody style={{ 
+          flex: 1, 
+          display: "flex", 
+          flexDirection: "column",
+          padding: '20px',
+          gap: '12px'
+        }}>
+          <MDBCardTitle style={{ 
+            fontSize: "1.25rem", 
+            fontWeight: "700",
+            minHeight: "50px",
+            display: 'flex',
+            alignItems: 'center',
+            margin: 0,
+            lineHeight: '1.3'
+          }}>
+            {title}
+          </MDBCardTitle>
+          <MDBCardText style={{ 
+            flex: 1, 
+            fontSize: "0.95rem", 
+            lineHeight: "1.6",
+            minHeight: "48px",
+            margin: 0,
+            color: 'rgba(255, 255, 255, 0.9)'
+          }}>
+            {text}
+          </MDBCardText>
+          <button
+            style={buttonStyle}
+            onClick={handleButtonClick}
+            onMouseEnter={(e) => {
+              e.target.style.background = 'rgba(100, 255, 218, 0.2)';
+              e.target.style.transform = 'scale(1.02)';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.background = 'rgba(100, 255, 218, 0.1)';
+              e.target.style.transform = 'scale(1)';
+            }}
+          >
+            {buttonText} <FaExternalLinkAlt />
+          </button>
         </MDBCardBody>
-        <MDBCardFooter style={{ background: "rgba(255,255,255,0.1)", borderTop: "none" ,fontSize: "0.8rem"}}>
-          <small style={{ color: "#a8b2d1" }}>{`Actualizado: ${lastUpdatedData}`}</small>
+        <MDBCardFooter style={{ 
+          background: "rgba(255,255,255,0.05)", 
+          borderTop: "1px solid rgba(255,255,255,0.1)",
+          fontSize: "0.85rem",
+          padding: '12px 20px'
+        }}>
+          <small style={{ color: "rgba(255, 255, 255, 0.7)", fontWeight: '500' }}>
+            {lastUpdatedData[repoName] ? `Actualizado: ${lastUpdatedData[repoName]}` : 'Cargando...'}
+          </small>
         </MDBCardFooter>
       </MDBCard>
     );
   };
 
   return (
-    <div>
+    <div style={{ padding: '40px 0' }}>
       <Container>
-        <h2 className="mb-4 text-center" style={{ fontSize: "2.5rem", fontWeight: "bold", color: "#64ffda" }}>
-          <FaNodeJs style={{ marginRight: "10px" }} />
+        <h2 className="mb-5 text-center" style={{ 
+          fontSize: "2.5rem", 
+          fontWeight: "700", 
+          color: "#64ffda",
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '12px'
+        }}>
+          <FaNodeJs />
           Aplicaciones Node.js
         </h2>
-        <MDBRow className="row-cols-1 row-cols-md-3 g-4">
+        <MDBRow className="row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
           <MDBCol>
             <Card
               imgSrc={odontoweb}
               title="OdontoWeb"
-              text={`Sitio web para presencia online de odontologos.`}
-              lastUpdatedData={lastUpdatedData4}
+              text="Sitio web para presencia online de odontólogos."
+              repoName="odonto_web"
               projectUrl="https://odonto-web-red.vercel.app/"
               buttonText="Visitar sitio"
             />
@@ -211,19 +230,18 @@ export default function App() {
             <Card
               imgSrc={imgdevist}
               title="Reservas D´visita"
-              text={`Sitio web que emula un sistema de reservas.`}
-              lastUpdatedData={lastUpdatedData5}
+              text="Sitio web que emula un sistema de reservas."
+              repoName="reservas"
               projectUrl="https://reservas-eta.vercel.app/"
               buttonText="Visitar sitio"
             />
           </MDBCol>
-
           <MDBCol>
             <Card
               imgSrc={login}
               title="Autenticación JWT"
-              text={`Implementación de login seguro con JSON Web Tokens.`}
-              lastUpdatedData={lastUpdatedData2}
+              text="Implementación de login seguro con JSON Web Tokens."
+              repoName="autenticate"
               projectUrl="https://autenticate.vercel.app/"
               buttonText="Probar Login"
             />
@@ -232,8 +250,8 @@ export default function App() {
             <Card
               imgSrc={generatePassword}
               title="Generador de Contraseñas"
-              text={`Crea contraseñas seguras con parámetros personalizables.`}
-              lastUpdatedData={lastUpdatedData3}
+              text="Crea contraseñas seguras con parámetros personalizables."
+              repoName="generatepassword"
               projectUrl="https://generatepassword-theta.vercel.app/"
               buttonText="Generar Contraseña"
             />
@@ -242,8 +260,8 @@ export default function App() {
             <Card
               imgSrc={imgtablaExport}
               title="TableExportJS"
-              text={`Herramienta para exportar tablas en diversos formatos.`}
-              lastUpdatedData={lastUpdatedData1}
+              text="Herramienta para exportar tablas en diversos formatos."
+              repoName="TableExportJS"
               onCardClick={() => setModals({ tableExport: true })}
               projectUrl="https://table-export-js-4zq5.vercel.app"
               buttonText="Explorar Herramienta"
@@ -254,4 +272,4 @@ export default function App() {
       {modals.tableExport && <TableExport onClose={() => setModals({ tableExport: false })} />}
     </div>
   );
-}
+} 
