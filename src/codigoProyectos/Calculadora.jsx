@@ -1,13 +1,9 @@
-
-
-
 import React, { useState } from "react";
 import { mostrarR } from "@codigoProyectos/verResultados/calculadora";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 
 const Calculadora = ({ onClose }) => {
-  
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
   const [operando, setOperando] = useState("");
@@ -76,34 +72,34 @@ const Calculadora = ({ onClose }) => {
     onClose();
   };
   return (
-    <Modal show={staticModal} onHide={handleClose} centered size=""  >
-      <Modal.Header closeButton>
+    <Modal
+      show={staticModal}
+      onHide={handleClose}
+      centered
+      size="md"
+    >
+      <Modal.Header closeButton className="bg-primary text-white">
         <Modal.Title>Calculadora</Modal.Title>
       </Modal.Header>
-      <div id="calculadora" className="bg-dark card w-70 m-auto p-4 ">
-        <form id="forma">
-          <div className="mb-1">
-            <label htmlFor="opA" className="form-label">
-              Operando uno
-            </label>
+
+      <div id="calculadora" className="bg-dark text-light rounded p-4 shadow">
+        <form>
+          <div className="mb-3">
+            <label className="form-label">Operando uno</label>
             <input
               type="text"
               className="form-control"
-              name="opA"
               placeholder="Escribe un número"
               onFocus={() => setInputActivo("input1")}
               onChange={(event) => handleInput(event, setInput1)}
               value={input1}
             />
           </div>
-          <div className="mb-1">
-            <label htmlFor="opB" className="form-label">
-              Operando dos
-            </label>
+          <div className="mb-3">
+            <label className="form-label">Operando dos</label>
             <input
               type="text"
               className="form-control"
-              name="opB"
               placeholder="Escribe un número"
               onFocus={() => setInputActivo("input2")}
               onChange={(event) => handleInput(event, setInput2)}
@@ -112,122 +108,82 @@ const Calculadora = ({ onClose }) => {
           </div>
         </form>
 
-        <div className="numeros">
-          <div className="d-flex justify-content-around mb-2">
-            {[1, 2, 3].map((numero) => (
-              <input
-                key={numero}
-                type="button"
-                className="btn btn-secondary btn-lg"
-                value={numero}
-                onClick={() =>
-                  handleInput(
-                    {
-                      target: {
-                        value: (operando === "" ? input1 : input2) + numero,
-                      },
-                    },
-                    operando === "" ? setInput1 : setInput2
-                  )
-                }
-              />
-            ))}
-          </div>
-          <div className="d-flex justify-content-around mb-2">
-            {[4, 5, 6].map((numero) => (
-              <input
-                key={numero}
-                type="button"
-                className="btn btn-secondary btn-lg"
-                value={numero}
-                onClick={() =>
-                  handleInput(
-                    {
-                      target: {
-                        value: (operando === "" ? input1 : input2) + numero,
-                      },
-                    },
-                    operando === "" ? setInput1 : setInput2
-                  )
-                }
-              />
-            ))}
-          </div>
-          <div className="d-flex justify-content-around mb-2">
-            {[7, 8, 9].map((numero) => (
-              <input
-                key={numero}
-                type="button"
-                className="btn btn-secondary btn-lg"
-                value={numero}
-                onClick={() =>
-                  handleInput(
-                    {
-                      target: {
-                        value: (operando === "" ? input1 : input2) + numero,
-                      },
-                    },
-                    operando === "" ? setInput1 : setInput2
-                  )
-                }
-              />
-            ))}
-          </div>
-          <div className="d-flex justify-content-around mb-2">
+        {/* Números */}
+        <div
+          className="d-grid gap-2 mb-3"
+          style={{ gridTemplateColumns: "repeat(3, 1fr)" }}
+        >
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((numero) => (
             <button
-              className="btn btn-secondary btn-lg"
+              key={numero}
+              className="btn btn-outline-light btn-lg"
               onClick={() =>
                 handleInput(
                   {
                     target: {
-                      value: (operando === "" ? input1 : input2) + "0",
+                      value: (operando === "" ? input1 : input2) + numero,
                     },
                   },
                   operando === "" ? setInput1 : setInput2
                 )
               }
             >
-              0
+              {numero}
             </button>
-          </div>
+          ))}
+          <button
+            className="btn btn-outline-light btn-lg col-span-3"
+            onClick={() =>
+              handleInput(
+                {
+                  target: { value: (operando === "" ? input1 : input2) + "0" },
+                },
+                operando === "" ? setInput1 : setInput2
+              )
+            }
+          >
+            0
+          </button>
         </div>
 
-        <div className="operaciones" >
-          <div className="d-flex justify-content-around mb-2">
-            {["+", "-", "X", "/"].map((operador) => (
-              <div key={operador}>
-                <button
-                  className={`btn btn-primary btn-lg  ${
-                    operando === operador ? "active" : ""
-                  }`}
-                  onClick={() => handleOperandoClick(operador)}
-                >
-                  {operador}
-                </button>
-              </div>
-            ))}
-            <div>
-              <button className="btn btn-success btn-lg" onClick={realizarOperacion}>
-                =
-              </button>
-            </div>
-          </div>
-          <div className="d-flex justify-content-around mb-2">
-            <button className="btn btn-danger btn-lg" onClick={limpiarInput}>
-              C
+        {/* Operaciones */}
+        <div className="d-flex justify-content-around mb-3">
+          {["+", "-", "X", "/"].map((op) => (
+            <button
+              key={op}
+              className={`btn btn-primary btn-lg ${
+                operando === op ? "active" : ""
+              }`}
+              onClick={() => handleOperandoClick(op)}
+            >
+              {op}
             </button>
-            <button className="btn btn-secondary btn-lg" onClick={retrocederInput}>
-              &#9003;
-            </button>
-          </div>
+          ))}
+          <button
+            className="btn btn-success btn-lg"
+            onClick={realizarOperacion}
+          >
+            =
+          </button>
         </div>
 
-        {resultado !== "" && (
-          <div className="mt-3">
-            <p>Resultado: {resultado}</p>
+        {/* Extra */}
+        <div className="d-flex justify-content-around">
+          <button className="btn btn-danger btn-lg" onClick={limpiarInput}>
+            C
+          </button>
+          <button className="btn btn-warning btn-lg" onClick={retrocederInput}>
+            ⌫
+          </button>
+        </div>
+
+        {resultado && (
+          <div className="mt-4 text-center">
+            <h4 className="fw-bold">Resultado: {resultado}</h4>
           </div>
         )}
       </div>
+
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
           Cerrar

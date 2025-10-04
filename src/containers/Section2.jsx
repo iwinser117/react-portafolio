@@ -127,8 +127,8 @@ export default function ProyectosNodeJS() {
       <MDBCard
         className="h-100 MDBCard"
         style={isHovered ? { ...cardStyle, ...hoverCardStyle } : cardStyle}
-        onMouseEnter={() => setHoveredCard(repoName)}
-        onMouseLeave={() => setHoveredCard(null)}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
         onClick={handleCardClick}
       >
         <MDBCardImage
