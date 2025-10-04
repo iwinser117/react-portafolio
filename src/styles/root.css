@@ -19,3 +19,7 @@
 body {
   font-size: 1.1rem;
 }
+
+.modal-backdrop {
+  z-index: -1;
+}
