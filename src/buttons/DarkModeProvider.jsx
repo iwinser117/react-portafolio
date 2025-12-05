@@ -29,7 +29,7 @@ const DarkModeProvider = ({ children }) => {
           <input 
             id="input" 
             type="checkbox" 
-            checked={isDarkMode}
+            checked={!isDarkMode}
             onChange={handleModeChange}
           />
           <div className="slider1 round">
