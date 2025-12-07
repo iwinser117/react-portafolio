@@ -58,12 +58,12 @@ const Proyectos = () => {
     heroGradient: { background: colors.gradientPrimary, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' },
     heroSubtitle: { fontSize: 'clamp(1.1rem, 2vw, 1.5rem)', color: colors.textSecondary, maxWidth: '800px', margin: '0 auto' },
     filtersContainer: { maxWidth: '1400px', margin: '0 auto', padding: '2rem 1rem' },
-    filtersBox: { background: isDark ? 'rgba(245, 246, 247, 0.05)' : 'rgba(0, 0, 0, 0.02)', backdropFilter: 'blur(20px)', borderRadius: '1.5rem', padding: '1.5rem', border: `1px solid ${colors.borderColor}`, display: 'flex', flexDirection: 'column', gap: '1rem' },
+    filtersBox: { background: isDark ? 'rgba(245, 246, 247, 0.05)' : 'rgba(0, 0, 0, 0.02)', backdropFilter: 'blur(20px)', borderRadius: '1.5rem', padding: '1.5rem', borderWidth: '1px', borderStyle: 'solid', borderColor: colors.borderColor, display: 'flex', flexDirection: 'column', gap: '1rem' },
     searchWrapper: { position: 'relative', flex: 1, maxWidth: '100%' },
     searchIcon: { position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: colors.textMuted },
-    searchInput: { width: '100%', padding: '0.875rem 1rem 0.875rem 3rem', background: isDark ? 'rgba(245, 246, 247, 0.1)' : 'rgba(0, 0, 0, 0.05)', border: `1px solid ${colors.borderColor}`, borderRadius: '0.75rem', color: colors.textPrimary, fontSize: '1rem', transition: 'all 0.3s ease' },
+    searchInput: { width: '100%', padding: '0.875rem 1rem 0.875rem 3rem', background: isDark ? 'rgba(245, 246, 247, 0.1)' : 'rgba(0, 0, 0, 0.05)', borderWidth: '1px', borderStyle: 'solid', borderColor: colors.borderColor, borderRadius: '0.75rem', color: colors.textPrimary, fontSize: '1rem', transition: 'all 0.3s ease' },
     categoryFilters: { display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center' },
-    filterBtn: { padding: '0.625rem 1.25rem', borderRadius: '0.75rem', fontWeight: 600, fontSize: '0.95rem', transition: 'all 0.3s ease', border: `1px solid ${colors.borderColor}`, background: isDark ? 'rgba(245, 246, 247, 0.05)' : 'rgba(0, 0, 0, 0.02)', color: colors.textSecondary, cursor: 'pointer' },
+    filterBtn: { padding: '0.625rem 1.25rem', borderRadius: '0.75rem', fontWeight: 600, fontSize: '0.95rem', transition: 'all 0.3s ease', borderWidth: '1px', borderStyle: 'solid', borderColor: colors.borderColor, background: isDark ? 'rgba(245, 246, 247, 0.05)' : 'rgba(0, 0, 0, 0.02)', color: colors.textSecondary, cursor: 'pointer' },
     filterBtnHover: { background: isDark ? 'rgba(245, 246, 247, 0.1)' : 'rgba(0, 0, 0, 0.05)', transform: 'translateY(-2px)' },
     filterBtnActive: { background: colors.gradientPrimary, color: 'white', borderColor: 'transparent', boxShadow: colors.shadowMedium, transform: 'scale(1.05)' },
     sectionWrapper: { maxWidth: '1400px', margin: '0 auto', padding: '3rem 1rem' },
@@ -158,13 +158,13 @@ const Proyectos = () => {
         {filteredProjects.length === 0 && (<div style={styles.emptyState}><div style={styles.emptyIcon}>🔍</div><h3 style={styles.emptyTitle}>No se encontraron proyectos</h3><p style={styles.emptyText}>Intenta con otros términos de búsqueda o categorías</p></div>)}
       </div>
 
-      <div style={styles.ctaSection}>
+      {/* <div style={styles.ctaSection}>
         <div style={styles.ctaBox}>
           <h2 style={styles.ctaTitle}>¿Tienes un proyecto en mente?</h2>
           <p style={styles.ctaText}>Estoy disponible para colaborar en proyectos interesantes</p>
           <button style={styles.ctaButton} onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'} onMouseLeave={(e) => e.target.style.transform = 'scale(1)'} onClick={() => window.location.href = '#contacto'}>Contáctame</button>
         </div>
-      </div>
+      </div> */}
 
       <Formulario />
       <Footer />
@@ -178,7 +178,7 @@ const ProjectCard = ({ project, featured = false, isDark, colors }) => {
   const [hoveredBtn, setHoveredBtn] = useState(null);
 
   const getCardStyles = () => ({
-    card: { position: 'relative', background: isDark ? 'rgba(245, 246, 247, 0.03)' : 'rgba(0, 0, 0, 0.02)', backdropFilter: 'blur(20px)', borderRadius: '1.5rem', overflow: 'hidden', border: featured ? `2px solid ${colors.borderColorActive}` : `1px solid ${colors.borderColor}`, transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)', display: 'flex', flexDirection: 'column', height: '100%', transform: isHovered ? 'translateY(-8px) scale(1.02)' : 'none', boxShadow: isHovered ? colors.shadowMedium : 'none' },
+    card: { position: 'relative', background: isDark ? 'rgba(245, 246, 247, 0.03)' : 'rgba(0, 0, 0, 0.02)', backdropFilter: 'blur(20px)', borderRadius: '1.5rem', overflow: 'hidden', borderWidth: featured ? '2px' : '1px', borderStyle: 'solid', borderColor: featured ? colors.borderColorActive : colors.borderColor, transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)', display: 'flex', flexDirection: 'column', height: '100%', transform: isHovered ? 'translateY(-8px) scale(1.02)' : 'none', boxShadow: isHovered ? colors.shadowMedium : 'none' },
     badge: { position: 'absolute', top: '1rem', right: '1rem', zIndex: 10, background: colors.gradientPrimary, color: 'white', fontSize: '0.75rem', fontWeight: 700, padding: '0.375rem 0.75rem', borderRadius: '9999px', boxShadow: colors.shadowSmall },
     imageContainer: { position: 'relative', height: '200px', overflow: 'hidden', background: colors.bgSecondary },
     image: { width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.7s ease', transform: isHovered ? 'scale(1.1)' : 'scale(1)' },
@@ -187,11 +187,11 @@ const ProjectCard = ({ project, featured = false, isDark, colors }) => {
     title: { fontSize: '1.25rem', fontWeight: 700, color: isHovered ? '#4DB1FF' : colors.textPrimary, transition: 'color 0.3s ease', minHeight: '50px', display: 'flex', alignItems: 'center', lineHeight: '1.3', margin: 0 },
     description: { fontSize: '0.875rem', color: colors.textSecondary, overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', minHeight: '40px', lineHeight: '1.6' },
     tags: { display: 'flex', flexWrap: 'wrap', gap: '0.5rem' },
-    tag: { padding: '0.375rem 0.75rem', background: isDark ? 'rgba(108, 99, 255, 0.15)' : 'rgba(0, 123, 255, 0.1)', color: isDark ? '#4DB1FF' : colors.primary, fontSize: '0.75rem', borderRadius: '9999px', border: `1px solid ${colors.borderColor}` },
+    tag: { padding: '0.375rem 0.75rem', background: isDark ? 'rgba(108, 99, 255, 0.15)' : 'rgba(0, 123, 255, 0.1)', color: isDark ? '#4DB1FF' : colors.primary, fontSize: '0.75rem', borderRadius: '9999px', borderWidth: '1px', borderStyle: 'solid', borderColor: colors.borderColor },
     actions: { display: 'flex', gap: '0.75rem', marginTop: 'auto' },
     actionBtn: { flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', padding: '0.75rem 1rem', borderRadius: '0.75rem', fontWeight: 600, fontSize: '0.9rem', transition: 'all 0.3s ease', textDecoration: 'none', cursor: 'pointer', border: 'none' },
     primaryBtn: { background: colors.gradientPrimary, color: 'white', transform: hoveredBtn === 'demo' ? 'translateY(-2px)' : 'none', boxShadow: hoveredBtn === 'demo' ? colors.shadowMedium : 'none' },
-    secondaryBtn: { background: isDark ? 'rgba(245, 246, 247, 0.05)' : 'rgba(0, 0, 0, 0.02)', color: isDark ? '#4DB1FF' : colors.primary, border: `1px solid ${colors.borderColor}`, transform: hoveredBtn === 'repo' ? 'translateY(-2px)' : 'none', boxShadow: hoveredBtn === 'repo' ? colors.shadowSmall : 'none' },
+    secondaryBtn: { background: isDark ? 'rgba(245, 246, 247, 0.05)' : 'rgba(0, 0, 0, 0.02)', color: isDark ? '#4DB1FF' : colors.primary, borderWidth: '1px', borderStyle: 'solid', borderColor: colors.borderColor, transform: hoveredBtn === 'repo' ? 'translateY(-2px)' : 'none', boxShadow: hoveredBtn === 'repo' ? colors.shadowSmall : 'none' },
     disabled: { opacity: 0.4, cursor: 'not-allowed' },
   });
 
