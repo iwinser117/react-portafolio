@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import { utcToZonedTime } from "date-fns-tz";
-import { FaCss3, FaExternalLinkAlt } from "react-icons/fa";
+import { FaCss3, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import "@styles/letra.css";
 import {
   MDBCard,
@@ -63,7 +63,7 @@ export default function ProyectosCSS() {
     return format(zonedDate, "d 'de' MMMM 'de' yyyy, h:mm a", { locale: es });
   };
 
-  const Card = ({ imgSrc, title, text, repoName, url }) => {
+  const Card = ({ imgSrc, title, text, repoName, url, repoUrl, techs = [] }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const cardStyle = {
@@ -128,7 +128,7 @@ export default function ProyectosCSS() {
           position="top"
           loading="lazy"
         />
-        <MDBCardBody style={{ 
+          <MDBCardBody style={{ 
           flex: 1, 
           display: "flex", 
           flexDirection: "column",
@@ -146,6 +146,9 @@ export default function ProyectosCSS() {
           }}>
             {title}
           </MDBCardTitle>
+          <div className="tech-badges" style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+            {techs.map((t, i) => <span key={i} className="tech-badge">{t}</span>)}
+          </div>
           <MDBCardText style={{ 
             fontSize: "0.95rem", 
             lineHeight: "1.6",
@@ -156,23 +159,23 @@ export default function ProyectosCSS() {
           }}>
             {text}
           </MDBCardText>
-          <a
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={buttonStyle}
-            onClick={handleVisitClick}
-            onMouseEnter={(e) => {
-              e.target.style.background = 'rgba(255, 255, 255, 0.2)';
-              e.target.style.transform = 'scale(1.02)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.background = 'rgba(255, 255, 255, 0.1)';
-              e.target.style.transform = 'scale(1)';
-            }}
-          >
-            Visitar Sitio <FaExternalLinkAlt />
-          </a>
+          <div className="card-actions" style={{ marginTop: 'auto' }}>
+            {url && (
+              <a
+                onClick={(e) => e.stopPropagation()}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={buttonStyle}
+                onClick={handleVisitClick}
+              >
+                Visitar Sitio <FaExternalLinkAlt />
+              </a>
+            )}
+            {repoUrl && (
+              <a onClick={(e) => e.stopPropagation()} href={repoUrl} target="_blank" rel="noopener noreferrer" style={{ ...buttonStyle, background: 'rgba(0,0,0,0.06)' }}><FaGithub /> Repositorio</a>
+            )}
+          </div>
         </MDBCardBody>
         <MDBCardFooter style={{ 
           background: "rgba(255,255,255,0.05)",
@@ -211,6 +214,8 @@ export default function ProyectosCSS() {
               text="Visitar aplicación"
               repoName="fireExtinguishers"
               url="https://fire-extinguishers.vercel.app"
+              repoUrl={`https://github.com/${owner}/fireExtinguishers`}
+              techs={["HTML","CSS","Animations"]}
             />
           </MDBCol>
           <MDBCol>
@@ -220,6 +225,8 @@ export default function ProyectosCSS() {
               text="Sitio web de imágenes de un gran artista en desarrollo."
               repoName="galery_art"
               url="https://galery-art-rho.vercel.app/"
+              repoUrl={`https://github.com/${owner}/galery_art`}
+              techs={["HTML","CSS","Lightbox"]}
             />
           </MDBCol>
           <MDBCol>
@@ -229,6 +236,8 @@ export default function ProyectosCSS() {
               text="Sitio que muestra 4 distintos temas para tu web"
               repoName="css_background"
               url="https://iwinser117.github.io/https---github.com-iwinser117-css_background/"
+              repoUrl={`https://github.com/${owner}/css_background`}
+              techs={["CSS","Animations","Responsive"]}
             />
           </MDBCol>
           <MDBCol>
@@ -238,6 +247,8 @@ export default function ProyectosCSS() {
               text="Ejemplo de una plantilla responsive con CSS."
               repoName="responsivetemplate"
               url="https://responsivetemplatecss.netlify.app/"
+              repoUrl={`https://github.com/${owner}/responsivetemplate`}
+              techs={["HTML","CSS","Responsive"]}
             />
           </MDBCol>
         </MDBRow>

@@ -14,7 +14,7 @@ import {
   MDBCol,
 } from "mdb-react-ui-kit";
 import { Container } from "react-bootstrap";
-import { FaNodeJs, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaNodeJs, FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 import TableExport from "@codigoProyectos/TableExport";
 
 import generatePassword from "@assets/generatePassword.webp";
@@ -71,6 +71,8 @@ export default function ProyectosNodeJS() {
     repoName,
     onCardClick,
     projectUrl,
+    repoUrl,
+    techs = [],
     buttonText = "Ir al Proyecto"
   }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -112,7 +114,8 @@ export default function ProyectosNodeJS() {
     };
 
     const handleCardClick = (e) => {
-      if (e.target.closest('button')) return;
+      // prevent triggering card action when clicking inside links or buttons
+      if (e.target.closest('button') || e.target.closest('a')) return;
       if (onCardClick) onCardClick();
     };
 
@@ -143,7 +146,7 @@ export default function ProyectosNodeJS() {
           position="top"
           loading="lazy"
         />
-        <MDBCardBody style={{ 
+          <MDBCardBody style={{ 
           flex: 1, 
           display: "flex", 
           flexDirection: "column",
@@ -161,6 +164,9 @@ export default function ProyectosNodeJS() {
           }}>
             {title}
           </MDBCardTitle>
+          <div className="tech-badges" style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+            {techs.map((t, i) => <span key={i} className="tech-badge">{t}</span>)}
+          </div>
           <MDBCardText style={{ 
             flex: 1, 
             fontSize: "0.95rem", 
@@ -171,20 +177,14 @@ export default function ProyectosNodeJS() {
           }}>
             {text}
           </MDBCardText>
-          <button
-            style={buttonStyle}
-            onClick={handleButtonClick}
-            onMouseEnter={(e) => {
-              e.target.style.background = 'rgba(100, 255, 218, 0.2)';
-              e.target.style.transform = 'scale(1.02)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.background = 'rgba(100, 255, 218, 0.1)';
-              e.target.style.transform = 'scale(1)';
-            }}
-          >
-            {buttonText} <FaExternalLinkAlt />
-          </button>
+          <div className="card-actions" style={{ marginTop: 'auto' }}>
+            {projectUrl && (
+              <a onClick={(e) => e.stopPropagation()} style={buttonStyle} className="action-link" href={projectUrl} target="_blank" rel="noopener noreferrer">{buttonText} <FaExternalLinkAlt /></a>
+            )}
+            {repoUrl && (
+              <a onClick={(e) => e.stopPropagation()} style={{ ...buttonStyle, background: 'rgba(0,0,0,0.06)', color: '#fff', border: '1px solid rgba(255,255,255,0.08)' }} className="action-link" href={repoUrl} target="_blank" rel="noopener noreferrer"><FaGithub /> Repositorio</a>
+            )}
+          </div>
         </MDBCardBody>
         <MDBCardFooter style={{ 
           background: "rgba(255,255,255,0.05)", 
@@ -223,6 +223,8 @@ export default function ProyectosNodeJS() {
               text="Sitio web para presencia online de odontólogos."
               repoName="odonto_web"
               projectUrl="https://odonto-web-red.vercel.app/"
+              repoUrl={`https://github.com/${owner}/odonto_web`}
+              techs={["Node.js","Express","Bootstrap"]}
               buttonText="Visitar sitio"
             />
           </MDBCol>
@@ -233,6 +235,8 @@ export default function ProyectosNodeJS() {
               text="Sitio web que emula un sistema de reservas."
               repoName="reservas"
               projectUrl="https://reservas-eta.vercel.app/"
+              repoUrl={`https://github.com/${owner}/reservas`}
+              techs={["Node.js","Express","Vercel"]}
               buttonText="Visitar sitio"
             />
           </MDBCol>
@@ -240,9 +244,11 @@ export default function ProyectosNodeJS() {
             <Card
               imgSrc={login}
               title="Autenticación JWT"
-              text="Implementación de login seguro con JSON Web Tokens."
+              text="Implementación de login con JSON Web Tokens. Incluye rutas protegidas y manejo de sesiones."
               repoName="autenticate"
               projectUrl="https://autenticate.vercel.app/"
+              repoUrl={`https://github.com/${owner}/autenticate`}
+              techs={["Node.js","JWT","Express"]}
               buttonText="Probar Login"
             />
           </MDBCol>
@@ -253,6 +259,8 @@ export default function ProyectosNodeJS() {
               text="Crea contraseñas seguras con parámetros personalizables."
               repoName="generatepassword"
               projectUrl="https://generatepassword-theta.vercel.app/"
+              repoUrl={`https://github.com/${owner}/generatepassword`}
+              techs={["HTML","CSS","JS"]}
               buttonText="Generar Contraseña"
             />
           </MDBCol>
@@ -264,6 +272,8 @@ export default function ProyectosNodeJS() {
               repoName="TableExportJS"
               onCardClick={() => setModals({ tableExport: true })}
               projectUrl="https://table-export-js-4zq5.vercel.app"
+              repoUrl={`https://github.com/${owner}/TableExportJS`}
+              techs={["Vanilla JS","CSV","XLSX"]}
               buttonText="Explorar Herramienta"
             />
           </MDBCol>
