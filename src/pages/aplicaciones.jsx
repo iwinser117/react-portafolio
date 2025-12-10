@@ -26,15 +26,18 @@ const getThemeColors = (isDark) => ({
   shadowSmall: isDark ? '0 4px 12px rgba(108,99,255,0.2)' : '0 4px 12px rgba(0,123,255,0.15)',
   shadowMedium: isDark ? '0 10px 25px rgba(108,99,255,0.3)' : '0 10px 25px rgba(0,123,255,0.2)',
   shadowLarge: isDark ? '0 20px 50px rgba(108,99,255,0.3)' : '0 20px 50px rgba(0,123,255,0.2)',
+  accentHover: '#2e7272',
 });
 
-const deriveCategory = (subtitle = "") => {
+const deriveCategories = (subtitle = "") => {
   const s = subtitle.toLowerCase();
-  if (s.includes("node") || s.includes("express") || s.includes("mongo")) return "Node";
-  if (s.includes("tailwind") || s.includes("css") || s.includes("scss")) return "CSS";
-  if (s.includes("react") || s.includes("next") || s.includes("ui") || s.includes("landing")) return "Landing Page";
-  if (s.includes("api") || s.includes("export")) return "API";
-  return "Other";
+  const categories = [];
+  //un proyecto puede pertenecer a varias categorias
+  if (s.includes("node") || s.includes("express") || s.includes("mongo")) categories.push("Node");
+  if (s.includes("tailwind") || s.includes("css") || s.includes("scss")) categories.push("CSS");
+  if (s.includes("react") || s.includes("next") || s.includes("ui") || s.includes("landing")) categories.push("Landing Page");
+  if (s.includes("api") || s.includes("export")) categories.push("API");
+  return categories.length > 0 ? categories : ["Other"];
 };
 
 const Proyectos = () => {
@@ -44,65 +47,25 @@ const Proyectos = () => {
   const isDark = useDarkMode();
   const colors = getThemeColors(isDark);
 
-  const getStyles = () => ({
-    wrapper: {
-      minHeight: '100vh',
-      background: isDark 
-        ? 'linear-gradient(135deg, #1D232A 0%, #232946 50%, #1D232A 100%)'
-        : 'linear-gradient(135deg, #F5F6F7 0%, #ffffff 50%, #F5F6F7 100%)',
-    },
-    heroSection: { position: 'relative', overflow: 'hidden', padding: '120px 20px', textAlign: 'center' },
-    heroOverlay: { position: 'absolute', inset: 0, background: colors.gradientHover, backdropFilter: 'blur(60px)' },
-    heroContent: { position: 'relative', maxWidth: '1200px', margin: '0 auto' },
-    heroTitle: { fontSize: 'clamp(2.5rem, 7vw, 5rem)', fontWeight: 700, color: colors.textPrimary, marginBottom: '1.5rem', letterSpacing: '-0.02em' },
-    heroGradient: { background: colors.gradientPrimary, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' },
-    heroSubtitle: { fontSize: 'clamp(1.1rem, 2vw, 1.5rem)', color: colors.textSecondary, maxWidth: '800px', margin: '0 auto' },
-    filtersContainer: { maxWidth: '1400px', margin: '0 auto', padding: '2rem 1rem' },
-    filtersBox: { background: isDark ? 'rgba(245, 246, 247, 0.05)' : 'rgba(0, 0, 0, 0.02)', backdropFilter: 'blur(20px)', borderRadius: '1.5rem', padding: '1.5rem', borderWidth: '1px', borderStyle: 'solid', borderColor: colors.borderColor, display: 'flex', flexDirection: 'column', gap: '1rem' },
-    searchWrapper: { position: 'relative', flex: 1, maxWidth: '100%' },
-    searchIcon: { position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: colors.textMuted },
-    searchInput: { width: '100%', padding: '0.875rem 1rem 0.875rem 3rem', background: isDark ? 'rgba(245, 246, 247, 0.1)' : 'rgba(0, 0, 0, 0.05)', borderWidth: '1px', borderStyle: 'solid', borderColor: colors.borderColor, borderRadius: '0.75rem', color: colors.textPrimary, fontSize: '1rem', transition: 'all 0.3s ease' },
-    categoryFilters: { display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center' },
-    filterBtn: { padding: '0.625rem 1.25rem', borderRadius: '0.75rem', fontWeight: 600, fontSize: '0.95rem', transition: 'all 0.3s ease', borderWidth: '1px', borderStyle: 'solid', borderColor: colors.borderColor, background: isDark ? 'rgba(245, 246, 247, 0.05)' : 'rgba(0, 0, 0, 0.02)', color: colors.textSecondary, cursor: 'pointer' },
-    filterBtnHover: { background: isDark ? 'rgba(245, 246, 247, 0.1)' : 'rgba(0, 0, 0, 0.05)', transform: 'translateY(-2px)' },
-    filterBtnActive: { background: colors.gradientPrimary, color: 'white', borderColor: 'transparent', boxShadow: colors.shadowMedium, transform: 'scale(1.05)' },
-    sectionWrapper: { maxWidth: '1400px', margin: '0 auto', padding: '3rem 1rem' },
-    sectionHeader: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' },
-    sectionTitle: { fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 700, color: colors.textPrimary, display: 'flex', alignItems: 'center', gap: '0.75rem' },
-    titleBar: { width: '0.5rem', height: '2rem', background: colors.gradientPrimary, borderRadius: '9999px' },
-    projectCount: { color: colors.textMuted, fontSize: '0.875rem' },
-    projectsGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' },
-    emptyState: { textAlign: 'center', padding: '5rem 1rem' },
-    emptyIcon: { fontSize: '4rem', marginBottom: '1rem' },
-    emptyTitle: { fontSize: '1.5rem', fontWeight: 600, color: colors.textPrimary, marginBottom: '0.5rem' },
-    emptyText: { color: colors.textMuted },
-    ctaSection: { maxWidth: '1400px', margin: '0 auto', padding: '3rem 1rem 5rem' },
-    ctaBox: { background: 'linear-gradient(135deg, #007bff, #0a6ed1)', borderRadius: '2rem', padding: '4rem 2rem', textAlign: 'center', boxShadow: colors.shadowLarge },
-    ctaTitle: { fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 700, color: 'white', marginBottom: '1rem' },
-    ctaText: { fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: 'aliceblue', marginBottom: '2rem', maxWidth: '800px', marginLeft: 'auto', marginRight: 'auto' },
-    ctaButton: { background: 'white', color: colors.primary, padding: '1rem 2rem', borderRadius: '0.75rem', fontWeight: 700, fontSize: '1.125rem', border: 'none', cursor: 'pointer', transition: 'all 0.3s ease', boxShadow: '0 10px 30px rgba(0, 0, 0, 0.2)' },
-  });
-
-  const styles = getStyles();
-
   const projects = useMemo(() => {
     const fromSecond = secondImages.map((p, i) => ({
-      id: `second-${i}`, title: p.alt || `Proyecto ${i + 1}`, img: p.src, subtitle: p.subtitle || "", category: deriveCategory(p.subtitle), tags: p.subtitle ? p.subtitle.split(" - ") : [], repo: p.repo || "", demo: p.demo || "", featured: p.featured || false
+      id: `second-${i}`, title: p.alt || `Proyecto ${i + 1}`, img: p.src, subtitle: p.subtitle || "", categories: deriveCategories(p.subtitle), tags: p.subtitle ? p.subtitle.split(" - ") : [], repo: p.repo || "", demo: p.demo || "", featured: p.featured || false
     }));
     const fromTodo = Object.keys(imagesTodowebp).map((key, i) => ({
-      id: `todo-${i}`, title: key.replace(/([A-Z])/g, " $1").replace(/_/g, " ").trim(), img: imagesTodowebp[key], subtitle: "", category: "Landing Page", tags: ["HTML", "CSS", "JavaScript"], repo: "", demo: "", featured: false
+      id: `todo-${i}`, title: key.replace(/([A-Z])/g, " $1").replace(/_/g, " ").trim(), img: imagesTodowebp[key], subtitle: "", categories: ["Landing Page"], tags: ["HTML", "CSS", "JavaScript"], repo: "", demo: "", featured: false
     }));
-    return [...fromSecond, ...fromTodo];
+    return [...fromSecond];
   }, []);
 
   const categories = useMemo(() => {
-    const cats = new Set(projects.map(p => p.category));
+    const cats = new Set();
+    projects.forEach(p => p.categories.forEach(cat => cats.add(cat)));
     return ['All', ...Array.from(cats)];
   }, [projects]);
 
   const filteredProjects = useMemo(() => {
     return projects.filter(project => {
-      const matchesCategory = selectedCategory === 'All' || project.category === selectedCategory;
+      const matchesCategory = selectedCategory === 'All' || project.categories.includes(selectedCategory);
       const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) || project.subtitle.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesCategory && matchesSearch;
     });
@@ -111,26 +74,101 @@ const Proyectos = () => {
   const featuredProjects = projects.filter(p => p.featured);
 
   return (
-    <div style={styles.wrapper}>
+    <div style={{ minHeight: '100vh' }}>
       <Nav />
-      <div style={styles.heroSection}>
-        <div style={styles.heroOverlay}></div>
-        <div style={styles.heroContent}>
-          <h1 style={styles.heroTitle}>Mis <span style={styles.heroGradient}>Proyectos</span></h1>
-          <p style={styles.heroSubtitle}>Explora mi portafolio de aplicaciones web modernas y funcionales</p>
+      
+      <div style={{ position: 'relative', overflow: 'hidden', padding: '120px 20px', textAlign: 'center' }}>
+        <div style={{ position: 'absolute', inset: 0, background: colors.gradientHover, backdropFilter: 'blur(60px)' }}></div>
+        <div style={{ position: 'relative', maxWidth: '1200px', margin: '0 auto' }}>
+          <h1 style={{ 
+            fontSize: 'clamp(1.8rem, 5vw, 3rem)', 
+            fontWeight: 700, 
+            color: colors.textPrimary,
+            marginBottom: '1.5rem', 
+            letterSpacing: '-0.02em',
+            transition: 'color 0.3s ease'
+          }}>
+            Mis <span style={{ 
+              background: colors.gradientPrimary, 
+              WebkitBackgroundClip: 'text', 
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>Proyectos</span>
+          </h1>
+          <p style={{ 
+            fontSize: 'clamp(1rem, 2vw, 1.25rem)', 
+            color: colors.textSecondary,
+            maxWidth: '800px',
+            margin: '0 auto',
+            transition: 'color 0.3s ease'
+          }}>
+            Explora mi portafolio de aplicaciones web modernas y funcionales
+          </p>
         </div>
       </div>
 
-      <div style={styles.filtersContainer}>
-        <div style={{...styles.filtersBox, ...(window.innerWidth >= 1024 ? {flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between'} : {})}}>
-          <div style={{...styles.searchWrapper, ...(window.innerWidth >= 1024 ? {maxWidth: '400px'} : {})}}>
-            <Search style={styles.searchIcon} size={20} />
-            <input type="text" placeholder="Buscar proyectos..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} style={styles.searchInput} />
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '2rem 1rem' }}>
+        <div style={{ 
+          background: isDark ? 'rgba(245, 246, 247, 0.05)' : 'rgba(0, 0, 0, 0.02)', 
+          backdropFilter: 'blur(20px)', 
+          borderRadius: '1.5rem', 
+          padding: '1.5rem', 
+          borderWidth: '1px',
+          borderStyle: 'solid',
+          borderColor: colors.borderColor,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '1rem'
+        }}>
+          <div style={{ position: 'relative', flex: 1, maxWidth: '100%' }}>
+            <Search style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: colors.textMuted }} size={20} />
+            <input 
+              type="text" 
+              placeholder="Buscar proyectos..." 
+              value={searchQuery} 
+              onChange={(e) => setSearchQuery(e.target.value)} 
+              style={{ 
+                width: '100%', 
+                padding: '0.875rem 1rem 0.875rem 3rem', 
+                background: isDark ? 'rgba(245, 246, 247, 0.1)' : 'rgba(0, 0, 0, 0.05)', 
+                borderWidth: '1px',
+                borderStyle: 'solid',
+                borderColor: colors.borderColor,
+                borderRadius: '0.75rem', 
+                color: colors.textPrimary, 
+                fontSize: '1rem', 
+                transition: 'all 0.3s ease' 
+              }} 
+            />
           </div>
 
-          <div style={styles.categoryFilters}>
+          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
             {categories.map(category => (
-              <button key={category} onClick={() => setSelectedCategory(category)} onMouseEnter={() => setHoveredFilter(category)} onMouseLeave={() => setHoveredFilter(null)} style={{...styles.filterBtn, ...(selectedCategory === category ? styles.filterBtnActive : {}), ...(hoveredFilter === category && selectedCategory !== category ? styles.filterBtnHover : {})}}>
+              <button 
+                key={category} 
+                onClick={() => setSelectedCategory(category)} 
+                onMouseEnter={() => setHoveredFilter(category)} 
+                onMouseLeave={() => setHoveredFilter(null)} 
+                style={{ 
+                  padding: '0.625rem 1.25rem', 
+                  borderRadius: '0.75rem', 
+                  fontWeight: 600, 
+                  fontSize: '0.95rem', 
+                  transition: 'all 0.3s ease', 
+                  borderWidth: '1px',
+                  borderStyle: 'solid',
+                  borderColor: selectedCategory === category ? 'transparent' : colors.borderColor,
+                  background: selectedCategory === category 
+                    ? colors.gradientPrimary 
+                    : (hoveredFilter === category 
+                      ? (isDark ? 'rgba(245, 246, 247, 0.1)' : 'rgba(0, 0, 0, 0.05)') 
+                      : (isDark ? 'rgba(245, 246, 247, 0.05)' : 'rgba(0, 0, 0, 0.02)')),
+                  color: selectedCategory === category ? 'white' : colors.textSecondary,
+                  cursor: 'pointer',
+                  boxShadow: selectedCategory === category ? colors.shadowMedium : 'none',
+                  transform: selectedCategory === category ? 'scale(1.05)' : (hoveredFilter === category && selectedCategory !== category ? 'translateY(-2px)' : 'none')
+                }}
+              >
                 {category}
               </button>
             ))}
@@ -139,32 +177,57 @@ const Proyectos = () => {
       </div>
 
       {selectedCategory === 'All' && searchQuery === '' && featuredProjects.length > 0 && (
-        <div style={styles.sectionWrapper}>
-          <h2 style={styles.sectionTitle}><span style={styles.titleBar}></span>Proyectos Destacados</h2>
-          <div style={styles.projectsGrid}>
+        <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '3rem 1rem' }}>
+          <h2 style={{ 
+            fontSize: 'clamp(1.5rem, 3vw, 2rem)', 
+            fontWeight: 700, 
+            color: colors.textPrimary, 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: '0.75rem',
+            marginBottom: '2rem',
+            transition: 'color 0.3s ease'
+          }}>
+            <span style={{ width: '0.5rem', height: '2rem', background: colors.gradientPrimary, borderRadius: '9999px' }}></span>
+            Proyectos Destacados
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
             {featuredProjects.map(project => (<ProjectCard key={project.id} project={project} featured isDark={isDark} colors={colors} />))}
           </div>
         </div>
       )}
 
-      <div style={styles.sectionWrapper}>
-        <div style={styles.sectionHeader}>
-          <h2 style={styles.sectionTitle}><span style={{...styles.titleBar, background: 'linear-gradient(to bottom, #007bff, #17a2b8)'}}></span>{selectedCategory === 'All' ? 'Todos los Proyectos' : `Proyectos de ${selectedCategory}`}</h2>
-          <span style={styles.projectCount}>{filteredProjects.length} {filteredProjects.length === 1 ? 'proyecto' : 'proyectos'}</span>
+      <div style={{ maxWidth: '1400px', margin: '0 auto', padding: '3rem 1rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
+          <h2 style={{ 
+            fontSize: 'clamp(1.5rem, 3vw, 2rem)', 
+            fontWeight: 700, 
+            color: colors.textPrimary, 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: '0.75rem',
+            transition: 'color 0.3s ease'
+          }}>
+            <span style={{ width: '0.5rem', height: '2rem', background: 'linear-gradient(to bottom, #007bff, #17a2b8)', borderRadius: '9999px' }}></span>
+            {selectedCategory === 'All' ? 'Todos los Proyectos' : `Proyectos de ${selectedCategory}`}
+          </h2>
+          <span style={{ color: colors.textMuted, fontSize: '0.875rem', transition: 'color 0.3s ease' }}>
+            {filteredProjects.length} {filteredProjects.length === 1 ? 'proyecto' : 'proyectos'}
+          </span>
         </div>
-        <div style={styles.projectsGrid}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
           {filteredProjects.map(project => (<ProjectCard key={project.id} project={project} isDark={isDark} colors={colors} />))}
         </div>
-        {filteredProjects.length === 0 && (<div style={styles.emptyState}><div style={styles.emptyIcon}>🔍</div><h3 style={styles.emptyTitle}>No se encontraron proyectos</h3><p style={styles.emptyText}>Intenta con otros términos de búsqueda o categorías</p></div>)}
+        {filteredProjects.length === 0 && (
+          <div style={{ textAlign: 'center', padding: '5rem 1rem' }}>
+            <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🔍</div>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 600, color: colors.textPrimary, marginBottom: '0.5rem', transition: 'color 0.3s ease' }}>
+              No se encontraron proyectos
+            </h3>
+            <p style={{ color: colors.textMuted, transition: 'color 0.3s ease' }}>Intenta con otros términos de búsqueda o categorías</p>
+          </div>
+        )}
       </div>
-
-      {/* <div style={styles.ctaSection}>
-        <div style={styles.ctaBox}>
-          <h2 style={styles.ctaTitle}>¿Tienes un proyecto en mente?</h2>
-          <p style={styles.ctaText}>Estoy disponible para colaborar en proyectos interesantes</p>
-          <button style={styles.ctaButton} onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'} onMouseLeave={(e) => e.target.style.transform = 'scale(1)'} onClick={() => window.location.href = '#contacto'}>Contáctame</button>
-        </div>
-      </div> */}
 
       <Formulario />
       <Footer />
