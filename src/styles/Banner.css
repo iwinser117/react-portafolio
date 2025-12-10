@@ -8,6 +8,9 @@
   /* margin-bottom: 40px; */
   /* margin-top: 20px; */
 }
+.dark-mode .banner p{
+  color: #e0e0e0;
+}
 
 .sectionbanner {
   display: flex;
@@ -87,9 +90,13 @@
   font-family: monospace;
   font-weight: bold;
   font-size: 3rem;
+  color: #232946;
+  transition: color 0.3s ease;
 }
 
-
+.dark-mode .nametitle {
+  color: #F5F6F7;
+}
 /* Estilos para pantallas grandes */
 @media (min-width: 992px) {
   .sectionbanner {

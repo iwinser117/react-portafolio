@@ -271,7 +271,7 @@ export default function ProyectosNodeJS() {
               text="Herramienta para exportar tablas en diversos formatos."
               repoName="TableExportJS"
               onCardClick={() => setModals({ tableExport: true })}
-              projectUrl="https://table-export-js-4zq5.vercel.app"
+              projectUrl="https://table-export-js-4zq5.vercel.app/"
               repoUrl={`https://github.com/${owner}/TableExportJS`}
               techs={["Vanilla JS","CSV","XLSX"]}
               buttonText="Explorar Herramienta"

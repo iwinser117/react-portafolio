@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { MDBIcon } from "mdb-react-ui-kit";
 import "@styles/Banner.css";
 import iwinserPerfil from "@assets/iwinserPerfil.webp";
+import { useDarkMode } from "@buttons/DarkModeProvider";
+
 
 const Banner = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const { isDarkMode } = useDarkMode();
   return (
     <section className="sectionbanner">
       <div className="d-flex justify-content-around align-items-center p-2 container banner">
