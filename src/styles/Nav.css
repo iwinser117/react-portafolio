@@ -1,4 +1,16 @@
 /* Estructura y colores originales */
+/* Aplicar transición uniforme a TODOS los elementos del navbar */
+nav,
+#navbar,
+#n2,
+.nav-ul,
+.nav-ul a,
+.navbar-brand,
+.navbar-toggler,
+.container-fluid {
+  transition: background-color 0.12s ease-in-out, color 0.12s ease-in-out !important;
+}
+
 nav .container-fluid .collapse {
   justify-content: end;
 }
@@ -38,7 +50,6 @@ nav .container-fluid .collapse {
     position: relative;
     align-items: center;
     background-color: #F5F6F7;
-    transition: background-color 0.3s ease;
     margin: auto;
     color: #354A5F;
   }
@@ -55,7 +66,6 @@ nav .container-fluid .collapse {
     display: inline-block;
     padding: 5px 15px;
     background-color: #F5F6F7;
-    transition: background-color 0.3s ease;
   }
 
   .nav-ul a:hover {
@@ -67,7 +77,6 @@ nav .container-fluid .collapse {
     position: fixed;
     top: 0;
     height: 50px;
-    transition: top 0.5s;
   }
 
   #navbar {
@@ -76,7 +85,6 @@ nav .container-fluid .collapse {
     top: 0;
     height: 50px;
     background-color: #F5F6F7;
-    transition: all 0.3s ease;
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
@@ -147,7 +155,6 @@ nav .container-fluid .collapse {
     position: relative;
     align-items: center;
     background-color: #F5F6F7;
-    transition: background-color 0.3s ease;
     margin: auto;
     color: #354A5F;
   }
@@ -163,7 +170,6 @@ nav .container-fluid .collapse {
     display: inline-block;
     padding: 5px 15px;
     background-color: #F5F6F7;
-    transition: background-color 0.3s ease;
   }
 
   .nav-ul a:hover {
@@ -190,7 +196,6 @@ nav .container-fluid .collapse {
     top: 0;
     height: 50px;
     background-color: #F5F6F7;
-    transition: all 0.3s ease;
     width: 100%;
     left: 50%;
     transform: translateX(-50%);
@@ -237,18 +242,14 @@ nav .container-fluid .collapse {
     position: fixed;
     top: 0;
     height: 52px;
-    transition: top 0.5s;
     width: 100% !important;
     background: transparent;
+    color: white;
+    background-color: #1D232A;
   }
 
   .dark-mode .nav-ul {
     /* background-color: transparent; */
-  }
-
-  .dark-mode #n2 {
-    color: white;
-    background-color: #1D232A;
   }
 
   #n2 {
@@ -257,11 +258,7 @@ nav .container-fluid .collapse {
     position: fixed;
     top: 0;
     height: 50px;
-    transition: top 0.5s;
     background: transparent;
-  }
-
-  #n2 {
     background-color: rgba(255, 255, 255, 0.8);
   }
 

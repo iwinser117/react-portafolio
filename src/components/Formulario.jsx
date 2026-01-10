@@ -5,18 +5,18 @@ import { exito, noEnviado, limpiarInput } from "../utils/sendForm";
 import { useDarkMode } from "@buttons/DarkModeProvider";
 
 const getThemeColors = (isDark) => ({
-  primary: '#007bff',
+  primary: '#004085',
   secondary: '#6c757d',
   bgPrimary: isDark ? '#1D232A' : '#F5F6F7',
   bgSecondary: isDark ? '#232946' : '#ffffff',
   textPrimary: isDark ? '#F5F6F7' : '#232946',
   textSecondary: isDark ? '#e0e0e0' : '#354A5F',
-  textMuted: isDark ? '#6c757d' : '#868e96',
-  gradientPrimary: 'linear-gradient(90deg, #6c63ff, #00c6fb)',
-  borderColor: isDark ? 'rgba(108,99,255,0.2)' : 'rgba(0,123,255,0.1)',
-  borderColorFocus: isDark ? 'rgba(108,99,255,0.5)' : 'rgba(0,123,255,0.3)',
-  shadowSmall: isDark ? '0 4px 12px rgba(108,99,255,0.2)' : '0 4px 12px rgba(0,123,255,0.15)',
-  shadowMedium: isDark ? '0 10px 25px rgba(108,99,255,0.3)' : '0 10px 25px rgba(0,123,255,0.2)',
+  textMuted: isDark ? '#999' : '#868e96',
+  gradientPrimary: isDark ? 'linear-gradient(135deg, #004085 0%, #0066cc 100%)' : 'linear-gradient(135deg, #004085 0%, #1a75ff 100%)',
+  borderColor: isDark ? 'rgba(0, 64, 133, 0.15)' : 'rgba(0, 64, 133, 0.08)',
+  borderColorFocus: isDark ? 'rgba(0, 64, 133, 0.4)' : 'rgba(0, 64, 133, 0.25)',
+  shadowSmall: isDark ? '0 4px 12px rgba(0, 64, 133, 0.15)' : '0 4px 12px rgba(0, 64, 133, 0.1)',
+  shadowMedium: isDark ? '0 10px 25px rgba(0, 64, 133, 0.2)' : '0 10px 25px rgba(0, 64, 133, 0.12)',
 });
 
 const Formulario = () => {
@@ -32,7 +32,7 @@ const Formulario = () => {
     container: {
       maxWidth: '1200px',
       margin: '0 auto',
-      padding: '4rem 1rem',
+      padding: '3rem 1rem',
       position: 'relative',
     },
     header: {
@@ -40,14 +40,18 @@ const Formulario = () => {
       marginBottom: '2rem',
     },
     title: {
-      fontSize: 'clamp(2rem, 5vw, 3rem)',
+      fontSize: 'clamp(1.8rem, 4vw, 2.5rem)',
       fontWeight: 700,
-      color: colors.textPrimary,
-      marginBottom: '1rem',
-      background: colors.gradientPrimary,
-      WebkitBackgroundClip: 'text',
-      WebkitTextFillColor: 'transparent',
-      backgroundClip: 'text',
+      color: isDark ? colors.textPrimary : '#004085',
+      marginBottom: '0.5rem',
+      background: isDark ? colors.gradientPrimary : 'linear-gradient(90deg, transparent 0%, #004085 0%, #004085 100%, transparent 100%)',
+      WebkitBackgroundClip: isDark ? 'text' : 'unset',
+      WebkitTextFillColor: isDark ? 'transparent' : 'unset',
+      backgroundClip: isDark ? 'text' : 'unset',
+      padding: isDark ? '0' : '0',
+      borderRadius: isDark ? '0' : '0',
+      display: 'inline-block',
+      position: 'relative',
     },
     subtitle: {
       fontSize: 'clamp(0.9rem, 2vw, 1rem)',
@@ -77,22 +81,22 @@ const Formulario = () => {
       boxShadow: colors.shadowMedium,
     },
     formWrapper: {
-      maxWidth: '700px',
+      maxWidth: '600px',
       margin: '0 auto',
       transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
     },
     formContainer: {
-      background: isDark ? 'rgba(245, 246, 247, 0.03)' : 'rgba(0, 0, 0, 0.02)',
-      backdropFilter: 'blur(20px)',
-      borderRadius: '1.5rem',
-      padding: '2.5rem',
+      background: isDark ? 'rgba(29, 35, 42, 0.7)' : 'rgba(255, 255, 255, 0.8)',
+      backdropFilter: 'blur(10px)',
+      borderRadius: '1rem',
+      padding: '2rem',
       borderWidth: '1px',
       borderStyle: 'solid',
       borderColor: colors.borderColor,
-      boxShadow: colors.shadowMedium,
+      boxShadow: colors.shadowSmall,
     },
     formGroup: {
-      marginBottom: '1.5rem',
+      marginBottom: '1.25rem',
     },
     label: {
       display: 'flex',
@@ -105,14 +109,14 @@ const Formulario = () => {
     },
     input: {
       width: '100%',
-      padding: '0.875rem 1rem',
-      fontSize: '1rem',
+      padding: '0.75rem 0.875rem',
+      fontSize: '0.95rem',
       color: colors.textPrimary,
-      background: isDark ? 'rgba(245, 246, 247, 0.05)' : 'rgba(0, 0, 0, 0.02)',
+      background: isDark ? 'rgba(245, 246, 247, 0.04)' : 'rgba(0, 0, 0, 0.01)',
       borderWidth: '1px',
       borderStyle: 'solid',
       borderColor: colors.borderColor,
-      borderRadius: '0.75rem',
+      borderRadius: '0.5rem',
       transition: 'all 0.3s ease',
       outline: 'none',
     },
@@ -123,39 +127,39 @@ const Formulario = () => {
     },
     textarea: {
       width: '100%',
-      padding: '0.875rem 1rem',
-      fontSize: '1rem',
+      padding: '0.75rem 0.875rem',
+      fontSize: '0.95rem',
       color: colors.textPrimary,
-      background: isDark ? 'rgba(245, 246, 247, 0.05)' : 'rgba(0, 0, 0, 0.02)',
+      background: isDark ? 'rgba(245, 246, 247, 0.04)' : 'rgba(0, 0, 0, 0.01)',
       borderWidth: '1px',
       borderStyle: 'solid',
       borderColor: colors.borderColor,
-      borderRadius: '0.75rem',
+      borderRadius: '0.5rem',
       transition: 'all 0.3s ease',
       outline: 'none',
       resize: 'vertical',
-      minHeight: '120px',
+      minHeight: '100px',
     },
     submitButton: {
       width: '100%',
-      padding: '1rem 2rem',
-      fontSize: '1.1rem',
+      padding: '0.875rem 2rem',
+      fontSize: '1rem',
       fontWeight: 600,
       color: 'white',
       background: colors.gradientPrimary,
       border: 'none',
-      borderRadius: '0.75rem',
+      borderRadius: '0.5rem',
       cursor: 'pointer',
       transition: 'all 0.3s ease',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
       gap: '0.5rem',
-      marginTop: '2rem',
+      marginTop: '1.5rem',
     },
     submitButtonHover: {
       transform: 'translateY(-2px)',
-      boxShadow: colors.shadowMedium,
+      boxShadow: colors.shadowSmall,
     },
     icon: {
       color: '#4DB1FF',
@@ -207,7 +211,7 @@ const Formulario = () => {
   return (
     <section style={styles.container} id="contactame">
       <div style={styles.header}>
-        <h3 style={styles.title}>Contáctame</h3>
+          <h3 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 700, marginBottom: '0.5rem' }}>Contáctame</h3>
         <p style={styles.subtitle}>
           {viewForm ? "" : "Diligenciar formulario"}
         </p>
