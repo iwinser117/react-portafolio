@@ -64,7 +64,7 @@ const Acerca = () => {
           {text}
           <span>Iwinser Sanchez</span>
         </h3>
-        <p>
+        <p className="text-pretty">
           Apasionado por la tecnología y el desarrollo de software, me especializo en crear soluciones innovadoras. Mi objetivo es desarrollar tecnologías de alta calidad que generen impacto.
           Como Consultor BTP en MQA Suramérica, desarrollo aplicaciones empresariales utilizando SAP BTP, CAP y UI5, integrándolas con SAP Fiori y S/4HANA. Paralelamente, trabajo en proyectos independientes como desarrollador Fullstack JavaScript, utilizando React, Node.js y MongoDB para crear aplicaciones web completas y robustas.
         </p>

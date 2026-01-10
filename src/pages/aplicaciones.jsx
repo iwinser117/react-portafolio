@@ -74,7 +74,7 @@ const Proyectos = () => {
   const featuredProjects = projects.filter(p => p.featured);
 
   return (
-    <div style={{ minHeight: '100vh' }}>
+    <div style={{ minHeight: '100vh' }} className='container'>
       <Nav />
       
       <div style={{ position: 'relative', overflow: 'hidden', padding: '120px 20px', textAlign: 'center' }}>

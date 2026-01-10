@@ -15,32 +15,35 @@
   cursor: pointer;
 }
 
+/* Estilos antiguos deprecados - mantener para compatibilidad */
 #form-contact {
   font-size: 16px;
-  padding-bottom: 12px;
-  padding-top: 12px;
+  padding: 12px;
   border: solid 1px rgb(175, 175, 175);
-  border-radius: 2%;
+  border-radius: 8px;
   background-color: #ffffff;
-  border-color: #0a6ed1;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  border-color: #004085;
+  box-shadow: 0px 4px 12px rgba(0, 64, 133, 0.15);
+  transition: background-color 0.12s ease-in-out, box-shadow 0.12s ease-in-out;
 }
 
 .dark-mode #form-contact {
-  background-color: #181d22;
-  border-color: #444;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: #1D232A;
+  border-color: #0066cc;
+  box-shadow: 0px 4px 12px rgba(0, 64, 133, 0.2);
+  transition: background-color 0.12s ease-in-out, box-shadow 0.12s ease-in-out;
 }
 
-
 .dark-mode label {
-  color: #ffffff;
+  color: #F5F6F7;
   font-weight: 600;
+  transition: color 0.12s ease-in-out;
 }
 
 label {
-  color: #000000;
+  color: #232946;
   font-weight: 600;
+  transition: color 0.12s ease-in-out;
 }
 
 .none-view {
@@ -48,45 +51,37 @@ label {
 }
 
 .block-view {
-  transition: 2s cubic-bezier(0, 0, 0, 0.27);
+  transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
   opacity: 1;
   border: solid 1px rgb(175, 175, 175);
-  border-radius: 2%;
+  border-radius: 8px;
 }
 
 .text-form {
   text-align: center;
-  font-size: 0.8em;
+  font-size: 0.9em;
   font-family: "Lato", sans-serif;
+  transition: color 0.12s ease-in-out;
 }
 
 .form-control {
-  -webkit-box-shadow: 0px 5px 5px -3px rgba(158, 158, 158, 0.5);
-  -moz-box-shadow: 0px 5px 5px -3px rgba(148, 148, 148, 0.5);
-  box-shadow: 0px 5px 5px -3px rgba(139, 139, 139, 0.5);
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 12px rgba(0, 64, 133, 0.1);
 }
 
 .dark-mode .form-control {
-  -webkit-box-shadow: 0px 5px 5px -3px rgba(158, 158, 158, 0.5);
-  -moz-box-shadow: 0px 5px 5px -3px rgba(148, 148, 148, 0.5);
-  box-shadow: 0px 5px 5px -3px rgba(139, 139, 139, 0.5);
-}
-
-/* Media query para pantallas grandes */
-@media (min-width: 1200px) {}
-
-/* Media query para pantallas medianas */
-@media (min-width: 800px) and (max-width: 1199px) {}
-
-/* Media query para pantallas pequeñas */
-@media (max-width: 799px) {
-  #form-contact {
-    width: 100% !important;
-  }
+  box-shadow: 0px 4px 12px rgba(0, 64, 133, 0.15);
+  transition: all 0.3s ease;
 }
 
 .dark-mode .form-label,
 .dark-mode .text-form {
-  color: white;
+  color: #F5F6F7;
+  transition: color 0.12s ease-in-out;
+}
+
+.form-label,
+.text-form {
+  transition: color 0.12s ease-in-out;
 }
