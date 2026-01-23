@@ -36,7 +36,7 @@ const Acerca = () => {
       setText(
         isDeleting
           ? currentText.substring(0, text.length - 1)
-          : currentText.substring(0, text.length + 1)
+          : currentText.substring(0, text.length + 1),
       );
 
       setTypingSpeed(isDeleting ? 100 : 150);
@@ -65,10 +65,17 @@ const Acerca = () => {
           <span>Iwinser Sanchez</span>
         </h3>
         <p className="text-pretty">
-          Apasionado por la tecnología y el desarrollo de software, me especializo en crear soluciones innovadoras. Mi objetivo es desarrollar tecnologías de alta calidad que generen impacto.
-          Como Consultor BTP en MQA Suramérica, desarrollo aplicaciones empresariales utilizando SAP BTP, CAP y UI5, integrándolas con SAP Fiori y S/4HANA. Paralelamente, trabajo en proyectos independientes como desarrollador Fullstack JavaScript, utilizando React, Node.js y MongoDB para crear aplicaciones web completas y robustas.
+          Desarrollador de software con enfoque en soluciones empresariales y
+          aplicaciones web modernas. Actualmente trabajo como Consultor{" "}
+          <strong>SAP BTP</strong> 
+          en MQA Suramérica, desarrollando aplicaciones sobre{" "}
+          <strong>SAP BTP, CAP y UI5</strong>, integradas con{" "}
+          <strong>SAP Fiori y S/4HANA</strong>. De forma paralela, desarrollo
+          proyectos Fullstack JavaScript, creando aplicaciones web completas con
+          React, Node.js y MongoDB. Me especializo en construir soluciones
+          escalables, bien estructuradas y orientadas a negocio, ideales para
+          entornos remotos y equipos distribuidos.
         </p>
-
       </article>
       {/* <section className="container-experiencia">
         <main>
@@ -106,12 +113,13 @@ const Acerca = () => {
       <article className="cert-container">
         <h4>Certificaciones</h4>
         <p>
-          Durante mi proceso de aprendizaje, hice parte del programa
-          <strong> Misión TIC 2022</strong> ofrecido por la Facultad de
-          Ingeniería de la Universidad de Antioquia obteniendo las
-          certificaciones correspondientes a dicho programa. Además, actualmente
-          continuo aprendiendo a traves de los cursos en la plataforma de
-          estudio en línea Platzi y recursos a mi disposición.
+          Actualmente curso la Ingeniería de Sistemas en la UNAD, lo cual
+          combino con una sólida base técnica obtenida en la Facultad de
+          Ingeniería de la Universidad de Antioquia (<i>Misión TIC 2022</i>). Mi
+          enfoque profesional se basa en el aprendizaje continuo,
+          especializándome constantemente en arquitecturas modernas y
+          tecnologías de alto impacto a través de plataformas líderes y recursos
+          técnicos de vanguardia.
         </p>
       </article>
 

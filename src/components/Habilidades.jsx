@@ -27,17 +27,14 @@ const Habilidades = () => {
           <i className="fa-solid fa-display"></i> Front-end
         </h3>
         <p>
-          Poseo un alto nivel de experiencia en Desarrollo FrontEnd haciendo uso de frameworks y librerías de JavaScript, como <strong>React</strong>, <strong>NextJs</strong> y <strong>UI5</strong>. También tengo experiencia en el desarrollo de aplicaciones web con <strong>HTML5</strong>, <strong>CSS3</strong> e implementación de componentes. <br />
-        </p>
-        <p>
-          Considero que JavaScript es un lenguaje sumamente importante tanto en
-          el frontend como en el backend. Me encanta trabajar con JavaScript
-          debido a su capacidad para manejar eventos, manipular el <strong>DOM</strong> y brindar
-          interactividad en el frontend. <br />
-        </p>
-        <p>
-          En continua formación para mantenerme al dia con las nuevas
-          tecnologías.
+          Especializado en la creación de interfaces de usuario alto rendimiento
+          y escalables. Mi enfoque principal es el ecosistema{" "}
+          <strong>React y Next.js</strong>, donde diseño arquitecturas de
+          componentes reutilizables y optimizadas. Además, poseo una ventaja
+          competitiva en el desarrollo de aplicaciones empresariales con SAP
+          UI5, asegurando una experiencia de usuario fluida (UX) e integraciones
+          robustas con sistemas back-end. Experto en maquetación avanzada con
+          HTML5, CSS3 y frameworks de utilidad como Tailwind CSS
         </p>
         <div className="slider">
           <div className="slide-track">
@@ -91,21 +88,15 @@ const Habilidades = () => {
           <i className="fa-solid fa-server"></i> Backend
         </h3>
         <p>
-          Poseo sólidos conocimientos en estructuras de datos y habilidades para
-          brindar soluciones a problemas lógicos en la parte backend de una
-          aplicación o servicio.
-        </p>
-
-        <p>
-          He trabajado con diversos lenguajes de programación como <strong>Python, Java
-            y JavaScript (NodeJs)</strong>. En particular, he estado enfocándome en el
-          desarrollo y manejo de bases de datos, especialmente con <strong>SQL</strong>
-          y <strong>MongoDB</strong>. Me he familiarizado con los distintos métodos para
-          interactuar con estas bases de datos, así como también he adquirido
-          experiencia en el consumo de APIs (REST) y consumo de datos mediante
-          oDatas. También tengo habilidades en el manejo de archivos JSON,
-          comprendiendo su estructura y accediendo a la información que
-          contienen.
+          Especializado en el diseño y construcción de arquitecturas del lado
+          del servidor robustas y escalables. Mi enfoque principal es el
+          ecosistema <strong>Node.js (Express/Runtime)</strong>, con amplia experiencia en la
+          creación de servicios bajo el modelo <strong>SAP CAP (Cloud Application
+          Programming)</strong>. Experto en el diseño de bases de datos relacionales
+          (SQL) y no relacionales (MongoDB), optimizando la integridad y el
+          acceso a los datos. Implemento comunicaciones eficientes mediante <strong>APIs
+          REST</strong> y servicios <strong>oData</strong>, garantizando integraciones fluidas en entornos
+          empresariales complejos.
         </p>
         <div className="slider">
           <div className="slide-track">
