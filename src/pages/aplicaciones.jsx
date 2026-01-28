@@ -78,7 +78,7 @@ const Proyectos = () => {
       <Nav />
       
       <div style={{ position: 'relative', overflow: 'hidden', padding: '120px 20px', textAlign: 'center' }}>
-        <div style={{ position: 'absolute', inset: 0, background: colors.gradientHover, backdropFilter: 'blur(60px)' }}></div>
+        <div style={{ position: 'absolute', inset: 0, backdropFilter: 'blur(60px)' }}></div>
         <div style={{ position: 'relative', maxWidth: '1200px', margin: '0 auto' }}>
           <h1 style={{ 
             fontSize: 'clamp(1.8rem, 5vw, 3rem)', 
