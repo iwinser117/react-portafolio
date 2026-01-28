@@ -67,8 +67,7 @@ const Acerca = () => {
         <p className="text-pretty">
           Desarrollador de software con enfoque en soluciones empresariales y
           aplicaciones web modernas. Actualmente trabajo como Consultor{" "}
-          <strong>SAP BTP</strong> 
-          en MQA Suramérica, desarrollando aplicaciones sobre{" "}
+          <strong>SAP BTP</strong> en MQA Suramérica, desarrollando aplicaciones sobre{" "}
           <strong>SAP BTP, CAP y UI5</strong>, integradas con{" "}
           <strong>SAP Fiori y S/4HANA</strong>. De forma paralela, desarrollo
           proyectos Fullstack JavaScript, creando aplicaciones web completas con
