@@ -1,0 +1,29 @@
+{
+  "_id": "post-example-sap-advanced",
+  "title": "Ejemplo de Post Completo - Configuración de Movimientos de Material",
+  "slug": "ejemplo-movimientos-material-sap",
+  "author": "Tu Nombre",
+  "date": "2026-02-05",
+  "category": "SAP",
+  "tags": ["SAP", "MM", "MMBE", "Valuación", "Avanzado", "Tutorial"],
+  "excerpt": "Guía completa sobre cómo configurar y entender los movimientos de material en SAP MM, incluyendo valuación FIFO, LIFO y promedio ponderado.",
+  "content": "<h2>Introducción a Movimientos de Material en SAP MM</h2><p>Los movimientos de material son transacciones fundamentales en la gestión de inventarios. En este post aprenderemos cómo configurarlos correctamente.</p><h3>Transacciones Principales</h3><ul><li><strong>MB01</strong>: Entrada de Mercadería de Compra</li><li><strong>MB1A</strong>: Entrada de Mercadería - Devolución a Proveedor</li><li><strong>MB1B</strong>: Entrada de Mercadería - Devolución desde Ventas</li><li><strong>MB1C</strong>: Entrada de Mercadería - Transferencia</li><li><strong>MB21</strong>: Salida de Mercadería</li><li><strong>MB22</strong>: Salida de Mercadería - Devolución a Clientes</li></ul><h2>Valuación de Materiales</h2><p>La valuación es crucial para los reportes financieros. SAP soporta tres métodos principales:</p><h3>1. FIFO (First In, First Out)</h3><p>El primer material que entra es el primero que sale. Recomendado cuando los precios están bajando.</p><pre>Entrada 1: 100 unidades @ $10 = $1,000\nEntrada 2: 100 unidades @ $8 = $800\nSalida: 100 unidades @ $10 (costo FIFO)\nInventario restante: 100 @ $8</pre><h3>2. LIFO (Last In, First Out)</h3><p>El último material que entra es el primero que sale. Refleja mejor los costos actuales.</p><pre>Entrada 1: 100 unidades @ $10 = $1,000\nEntrada 2: 100 unidades @ $8 = $800\nSalida: 100 unidades @ $8 (costo LIFO)\nInventario restante: 100 @ $10</pre><h3>3. Promedio Ponderado</h3><p>Utiliza el costo promedio de todas las unidades. Es el más comúnmente usado.</p><pre>Entrada 1: 100 unidades @ $10 = $1,000\nEntrada 2: 100 unidades @ $8 = $800\nCosto Promedio = $1,800 / 200 = $9\nSalida: 100 unidades @ $9 (costo promedio)</pre><h2>Paso a Paso: Configurar Movimiento de Material</h2><h3>Paso 1: Crear el Tipo de Movimiento</h3><p>Código de transacción: <strong>OMBS</strong></p><ol><li>Mantener el Tipo de Movimiento</li><li>Ingresar código (ej: 999)</li><li>Describir el movimiento</li><li>Indicar si es entrada, salida o transferencia</li><li>Guardar</li></ol><h3>Paso 2: Configurar la Valuación</h3><p>Código de transacción: <strong>OMSL</strong></p><ol><li>Seleccionar el tipo de material</li><li>Elegir método de valuación</li><li>Configurar precios estándar vs promedio</li><li>Activar contabilización en FI</li></ol><h3>Paso 3: Ejecutar Movimiento</h3><p>Código de transacción: <strong>MB01</strong> (o según tu movimiento)</p><ul><li>Centro: Ingresar</li><li>Material: Seleccionar</li><li>Cantidad: Cantidad a recibir</li><li>Precio: Se calcula automáticamente</li><li>Contabilizar</li></ul><h2>Análisis de Inventario</h2><p>Después de los movimientos, verificar con:</p><ul><li><strong>MMBE</strong>: Ver stock actual</li><li><strong>MC.1</strong>: Análisis de material</li><li><strong>MIRO</strong>: Recepción de factura</li><li><strong>FB60</strong>: Entrada de factura</li></ul><h2>Mejores Prácticas</h2><ol><li><strong>Documentación</strong>: Documenta cada movimiento</li><li><strong>Validaciones</strong>: Usa reglas de negocio</li><li><strong>Aprobaciones</strong>: Requiere aprobación para montos grandes</li><li><strong>Auditoría</strong>: Mantén trazabilidad</li><li><strong>Reconciliación</strong>: Compara MM con FI mensualmente</li></ol><h2>Casos Comunes</h2><h3>¿Qué pasa si no tengo stock?</h3><p>SAP permite 'stock negativo' pero esto puede generar problemas. Usa <strong>MBST</strong> para restringir.</p><h3>¿Cómo corregir un movimiento incorrecto?</h3><p>No se puede cancelar directamente. Debes hacer un movimiento inverso (ej: salida si fue entrada).</p><h3>¿Cómo ver el histórico?</h3><p>Transacción <strong>ZXMCB</strong> o reportes en <strong>MBST</strong>.</p><h2>Conclusión</h2><p>Los movimientos de material son la columna vertebral de MM. Dominarlos te permitirá optimizar inventarios y garantizar datos contables correctos.</p>",
+  "image": "https://via.placeholder.com/600x400?text=SAP+MM+Movimientos",
+  "views": 0,
+  "comments": [
+    {
+      "id": "comment-example-001",
+      "author": "Juan García",
+      "content": "Excelente explicación del método FIFO vs LIFO. Muy útil para mis configuraciones.",
+      "date": "2026-02-06",
+      "approved": true
+    },
+    {
+      "id": "comment-example-002", 
+      "author": "Anónimo",
+      "content": "¿Hay diferencia en el performance entre FIFO y Promedio Ponderado?",
+      "date": "2026-02-07",
+      "approved": true
+    }
+  ]
+}
