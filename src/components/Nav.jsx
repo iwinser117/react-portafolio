@@ -6,7 +6,7 @@ import { NavLink, useLocation } from "react-router-dom";
 import { useDarkMode } from "../buttons/DarkModeProvider";
 import { useTranslation } from "react-i18next";
 import SettingsButton from "../buttons/SettingsButton";
-import { FaHome, FaUser,FaBrain, FaLaptopCode, FaEnvelope } from "react-icons/fa";
+import { FaHome, FaUser,FaBrain, FaLaptopCode, FaEnvelope, FaBlog } from "react-icons/fa";
 
 const Nav = () => {
   const location = useLocation();
@@ -57,7 +57,7 @@ const Nav = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav nav-ul">
-              {location.pathname === "/aplicaciones" ? (
+              {location.pathname !== "/" ? (
                 <li className="nav-item">
                   <NavLink className="nav-link" to={"/"}>
                     <FaHome style={{ marginRight: '5px' }} /> {t('nav.home')}
@@ -72,7 +72,7 @@ const Nav = () => {
                 </li>
               )} */}
 
-              {location.pathname === "/aplicaciones" ? null : (
+              {(location.pathname === "/aplicaciones" || location.pathname === "/blog") ? null : (
                 <li className="nav-item ">
                   <a className="nav-link " href="#habilidades">
                   <FaBrain style={{ marginRight: '5px' }}/> {t('nav.skills')}
@@ -91,6 +91,12 @@ const Nav = () => {
               <li className="nav-item ">
                 <a className="nav-link" href="#contactame">
                   <FaEnvelope style={{ marginRight: '5px' }} /> {t('nav.contact')}
+                </a>
+              </li>
+
+              <li className="nav-item">
+                <a className="nav-link" href="/blog">
+                  <FaBlog style={{ marginRight: '5px' }} /> {t('nav.blog')}
                 </a>
               </li>
 
