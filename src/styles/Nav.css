@@ -392,7 +392,7 @@ nav .container-fluid .collapse {
 }
 
 .dark-mode .settings-modal-content {
-  background-color: #232946;
+  background-color: #12171C;  background-image: linear-gradient(to bottom right, #12171C, #333d4a);
 }
 
 @keyframes slideInRight {
