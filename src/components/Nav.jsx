@@ -4,11 +4,14 @@ import logoblack from "@assets/ok_white_bgsvg.svg";
 import "@styles/Nav.css";
 import { NavLink, useLocation } from "react-router-dom";
 import { useDarkMode } from "../buttons/DarkModeProvider";
+import { useTranslation } from "react-i18next";
+import SettingsButton from "../buttons/SettingsButton";
 import { FaHome, FaUser,FaBrain, FaLaptopCode, FaEnvelope } from "react-icons/fa";
 
 const Nav = () => {
   const location = useLocation();
   const isDarkMode = useDarkMode();
+  const { t } = useTranslation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -57,7 +60,7 @@ const Nav = () => {
               {location.pathname === "/aplicaciones" ? (
                 <li className="nav-item">
                   <NavLink className="nav-link" to={"/"}>
-                    <FaHome style={{ marginRight: '5px' }} /> Inicio
+                    <FaHome style={{ marginRight: '5px' }} /> {t('nav.home')}
                   </NavLink>
                 </li>
               ) : null}
@@ -72,7 +75,7 @@ const Nav = () => {
               {location.pathname === "/aplicaciones" ? null : (
                 <li className="nav-item ">
                   <a className="nav-link " href="#habilidades">
-                  <FaBrain style={{ marginRight: '5px' }}/> Habilidades
+                  <FaBrain style={{ marginRight: '5px' }}/> {t('nav.skills')}
                   </a>
                 </li>
               )}
@@ -80,15 +83,19 @@ const Nav = () => {
               {location.pathname === "/aplicaciones" ? null : (
                 <li className="nav-item ">
                   <NavLink className="nav-link" to={"/aplicaciones"}>
-                    <FaLaptopCode style={{ marginRight: '5px' }} /> Aplicaciones
+                    <FaLaptopCode style={{ marginRight: '5px' }} /> {t('nav.applications')}
                   </NavLink>
                 </li>
               )}
 
               <li className="nav-item ">
                 <a className="nav-link" href="#contactame">
-                  <FaEnvelope style={{ marginRight: '5px' }} /> Contactame
+                  <FaEnvelope style={{ marginRight: '5px' }} /> {t('nav.contact')}
                 </a>
+              </li>
+
+              <li className="nav-item nav-settings-item">
+                <SettingsButton />
               </li>
             </ul>
           </div>

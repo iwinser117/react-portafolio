@@ -1,4 +1,5 @@
 import React, { useState, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 import { Mail, Send, User, MessageSquare, X, CheckCircle } from "lucide-react";
 import { exito, noEnviado, limpiarInput } from "../utils/sendForm";
@@ -21,6 +22,7 @@ const getThemeColors = (isDark) => ({
 
 const Formulario = () => {
   const isDark = useDarkMode();
+  const { t } = useTranslation();
   const colors = getThemeColors(isDark);
   
   const [viewForm, setViewForm] = useState(true); // Empieza abierto como el original
@@ -211,9 +213,9 @@ const Formulario = () => {
   return (
     <section style={styles.container} id="contactame">
       <div style={styles.header}>
-          <h3 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 700, marginBottom: '0.5rem' }}>Contáctame</h3>
+          <h3 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 700, marginBottom: '0.5rem' }}>{t('contact.title')}</h3>
         <p style={styles.subtitle}>
-          {viewForm ? "" : "Diligenciar formulario"}
+          {viewForm ? "" : t('contact.subtitle')}
         </p>
       </div>
 
@@ -226,7 +228,7 @@ const Formulario = () => {
           }}
           onMouseEnter={() => setIsHoveredToggle(true)}
           onMouseLeave={() => setIsHoveredToggle(false)}
-          title={viewForm ? "Cerrar formulario" : "Diligenciar formulario"}
+          title={viewForm ? t('contact.closeForm') : t('contact.openForm')}
         >
           {viewForm ? (
             <X size={24} color="white" />
@@ -244,13 +246,13 @@ const Formulario = () => {
             <div style={styles.formGroup}>
               <label htmlFor="user_name" style={styles.label}>
                 <User size={18} style={styles.icon} />
-                Nombre
+                {t('contact.name')}
               </label>
               <input
                 type="text"
                 id="user_name"
                 name="user_name"
-                placeholder="Escribe tu nombre"
+                placeholder={t('contact.namePlaceholder')}
                 required
                 style={{
                   ...styles.input,
@@ -264,13 +266,13 @@ const Formulario = () => {
             <div style={styles.formGroup}>
               <label htmlFor="user_email" style={styles.label}>
                 <Mail size={18} style={styles.icon} />
-                Email
+                {t('contact.email')}
               </label>
               <input
                 type="email"
                 id="user_email"
                 name="user_email"
-                placeholder="name@example.com"
+                placeholder={t('contact.emailPlaceholder')}
                 required
                 style={{
                   ...styles.input,
@@ -284,13 +286,13 @@ const Formulario = () => {
             <div style={styles.formGroup}>
               <label htmlFor="asunto" style={styles.label}>
                 <CheckCircle size={18} style={styles.icon} />
-                Asunto
+                {t('contact.subject')}
               </label>
               <input
                 type="text"
                 id="asunto"
                 name="asunto"
-                placeholder="Escribe una breve descripción del motivo de contacto"
+                placeholder={t('contact.subjectPlaceholder')}
                 required
                 style={{
                   ...styles.input,
@@ -304,12 +306,12 @@ const Formulario = () => {
             <div style={styles.formGroup}>
               <label htmlFor="message" style={styles.label}>
                 <MessageSquare size={18} style={styles.icon} />
-                Mensaje
+                {t('contact.message')}
               </label>
               <textarea
                 id="message"
                 name="message"
-                placeholder="Escribe tu mensaje aquí..."
+                placeholder={t('contact.messagePlaceholder')}
                 rows="3"
                 style={{
                   ...styles.textarea,
@@ -331,7 +333,7 @@ const Formulario = () => {
               onMouseLeave={() => setIsHoveredButton(false)}
             >
               <Send size={20} />
-              Enviar
+              {t('contact.send')}
             </button>
           </form>
         </div>

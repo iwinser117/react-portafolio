@@ -8,6 +8,19 @@
   /* margin-bottom: 40px; */
   /* margin-top: 20px; */
 }
+
+/* Contenedor de texto con ancho fijo para evitar movimiento al cambiar idioma */
+.banner > .p-2 {
+  flex: 1;
+  min-width: 0;
+  max-width: 500px;
+}
+
+.banner h2,
+.banner p {
+  min-height: 1.5em;
+}
+
 .dark-mode .banner p{
   color: #e0e0e0;
 }
@@ -108,6 +121,13 @@
   }
   .iwinserPerfil {  
     width: 24%;
+    min-width: 200px;
+    flex-shrink: 0;
+  }
+  .banner > .p-2 {
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px;
   }
 }
 

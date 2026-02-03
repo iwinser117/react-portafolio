@@ -40,9 +40,11 @@
     "@mui/material": "^6.4.5",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",
+    "i18next": "^25.8.0",
     "lucide-react": "^0.556.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^16.5.4",
     "react-icons": "^4.9.0",
     "react-router-dom": "^6.6.2",
     "sweetalert2": "^11.6.13"

@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Search, Github, ExternalLink } from 'lucide-react';
 import { secondImages, imagesTodowebp } from '../utils/galerimages';
 import Nav from "@components/Nav";
@@ -45,6 +46,7 @@ const Proyectos = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [hoveredFilter, setHoveredFilter] = useState(null);
   const isDark = useDarkMode();
+  const { t } = useTranslation();
   const colors = getThemeColors(isDark);
 
   const projects = useMemo(() => {
@@ -88,12 +90,12 @@ const Proyectos = () => {
             letterSpacing: '-0.02em',
             transition: 'color 0.3s ease'
           }}>
-            Mis <span style={{ 
+            {t('projects.pageTitle').split(' ').slice(0, -1).join(' ')} <span style={{ 
               background: colors.gradientPrimary, 
               WebkitBackgroundClip: 'text', 
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text'
-            }}>Proyectos</span>
+            }}>{t('projects.pageTitle').split(' ').slice(-1).join(' ')}</span>
           </h1>
           <p style={{ 
             fontSize: 'clamp(1rem, 2vw, 1.25rem)', 
@@ -102,7 +104,7 @@ const Proyectos = () => {
             margin: '0 auto',
             transition: 'color 0.3s ease'
           }}>
-            Explora mi portafolio de aplicaciones web modernas y funcionales
+            {t('projects.pageDescription')}
           </p>
         </div>
       </div>
@@ -124,7 +126,7 @@ const Proyectos = () => {
             <Search style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', color: colors.textMuted }} size={20} />
             <input 
               type="text" 
-              placeholder="Buscar proyectos..." 
+              placeholder={t('projects.search')} 
               value={searchQuery} 
               onChange={(e) => setSearchQuery(e.target.value)} 
               style={{ 
@@ -189,7 +191,7 @@ const Proyectos = () => {
             transition: 'color 0.3s ease'
           }}>
             <span style={{ width: '0.5rem', height: '2rem', background: colors.gradientPrimary, borderRadius: '9999px' }}></span>
-            Proyectos Destacados
+            {t('projects.featured')}
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
             {featuredProjects.map(project => (<ProjectCard key={project.id} project={project} featured isDark={isDark} colors={colors} />))}
@@ -209,10 +211,10 @@ const Proyectos = () => {
             transition: 'color 0.3s ease'
           }}>
             <span style={{ width: '0.5rem', height: '2rem', background: 'linear-gradient(to bottom, #007bff, #17a2b8)', borderRadius: '9999px' }}></span>
-            {selectedCategory === 'All' ? 'Todos los Proyectos' : `Proyectos de ${selectedCategory}`}
+            {selectedCategory === 'All' ? t('projects.allProjects') : `${t('projects.projectsOf')} ${selectedCategory}`}
           </h2>
           <span style={{ color: colors.textMuted, fontSize: '0.875rem', transition: 'color 0.3s ease' }}>
-            {filteredProjects.length} {filteredProjects.length === 1 ? 'proyecto' : 'proyectos'}
+            {filteredProjects.length} {filteredProjects.length === 1 ? t('projects.project') : t('projects.projects')}
           </span>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1.5rem' }}>
@@ -222,9 +224,9 @@ const Proyectos = () => {
           <div style={{ textAlign: 'center', padding: '5rem 1rem' }}>
             <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🔍</div>
             <h3 style={{ fontSize: '1.5rem', fontWeight: 600, color: colors.textPrimary, marginBottom: '0.5rem', transition: 'color 0.3s ease' }}>
-              No se encontraron proyectos
+              {t('projects.noResults')}
             </h3>
-            <p style={{ color: colors.textMuted, transition: 'color 0.3s ease' }}>Intenta con otros términos de búsqueda o categorías</p>
+            <p style={{ color: colors.textMuted, transition: 'color 0.3s ease' }}>{t('projects.tryOther')}</p>
           </div>
         )}
       </div>
