@@ -3,11 +3,13 @@ import { MDBIcon } from "mdb-react-ui-kit";
 import "@styles/Banner.css";
 import iwinserPerfil from "@assets/iwinserPerfil.webp";
 import { useDarkMode } from "@buttons/DarkModeProvider";
+import { useTranslation } from "react-i18next";
 
 
 const Banner = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
-  const { isDarkMode } = useDarkMode();
+  const isDarkMode = useDarkMode();
+  const { t } = useTranslation();
   return (
     <section className="sectionbanner">
       <div className="d-flex justify-content-around align-items-center p-2 container banner">
@@ -27,10 +29,9 @@ const Banner = () => {
         </div>
         <div className="p-2">
           <h4 className="text-center nametitle">Iwinser Sanchez</h4>
-          <h2 className="text-center">Desarrollador FullStack</h2>
+          <h2 className="text-center">{t('banner.title')}</h2>
           <p className="text-center">
-            Experiencia en JavaScript y <br />
-            desarrollo web front-end y back-end.
+            {t('banner.description')}
           </p>
           <div className="social-buttons social-buttons-small m-auto">
             <a
@@ -40,7 +41,7 @@ const Banner = () => {
               rel="noopener noreferrer"
             >
               <i className="fa-brands fa-github"></i>
-              <span>GitHub</span>
+              <span>{t('banner.github')}</span>
             </a>
             <a
               className="social-button linkedin small"
@@ -49,7 +50,7 @@ const Banner = () => {
               rel="noopener noreferrer"
             >
               <i className="fa-brands fa-linkedin"></i>
-              <span>LinkedIn</span>
+              <span>{t('banner.linkedin')}</span>
             </a>
             <a
               className="social-button cv small"
@@ -57,7 +58,7 @@ const Banner = () => {
               href="../assets/IwinserSanchez.pdf"
             >
               <i className="fa-solid fa-file-pdf"></i>
-              <span>Curriculum</span>
+              <span>{t('banner.curriculum')}</span>
             </a>
           </div>
         </div>

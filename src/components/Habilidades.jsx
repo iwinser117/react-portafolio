@@ -16,26 +16,20 @@ import express from "../assets/express.svg";
 import mongodb from "../assets/mongodb.svg";
 import wjt from "../assets/wjt.svg";
 import sap from "../assets/sap.svg";
+import { useTranslation } from "react-i18next";
+
 const Habilidades = () => {
+  const { t } = useTranslation();
   return (
     <section className="container  acerca-cnt col-8  lh-lg">
       <article id="habilidades" className="pt-3">
-        <h3>Habilidades</h3>
+        <h3>{t('skills.title')}</h3>
       </article>
       <article className="pt-3">
         <h3>
-          <i className="fa-solid fa-display"></i> Front-end
+          <i className="fa-solid fa-display"></i> {t('skills.frontend')}
         </h3>
-        <p>
-          Especializado en la creación de interfaces de usuario alto rendimiento
-          y escalables. Mi enfoque principal es el ecosistema{" "}
-          <strong>React y Next.js</strong>, donde diseño arquitecturas de
-          componentes reutilizables y optimizadas. Además, poseo una ventaja
-          competitiva en el desarrollo de aplicaciones empresariales con SAP
-          UI5, asegurando una experiencia de usuario fluida (UX) e integraciones
-          robustas con sistemas back-end. Experto en maquetación avanzada con
-          HTML5, CSS3 y frameworks de utilidad como Tailwind CSS
-        </p>
+        <p dangerouslySetInnerHTML={{ __html: t('skills.frontendDescription') }} />
         <div className="slider">
           <div className="slide-track">
             <div className="slide">
@@ -85,19 +79,9 @@ const Habilidades = () => {
       </article>
       <article>
         <h3>
-          <i className="fa-solid fa-server"></i> Backend
+          <i className="fa-solid fa-server"></i> {t('skills.backend')}
         </h3>
-        <p>
-          Especializado en el diseño y construcción de arquitecturas del lado
-          del servidor robustas y escalables. Mi enfoque principal es el
-          ecosistema <strong>Node.js (Express/Runtime)</strong>, con amplia experiencia en la
-          creación de servicios bajo el modelo <strong>SAP CAP (Cloud Application
-          Programming)</strong>. Experto en el diseño de bases de datos relacionales
-          (SQL) y no relacionales (MongoDB), optimizando la integridad y el
-          acceso a los datos. Implemento comunicaciones eficientes mediante <strong>APIs
-          REST</strong> y servicios <strong>oData</strong>, garantizando integraciones fluidas en entornos
-          empresariales complejos.
-        </p>
+        <p dangerouslySetInnerHTML={{ __html: t('skills.backendDescription') }} />
         <div className="slider">
           <div className="slide-track">
             <div className="slide">

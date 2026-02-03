@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import mostrarDiploma from "../utils/modalDiploma.js";
 import GridExperiencia from "./AcercaExperiencias";
 import Certifications from "./Certifications.jsx";
 import "@styles/acerca.css";
 
 const Acerca = () => {
+  const { t, i18n } = useTranslation();
   const [selectedId, setSelectedId] = useState(null);
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -12,12 +14,7 @@ const Acerca = () => {
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   const translations = [
-    "Hola, soy ",
-    "Hello, I am ",
-    "Bonjour, je suis ",
-    "Hallo, ich bin ",
-    "Ciao, sono ",
-    "こんにちは、私は ",
+    i18n.language === 'en' ? "Hello, I am " : "Hola, soy ",
   ];
 
   const handleClick = (event) => {
@@ -64,17 +61,7 @@ const Acerca = () => {
           {text}
           <span>Iwinser Sanchez</span>
         </h3>
-        <p className="text-pretty">
-          Desarrollador de software con enfoque en soluciones empresariales y
-          aplicaciones web modernas. Actualmente trabajo como Consultor{" "}
-          <strong>SAP BTP</strong> en MQA Suramérica, desarrollando aplicaciones sobre{" "}
-          <strong>SAP BTP, CAP y UI5</strong>, integradas con{" "}
-          <strong>SAP Fiori y S/4HANA</strong>. De forma paralela, desarrollo
-          proyectos Fullstack JavaScript, creando aplicaciones web completas con
-          React, Node.js y MongoDB. Me especializo en construir soluciones
-          escalables, bien estructuradas y orientadas a negocio, ideales para
-          entornos remotos y equipos distribuidos.
-        </p>
+        <p className="text-pretty" dangerouslySetInnerHTML={{ __html: t('about.description') }} />
       </article>
       {/* <section className="container-experiencia">
         <main>
@@ -103,23 +90,15 @@ const Acerca = () => {
         </main>
       </section> */}
       <div className="experiencia">
-        <h4 className="encabezado">Proyectos Personales</h4>
+        <h4 className="encabezado">{t('about.personalProjects')}</h4>
         <div>
           <GridExperiencia />
         </div>
       </div>
 
       <article className="cert-container">
-        <h4>Certificaciones</h4>
-        <p>
-          Actualmente curso la Ingeniería de Sistemas en la UNAD, lo cual
-          combino con una sólida base técnica obtenida en la Facultad de
-          Ingeniería de la Universidad de Antioquia (<i>Misión TIC 2022</i>). Mi
-          enfoque profesional se basa en el aprendizaje continuo,
-          especializándome constantemente en arquitecturas modernas y
-          tecnologías de alto impacto a través de plataformas líderes y recursos
-          técnicos de vanguardia.
-        </p>
+        <h4>{t('about.certifications')}</h4>
+        <p dangerouslySetInnerHTML={{ __html: t('about.certificationsDescription') }} />
       </article>
 
       <Certifications />

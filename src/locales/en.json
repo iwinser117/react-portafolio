@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "home": "Home",
+    "skills": "Skills",
+    "applications": "Applications",
+    "contact": "Contact me"
+  },
+  "banner": {
+    "title": "FullStack Developer",
+    "description": "Experience in JavaScript and front-end and back-end web development.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "curriculum": "Curriculum"
+  },
+  "about": {
+    "greeting": "Hello, I am ",
+    "name": "Iwinser Sanchez",
+    "description": "Software developer focused on enterprise solutions and modern web applications. I currently work as a <strong>SAP BTP</strong> Consultant at MQA Suramérica, developing applications on <strong>SAP BTP, CAP and UI5</strong>, integrated with <strong>SAP Fiori and S/4HANA</strong>. In parallel, I develop Fullstack JavaScript projects, creating complete web applications with React, Node.js and MongoDB. I specialize in building scalable, well-structured and business-oriented solutions, ideal for remote environments and distributed teams.",
+    "personalProjects": "Personal Projects",
+    "certifications": "Certifications",
+    "certificationsDescription": "I am currently pursuing a Systems Engineering degree at UNAD, which I combine with a solid technical foundation obtained at the Faculty of Engineering of the University of Antioquia (<i>Misión TIC 2022</i>). My professional approach is based on continuous learning, constantly specializing in modern architectures and high-impact technologies through leading platforms and cutting-edge technical resources."
+  },
+  "skills": {
+    "title": "Skills",
+    "frontend": "Front-end",
+    "frontendDescription": "Specialized in creating high-performance and scalable user interfaces. My main focus is the <strong>React and Next.js</strong> ecosystem, where I design reusable and optimized component architectures. Additionally, I have a competitive advantage in developing enterprise applications with SAP UI5, ensuring smooth user experience (UX) and robust integrations with back-end systems. Expert in advanced web design with HTML5, CSS3 and utility frameworks like Tailwind CSS",
+    "backend": "Back-end",
+    "backendDescription": "Robust and scalable development with Node.js and Express.js. Design of high-performance RESTful APIs with secure validation, authentication and authorization. Expertise in NoSQL (MongoDB) and SQL (PostgreSQL, MySQL) databases, transactional handling and query optimization. Implementation of architectural patterns such as MVC, custom middleware, and clustering. Experience in integration with external services, error handling and logging, and production environment deployment.",
+    "sap": "SAP"
+  },
+  "projects": {
+    "pageTitle": "My Projects",
+    "pageDescription": "Explore my portfolio of modern and functional web applications",
+    "allProjects": "All Projects",
+    "projectsOf": "Projects of",
+    "search": "Search projects...",
+    "noResults": "No projects found",
+    "tryOther": "Try other search terms or categories",
+    "featured": "Featured Projects",
+    "project": "project",
+    "projects": "projects"
+  },
+  "contact": {
+    "title": "Contact me",
+    "subtitle": "Fill out the form",
+    "openForm": "Fill out the form",
+    "closeForm": "Close form",
+    "name": "Name",
+    "namePlaceholder": "Write your name",
+    "email": "Email",
+    "emailPlaceholder": "name@example.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "Write a brief description of the reason for contact",
+    "message": "Message",
+    "messagePlaceholder": "Write your message here...",
+    "send": "Send",
+    "success": "Message sent successfully",
+    "error": "Error sending message"
+  },
+  "settings": {
+    "title": "Settings",
+    "theme": "Theme",
+    "language": "Language",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode",
+    "spanish": "Español",
+    "english": "English"
+  },
+  "Aside": {
+    "contactMe": "Contact Me"
+  }
+}

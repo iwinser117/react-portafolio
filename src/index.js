@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import App from "./routes/App";
 import track from "./utils/track";
 import { ca } from "date-fns/locale";
+import "./locales/i18nConfig";
 
 // Inicializar el rastreador de visitas
 try{

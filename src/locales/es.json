@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "skills": "Habilidades",
+    "applications": "Aplicaciones",
+    "contact": "Contáctame"
+  },
+  "banner": {
+    "title": "Desarrollador FullStack",
+    "description": "Experiencia en JavaScript y desarrollo web front-end y back-end.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "curriculum": "Curriculum"
+  },
+  "about": {
+    "greeting": "Hola, soy ",
+    "name": "Iwinser Sanchez",
+    "description": "Desarrollador de software con enfoque en soluciones empresariales y aplicaciones web modernas. Actualmente trabajo como Consultor <strong>SAP BTP</strong> en MQA Suramérica, desarrollando aplicaciones sobre <strong>SAP BTP, CAP y UI5</strong>, integradas con <strong>SAP Fiori y S/4HANA</strong>. De forma paralela, desarrollo proyectos Fullstack JavaScript, creando aplicaciones web completas con React, Node.js y MongoDB. Me especializo en construir soluciones escalables, bien estructuradas y orientadas a negocio, ideales para entornos remotos y equipos distribuidos.",
+    "personalProjects": "Proyectos Personales",
+    "certifications": "Certificaciones",
+    "certificationsDescription": "Actualmente curso la Ingeniería de Sistemas en la UNAD, lo cual combino con una sólida base técnica obtenida en la Facultad de Ingeniería de la Universidad de Antioquia (<i>Misión TIC 2022</i>). Mi enfoque profesional se basa en el aprendizaje continuo, especializándome constantemente en arquitecturas modernas y tecnologías de alto impacto a través de plataformas líderes y recursos técnicos de vanguardia."
+  },
+  "skills": {
+    "title": "Habilidades",
+    "frontend": "Front-end",
+    "frontendDescription": "Especializado en la creación de interfaces de usuario alto rendimiento y escalables. Mi enfoque principal es el ecosistema <strong>React y Next.js</strong>, donde diseño arquitecturas de componentes reutilizables y optimizadas. Además, poseo una ventaja competitiva en el desarrollo de aplicaciones empresariales con SAP UI5, asegurando una experiencia de usuario fluida (UX) e integraciones robustas con sistemas back-end. Experto en maquetación avanzada con HTML5, CSS3 y frameworks de utilidad como Tailwind CSS",
+    "backend": "Back-end",
+    "backendDescription": "Desarrollo robusto y escalable con Node.js y Express.js. Diseño de APIs RESTful de alto rendimiento con validación, autenticación y autorización segura. Expertise en bases de datos NoSQL (MongoDB) y SQL (PostgreSQL, MySQL), manejo transaccional y optimización de consultas. Implementación de patrones arquitectónicos como MVC, middleware personalizado, y clustering. Experiencia en integración con servicios externos, gestión de errores y logging, y deployment en entornos de producción.",
+    "sap": "SAP"
+  },
+  "projects": {
+    "pageTitle": "Mis Proyectos",
+    "pageDescription": "Explora mi portafolio de aplicaciones web modernas y funcionales",
+    "allProjects": "Todos los Proyectos",
+    "projectsOf": "Proyectos de",
+    "search": "Buscar proyectos...",
+    "noResults": "No se encontraron proyectos",
+    "tryOther": "Intenta con otros términos de búsqueda o categorías",
+    "featured": "Proyectos Destacados",
+    "project": "proyecto",
+    "projects": "proyectos"
+  },
+  "contact": {
+    "title": "Contáctame",
+    "subtitle": "Diligenciar formulario",
+    "openForm": "Diligenciar formulario",
+    "closeForm": "Cerrar formulario",
+    "name": "Nombre",
+    "namePlaceholder": "Escribe tu nombre",
+    "email": "Email",
+    "emailPlaceholder": "name@example.com",
+    "subject": "Asunto",
+    "subjectPlaceholder": "Escribe una breve descripción del motivo de contacto",
+    "message": "Mensaje",
+    "messagePlaceholder": "Escribe tu mensaje aquí...",
+    "send": "Enviar",
+    "success": "Mensaje enviado correctamente",
+    "error": "Error al enviar el mensaje"
+  },
+  "settings": {
+    "title": "Configuración",
+    "theme": "Tema",
+    "language": "Idioma",
+    "darkMode": "Modo oscuro",
+    "lightMode": "Modo claro",
+    "spanish": "Español",
+    "english": "English"
+  },
+    "Aside": {
+        "contactMe": "Contáctame"
+    }
+}
