@@ -1,88 +1,17 @@
 [
-  {
-    "_id": "post-001",
-    "title": "Introducción a SAP SD - Sales and Distribution",
-    "slug": "introduccion-sap-sd",
-    "author": "Tu Nombre",
-    "date": "2026-02-01",
-    "category": "SAP",
-    "tags": ["SAP", "SD", "Ventas", "Distribución", "Principiante"],
-    "excerpt": "Una guía completa para entender los conceptos básicos del módulo SD (Sales and Distribution) en SAP. Aprenderemos sobre documentos de venta, clientes y procesos.",
-    "content": "<h2>¿Qué es SAP SD?</h2><p>El módulo SD (Sales and Distribution) es uno de los módulos más importantes en SAP...</p><h2>Procesos principales</h2><ul><li>Gestión de clientes</li><li>Cotizaciones y pedidos</li><li>Entregas</li><li>Facturación</li></ul>",
-    "image": "https://via.placeholder.com/600x400?text=SAP+SD",
-    "views": 145,
-    "comments": [
-      {
-        "id": "comment-001",
-        "author": "Juan",
-        "content": "Excelente explicación, muy clara para principiantes.",
-        "date": "2026-02-02",
-        "approved": true
-      }
-    ]
-  },
+ 
   {
     "_id": "post-002",
-    "title": "Mejores prácticas de seguridad en React",
-    "slug": "seguridad-react",
-    "author": "Tu Nombre",
-    "date": "2026-02-02",
-    "category": "React",
-    "tags": ["React", "Seguridad", "Frontend", "JavaScript"],
-    "excerpt": "Descubre cómo proteger tu aplicación React de vulnerabilidades comunes como XSS, CSRF y más.",
-    "content": "<h2>Vulnerabilidades comunes en React</h2><p>React proporciona protección contra XSS por defecto, pero hay otras consideraciones de seguridad...</p><h2>Implementar HTTPS</h2><p>Siempre usa HTTPS en producción para proteger los datos en tránsito...</p>",
-    "image": "https://via.placeholder.com/600x400?text=React+Security",
+    "title": "Consumo de API Flow de SAP Build desde Bruno (Software API Rest)",
+    "slug": "consumo-api-sap-build-bruno",
+    "author": "Iwinser Sanchez",
+    "date": "2026-02-04",
+    "category": "SAP",
+    "tags": ["SAP", "API", "Bruno", "Integration", "OAuth2"],
+    "excerpt": "Aprende a consumir un flujo de integración de SAP Build Process Automation usando Bruno como cliente API Rest con autenticación OAuth2.",
+    "content": "<h2>Consumir un Flow de Integración de SAP Build</h2><p>Tomando el endpoint que nos proporciona SAP en la vista previa, nos dirigimos a Postman, Bruno o el software de nuestra preferencia.</p>{{img-1}}<h2>Crear Clave del Servicio para la Instancia</h2><p>Una vez creada la nueva clave de servicio, procedemos a hacer uso de los nuevos parámetros que nos retorna:</p><ul><li><strong>clientid:</strong> Identificador único del cliente.</li><li><strong>clientsecret:</strong> Secreto del cliente para autenticación.</li><li><strong>tokenurl:</strong> URL para obtener el token de acceso.</li></ul>{{img-2}}<h2>Configurar Autenticación en Bruno</h2><p>En Bruno, en la sección de <strong>Auth</strong>, configuramos lo siguiente:</p><ul><li><strong>Grant Type:</strong> Client Credentials</li><li><strong>Access Token URL:</strong> La URL del token obtenida de la clave de servicio</li><li><strong>Client ID:</strong> El clientid de la clave de servicio</li><li><strong>Client Secret:</strong> El clientsecret de la clave de servicio</li></ul><p>Validamos que nos retorne el token satisfactoriamente mediante el botón <strong>Get Access Token</strong>.</p>{{img-3}}<h2>Ejecutar la Solicitud al Flow de SAP Build</h2><p>Una vez que el token se retorna correctamente, podemos ejecutar el GET o POST de la integración. Con el token de acceso, hacemos la solicitud al endpoint del flow de SAP Build, incluyendo el token en el encabezado de autorización.</p><p>Si todo está configurado correctamente, deberíamos recibir la respuesta esperada del flow de integración.</p>{{img-4}}{{img-5}}",
+    "image": ["https://res.cloudinary.com/dv5zrwuli/image/upload/v1770224967/SAPblog/portadaspost/Captura_de_pantalla_2026-02-04_120607_ylw0ya.png", "https://res.cloudinary.com/dv5zrwuli/image/upload/v1770228679/SAPblog/portadaspost/Captura_de_pantalla_2026-02-04_131150_e4g2k6.png", "https://res.cloudinary.com/dv5zrwuli/image/upload/v1770228971/SAPblog/portadaspost/Captura_de_pantalla_2026-02-04_131357_in9w4b.png", "https://res.cloudinary.com/dv5zrwuli/image/upload/v1770229762/SAPblog/portadaspost/Captura_de_pantalla_2026-02-04_133001_pdzkr4.png", "https://res.cloudinary.com/dv5zrwuli/image/upload/v1770230076/SAPblog/portadaspost/Captura_de_pantalla_2026-02-04_133507_mc5koc.png", "https://res.cloudinary.com/dv5zrwuli/image/upload/v1770230280/SAPblog/portadaspost/Captura_de_pantalla_2026-02-04_133836_rchmtp.png"],
     "views": 89,
     "comments": []
-  },
-  {
-    "_id": "post-003",
-    "title": "Gestión de Materiales (MM) en SAP",
-    "slug": "gestion-materiales-sap-mm",
-    "author": "Tu Nombre",
-    "date": "2026-01-30",
-    "category": "SAP",
-    "tags": ["SAP", "MM", "Materiales", "Inventario", "Almacén"],
-    "excerpt": "Todo lo que necesitas saber sobre el módulo MM (Materials Management) en SAP, desde la creación de materiales hasta la gestión de almacenes.",
-    "content": "<h2>Módulo MM - Materials Management</h2><p>El módulo MM es crucial para la gestión de inventarios y almacenes...</p><h2>Transacciones importantes</h2><ul><li>MM01: Crear material</li><li>MMBE: Visualizar stock</li><li>MB1C: Recepción de mercadería</li></ul>",
-    "image": "https://via.placeholder.com/600x400?text=SAP+MM",
-    "views": 230,
-    "comments": [
-      {
-        "id": "comment-002",
-        "author": "María",
-        "content": "Muy completo. ¿Podrías hacer un post sobre valuación de materiales?",
-        "date": "2026-02-01",
-        "approved": true
-      }
-    ]
-  },
-  {
-    "_id": "post-004",
-    "title": "Integración de APIs REST con React",
-    "slug": "integracion-api-rest-react",
-    "author": "Tu Nombre",
-    "date": "2026-01-28",
-    "category": "React",
-    "tags": ["React", "API", "Fetch", "Axios", "Integración"],
-    "excerpt": "Aprende las mejores formas de integrar APIs REST en tu aplicación React usando fetch y axios.",
-    "content": "<h2>¿Fetch o Axios?</h2><p>Ambos son válidos, aquí te mostramos las diferencias...</p><h2>Manejo de errores</h2><p>Es importante manejar correctamente los errores en las llamadas a API...</p>",
-    "image": "https://via.placeholder.com/600x400?text=React+API",
-    "views": 156,
-    "comments": []
-  },
-  {
-    "_id": "post-005",
-    "title": "Configuración de Libro Mayor (FI) en SAP",
-    "slug": "configuracion-fi-sap",
-    "author": "Tu Nombre",
-    "date": "2026-01-25",
-    "category": "SAP",
-    "tags": ["SAP", "FI", "Contabilidad", "Finanzas"],
-    "excerpt": "Guía completa sobre la configuración del módulo FI (Financial Accounting) en SAP, incluyendo cuentas, centros de costos y más.",
-    "content": "<h2>Módulo FI - Financial Accounting</h2><p>La contabilidad es fundamental en cualquier organización...</p><h2>Estructura de cuentas</h2><p>El plan de cuentas es la base del sistema contable...</p>",
-    "image": "https://via.placeholder.com/600x400?text=SAP+FI",
-    "views": 98,
-    "comments": []
-  }
+  }  
 ]

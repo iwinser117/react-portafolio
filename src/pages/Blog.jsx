@@ -1,7 +1,6 @@
 import React from "react";
 import BlogListModern from "../containers/BlogListModern";
 import Nav from "@components/Nav";
-import Formulario from "@components/Formulario";
 import Footer from "@components/Footer";
 import BtnArriba from "@buttons/BtnArriba";
 
@@ -14,7 +13,6 @@ const Blog = () => {
     <div className="data-bs-theme-dark letra-home">
       <Nav />
       <BlogListModern />
-      <Formulario />
       <Footer />
       <BtnArriba />
     </div>

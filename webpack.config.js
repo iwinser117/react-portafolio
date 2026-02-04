@@ -11,6 +11,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
+    publicPath: "/",
   },
   resolve: {
     extensions: [".js", ".jsx"],
@@ -81,6 +82,12 @@ module.exports = {
     minimizer: [new CssMinimizerWebpackPlugin(), new TerserWebpackPlugin()],
   },
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: {
+      index: "/index.html",
+      disableDotRule: false,
+    },
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
   }
 }

@@ -8,6 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
+    publicPath: "/",
   },
   mode: "development",
   //es como un live server pero para webpack   watch : true,
@@ -70,7 +71,8 @@ module.exports = {
     watchFiles: path.join(__dirname, "dist"), //observa los cambios en todos nuestros archivos y actualiza el navegador
     compress: true,
     historyApiFallback: {
-      historyApiFallback: true,
+      index: "/index.html",
+      disableDotRule: false,
     },
     port: 3007,
     open: true, //Hace que se abra en el navegador
