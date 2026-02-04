@@ -132,10 +132,10 @@ const BlogPost = () => {
         )}
 
         {/* Sección de comentarios */}
-        <CommentSection 
+       {/*  <CommentSection 
           slug={slug} 
           initialComments={post.comments || []}
-        />
+        /> */}
       </article>
 
       {/* Navegación entre posts */}
