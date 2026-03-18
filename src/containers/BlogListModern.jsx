@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import Formulario from "@components/Formulario";
 import { useBlog, useBlogFilter, useBlogCategories, useBlogTags } from '../hooks/useBlog';
 import '../styles/blog-modern.css';
 
@@ -235,7 +236,7 @@ const BlogListModern = () => {
                 >
                   <Link to={`/blog/${post.slug}`} className="blog-post-card__link">
                     <div className="blog-post-card__image">
-                      <img src={post.image} alt={post.title} loading="lazy" />
+                      <img src={Array.isArray(post?.image) ? post.image[0] : post?.image} alt={post.title} loading="lazy" />
                       <span className="blog-post-card__category">
                         {post.category === 'SAP' && '💼'}
                         {post.category === 'React' && '⚛️'}
@@ -317,13 +318,11 @@ const BlogListModern = () => {
       {/* CTA al final */}
       <section className="blog-cta">
         <div className="blog-cta__content">
-          <h3>¿Tienes alguna sugerencia de tema?</h3>
-          <p>Si hay algo específico sobre lo que te gustaría que escribiera, ¡házmelo saber!</p>
-          <Link to="/#contacto" className="blog-cta__button">
-            Contactar →
-          </Link>
+          <h3>💡 ¿Sugerencias de temas?</h3>
+          <p>¿Hay algo sobre SAP, desarrollo web o tecnología que te gustaría que cubriera? ¡Escríbeme!</p>
         </div>
       </section>
+      <Formulario />        
     </div>
   );
 };
