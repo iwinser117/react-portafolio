@@ -5,6 +5,8 @@ const CssMinimizerWebpackPlugin = require("css-minimizer-webpack-plugin")
 const TerserWebpackPlugin = require("terser-webpack-plugin")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const CopyPlugin = require("copy-webpack-plugin")
+const webpack = require('webpack');
+dotenv = require("dotenv").config()
 
 module.exports = {
   entry: "./src/index.js",
@@ -74,6 +76,9 @@ module.exports = {
           to: "assets",
         },
       ],
+    }),
+    new webpack.DefinePlugin({
+      "process.env.Email_key": JSON.stringify(process.env.Email_key),
     }),
   ],
   optimization: {

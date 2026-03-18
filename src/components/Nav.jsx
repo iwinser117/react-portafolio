@@ -94,12 +94,14 @@ const Nav = () => {
                 </a>
               </li>
 
-              <li className="nav-item">
-                <a className="nav-link" href="/blog">
-                  <FaBlog style={{ marginRight: '5px' }} /> {t('nav.blog')}
-                </a>
-              </li>
-
+              {location.pathname === "/blog" ? null : (
+                <li className="nav-item">
+                  <a className="nav-link" href="/blog">
+                    <FaBlog style={{ marginRight: '5px' }} /> {t('nav.blog')}
+                  </a>
+                </li>
+              )}
+              
               <li className="nav-item nav-settings-item">
                 <SettingsButton />
               </li>

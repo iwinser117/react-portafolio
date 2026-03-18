@@ -29,6 +29,7 @@ const Formulario = () => {
   const [focusedInput, setFocusedInput] = useState(null);
   const [isHoveredButton, setIsHoveredButton] = useState(false);
   const [isHoveredToggle, setIsHoveredToggle] = useState(false);
+  const key = process.env.Email_key;
 
   const getStyles = () => ({
     container: {
@@ -194,7 +195,7 @@ const Formulario = () => {
 
     emailjs
       .sendForm(
-        "service_uiwikh8",
+        key,
         "template_40uel95",
         form.current,
         "tvVn2ElRQmSkAAMc2"
