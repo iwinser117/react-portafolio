@@ -579,17 +579,23 @@
   border-radius: 8px;
   padding: 2rem;
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .blog-post__header {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  display: block;
+  height: auto !important;
+  min-height: auto;
+  background: transparent;
 }
 
 .blog-post__meta {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   font-size: 0.95rem;
   color: var(--blog-secondary);
 }
@@ -606,13 +612,18 @@
   font-size: 2rem;
   color: var(--blog-text);
   margin-bottom: 1rem;
-  line-height: 1.3;
+  margin-top: 0.75rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  display: block;
 }
 
 .blog-post__author {
   color: var(--blog-secondary);
   font-size: 0.95rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .blog-post__image {
@@ -621,6 +632,9 @@
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 2rem;
+  margin-top: 0;
+  display: block;
+  flex-shrink: 0;
 }
 
 .blog-post__content {
@@ -628,6 +642,13 @@
   line-height: 1.8;
   color: var(--blog-text);
   margin-bottom: 2rem;
+  margin-top: 0;
+  clear: both;
+  position: relative;
+}
+
+.blog-post__content > *:first-child {
+  margin-top: 0;
 }
 
 .blog-post__content h2 {
@@ -681,6 +702,26 @@
   border-radius: 8px;
   overflow-x: auto;
   margin-bottom: 1rem;
+}
+
+/* Imágenes inline dentro del contenido */
+.blog-post__inline-image {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.blog-post__inline-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: var(--blog-shadow-hover);
+}
+
+.blog-post__inline-image figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--blog-text-secondary);
+  font-style: italic;
 }
 
 .blog-post__tags {
@@ -1227,7 +1268,10 @@
 
 .dark-mode .blog-post__content h2,
 .dark-mode .blog-post__content h3,
-.dark-mode .blog-post__content h4 {
+.dark-mode .blog-post__content h4,
+.dark-mode .blog-post__content h5,
+.dark-mode .blog-post__content h6,
+.dark-mode .blog-post__content p {
   color: var(--blog-dark-text);
 }
 
@@ -1245,6 +1289,10 @@
 .dark-mode .blog-post__content blockquote {
   background: var(--blog-dark-bg);
   border-left-color: var(--blog-primary);
+  color: var(--blog-dark-text-secondary);
+}
+
+.dark-mode .blog-post__inline-image figcaption {
   color: var(--blog-dark-text-secondary);
 }
 
