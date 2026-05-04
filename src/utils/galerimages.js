@@ -44,20 +44,20 @@ const section1Projects = [
 
 // Section2: Proyectos Node.js
 const section2Projects = [
-  { 
+ /*  { 
     src: odontoweb, 
     alt: 'OdontoWeb', 
     subtitle: 'Node.js - Express - Bootstrap',
     demo: 'https://odonto-web-red.vercel.app/',
     repo: 'https://github.com/iwinser117/odonto_web'
-  },
-  { 
+  }, */
+  /* { 
     src: imgdevist, 
     alt: 'Reservas D´visita', 
     subtitle: 'Node.js - Express - Vercel',
     demo: 'https://reservas-eta.vercel.app/',
     repo: 'https://github.com/iwinser117/reservas'
-  },
+  }, */
   { 
     src: login, 
     alt: 'Autenticación JWT', 
@@ -83,13 +83,13 @@ const section2Projects = [
 
 // Section3: Proyectos CSS
 const section3Projects = [
-  { 
-    src: css_extint, 
-    alt: 'Sitio Extintores', 
-    subtitle: 'React - CSS - Tailwind',
-    demo: 'https://fire-extinguishers.vercel.app/',
-    repo: 'https://github.com/iwinser117/fireExtinguishers'
-  },
+  // { 
+  //   src: css_extint, 
+  //   alt: 'Sitio Extintores', 
+  //   subtitle: 'React - CSS - Tailwind',
+  //   demo: 'https://fire-extinguishers.vercel.app/',
+  //   repo: 'https://github.com/iwinser117/fireExtinguishers'
+  // },
   { 
     src: galeryart, 
     alt: 'Galería de Arte', 
@@ -115,20 +115,20 @@ const section3Projects = [
 
 // Proyectos destacados para la página de aplicaciones
 const secondImages = [
-  { 
+  /* { 
     src: odontoweb, 
     alt: 'Odonto web', 
     subtitle: 'React Next UI',
     demo: 'https://odonto-web-red.vercel.app/',
     repo: 'https://github.com/iwinser117/odonto_web'
-  },
-  { 
-    src: css_extint, 
-    alt: 'Sitio extintores', 
-    subtitle: 'React - Css - Tailwind - Landing Page',
-    demo: 'https://fire-extinguishers.vercel.app/',
-    repo: 'https://github.com/iwinser117/fireExtinguishers'
-  },
+  }, */
+  /*  { 
+     src: css_extint, 
+     alt: 'Sitio extintores', 
+     subtitle: 'React - Css - Tailwind - Landing Page',
+     demo: 'https://fire-extinguishers.vercel.app/',
+     repo: 'https://github.com/iwinser117/fireExtinguishers'
+   }, */
   { 
     src: listtareas, 
     alt: 'CRUD Lista tareas', 
@@ -157,13 +157,13 @@ const secondImages = [
     demo: 'https://table-export-js-4zq5.vercel.app/',
     repo: 'https://github.com/iwinser117/TableExportJS'
   },
-  {
+  /* {
     src: imgdevist,
     alt: 'Reservas D´visita', 
     subtitle: 'landing Page - NodeJs',
     demo: 'https://reservas-eta.vercel.app/',
     repo: 'https://github.com/iwinser117/reservas'
-  }
+  } */
 ];
 
 const imagesTodowebp = {

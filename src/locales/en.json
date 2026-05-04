@@ -7,7 +7,7 @@
     "blog": "Blog"
   },
   "banner": {
-    "title": "FullStack Developer",
+    "title": "FullStack Developer - BTP CPI",
     "description": "Experience in JavaScript and front-end and back-end web development.",
     "github": "GitHub",
     "linkedin": "LinkedIn",
@@ -16,7 +16,7 @@
   "about": {
     "greeting": "Hello, I am ",
     "name": "Iwinser Sanchez",
-    "description": "Software developer focused on enterprise solutions and modern web applications. I currently work as a <strong>SAP BTP</strong> Consultant at MQA Suramérica, developing applications on <strong>SAP BTP, CAP and UI5</strong>, integrated with <strong>SAP Fiori and S/4HANA</strong>. In parallel, I develop Fullstack JavaScript projects, creating complete web applications with React, Node.js and MongoDB. I specialize in building scalable, well-structured and business-oriented solutions, ideal for remote environments and distributed teams.",
+    "description": "I build software that businesses actually use. By day, I develop <strong>SAP BTP, CAP and UI5</strong> applications integrated with <strong>S/4HANA</strong> at MQA Suramérica. In parallel, I create full-stack web products with React, Node.js and MongoDB. My focus is not just writing clean code — it’s understanding the business and delivering solutions that scale.",
     "personalProjects": "Personal Projects",
     "certifications": "Certifications",
     "certificationsDescription": "I am currently pursuing a Systems Engineering degree at UNAD, which I combine with a solid technical foundation obtained at the Faculty of Engineering of the University of Antioquia (<i>Misión TIC 2022</i>). My professional approach is based on continuous learning, constantly specializing in modern architectures and high-impact technologies through leading platforms and cutting-edge technical resources."
