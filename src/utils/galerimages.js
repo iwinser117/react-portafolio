@@ -21,6 +21,7 @@ import login from "@assets/login.webp";
 import fondocss from "@assets/fondocss.png";
 import semanticpage from "@assets/semanticpage.png";
 import galeryart from "@assets/galeryart.png";
+import crud_sap from "@assets/CRUDSAP.webp";
 
 const imagesData = [
   { src: js, alt: 'Login con JS' },
@@ -157,6 +158,13 @@ const secondImages = [
     demo: 'https://table-export-js-4zq5.vercel.app/',
     repo: 'https://github.com/iwinser117/TableExportJS'
   },
+  {
+    src: crud_sap,
+    alt: 'CRUD SAP', 
+    subtitle: 'NodeJs - Express - Odata - SAP',
+    demo: 'https://mega-crud-table-ui5.vercel.app/',
+    repo: 'https://github.com/iwinser117/mega-crud-table-ui5'
+  }
   /* {
     src: imgdevist,
     alt: 'Reservas D´visita', 
