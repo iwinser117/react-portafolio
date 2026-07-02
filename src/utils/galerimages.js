@@ -23,35 +23,50 @@ import semanticpage from "@assets/semanticpage.png";
 import galeryart from "@assets/galeryart.png";
 import crud_sap from "@assets/CRUDSAP.webp";
 
-const imagesData = [
-  { src: js, alt: 'Login con JS' },
-  { src: node, alt: 'CRUD Lista tareas' },
-  { src: css, alt: 'Input colors' },
-  { src: html, alt: 'HTML' },
-  { src: react, alt: 'Contador' },
-  { src: js, alt: 'Calculadora' },
-];
-
-// Section1: Proyectos JavaScript
-const section1Projects = [
-  { 
-    src: rickandmorty, 
-    alt: 'Rick and Morty', 
-    subtitle: 'Consumo API - Paginación',
-    demo: 'https://api-rick-and-morty-17j9.vercel.app/',
-    repo: 'https://github.com/iwinser117/Api-Rick-and-Morty'
+const imagesData = [{
+    src: js,
+    alt: 'Login con JS'
+  },
+  {
+    src: node,
+    alt: 'CRUD Lista tareas'
+  },
+  {
+    src: css,
+    alt: 'Input colors'
+  },
+  {
+    src: html,
+    alt: 'HTML'
+  },
+  {
+    src: react,
+    alt: 'Contador'
+  },
+  {
+    src: js,
+    alt: 'Calculadora'
   },
 ];
 
+// Section1: Proyectos JavaScript
+const section1Projects = [{
+  src: rickandmorty,
+  alt: 'Rick and Morty',
+  subtitle: 'Consumo API - Paginación',
+  demo: 'https://api-rick-and-morty-17j9.vercel.app/',
+  repo: 'https://github.com/iwinser117/Api-Rick-and-Morty'
+}, ];
+
 // Section2: Proyectos Node.js
 const section2Projects = [
- /*  { 
-    src: odontoweb, 
-    alt: 'OdontoWeb', 
-    subtitle: 'Node.js - Express - Bootstrap',
-    demo: 'https://odonto-web-red.vercel.app/',
-    repo: 'https://github.com/iwinser117/odonto_web'
-  }, */
+  /*  { 
+     src: odontoweb, 
+     alt: 'OdontoWeb', 
+     subtitle: 'Node.js - Express - Bootstrap',
+     demo: 'https://odonto-web-red.vercel.app/',
+     repo: 'https://github.com/iwinser117/odonto_web'
+   }, */
   /* { 
     src: imgdevist, 
     alt: 'Reservas D´visita', 
@@ -59,23 +74,23 @@ const section2Projects = [
     demo: 'https://reservas-eta.vercel.app/',
     repo: 'https://github.com/iwinser117/reservas'
   }, */
-  { 
-    src: login, 
-    alt: 'Autenticación JWT', 
+  {
+    src: login,
+    alt: 'Autenticación JWT',
     subtitle: 'Node.js - JWT - Express',
     demo: 'https://autenticate.vercel.app/',
     repo: 'https://github.com/iwinser117/autenticate'
   },
-  { 
-    src: generatePassword, 
-    alt: 'Generador Contraseñas', 
+  {
+    src: generatePassword,
+    alt: 'Generador Contraseñas',
     subtitle: 'Tailwind - NextJs',
     demo: 'https://generatepassword-theta.vercel.app/',
     repo: 'https://github.com/iwinser117/generatepassword'
   },
-  { 
-    src: imgtablaExport, 
-    alt: 'TableExportJS', 
+  {
+    src: imgtablaExport,
+    alt: 'TableExportJS',
     subtitle: 'Vanilla JS - CSV - XLSX',
     demo: 'https://table-export-js-4zq5.vercel.app/',
     repo: 'https://github.com/iwinser117/TableExportJS'
@@ -91,23 +106,23 @@ const section3Projects = [
   //   demo: 'https://fire-extinguishers.vercel.app/',
   //   repo: 'https://github.com/iwinser117/fireExtinguishers'
   // },
-  { 
-    src: galeryart, 
-    alt: 'Galería de Arte', 
+  {
+    src: galeryart,
+    alt: 'Galería de Arte',
     subtitle: 'HTML - CSS - Lightbox',
     demo: 'https://galery-art-rho.vercel.app/',
     repo: 'https://github.com/iwinser117/galery_art'
   },
-  { 
-    src: fondocss, 
-    alt: 'Animación Background', 
+  {
+    src: fondocss,
+    alt: 'Animación Background',
     subtitle: 'CSS - Animations - Responsive',
     demo: 'https://iwinser117.github.io/https---github.com-iwinser117-css_background/',
     repo: 'https://github.com/iwinser117/css_background'
   },
-  { 
-    src: semanticpage, 
-    alt: 'Plantilla Responsive', 
+  {
+    src: semanticpage,
+    alt: 'Plantilla Responsive',
     subtitle: 'HTML - CSS - Responsive',
     demo: 'https://responsivetemplatecss.netlify.app/',
     repo: 'https://github.com/iwinser117/responsivetemplate'
@@ -130,41 +145,41 @@ const secondImages = [
      demo: 'https://fire-extinguishers.vercel.app/',
      repo: 'https://github.com/iwinser117/fireExtinguishers'
    }, */
-  { 
-    src: listtareas, 
-    alt: 'CRUD Lista tareas', 
+  {
+    src: listtareas,
+    alt: 'CRUD Lista tareas',
     subtitle: 'NodeJs - React - MongoDB',
     demo: 'https://crudlistatareas.netlify.app/',
     repo: 'https://github.com/iwinser117/nodeJs_react_crud'
   },
-  { 
-    src: login, 
-    alt: 'Autenticación JWT', 
+  {
+    src: login,
+    alt: 'Autenticación JWT',
     subtitle: 'NodeJs - ExpressJs - oAuth',
     demo: 'https://autenticate.vercel.app/',
     repo: 'https://github.com/iwinser117/autenticate'
   },
-  { 
-    src: generatePassword, 
-    alt: 'Generador Contraseñas', 
+  {
+    src: generatePassword,
+    alt: 'Generador Contraseñas',
     subtitle: 'Tailwind - NextJs',
     demo: 'https://generatepassword-theta.vercel.app/',
     repo: 'https://github.com/iwinser117/generatepassword'
   },
-  { 
-    src: imgtablaExport, 
-    alt: 'TableExportJS', 
+  {
+    src: imgtablaExport,
+    alt: 'TableExportJS',
     subtitle: 'NodeJs',
     demo: 'https://table-export-js-4zq5.vercel.app/',
     repo: 'https://github.com/iwinser117/TableExportJS'
   },
   {
     src: crud_sap,
-    alt: 'CRUD SAP', 
+    alt: 'CRUD SAP',
     subtitle: 'NodeJs - Express - Odata - SAP',
     demo: 'https://mega-crud-table-ui5.vercel.app/',
     repo: 'https://github.com/iwinser117/mega-crud-table-ui5'
-  }
+  },
   /* {
     src: imgdevist,
     alt: 'Reservas D´visita', 
@@ -172,6 +187,13 @@ const secondImages = [
     demo: 'https://reservas-eta.vercel.app/',
     repo: 'https://github.com/iwinser117/reservas'
   } */
+  {
+    src: "",
+    alt: "apk pdf",
+    subtitle: "Visor PDF - Android",
+    demo: "https://pdf-generator-nodejs.vercel.app/",
+    repo: "https://github.com/iwinser117/pdf_reader"
+  }
 ];
 
 const imagesTodowebp = {
@@ -185,4 +207,11 @@ const imagesTodowebp = {
   generatePassword: generatePassword,
   rickandmorty: rickandmorty
 };
-export { imagesData, secondImages, imagesTodowebp, section1Projects, section2Projects, section3Projects }; 
+export {
+  imagesData,
+  secondImages,
+  imagesTodowebp,
+  section1Projects,
+  section2Projects,
+  section3Projects
+};
