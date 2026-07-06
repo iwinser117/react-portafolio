@@ -30,6 +30,7 @@ const Formulario = () => {
   const [isHoveredButton, setIsHoveredButton] = useState(false);
   const [isHoveredToggle, setIsHoveredToggle] = useState(false);
   const key = process.env.Email_key;
+  const publicKey = process.env.public_key;
 
   const getStyles = () => ({
     container: {
@@ -198,7 +199,7 @@ const Formulario = () => {
         key,
         "template_40uel95",
         form.current,
-        "tvVn2ElRQmSkAAMc2"
+        publicKey
       )
       .then(
         (result) => {
