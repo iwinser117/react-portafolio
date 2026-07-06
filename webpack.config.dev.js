@@ -65,6 +65,7 @@ module.exports = {
     }),
     new webpack.DefinePlugin({
       "process.env.Email_key": JSON.stringify(process.env.Email_key), 
+      "process.env.public_key": JSON.stringify(process.env.public_key),
       })
   ],
   devServer: {
