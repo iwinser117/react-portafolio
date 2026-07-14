@@ -5,7 +5,7 @@
   }
 
   .acerca-cnt {
-    width: 70%;
+    width: 100%;
   }
 
   .certificados-iconos li:hover {
@@ -28,7 +28,7 @@
 /* Media query para pantallas medianas */
 @media (min-width: 800px) and (max-width: 1199px) {
   .acerca-cnt {
-    width: 80%;
+    width: 100%;
     /* padding-top: 20px; */
   }
 
