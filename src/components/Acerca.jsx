@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import mostrarDiploma from "../utils/modalDiploma.js";
 import GridExperiencia from "./AcercaExperiencias";
 import Certifications from "./Certifications.jsx";
+import CategoriesTecnologie from "./CategoriesTecnologie.jsx";
 import "@styles/acerca.css";
 
 const Acerca = () => {
@@ -55,14 +56,15 @@ const Acerca = () => {
     setIsVisible(!isVisible);
   };
   return (
-    <section className="container acerca-cnt col-8  text-justify lh-lg">
-      <article id="acercademi">
+    <section className="acerca-cnt col-8  text-justify lh-lg">
+      <article id="acercademi" className="container-md">
         <h3>
           {text}
           <span>Iwinser Sanchez</span>
         </h3>
         <p className="text-pretty" dangerouslySetInnerHTML={{ __html: t('about.description') }} />
       </article>
+      <CategoriesTecnologie />
       {/* <section className="container-experiencia">
         <main>
           <h4>Experiencia</h4>

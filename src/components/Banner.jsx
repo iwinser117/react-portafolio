@@ -4,6 +4,7 @@ import "@styles/Banner.css";
 import iwinserPerfil from "@assets/iwinserPerfil.webp";
 import { useDarkMode } from "@buttons/DarkModeProvider";
 import { useTranslation } from "react-i18next";
+import { Container } from "react-bootstrap";
 
 
 const Banner = () => {
@@ -11,28 +12,23 @@ const Banner = () => {
   const isDarkMode = useDarkMode();
   const { t } = useTranslation();
   return (
-    <section className="sectionbanner">
-      <div className="d-flex justify-content-around align-items-center p-2 container banner">
-        <div className="iwinserPerfil">
-          <div className={`image-placeholder ${imageLoaded ? "loaded" : ""}`}>
-            <img
-              src={iwinserPerfil}
-              alt="Perfil"
-              loading="lazy"
-              onLoad={() => setImageLoaded(true)}
-              style={{
-                opacity: imageLoaded ? 1 : 0,
-                transition: "opacity 0.3s ease-in-out",
-              }}
-            />
+    <Container className="sectionbanner">
+      <div className="banner">
+        <div className="banner-media">
+          <div className="iwinserPerfil">
+            <div className={`image-placeholder ${imageLoaded ? "loaded" : ""}`}>
+              <img
+                src={iwinserPerfil}
+                alt="Perfil"
+                loading="lazy"
+                onLoad={() => setImageLoaded(true)}
+                style={{
+                  opacity: imageLoaded ? 1 : 0,
+                  transition: "opacity 0.3s ease-in-out",
+                }}
+              />
+            </div>
           </div>
-        </div>
-        <div className="p-2">
-          <h4 className="text-center nametitle">Iwinser Sanchez</h4>
-          <h2 className="text-center">{t('banner.title')}</h2>
-          <p className="text-center">
-            {t('banner.description')}
-          </p>
           <div className="social-buttons social-buttons-small m-auto">
             <a
               className="social-button github small"
@@ -62,8 +58,15 @@ const Banner = () => {
             </a>
           </div>
         </div>
+        <div className="banner-content p-2">
+          <h4 className="text-center nametitle">Iwinser Sanchez</h4>
+          <h2 className="text-center">{t('banner.title')}</h2>
+          <p className="text-center">
+            {t('banner.description')}
+          </p>
+        </div>
       </div>
-    </section>
+    </Container>
   );
 };
 
