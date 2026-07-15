@@ -16,7 +16,7 @@
   "about": {
     "greeting": "Hello, I am ",
     "name": "Iwinser Sanchez",
-    "description": "I build software that businesses actually use. By day, I develop <strong>SAP BTP, CAP and UI5</strong> applications integrated with <strong>S/4HANA</strong> at MQA Suramérica. In parallel, I create full-stack web products with React, Node.js and MongoDB. My focus is not just writing clean code — it’s understanding the business and delivering solutions that scale.",
+    "description": "I build comprehensive software solutions for organizations, ranging from SAP BTP environments—leveraging SAP Build for automation and SAP CPI for seamless integration—to bespoke cloud applications. My primary technical stack includes Node.js, React, MongoDB, and SQL. I specialize in building robust integrations with third-party platforms, streamlining complex business logic, and delivering scalable solutions tailored to my clients' unique business needs.",
     "personalProjects": "Personal Projects",
     "certifications": "Certifications",
     "certificationsDescription": "I am currently pursuing a Systems Engineering degree at UNAD, which I combine with a solid technical foundation obtained at the Faculty of Engineering of the University of Antioquia (<i>Misión TIC 2022</i>). My professional approach is based on continuous learning, constantly specializing in modern architectures and high-impact technologies through leading platforms and cutting-edge technical resources."
@@ -24,9 +24,9 @@
   "skills": {
     "title": "Skills",
     "frontend": "Front-end",
-    "frontendDescription": "Specialized in creating high-performance and scalable user interfaces. My main focus is the <strong>React and Next.js</strong> ecosystem, where I design reusable and optimized component architectures. Additionally, I have a competitive advantage in developing enterprise applications with SAP UI5, ensuring smooth user experience (UX) and robust integrations with back-end systems. Expert in advanced web design with HTML5, CSS3 and utility frameworks like Tailwind CSS",
+    "frontendDescription": "Frontend development is about more than visual design. My focus is on building intuitive, responsive, and adaptable applications that improve users' daily workflows. In enterprise environments, the internal user experience is especially important because employees interact with the software for most of their workday. For this reason, I prioritize usability, efficiency, and streamlined workflows to make every process faster, simpler, and more productive.",
     "backend": "Back-end",
-    "backendDescription": "Robust and scalable development with Node.js and Express.js. Design of high-performance RESTful APIs with secure validation, authentication and authorization. Expertise in NoSQL (MongoDB) and SQL (PostgreSQL, MySQL) databases, transactional handling and query optimization. Implementation of architectural patterns such as MVC, custom middleware, and clustering. Experience in integration with external services, error handling and logging, and production environment deployment.",
+    "backendDescription": "A robust backend is more than an API that meets functional requirements. My approach is to build secure, scalable, and maintainable services that evolve alongside business needs. I implement authentication and authorization mechanisms, along with traceability, structured logging, and error-handling strategies that simplify monitoring and enable rapid root cause analysis. This results in reliable systems that are easier to maintain and ready to support future business requirements without compromising stability.",
     "sap": "SAP"
   },
   "projects": {

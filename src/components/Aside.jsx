@@ -11,7 +11,7 @@ const Aside = () => {
       <aside className="d-flex justify-content-around content-aside">
         <div className="aside">
           <div className="aside-div-int">
-            <h3 className="text-center mb-4">{t('Aside.contactMe')}</h3>
+            {/* <h3 className="text-center mb-4">{t('Aside.contactMe')}</h3> */}
             <div className="aside-div-int1">
               <div className="social-buttons">
                 <a

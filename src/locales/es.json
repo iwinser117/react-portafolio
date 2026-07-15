@@ -16,7 +16,7 @@
   "about": {
     "greeting": "Hola, soy ",
     "name": "Iwinser Sanchez",
-    "description": "Construyo software que las empresas realmente usan. Durante el día, desarrollo aplicaciones <strong>SAP BTP, CAP y UI5</strong> integradas con <strong>S/4HANA</strong> en MQA Suramérica. En paralelo, creo productos web completos con React, Node.js y MongoDB. Mi enfoque no es solo escribir código limpio — es entender el negocio y entregar soluciones que escalan.",
+    "description": "Desarrollo soluciones de software integrales para empresas y organizaciones, desde entornos SAP BTP —incluyendo automatizaciones con SAP Build e integraciones mediante SAP CPI (Cloud Platform Integration)— hasta aplicaciones web a medida. Mi stack técnico principal incluye Node.js, React, MongoDB y SQL. Me especializo en la integración efectiva con plataformas de terceros, optimizando la lógica de negocio y garantizando soluciones robustas, escalables y orientadas a los objetivos estratégicos de mis clientes.",
     "personalProjects": "Proyectos Personales",
     "certifications": "Certificaciones",
     "certificationsDescription": "Actualmente curso la Ingeniería de Sistemas en la UNAD, lo cual combino con una sólida base técnica obtenida en la Facultad de Ingeniería de la Universidad de Antioquia (<i>Misión TIC 2022</i>). Mi enfoque profesional se basa en el aprendizaje continuo, especializándome constantemente en arquitecturas modernas y tecnologías de alto impacto a través de plataformas líderes y recursos técnicos de vanguardia."
@@ -24,9 +24,9 @@
   "skills": {
     "title": "Habilidades",
     "frontend": "Front-end",
-    "frontendDescription": "Especializado en la creación de interfaces de usuario alto rendimiento y escalables. Mi enfoque principal es el ecosistema <strong>React y Next.js</strong>, donde diseño arquitecturas de componentes reutilizables y optimizadas. Además, poseo una ventaja competitiva en el desarrollo de aplicaciones empresariales con SAP UI5, asegurando una experiencia de usuario fluida (UX) e integraciones robustas con sistemas back-end. Experto en maquetación avanzada con HTML5, CSS3 y frameworks de utilidad como Tailwind CSS",
+    "frontendDescription": "El desarrollo de interfaces va más allá de la apariencia visual. Mi enfoque es crear aplicaciones intuitivas, responsivas y adaptables que faciliten el trabajo diario de los usuarios. En entornos empresariales, la experiencia del cliente interno es fundamental, ya que interactúa con el software durante gran parte de su jornada laboral. Por ello, priorizo la usabilidad, la eficiencia y la reducción de pasos innecesarios para que cada proceso sea más ágil, cómodo y productivo.",
     "backend": "Back-end",
-    "backendDescription": "Desarrollo robusto y escalable con Node.js y Express.js. Diseño de APIs RESTful de alto rendimiento con validación, autenticación y autorización segura. Expertise en bases de datos NoSQL (MongoDB) y SQL (PostgreSQL, MySQL), manejo transaccional y optimización de consultas. Implementación de patrones arquitectónicos como MVC, middleware personalizado, y clustering. Experiencia en integración con servicios externos, gestión de errores y logging, y deployment en entornos de producción.",
+    "backendDescription": "Un backend sólido va más allá de cumplir con los requerimientos funcionales. Mi enfoque es desarrollar servicios seguros, escalables y mantenibles, preparados para evolucionar junto con las necesidades del negocio. Implemento mecanismos de autenticación y autorización, además de estrategias de trazabilidad, registro de eventos (logging) y manejo de errores que facilitan el monitoreo y permiten identificar rápidamente la causa raíz de cualquier incidencia. De esta forma, los sistemas son más confiables, fáciles de mantener y capaces de adaptarse a nuevos requerimientos sin comprometer su estabilidad.",
     "sap": "SAP"
   },
   "projects": {
@@ -67,7 +67,7 @@
     "spanish": "Español",
     "english": "English"
   },
-    "Aside": {
-        "contactMe": "Contáctame"
-    }
+  "Aside": {
+    "contactMe": "Contáctame"
+  }
 }
