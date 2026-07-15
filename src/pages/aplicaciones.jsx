@@ -83,19 +83,14 @@ const Proyectos = () => {
         <div style={{ position: 'absolute', inset: 0, backdropFilter: 'blur(60px)' }}></div>
         <div style={{ position: 'relative', maxWidth: '1200px', margin: '0 auto' }}>
           <h1 style={{ 
-            fontSize: 'clamp(1.8rem, 5vw, 3rem)', 
-            fontWeight: 700, 
+            fontSize: 'clamp(1.5rem, 5vw, 3rem)', 
+            fontWeight: 500, 
             color: colors.textPrimary,
             marginBottom: '1.5rem', 
             letterSpacing: '-0.02em',
             transition: 'color 0.3s ease'
           }}>
-            {t('projects.pageTitle').split(' ').slice(0, -1).join(' ')} <span style={{ 
-              background: colors.gradientPrimary, 
-              WebkitBackgroundClip: 'text', 
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}>{t('projects.pageTitle').split(' ').slice(-1).join(' ')}</span>
+            {t('projects.pageTitle')}
           </h1>
           <p style={{ 
             fontSize: 'clamp(1rem, 2vw, 1.25rem)', 

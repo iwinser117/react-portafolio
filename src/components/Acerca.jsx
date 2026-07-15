@@ -91,14 +91,14 @@ const Acerca = () => {
           </section>
         </main>
       </section> */}
-      <div className="experiencia">
+      <div className="container-md experiencia">
         <h4 className="encabezado">{t('about.personalProjects')}</h4>
         <div>
           <GridExperiencia />
         </div>
       </div>
 
-      <article className="cert-container">
+      <article className="container-md cert-container">
         <h4>{t('about.certifications')}</h4>
         <p dangerouslySetInnerHTML={{ __html: t('about.certificationsDescription') }} />
       </article>

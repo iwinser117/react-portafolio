@@ -20,24 +20,6 @@ const Certificados = () => {
       fecha: "2022-01",
     },
     {
-      id: 1,
-      title: "Diplomado en Desarrollo de Aplicaciones Web",
-      institucion: "MisionTic2022",
-      fecha: "2022-03",
-    },
-    {
-      id: 2,
-      title: "Diplomado en Programación Básica Lenguaje Java",
-      institucion: "MisionTic2022",
-      fecha: "2022-05",
-    },
-    {
-      id: 3,
-      title: "Diplomado Fundamentos de Programación en Python",
-      institucion: "MisionTic2022",
-      fecha: "2022-07",
-    },
-    {
       id: 4,
       title: "Full Stack Developer con JavaScript",
       institucion: "Platzi",
