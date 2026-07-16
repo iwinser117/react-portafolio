@@ -8,6 +8,8 @@ import {
   Grid,
 } from "@mui/material";
 import { Container } from "react-bootstrap";
+import { useDarkMode } from "../buttons/DarkModeProvider";
+
 
 const technologies = [
   {
@@ -66,6 +68,7 @@ const technologies = [
 ];
 
 const TechnologiesSection = () => {
+  const isDarkMode = useDarkMode();
   return (
     <Container className="py-5">
       <Box sx={{ mb: 5 }}>
@@ -78,7 +81,7 @@ const TechnologiesSection = () => {
 
         <Typography
           variant="body1"
-          color="text.secondary"
+          sx={{ color: "text.secondary", fontSize: { xs: "0.8rem", sm: "1rem", md: "1.2rem" } }}
         >
           Conjunto de tecnologías utilizadas en el desarrollo de aplicaciones,
           integraciones y soluciones empresariales.
@@ -116,8 +119,7 @@ const TechnologiesSection = () => {
 
               <Typography
                 variant="body2"
-                color="text.secondary"
-                sx={{ mb: 3 }}
+                sx={{ mb: 3, color: isDarkMode ? "black !important" : "text.secondary !important"}}
               >
                 {category.description}
               </Typography>
