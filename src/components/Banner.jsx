@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MDBIcon } from "mdb-react-ui-kit";
 import "@styles/Banner.css";
 import iwinserPerfil from "@assets/iwinserPerfil.webp";
-import { useDarkMode } from "@buttons/DarkModeProvider";
+import { useDarkMode } from "./Settingsmanager";
 import { useTranslation } from "react-i18next";
 import { Container } from "react-bootstrap";
 

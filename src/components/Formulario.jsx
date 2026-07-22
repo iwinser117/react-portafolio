@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";
 import { Mail, Send, User, MessageSquare, X, CheckCircle } from "lucide-react";
 import { exito, noEnviado, limpiarInput } from "../utils/sendForm";
-import { useDarkMode } from "@buttons/DarkModeProvider";
+import { useDarkMode } from "./Settingsmanager";
 
 const getThemeColors = (isDark) => ({
   primary: '#004085',
@@ -21,7 +21,8 @@ const getThemeColors = (isDark) => ({
 });
 
 const Formulario = () => {
-  const isDark = useDarkMode();
+  let isDark = useDarkMode();
+  isDark = isDark.isDarkMode;
   const { t } = useTranslation();
   const colors = getThemeColors(isDark);
   

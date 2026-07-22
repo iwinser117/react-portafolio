@@ -4,15 +4,15 @@ import { Routes, Route } from "react-router-dom";
 import "@styles/resposiveMed.css";
 import "@codigoProyectos/verResultados/calculadora";
 
-import DarkModeProvider from "../buttons/DarkModeProvider";
+import { SettingsProvider } from "@components/Settingsmanager";
 import Home from "@pages/Home";
 import Proyectos from "@pages/aplicaciones";
 import Blog from "@pages/Blog";
-import BlogPost from "@containers/BlogPost";
+import BlogPost from "@containers/BlogPost";  
 
 const App = () => {
   return (
-    <DarkModeProvider>
+    <SettingsProvider>
       <div className="app-container main-container">
         <Routes>
           <Route exact path="/" element={<Home />} />
@@ -21,7 +21,7 @@ const App = () => {
           <Route  path="/blog/:slug" element={<BlogPost />} />
         </Routes>
       </div>
-    </DarkModeProvider>
+    </SettingsProvider>
   );
 };
 export default App;
