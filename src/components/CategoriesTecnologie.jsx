@@ -8,7 +8,7 @@ import {
   Grid,
 } from "@mui/material";
 import { Container } from "react-bootstrap";
-import { useDarkMode } from "../buttons/DarkModeProvider";
+import { useDarkMode } from "./Settingsmanager";
 
 
 const technologies = [
@@ -119,7 +119,7 @@ const TechnologiesSection = () => {
 
               <Typography
                 variant="body2"
-                sx={{ mb: 3, color: isDarkMode ? "black !important" : "text.secondary !important"}}
+                sx={{ mb: 3, color: isDarkMode.isDarkMode ? "black !important" : "text.secondary !important"}}
               >
                 {category.description}
               </Typography>

@@ -3,9 +3,9 @@ import logowhite from "@assets/ok.svg";
 import logoblack from "@assets/ok_white_bgsvg.svg";
 import "@styles/Nav.css";
 import { NavLink, useLocation } from "react-router-dom";
-import { useDarkMode } from "../buttons/DarkModeProvider";
 import { useTranslation } from "react-i18next";
-import SettingsButton from "../buttons/SettingsButton";
+import { useDarkMode } from "../components/Settingsmanager";
+import SettingsManager from "../components/Settingsmanager";
 import { FaHome, FaUser,FaBrain, FaLaptopCode, FaEnvelope, FaBlog } from "react-icons/fa";
 
 const Nav = () => {
@@ -41,9 +41,9 @@ const Nav = () => {
 
   return (
     <>
-      <nav id="navbar" className="navbar navbar-expand-lg">
+      <nav id="navbar"  className="navbar navbar-expand-lg">
         <div className="container-fluid w-75" id="n2">
-          <img className="navbar-brand" src={isDarkMode ? logoblack : logowhite} width="60px" alt="logoIS" />
+          <img className="navbar-brand" src={isDarkMode.isDarkMode ? logoblack : logowhite} width="60px" alt="logoIS" />
           <button
             className="navbar-toggler "
             type="button"
@@ -103,7 +103,7 @@ const Nav = () => {
               )}
               
               <li className="nav-item nav-settings-item">
-                <SettingsButton />
+                <SettingsManager />
               </li>
             </ul>
           </div>

@@ -6,7 +6,7 @@ import Nav from "@components/Nav";
 import Formulario from "@components/Formulario";
 import Footer from "@components/Footer";
 import BtnArriba from "@buttons/BtnArriba";
-import { useDarkMode } from "@buttons/DarkModeProvider";
+import { useDarkMode } from "../components/Settingsmanager";
 
 // usamos el hook del DarkModeProvider
 
@@ -45,7 +45,8 @@ const Proyectos = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [hoveredFilter, setHoveredFilter] = useState(null);
-  const isDark = useDarkMode();
+  let isDark = useDarkMode();
+  isDark = isDark.isDarkMode;
   const { t } = useTranslation();
   const colors = getThemeColors(isDark);
 
