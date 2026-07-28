@@ -61,6 +61,11 @@ nav .container-fluid .collapse {
     text-align: center;
   }
 
+  .nav-ul .nav-settings-item {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
   .nav-ul a {
     position: relative;
     display: inline-block;
@@ -163,6 +168,11 @@ nav .container-fluid .collapse {
     position: static;
     text-align: center;
     margin: 0 5px;
+  }
+
+  .nav-ul .nav-settings-item {
+    margin-left: auto;
+    margin-right: 0;
   }
 
   .nav-ul a {
@@ -306,6 +316,17 @@ nav .container-fluid .collapse {
 
   .nav-ul li {
     padding: 0 !important;
+  }
+
+  .navbar .nav-settings-item {
+    display: flex;
+    width: 100% !important;
+    padding: 0.5rem 0 !important;
+    border-bottom: 0;
+  }
+
+  .dark-mode .navbar .nav-settings-item {
+    border-bottom: 0;
   }
 
   .nav-ul li a {
