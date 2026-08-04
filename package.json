@@ -16,6 +16,7 @@
     "@babel/plugin-transform-runtime": "^7.19.6",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
+    "@tailwindcss/postcss": "^4.3.3",
     "babel-loader": "^9.1.2",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
@@ -25,6 +26,7 @@
     "html-webpack-plugin": "^5.5.0",
     "mdb-react-ui-kit": "^5.1.0",
     "mini-css-extract-plugin": "^2.7.2",
+    "postcss-loader": "^8.2.1",
     "react-bootstrap": "^2.7.0",
     "react-bootstrap-carousel": "^4.1.1",
     "terser-webpack-plugin": "^5.3.6",
@@ -38,16 +40,19 @@
     "@emotion/styled": "^11.14.0",
     "@mui/lab": "^6.0.0-beta.24",
     "@mui/material": "^6.4.5",
+    "autoprefixer": "^10.5.4",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",
     "dotenv": "^17.3.1",
     "i18next": "^25.8.0",
     "lucide-react": "^0.556.0",
+    "postcss": "^8.5.25",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^16.5.4",
     "react-icons": "^4.9.0",
     "react-router-dom": "^6.6.2",
-    "sweetalert2": "^11.6.13"
+    "sweetalert2": "^11.6.13",
+    "tailwindcss": "^4.3.3"
   }
 }

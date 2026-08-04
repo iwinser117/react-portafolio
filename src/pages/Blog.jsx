@@ -11,7 +11,6 @@ import BtnArriba from "@buttons/BtnArriba";
 const Blog = () => {
   return (
     <div className="data-bs-theme-dark letra-home">
-      <Nav />
       <BlogListModern />
       <Footer />
       <BtnArriba />

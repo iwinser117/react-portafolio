@@ -1,156 +1,91 @@
+// src/components/CategoriesTecnologie.jsx
 import React from "react";
-import {
-  Box,
-  Typography,
-  Chip,
-  Stack,
-  Paper,
-  Grid,
-} from "@mui/material";
-import { Container } from "react-bootstrap";
 import { useDarkMode } from "./Settingsmanager";
-
+import { useTranslation } from "react-i18next";
 
 const technologies = [
   {
-    title: "SAP Ecosystem",
-    description:
-      "Desarrollo e integración de soluciones empresariales sobre SAP.",
-    items: [
-      "SAP BTP",
-      "SAP UI5",
-      "SAP CPI",
-      "SAP Build Process Automation",
-      "Cloud Foundry",
-      "Neo",
-      "XSJS",
-      "CDS",
-    ],
-  },
-  {
     title: "Frontend",
-    description:
-      "Desarrollo de interfaces web modernas y responsivas.",
-    items: [
-      "React",
-      "JavaScript",
-      "HTML5",
-      "CSS3",
-      "Material UI",
-      "Bootstrap",
-    ],
+    description: "Desarrollo de interfaces web modernas y responsivas.",
+    items: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"],
   },
   {
-    title: "Backend",
-    description:
-      "Desarrollo de APIs, lógica de negocio y servicios.",
-    items: [
-      "Node.js",
-      "Python",
-      "Express",
-      "SAP CAP",
-      "SAP HANA",
-    ],
+    title: "Backend & DB",
+    description: "Desarrollo de APIs, lógica de negocio y bases de datos.",
+    items: ["Node.js", "Express", "MongoDB", "SQL", "Python", "SAP CAP", "SAP HANA"],
+  },
+  {
+    title: "SAP Ecosystem",
+    description: "Desarrollo e integración de soluciones empresariales sobre SAP.",
+    items: ["SAP BTP", "SAP UI5", "SAP CPI", "SAP Build Process Automation", "Cloud Foundry", "XSJS", "CDS"],
   },
   {
     title: "Integración",
-    description:
-      "Comunicación entre sistemas y servicios empresariales.",
-    items: [
-      "REST",
-      "SOAP",
-      "OData",
-      "XML",
-      "JSON",
-      "Cloud Integration Platform",
-    ],
+    description: "Comunicación entre sistemas y servicios empresariales.",
+    items: ["REST", "SOAP", "OData", "XML", "JSON", "Cloud Integration Platform"],
   },
 ];
 
 const TechnologiesSection = () => {
-  const isDarkMode = useDarkMode();
+  const { isDarkMode } = useDarkMode();
+  const { t } = useTranslation();
+
   return (
-    <Container className="py-5">
-      <Box sx={{ mb: 5 }}>
-        <Typography
-          variant="h4"
-          sx={{ fontWeight: 700, mb: 1, fontSize: { xs: "1rem", sm: "1.5rem", md: "2rem" } }}
-        >
-          Tecnologías
-        </Typography>
+    <section className="w-full">
+      {/* Header */}
+      <div className="mb-6">
+        <h2 className="text-xl sm:text-2xl font-bold text-[#354A5F] dark:text-[#F5F6F7] mb-1">
+          {t("technologies.title", "Tecnologías")}
+        </h2>
+        <p className="text-sm sm:text-base text-[#6a6d70] dark:text-[#b9c5d1]">
+          {t("technologies.description", "Conjunto de tecnologías utilizadas en el desarrollo de aplicaciones, integraciones y soluciones empresariales.")}
+        </p>
+      </div>
 
-        <Typography
-          variant="body1"
-          sx={{ color: "text.secondary", fontSize: { xs: "0.8rem", sm: "1rem", md: "1.2rem" } }}
-        >
-          Conjunto de tecnologías utilizadas en el desarrollo de aplicaciones,
-          integraciones y soluciones empresariales.
-        </Typography>
-      </Box>
-
-      <Grid container spacing={3}>
+      {/* Grid de categorías */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {technologies.map((category) => (
-          <Grid item xs={12} md={6} key={category.title}>
-            <Paper
-              elevation={0}
-              sx={{
-                height: "100%",
-                p: 3,
-                borderRadius: 3,
-                border: "1px solid",
-                borderColor: "divider",
-                transition: "0.25s",
+          <div
+            key={category.title}
+            className="
+              h-full p-4 sm:p-5 rounded-xl
+              bg-white dark:bg-[#1d232a]
+              border border-[#d9d9d9] dark:border-[#3c4854]
+              transition-all duration-300 ease-in-out
+              hover:-translate-y-1 hover:border-[#0070d2] dark:hover:border-[#4DB1FF]
+              shadow-sm hover:shadow-md
+            "
+          >
+            <h3 className="text-base sm:text-lg font-semibold text-[#354A5F] dark:text-[#F5F6F7] mb-1">
+              {category.title}
+            </h3>
+            
+            <p className={`text-xs sm:text-sm mb-3 ${isDarkMode ? "text-[#b9c5d1]" : "text-[#6a6d70]"}`}>
+              {category.description}
+            </p>
 
-                "&:hover": {
-                  transform: "translateY(-4px)",
-                  borderColor: "primary.main",
-                },
-              }}
-            >
-              <Typography
-                variant="h6"
-                sx={{
-                  fontWeight: 600,
-                  mb: 1,
-                }}
-              >
-                {category.title}
-              </Typography>
-
-              <Typography
-                variant="body2"
-                sx={{ mb: 3, color: isDarkMode.isDarkMode ? "black !important" : "text.secondary !important"}}
-              >
-                {category.description}
-              </Typography>
-
-              <Stack
-                direction="row"
-                flexWrap="wrap"
-                gap={1}
-              >
-                {category.items.map((tech) => (
-                  <Chip
-                    key={tech}
-                    label={tech}
-                    variant="outlined"
-                    sx={{
-                      borderRadius: "8px",
-                      fontWeight: 500,
-                      transition: ".2s",
-
-                      "&:hover": {
-                        backgroundColor: "action.hover",
-                      },
-                    }}
-                  />
-                ))}
-              </Stack>
-            </Paper>
-          </Grid>
+            <div className="flex flex-wrap gap-1.5">
+              {category.items.map((tech) => (
+                <span
+                  key={tech}
+                  className="
+                    inline-flex items-center px-2.5 py-1 rounded-md
+                    text-xs font-medium
+                    border border-[#d9d9d9] dark:border-[#3c4854]
+                    text-[#354A5F] dark:text-[#F5F6F7]
+                    bg-transparent
+                    transition-colors duration-200
+                    hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.15)]
+                  "
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
         ))}
-      </Grid>
-    </Container>
+      </div>
+    </section>
   );
 };
 

@@ -1,7 +1,8 @@
+// src/components/Habilidades.jsx
 import React from "react";
-import Carousel from "react-bootstrap/Carousel";
-import "@styles/habilidades.css";
-import { FaReact } from "react-icons/fa";
+import { Monitor, Server } from "lucide-react";
+import { useTranslation } from "react-i18next";
+
 import react from "../assets/react.svg";
 import htmlimg from "../assets/html.svg";
 import bootstrap from "../assets/bootstrap.svg";
@@ -16,116 +17,102 @@ import express from "../assets/express.svg";
 import mongodb from "../assets/mongodb.svg";
 import wjt from "../assets/wjt.svg";
 import sap from "../assets/sap.svg";
-import { useTranslation } from "react-i18next";
+
+const frontendTechs = [
+  { name: "React", icon: react },
+  { name: "HTML5", icon: htmlimg },
+  { name: "CSS3", icon: css },
+  { name: "SAP UI5", icon: ui5 },
+  { name: "Bootstrap", icon: bootstrap },
+  { name: "XML", icon: xml },
+  { name: "JSON", icon: json },
+];
+
+const backendTechs = [
+  { name: "Node.js", icon: node },
+  { name: "Express", icon: express },
+  { name: "MongoDB", icon: mongodb },
+  { name: "MySQL", icon: sql },
+  { name: "PostgreSQL", icon: postgresql },
+  { name: "JWT", icon: wjt },
+  { name: "SAP BTP", icon: sap },
+];
 
 const Habilidades = () => {
   const { t } = useTranslation();
+
   return (
-    <section className="container  acerca-cnt col-8  lh-lg">
-      <article id="habilidades" className="pt-3">
-        <h3>{t('skills.title')}</h3>
-      </article>
-      <article className="pt-3">
-        <h3>
-          <i className="fa-solid fa-display"></i> {t('skills.frontend')}
-        </h3>
-        <p dangerouslySetInnerHTML={{ __html: t('skills.frontendDescription') }} />
-        <div className="slider">
-          <div className="slide-track">
-            <div className="slide">
-              <img src={react} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={htmlimg} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={bootstrap} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={ui5} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={css} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={xml} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={json} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={react} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={htmlimg} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={bootstrap} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={ui5} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={css} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={xml} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={json} height="60" width="150" alt="" />
-            </div>
+    <section
+      id="habilidades"
+      className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-6"
+    >
+      <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-8 text-[#354A5F] dark:text-[#F5F6F7]">
+        {t("skills.title")}
+      </h3>
+
+      {/* SECCIÓN FRONTEND */}
+      <article className="mb-12">
+        <h4 className="text-lg font-semibold text-[#0070d2] dark:text-[#4DB1FF] mb-2 flex items-center gap-2">
+          <Monitor size={20} />
+          <span>{t("skills.frontend")}</span>
+        </h4>
+        <p
+          className="w-full text-sm sm:text-base text-[#6a6d70] dark:text-[#b9c5d1] leading-relaxed mb-6"
+          dangerouslySetInnerHTML={{ __html: t("skills.frontendDescription") }}
+        />
+
+        {/* Infinite Slider Wrapper con máscaras de degradado a los lados */}
+        <div className="relative w-full overflow-hidden py-4 [mask-image:_linear-gradient(to_right,_transparent_0,_black_128px,_black_calc(100%-128px),_transparent_100%)]">
+          <div className="animate-infinite-scroll flex items-center gap-8 md:gap-12">
+            {/* Duplicamos el array para que el scroll sea infinito sin saltos */}
+            {[...frontendTechs, ...frontendTechs].map((tech, idx) => (
+              <div
+                key={idx}
+                className="flex flex-col items-center justify-center shrink-0 w-24 group cursor-pointer"
+              >
+                <img
+                  src={tech.icon}
+                  alt={tech.name}
+                  className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-125 filter drop-shadow-sm"
+                />
+                <span className="text-[11px] font-medium text-gray-500 dark:text-gray-400 mt-2 opacity-80 group-hover:opacity-100 transition-opacity">
+                  {tech.name}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </article>
-      <article>
-        <h3>
-          <i className="fa-solid fa-server"></i> {t('skills.backend')}
-        </h3>
-        <p dangerouslySetInnerHTML={{ __html: t('skills.backendDescription') }} />
-        <div className="slider">
-          <div className="slide-track">
-            <div className="slide">
-              <img src={wjt} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={express} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={sql} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={mongodb} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={node} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={sap} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={postgresql} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={wjt} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={express} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={sql} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={mongodb} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={node} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={sap} height="60" width="150" alt="" />
-            </div>
-            <div className="slide">
-              <img src={postgresql} height="60" width="150" alt="" />
-            </div>
+
+      {/* SECCIÓN BACKEND */}
+      <article className="mb-6">
+        <h4 className="text-lg font-semibold text-[#0070d2] dark:text-[#4DB1FF] mb-2 flex items-center gap-2">
+          <Server size={20} />
+          <span>{t("skills.backend")}</span>
+        </h4>
+        <p
+          className="w-full text-sm sm:text-base text-[#6a6d70] dark:text-[#b9c5d1] leading-relaxed mb-6"
+          dangerouslySetInnerHTML={{ __html: t("skills.frontendDescription") }}
+        />
+
+        {/* Infinite Slider Wrapper */}
+        <div className="relative w-full overflow-hidden py-4 [mask-image:_linear-gradient(to_right,_transparent_0,_black_128px,_black_calc(100%-128px),_transparent_100%)]">
+          <div className="animate-infinite-scroll flex items-center gap-8 md:gap-12">
+            {[...backendTechs, ...backendTechs].map((tech, idx) => (
+              <div
+                key={idx}
+                className="flex flex-col items-center justify-center shrink-0 w-24 group cursor-pointer"
+              >
+                <img
+                  src={tech.icon}
+                  alt={tech.name}
+                  className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-125 filter drop-shadow-sm"
+                />
+                <span className="text-[11px] font-medium text-gray-500 dark:text-gray-400 mt-2 opacity-80 group-hover:opacity-100 transition-opacity">
+                  {tech.name}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </article>
