@@ -8,7 +8,8 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { FaGithub, FaLinkedin, FaFilePdf, FaEllipsisV } from "react-icons/fa";
+import { FaEllipsisV } from "react-icons/fa";
+import { Github, Linkedin, FileText,  } from "lucide-react";
 import { useDarkMode } from "../components/Settingsmanager";
 
 const SocialButtonsNav = () => {
@@ -25,21 +26,21 @@ const SocialButtonsNav = () => {
   const socialLinks = [
     {
       name: "GitHub",
-      icon: FaGithub,
+      icon: Github,
       url: "https://github.com/iwinser117",
       color: "#333333",
       colorLight: "#F5F6F7",
     },
     {
       name: "LinkedIn",
-      icon: FaLinkedin,
+      icon: Linkedin,
       url: "https://www.linkedin.com/in/iwinser-aljadys-sanchez-0a62a0234/?originalSubdomain=co",
       color: "#0077B5",
       colorLight: "#4DB1FF",
     },
     {
       name: "Currículum",
-      icon: FaFilePdf,
+      icon: FileText,
       url: "../assets/IwinserSanchez.pdf",
       download: true,
       color: "#D32F2F",
@@ -95,7 +96,7 @@ const SocialButtonsNav = () => {
                     minWidth: "auto",
                   }}
                 >
-                  <Icon size={22} />
+                  <Icon size={18} />
                 </IconButton>
               ) : (
                 <IconButton
@@ -114,7 +115,7 @@ const SocialButtonsNav = () => {
                     minWidth: "auto",
                   }}
                 >
-                  <Icon size={22} />
+                  <Icon size={18} />
                 </IconButton>
               )}
             </Tooltip>
@@ -235,7 +236,7 @@ const SocialButtonsNav = () => {
                   minWidth: "auto",
                 }}
               >
-                <Icon size={26} />
+                <Icon size={18} />
               </IconButton>
             ) : (
               <IconButton

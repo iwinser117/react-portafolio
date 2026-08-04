@@ -1,10 +1,10 @@
+// src/components/Acerca.jsx
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import mostrarDiploma from "../utils/modalDiploma.js";
 import GridExperiencia from "./AcercaExperiencias";
 import Certifications from "./Certifications.jsx";
 import CategoriesTecnologie from "./CategoriesTecnologie.jsx";
-import "@styles/acerca.css";
 
 const Acerca = () => {
   const { t, i18n } = useTranslation();
@@ -18,10 +18,6 @@ const Acerca = () => {
     i18n.language === 'en' ? "Hello, I am " : "Hola, soy ",
   ];
 
-  const handleClick = (event) => {
-    mostrarDiploma(selectedId);
-    setSelectedId(event.currentTarget.id);
-  };
   useEffect(() => {
     mostrarDiploma(selectedId);
   }, [selectedId]);
@@ -40,7 +36,7 @@ const Acerca = () => {
       setTypingSpeed(isDeleting ? 100 : 150);
 
       if (!isDeleting && text === currentText) {
-        setTimeout(() => setIsDeleting(true), 2000); // Pausa antes de borrar
+        setTimeout(() => setIsDeleting(true), 2000);
       } else if (isDeleting && text === "") {
         setIsDeleting(false);
         setLoopNum(loopNum + 1);
@@ -48,62 +44,52 @@ const Acerca = () => {
     };
 
     const typingTimer = setTimeout(handleTyping, typingSpeed);
-
     return () => clearTimeout(typingTimer);
   }, [text, isDeleting, loopNum, typingSpeed, translations]);
-  const [isVisible, setIsVisible] = useState(false);
-  const toggleVisibility = () => {
-    setIsVisible(!isVisible);
-  };
+
   return (
-    <section className="acerca-cnt col-8  text-justify lh-lg">
-      <article id="acercademi" className="container-md">
-        <h3>
-          {text}
-          <span>Iwinser Sanchez</span>
+    <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 py-8">
+      
+      {/* ACERCA DE MI */}
+      <article id="acercademi" className="w-full mb-10">
+        <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3">
+          <span className="font-mono text-[#354A5F] dark:text-[#F5F6F7]">{text}</span>
+          <span className="text-[#0070d2] dark:text-[#4DB1FF]">Iwinser Sanchez</span>
         </h3>
-        <p className="text-pretty" dangerouslySetInnerHTML={{ __html: t('about.description') }} />
+        <p 
+          className="text-justify text-pretty text-sm sm:text-base leading-relaxed text-[#354A5F] dark:text-[#e0e0e0]"
+          dangerouslySetInnerHTML={{ __html: t('about.description') }} 
+        />
       </article>
-      <CategoriesTecnologie />
-      {/* <section className="container-experiencia">
-        <main>
-          <h4>Experiencia</h4>
-          <section>
-            <div className="experiencia-detail">
-              <h5>SAP Consultor BTP - MQA Suramérica</h5>
-              <ul>
-                <li>Enero 2023 - Actualmente</li>
-                <li>Desarrollo de aplicaciones en SAP BTP con CAP y UI5.</li>
-                <li>Integración con SAP Fiori y SAP S/4HANA.</li>
-                <li>Soluciones en la nube para optimizar procesos empresariales.</li>
-              </ul>
-              <h5>Desarrollador Fullstack JavaScript</h5>
-              <ul>
-                <li>Marzo 2020 - Actualmente (Proyectos propios)</li>
-                <li>Desarrollo de aplicaciones con React, Node.js y MongoDB.</li>
-                <li>Creación de interfaces responsivas y accesibles.</li>
-                <li>Integración de APIs RESTful y autenticación segura.</li>
-              </ul>
-            </div>
 
-
-            
-          </section>
-        </main>
-      </section> */}
-      <div className="container-md experiencia">
-        <h4 className="encabezado">{t('about.personalProjects')}</h4>
-        <div>
-          <GridExperiencia />
-        </div>
+      {/* CATEGORÍAS TECNOLOGÍA */}
+      <div className="w-full mb-10">
+        <CategoriesTecnologie />
       </div>
 
-      <article className="container-md cert-container">
-        <h4>{t('about.certifications')}</h4>
-        <p dangerouslySetInnerHTML={{ __html: t('about.certificationsDescription') }} />
+      {/* PROYECTOS PERSONALES */}
+      <div className="w-full mb-10">
+        <h4 className="text-xl sm:text-2xl font-bold mb-4 text-[#354A5F] dark:text-[#F5F6F7]">
+          {t('about.personalProjects')}
+        </h4>
+        <GridExperiencia />
+      </div>
+
+      {/* CERTIFICACIONES */}
+      <article className="w-full mb-4">
+        <h4 className="text-xl sm:text-2xl font-bold mb-2 text-[#354A5F] dark:text-[#F5F6F7]">
+          {t('about.certifications')}
+        </h4>
+        <p 
+          className="text-justify text-pretty text-sm sm:text-base leading-relaxed text-[#354A5F] dark:text-[#e0e0e0]"
+          dangerouslySetInnerHTML={{ __html: t('about.certificationsDescription') }} 
+        />
       </article>
 
-      <Certifications />
+      <div className="w-full">
+        <Certifications />
+      </div>
+
     </section>
   );
 };

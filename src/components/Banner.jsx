@@ -1,72 +1,127 @@
+// src/components/Banner.jsx
 import React, { useState } from "react";
-import { MDBIcon } from "mdb-react-ui-kit";
-import "@styles/Banner.css";
 import iwinserPerfil from "@assets/iwinserPerfil.webp";
 import { useDarkMode } from "./Settingsmanager";
 import { useTranslation } from "react-i18next";
-import { Container } from "react-bootstrap";
-
+import { Github, Linkedin, FileText } from "lucide-react";
 
 const Banner = () => {
   const [imageLoaded, setImageLoaded] = useState(false);
-  const isDarkMode = useDarkMode();
+  const { isDarkMode } = useDarkMode();
   const { t } = useTranslation();
+
   return (
-    <Container className="sectionbanner">
-      <div className="banner">
-        <div className="banner-media">
-          <div className="iwinserPerfil">
-            <div className={`image-placeholder ${imageLoaded ? "loaded" : ""}`}>
-              <img
-                src={iwinserPerfil}
-                alt="Perfil"
-                loading="lazy"
-                onLoad={() => setImageLoaded(true)}
-                style={{
-                  opacity: imageLoaded ? 1 : 0,
-                  transition: "opacity 0.3s ease-in-out",
-                }}
-              />
-            </div>
+    <section className="w-full flex justify-center items-center py-8 md:py-12">
+      <div
+        className="
+        w-full max-w-5xl 
+        flex flex-col md:flex-row-reverse 
+        items-center justify-between 
+        gap-6 md:gap-10
+        px-4 sm:px-6
+      "
+      >
+        {/* Columna Derecha: Imagen Perfil (Tamaño controlado) + Botones */}
+        <div className="flex flex-col items-center gap-4 shrink-0">
+          {/* Avatar con tamaño reducido y controlado */}
+          <div
+            className="
+            relative 
+            w-40 h-40 sm:w-48 sm:h-48 md:w-52 md:h-52
+            rounded-2xl overflow-hidden shadow-md
+            border-2 border-[#d9d9d9] dark:border-[#3c4854]
+            transition-transform duration-300 hover:scale-[1.02]
+          "
+          >
+            <img
+              src={iwinserPerfil}
+              alt="Iwinser Sanchez - Perfil"
+              loading="lazy"
+              onLoad={() => setImageLoaded(true)}
+              className={`
+                w-full h-full object-cover
+                transition-opacity duration-300 ease-in-out
+                ${imageLoaded ? "opacity-100" : "opacity-0"}
+              `}
+            />
+            {!imageLoaded && (
+              <div className="absolute inset-0 bg-gray-200 dark:bg-gray-700 animate-pulse" />
+            )}
           </div>
-          <div className="social-buttons social-buttons-small m-auto">
+
+          {/* Botones Sociales compactos e inline */}
+          <div className="flex flex-wrap items-center justify-center gap-2">
             <a
-              className="social-button github small"
+              className="
+                inline-flex items-center gap-1.5 
+                px-3 py-1.5 rounded-lg
+                bg-gray-100 dark:bg-[#1d232a] 
+                text-gray-700 dark:text-gray-200
+                border border-[#d9d9d9] dark:border-[#3c4854]
+                hover:bg-purple-50 dark:hover:bg-purple-900/20 hover:text-purple-600 dark:hover:text-purple-400
+                transition-all duration-200 text-xs font-medium shadow-sm
+              "
               href="https://github.com/iwinser117"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="fa-brands fa-github"></i>
-              <span>{t('banner.github')}</span>
+              <Github size={15} />
+              <span>{t("banner.github")}</span>
             </a>
+
             <a
-              className="social-button linkedin small"
+              className="
+                inline-flex items-center gap-1.5 
+                px-3 py-1.5 rounded-lg
+                bg-gray-100 dark:bg-[#1d232a] 
+                text-gray-700 dark:text-gray-200
+                border border-[#d9d9d9] dark:border-[#3c4854]
+                hover:bg-blue-50 dark:hover:bg-blue-900/20 hover:text-blue-600 dark:hover:text-blue-400
+                transition-all duration-200 text-xs font-medium shadow-sm
+              "
               href="https://www.linkedin.com/in/iwinser-aljadys-sanchez-0a62a0234/?originalSubdomain=co"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className="fa-brands fa-linkedin"></i>
-              <span>{t('banner.linkedin')}</span>
+              <Linkedin size={15} />
+              <span>{t("banner.linkedin")}</span>
             </a>
+
             <a
-              className="social-button cv small"
+              className="
+                inline-flex items-center gap-1.5 
+                px-3 py-1.5 rounded-lg
+                bg-gray-100 dark:bg-[#1d232a] 
+                text-gray-700 dark:text-gray-200
+                border border-[#d9d9d9] dark:border-[#3c4854]
+                hover:bg-red-50 dark:hover:bg-red-900/20 hover:text-red-600 dark:hover:text-red-400
+                transition-all duration-200 text-xs font-medium shadow-sm
+              "
               download="CurriculumDeveloperIwinserSanchez"
               href="../assets/IwinserSanchez.pdf"
             >
-              <i className="fa-solid fa-file-pdf"></i>
-              <span>{t('banner.curriculum')}</span>
+              <FileText size={15} />
+              <span>{t("banner.curriculum")}</span>
             </a>
           </div>
         </div>
-        <div className="banner-content p-2">
-          <h4 className="text-center nametitle">Iwinser Sanchez</h4>
-          <h2 className="text-center">{t('banner.title')}</h2>
-          <p className="text-center">
-            {t('banner.description')}
+
+        {/* Columna Izquierda: Información de presentación */}
+        <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
+          <h4 className="font-mono font-bold text-2xl sm:text-3xl lg:text-4xl text-[#354A5F] dark:text-[#F5F6F7] mb-1">
+            Iwinser Sanchez
+          </h4>
+
+          <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold text-[#0070d2] dark:text-[#4DB1FF] mb-3">
+            {t("banner.title")}
+          </h2>
+
+          <p className="text-sm sm:text-base text-[#6a6d70] dark:text-[#b9c5d1] leading-relaxed max-w-xl">
+            {t("banner.description")}
           </p>
         </div>
       </div>
-    </Container>
+    </section>
   );
 };
 

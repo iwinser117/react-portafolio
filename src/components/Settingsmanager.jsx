@@ -1,3 +1,4 @@
+// src/components/SettingsManager.jsx
 import React, { useState, useEffect, createContext, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -9,7 +10,6 @@ import {
   ChevronRight,
   Search,
 } from "lucide-react";
-import "@styles/settings.css";
 
 // ============= CONTEXTO MODO OSCURO =============
 const DarkModeContext = createContext();
@@ -97,55 +97,75 @@ const SettingsManager = () => {
   }, [isOpen]);
 
   return (
-    <div className="sap-settings-wrapper">
-      {/* TRIGGER — inline, NO fixed */}
+    <div className="sap-settings-wrapper relative inline-flex items-center ml-3 z-[101] max-[799px]:w-full max-[799px]:ml-0">
+      {/* TRIGGER */}
       <button
-        className="sap-trigger"
+        className="w-[38px] h-[38px] rounded-full border border-transparent 
+                   bg-[#f7f7f7] text-[#32363a] cursor-pointer flex items-center 
+                   justify-center shrink-0 transition-all duration-200 ease-in-out
+                   hover:bg-[#e5f0fa] hover:border-[#0070d2] hover:text-[#0070d2]
+                   dark:bg-[#232a32] dark:text-[#f5f6f7] dark:hover:bg-[rgba(77,177,255,0.14)]
+                   max-[799px]:w-full max-[799px]:h-auto max-[799px]:min-h-[44px] 
+                   max-[799px]:justify-start max-[799px]:gap-3 max-[799px]:px-4 
+                   max-[799px]:py-3 max-[799px]:rounded-lg max-[799px]:font-inherit"
         onClick={() => setIsOpen((prev) => !prev)}
         title={t("settings.title")}
         aria-label={t("settings.title")}
         aria-expanded={isOpen}
       >
         {isOpen ? <X size={18} /> : <Settings size={18} />}
-        <span className="sap-trigger-label">{t("settings.title")}</span>
+        <span className="hidden max-[799px]:inline">{t("settings.title")}</span>
       </button>
 
       {isOpen && (
         <>
           {/* BACKDROP (solo móvil) */}
           <div
-            className="sap-backdrop"
+            className="fixed inset-0 bg-black/35 backdrop-blur-sm z-[9998] 
+                       animate-[fadeIn_0.2s_ease_forwards] min-[800px]:hidden"
             onClick={closeMenu}
             role="presentation"
           />
 
           {/* ===== DESKTOP: POPOVER ===== */}
           <div
-            className="sap-popover"
+            className="absolute top-[calc(100%+10px)] right-0 w-[280px] 
+                       bg-white dark:bg-[#1d232a] rounded-lg 
+                       shadow-[0_8px_32px_rgba(0,0,0,0.18)] z-[9999] overflow-hidden
+                       animate-[popIn_0.25s_cubic-bezier(0.16,1,0.3,1)_forwards]
+                       max-[799px]:hidden
+                       before:content-[''] before:absolute before:-top-[6px] 
+                       before:right-[13px] before:w-3 before:h-3 before:bg-white 
+                       before:dark:bg-[#1d232a] before:rotate-45 before:-z-10
+                       before:border-l before:border-t before:border-[#d9d9d9] 
+                       before:dark:border-[#3c4854]"
             role="dialog"
             aria-modal="true"
             aria-labelledby="sap-popover-title"
           >
-            {/* Header simple sin avatar */}
-            <div className="sap-popover-header">
-              <h3 id="sap-popover-title" className="sap-popover-title">
+            {/* Header */}
+            <div className="px-5 py-3.5 border-b border-[#d9d9d9] dark:border-[#3c4854] bg-[#f7f7f7] dark:bg-[#232a32]">
+              <h3 id="sap-popover-title" className="text-[0.9375rem] font-semibold text-[#32363a] dark:text-[#f5f6f7] m-0 flex items-center gap-2">
                 <Settings size={16} />
                 {t("settings.title")}
               </h3>
             </div>
 
-            <div className="sap-list">
+            <div className="py-2">
               {/* TEMA */}
               <button
-                className="sap-item"
+                className="flex items-center gap-3 px-5 py-2.5 cursor-pointer 
+                           transition-all duration-200 ease-in-out border-0 bg-transparent 
+                           w-full text-left font-inherit text-sm text-[#32363a] dark:text-[#f5f6f7]
+                           hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
                 onClick={() => toggleSection("theme")}
                 aria-expanded={expandedSection === "theme"}
               >
-                <ThemeIcon size={18} className="sap-item-icon" />
-                <span className="sap-item-text">{t("settings.theme")}</span>
+                <ThemeIcon size={18} className="text-[#6a6d70] dark:text-[#b9c5d1] shrink-0 group-hover:text-[#0070d2]" />
+                <span className="flex-1">{t("settings.theme")}</span>
                 <ChevronRight
                   size={16}
-                  className="sap-item-chevron"
+                  className="text-[#6a6d70] dark:text-[#b9c5d1] opacity-60 transition-transform duration-200"
                   style={{
                     transform:
                       expandedSection === "theme"
@@ -156,16 +176,24 @@ const SettingsManager = () => {
               </button>
 
               {expandedSection === "theme" && (
-                <div className="sap-submenu">
+                <div className="px-5 pb-3 pl-[3.25rem] flex flex-col gap-1.5 animate-[slideDown_0.2s_ease]">
                   <button
-                    className={`sap-subitem ${!isDarkMode ? "active" : ""}`}
+                    className={`flex items-center gap-2 px-3 py-2 rounded border text-[0.8125rem] text-[#32363a] dark:text-[#f5f6f7] transition-all duration-200 ease-in-out font-inherit cursor-pointer
+                      ${!isDarkMode 
+                        ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]" 
+                        : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
+                      }`}
                     onClick={() => isDarkMode && toggleTheme()}
                   >
                     <Sun size={14} />
                     {t("settings.lightMode")}
                   </button>
                   <button
-                    className={`sap-subitem ${isDarkMode ? "active" : ""}`}
+                    className={`flex items-center gap-2 px-3 py-2 rounded border text-[0.8125rem] text-[#32363a] dark:text-[#f5f6f7] transition-all duration-200 ease-in-out font-inherit cursor-pointer
+                      ${isDarkMode 
+                        ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]" 
+                        : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
+                      }`}
                     onClick={() => !isDarkMode && toggleTheme()}
                   >
                     <Moon size={14} />
@@ -174,21 +202,22 @@ const SettingsManager = () => {
                 </div>
               )}
 
-              <div className="sap-divider" />
+              <div className="h-px bg-[#d9d9d9] dark:bg-[#3c4854] my-2 mx-5" />
 
               {/* IDIOMA */}
               <button
-                className="sap-item"
+                className="flex items-center gap-3 px-5 py-2.5 cursor-pointer 
+                           transition-all duration-200 ease-in-out border-0 bg-transparent 
+                           w-full text-left font-inherit text-sm text-[#32363a] dark:text-[#f5f6f7]
+                           hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
                 onClick={() => toggleSection("language")}
                 aria-expanded={expandedSection === "language"}
               >
-                <Globe size={18} className="sap-item-icon" />
-                <span className="sap-item-text">
-                  {t("settings.language")}
-                </span>
+                <Globe size={18} className="text-[#6a6d70] dark:text-[#b9c5d1] shrink-0" />
+                <span className="flex-1">{t("settings.language")}</span>
                 <ChevronRight
                   size={16}
-                  className="sap-item-chevron"
+                  className="text-[#6a6d70] dark:text-[#b9c5d1] opacity-60 transition-transform duration-200"
                   style={{
                     transform:
                       expandedSection === "language"
@@ -199,23 +228,27 @@ const SettingsManager = () => {
               </button>
 
               {expandedSection === "language" && (
-                <div className="sap-submenu">
+                <div className="px-5 pb-3 pl-[3.25rem] flex flex-col gap-1.5 animate-[slideDown_0.2s_ease]">
                   <button
-                    className={`sap-subitem ${
-                      currentLanguage === "es" ? "active" : ""
-                    }`}
+                    className={`flex items-center gap-2 px-3 py-2 rounded border text-[0.8125rem] text-[#32363a] dark:text-[#f5f6f7] transition-all duration-200 ease-in-out font-inherit cursor-pointer
+                      ${currentLanguage === "es" 
+                        ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]" 
+                        : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
+                      }`}
                     onClick={() => handleLanguageChange("es")}
                   >
-                    <span className="sap-flag">🇪🇸</span>
+                    <span className="text-base">🇪🇸</span>
                     {t("settings.spanish")}
                   </button>
                   <button
-                    className={`sap-subitem ${
-                      currentLanguage === "en" ? "active" : ""
-                    }`}
+                    className={`flex items-center gap-2 px-3 py-2 rounded border text-[0.8125rem] text-[#32363a] dark:text-[#f5f6f7] transition-all duration-200 ease-in-out font-inherit cursor-pointer
+                      ${currentLanguage === "en" 
+                        ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]" 
+                        : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
+                      }`}
                     onClick={() => handleLanguageChange("en")}
                   >
-                    <span className="sap-flag">🇺🇸</span>
+                    <span className="text-base">🇺🇸</span>
                     {t("settings.english")}
                   </button>
                 </div>
@@ -225,18 +258,23 @@ const SettingsManager = () => {
 
           {/* ===== MÓVIL: PANEL LATERAL ===== */}
           <div
-            className="sap-panel"
+            className="fixed top-0 right-0 w-full max-w-[380px] h-screen 
+                       bg-white dark:bg-[#1d232a] z-[9999] flex flex-col
+                       shadow-[-4px_0_24px_rgba(0,0,0,0.15)]
+                       animate-[slideInRight_0.3s_cubic-bezier(0.16,1,0.3,1)_forwards]
+                       min-[800px]:hidden"
             role="dialog"
             aria-modal="true"
             aria-labelledby="sap-panel-title"
           >
-            <div className="sap-panel-header">
-              <h2 id="sap-panel-title" className="sap-panel-title">
+            <div className="flex items-center justify-between px-5 py-4 border-b border-[#d9d9d9] dark:border-[#3c4854] bg-[#f7f7f7] dark:bg-[#232a32]">
+              <h2 id="sap-panel-title" className="text-lg font-semibold text-[#32363a] dark:text-[#f5f6f7] m-0 flex items-center gap-2">
                 <Settings size={18} />
                 {t("settings.title")}
               </h2>
               <button
-                className="sap-panel-close"
+                className="w-9 h-9 rounded-full border-0 bg-transparent text-[#6a6d70] dark:text-[#b9c5d1] cursor-pointer flex items-center justify-center transition-all duration-200 ease-in-out
+                           hover:bg-[#e5f0fa] hover:text-[#0070d2] dark:hover:bg-[rgba(77,177,255,0.14)]"
                 onClick={closeMenu}
                 aria-label="Cerrar"
               >
@@ -244,28 +282,30 @@ const SettingsManager = () => {
               </button>
             </div>
 
-            <div className="sap-panel-search">
-              <Search size={16} className="sap-search-icon" />
+            <div className="px-5 py-3 border-b border-[#d9d9d9] dark:border-[#3c4854] relative">
+              <Search size={16} className="absolute left-8 top-1/2 -translate-y-1/2 text-[#6a6d70] dark:text-[#b9c5d1] pointer-events-none" />
               <input
                 type="text"
-                className="sap-search-input"
+                className="w-full py-2.5 pr-3.5 pl-9 border border-[#d9d9d9] dark:border-[#3c4854] rounded text-sm font-inherit bg-[#f7f7f7] dark:bg-[#232a32] text-[#32363a] dark:text-[#f5f6f7] box-border
+                           focus:outline-none focus:border-[#0070d2] focus:bg-white dark:focus:bg-[#1d232a]"
                 placeholder={t("settings.search", "Buscar...")}
               />
             </div>
 
-            <div className="sap-panel-body">
+            <div className="flex-1 overflow-y-auto py-2 scrollbar-thin">
               <button
-                className="sap-panel-item"
+                className="flex items-center gap-3 px-5 py-3.5 cursor-pointer 
+                           transition-all duration-200 ease-in-out border-0 bg-transparent 
+                           w-full text-left font-inherit text-[0.9375rem] text-[#32363a] dark:text-[#f5f6f7]
+                           hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
                 onClick={() => toggleSection("theme")}
                 aria-expanded={expandedSection === "theme"}
               >
-                <ThemeIcon size={18} className="sap-panel-item-icon" />
-                <span className="sap-panel-item-text">
-                  {t("settings.theme")}
-                </span>
+                <ThemeIcon size={18} className="text-[#6a6d70] dark:text-[#b9c5d1] shrink-0" />
+                <span className="flex-1">{t("settings.theme")}</span>
                 <ChevronRight
                   size={18}
-                  className="sap-panel-item-chevron"
+                  className="text-[#6a6d70] dark:text-[#b9c5d1] transition-transform duration-200"
                   style={{
                     transform:
                       expandedSection === "theme"
@@ -276,20 +316,24 @@ const SettingsManager = () => {
               </button>
 
               {expandedSection === "theme" && (
-                <div className="sap-panel-submenu">
+                <div className="px-5 pb-3 pl-10 flex flex-col gap-2 animate-[slideDown_0.2s_ease]">
                   <button
-                    className={`sap-panel-subitem ${
-                      !isDarkMode ? "active" : ""
-                    }`}
+                    className={`flex items-center gap-2.5 px-3.5 py-2.5 rounded border text-sm text-[#32363a] dark:text-[#f5f6f7] transition-all duration-200 ease-in-out font-inherit cursor-pointer
+                      ${!isDarkMode 
+                        ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]" 
+                        : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
+                      }`}
                     onClick={() => isDarkMode && toggleTheme()}
                   >
                     <Sun size={14} />
                     {t("settings.lightMode")}
                   </button>
                   <button
-                    className={`sap-panel-subitem ${
-                      isDarkMode ? "active" : ""
-                    }`}
+                    className={`flex items-center gap-2.5 px-3.5 py-2.5 rounded border text-sm text-[#32363a] dark:text-[#f5f6f7] transition-all duration-200 ease-in-out font-inherit cursor-pointer
+                      ${isDarkMode 
+                        ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]" 
+                        : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
+                      }`}
                     onClick={() => !isDarkMode && toggleTheme()}
                   >
                     <Moon size={14} />
@@ -298,20 +342,21 @@ const SettingsManager = () => {
                 </div>
               )}
 
-              <div className="sap-divider" />
+              <div className="h-px bg-[#d9d9d9] dark:bg-[#3c4854] my-2 mx-5" />
 
               <button
-                className="sap-panel-item"
+                className="flex items-center gap-3 px-5 py-3.5 cursor-pointer 
+                           transition-all duration-200 ease-in-out border-0 bg-transparent 
+                           w-full text-left font-inherit text-[0.9375rem] text-[#32363a] dark:text-[#f5f6f7]
+                           hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
                 onClick={() => toggleSection("language")}
                 aria-expanded={expandedSection === "language"}
               >
-                <Globe size={18} className="sap-panel-item-icon" />
-                <span className="sap-panel-item-text">
-                  {t("settings.language")}
-                </span>
+                <Globe size={18} className="text-[#6a6d70] dark:text-[#b9c5d1] shrink-0" />
+                <span className="flex-1">{t("settings.language")}</span>
                 <ChevronRight
                   size={18}
-                  className="sap-panel-item-chevron"
+                  className="text-[#6a6d70] dark:text-[#b9c5d1] transition-transform duration-200"
                   style={{
                     transform:
                       expandedSection === "language"
@@ -322,23 +367,27 @@ const SettingsManager = () => {
               </button>
 
               {expandedSection === "language" && (
-                <div className="sap-panel-submenu">
+                <div className="px-5 pb-3 pl-10 flex flex-col gap-2 animate-[slideDown_0.2s_ease]">
                   <button
-                    className={`sap-panel-subitem ${
-                      currentLanguage === "es" ? "active" : ""
-                    }`}
+                    className={`flex items-center gap-2.5 px-3.5 py-2.5 rounded border text-sm text-[#32363a] dark:text-[#f5f6f7] transition-all duration-200 ease-in-out font-inherit cursor-pointer
+                      ${currentLanguage === "es" 
+                        ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]" 
+                        : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
+                      }`}
                     onClick={() => handleLanguageChange("es")}
                   >
-                    <span className="sap-flag">🇪🇸</span>
+                    <span className="text-base">🇪🇸</span>
                     {t("settings.spanish")}
                   </button>
                   <button
-                    className={`sap-panel-subitem ${
-                      currentLanguage === "en" ? "active" : ""
-                    }`}
+                    className={`flex items-center gap-2.5 px-3.5 py-2.5 rounded border text-sm text-[#32363a] dark:text-[#f5f6f7] transition-all duration-200 ease-in-out font-inherit cursor-pointer
+                      ${currentLanguage === "en" 
+                        ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]" 
+                        : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
+                      }`}
                     onClick={() => handleLanguageChange("en")}
                   >
-                    <span className="sap-flag">🇺🇸</span>
+                    <span className="text-base">🇺🇸</span>
                     {t("settings.english")}
                   </button>
                 </div>

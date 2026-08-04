@@ -14,7 +14,6 @@ const Home = () => {
   return (
     <>
       <div className="data-bs-theme-dark letra-home">
-        <Nav />
         <Banner />
         <Acerca />
         <Habilidades />

@@ -1,0 +1,213 @@
+/* ============================================
+   INDEX.CSS - ESTILOS GLOBALES UNIFICADOS
+   ============================================ */
+
+@import "tailwindcss";
+
+/* ===== CONFIGURACIÓN DE DARK MODE ===== */
+/* Le dice a Tailwind que use tu clase .dark-mode */
+@custom-variant dark (&:where(.dark-mode, .dark-mode *));
+
+/* ===== VARIABLES GLOBALES ===== */
+:root {
+  /* Iconos */
+  --iconGit: #b140c0;
+  --iconLinkedin: #0e76a8;
+  --iconPdf: #8d0808;
+  --iconWsp: #0b4412;
+  --iconEmail: linear-gradient(to right, #D44638, #FF5B32);
+  
+  /* Settings Manager */
+  --sap-blue: #0070d2;
+  --sap-blue-light: #e5f0fa;
+  --sap-text: #32363a;
+  --sap-text-secondary: #6a6d70;
+  --sap-border: #d9d9d9;
+  --sap-bg: #f7f7f7;
+  --sap-white: #ffffff;
+  --sap-radius: 0.5rem;
+}
+
+/* ===== ESTILOS BASE ===== */
+@layer base {
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    font-size: 1.1rem;
+    background-attachment: fixed;
+    
+    /* Transición suave para el cambio de tema */
+    transition: background-color 0.12s ease-in-out, 
+                color 0.12s ease-in-out;
+    
+    /* Modo claro por defecto */
+    background: linear-gradient(135deg, 
+      #ffffff 0%,
+      #f8faff 20%,
+      rgba(238, 242, 255, 0.9) 40%,
+      rgba(224, 242, 254, 0.8) 60%,
+      rgba(236, 254, 255, 0.9) 80%,
+      #ffffff 100%
+    );
+    background-image: 
+      linear-gradient(135deg, 
+        rgba(147, 197, 253, 0.1) 0%,
+        rgba(196, 181, 253, 0.1) 50%,
+        rgba(167, 243, 208, 0.1) 100%
+      );
+    background-blend-mode: overlay;
+    color: #2d3748;
+  }
+
+  /* ===== MODO OSCURO ===== */
+  .dark-mode {
+    color: #eaecee;
+    background-color: #12171C;
+    background-image: linear-gradient(to bottom right, #12171C, #333d4a);
+    background-blend-mode: normal;
+    
+    /* Variables para dark mode */
+    --sap-blue-light: rgba(77, 177, 255, 0.14);
+    --sap-text: #f5f6f7;
+    --sap-text-secondary: #b9c5d1;
+    --sap-border: #3c4854;
+    --sap-bg: #232a32;
+    --sap-white: #1d232a;
+    color-scheme: dark;
+  }
+
+  
+
+  /* Header */
+  header {
+    background: #ffffff;
+    height: 50px;
+  }
+  
+  .dark-mode header {
+    background: #1a1f26;
+  }
+}
+
+/* ===== COMPONENTES REUTILIZABLES ===== */
+@layer components {
+  /* Contenedor principal */
+  .main-container {
+    max-width: 1400px;
+    margin: auto;
+  }
+
+  /* Backdrop para modales */
+  .modal-backdrop {
+    z-index: -1;
+  }
+
+
+  /* ===== ANIMACIONES DEL SETTINGS MANAGER ===== */
+  .animate-fadeIn {
+    animation: fadeIn 0.2s ease forwards;
+  }
+
+  .animate-popIn {
+    animation: popIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-slideInRight {
+    animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-slideDown {
+    animation: slideDown 0.2s ease;
+  }
+
+  /* ===== SCROLLBAR PERSONALIZADA ===== */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(0, 112, 210, 0.2);
+    border-radius: 3px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 112, 210, 0.4);
+  }
+
+  /* ===== FOCUS VISIBLE ACCESIBLE ===== */
+  *:focus-visible {
+    outline: 2px solid #0070d2;
+    outline-offset: 2px;
+  }
+}
+
+/* ===== KEYFRAMES ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== REDUCIR ANIMACIONES ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* habilidades */
+
+/* src/styles/animations.css o en tu index.css */
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-infinite-scroll {
+  display: flex;
+  width: max-content;
+  animation: infinite-scroll 25s linear infinite;
+}
+
+.animate-infinite-scroll:hover {
+  animation-play-state: paused; /* Pausa fluida al pasar el mouse */
+}

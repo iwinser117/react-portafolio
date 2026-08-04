@@ -1,40 +1,47 @@
+// src/utils/modalDiploma.js
+
 const imgs = [
   require("../assets/d3Soft.jpg"),
   require("../assets/d4Web.jpg"),
   require("../assets/d2Java.jpg"),
   require("../assets/d1Python.jpg"),
-  require('../assets/fullstack.jpg'),
-  require('../assets/d6FronDev.jpg'),
-  require('../assets/d7ReactPractico.jpg'),
+  require("../assets/fullstack.jpg"),
+  require("../assets/d6FronDev.jpg"),
+  require("../assets/d7ReactPractico.jpg"),
 ];
 
 function mostrarDiploma(idImg) {
-  if (idImg === null) return;
+  if (idImg === null || idImg === undefined) return;
 
-  // Obtener el modal y la imagen dentro del modal
   const modal = document.getElementById("diplomaModal");
   const modalImg = document.getElementById("modalImage");
 
-  // Asignar la imagen al modal
+  if (!modal || !modalImg) return;
+
+  // Asignar la imagen
   modalImg.src = imgs[idImg];
 
-  // Mostrar el modal
-  modal.style.display = "block";
+  // Mostrar el modal removiendo 'hidden'
+  modal.classList.remove("hidden");
+  document.body.style.overflow = "hidden"; // Bloquea el scroll del fondo
 
-  // Obtener el elemento <span> que cierra el modal
-  const span = document.getElementsByClassName("close")[0];
+  const closeModal = () => {
+    modal.classList.add("hidden");
+    document.body.style.overflow = "auto"; // Restaura el scroll
+  };
 
-  // Cuando el usuario hace clic en <span> (x), cerrar el modal
-  span.onclick = function() {
-    modal.style.display = "none";
+  // Botón de cierre (x)
+  const span = modal.querySelector(".close");
+  if (span) {
+    span.onclick = closeModal;
   }
 
-  // Cuando el usuario hace clic fuera de la imagen, cerrar el modal
-  modal.onclick = function(event) {
+  // Clic fuera del contenido
+  modal.onclick = function (event) {
     if (event.target === modal) {
-      modal.style.display = "none";
+      closeModal();
     }
-  }
+  };
 }
 
 export default mostrarDiploma;
