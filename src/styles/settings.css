@@ -41,9 +41,8 @@
   height: 38px;
   border-radius: 50%;
   border: 1px solid transparent;
-  /* Mismo fondo y texto que la navegación en modo claro. */
-  background: #f5f6f7;
-  color: #354a5f;
+  background: var(--sap-bg);
+  color: var(--sap-text);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -64,8 +63,8 @@
 
 /* Settings se integra con el navbar cuando está activo el tema oscuro. */
 .dark-mode .sap-trigger {
-  background: #1d232a;
-  color: #f5f6f7;
+  background: var(--sap-bg);
+  color: var(--sap-text);
 }
 
 /* ===== BACKDROP (móvil) ===== */

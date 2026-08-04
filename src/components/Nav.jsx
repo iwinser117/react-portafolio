@@ -2,16 +2,28 @@ import React, { useEffect } from "react";
 import logowhite from "@assets/ok.svg";
 import logoblack from "@assets/ok_white_bgsvg.svg";
 import "@styles/Nav.css";
+import "@styles/nav-social-buttons.css"; // Importar estilos de botones sociales
 import { NavLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useDarkMode } from "../components/Settingsmanager";
 import SettingsManager from "../components/Settingsmanager";
-import { FaHome, FaUser,FaBrain, FaLaptopCode, FaEnvelope, FaBlog } from "react-icons/fa";
+import SocialButtonsNav from "../buttons/SocialButtonsNav";
+import {
+  FaHome,
+  FaUser,
+  FaBrain,
+  FaLaptopCode,
+  FaEnvelope,
+  FaBlog,
+} from "react-icons/fa";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 const Nav = () => {
   const location = useLocation();
   const isDarkMode = useDarkMode();
   const { t } = useTranslation();
+  const theme = useTheme();
+  const isMobile = useMediaQuery("(max-width: 799px)");
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -32,20 +44,25 @@ const Nav = () => {
       prevScrollpos = currentScrollPos;
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [location.pathname]);
 
   return (
     <>
-      <nav id="navbar"  className="navbar navbar-expand-lg">
-        <div className="container-fluid w-75" id="n2">
-          <img className="navbar-brand" src={isDarkMode.isDarkMode ? logoblack : logowhite} width="60px" alt="logoIS" />
+      <nav id="navbar" className="navbar navbar-expand-lg">
+        <div className="container-fluid" id="n2">
+          <img
+            className="navbar-brand"
+            src={isDarkMode.isDarkMode ? logoblack : logowhite}
+            width="60px"
+            alt="logoIS"
+          />
           <button
-            className="navbar-toggler "
+            className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -53,55 +70,54 @@ const Nav = () => {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span className="navbar-toggler-icon "></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav nav-ul">
               {location.pathname !== "/" ? (
                 <li className="nav-item">
                   <NavLink className="nav-link" to={"/"}>
-                    <FaHome style={{ marginRight: '5px' }} /> {t('nav.home')}
+                    <FaHome style={{ marginRight: "5px" }} /> {t("nav.home")}
                   </NavLink>
                 </li>
               ) : null}
-              {/* {location.pathname === "/aplicaciones" ? null : (
-                <li className="nav-item">
-                  <a className="nav-link" href="#acercademi">
-                    Acerca de mi
-                  </a>
-                </li>
-              )} */}
 
-              {(location.pathname === "/aplicaciones" || location.pathname === "/blog") ? null : (
-                <li className="nav-item ">
-                  <a className="nav-link " href="#habilidades">
-                  <FaBrain style={{ marginRight: '5px' }}/> {t('nav.skills')}
+              {location.pathname === "/aplicaciones" ||
+              location.pathname === "/blog" ? null : (
+                <li className="nav-item">
+                  <a className="nav-link" href="#habilidades">
+                    <FaBrain style={{ marginRight: "5px" }} /> {t("nav.skills")}
                   </a>
                 </li>
               )}
 
               {location.pathname === "/aplicaciones" ? null : (
-                <li className="nav-item ">
+                <li className="nav-item">
                   <NavLink className="nav-link" to={"/aplicaciones"}>
-                    <FaLaptopCode style={{ marginRight: '5px' }} /> {t('nav.applications')}
+                    <FaLaptopCode style={{ marginRight: "5px" }} />{" "}
+                    {t("nav.applications")}
                   </NavLink>
                 </li>
               )}
 
-              <li className="nav-item ">
+              <li className="nav-item">
                 <a className="nav-link" href="#contactame">
-                  <FaEnvelope style={{ marginRight: '5px' }} /> {t('nav.contact')}
+                  <FaEnvelope style={{ marginRight: "5px" }} />{" "}
+                  {t("nav.contact")}
                 </a>
               </li>
 
               {location.pathname === "/blog" ? null : (
                 <li className="nav-item">
                   <a className="nav-link" href="/blog">
-                    <FaBlog style={{ marginRight: '5px' }} /> {t('nav.blog')}
+                    <FaBlog style={{ marginRight: "5px" }} /> {t("nav.blog")}
                   </a>
                 </li>
               )}
-              
+              {/* BOTONES SOCIALES con clase CSS */}
+              <li className="nav-social-buttons">
+                <SocialButtonsNav />
+              </li>
               <li className="nav-item nav-settings-item">
                 <SettingsManager />
               </li>

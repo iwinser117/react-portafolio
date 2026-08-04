@@ -1,0 +1,110 @@
+/* Estilos para SocialButtonsNav - ANULANDO conflictos con .nav-ul li */
+
+/* Resetear conflictos globales - selector específico para anular .nav-ul li */
+.nav-ul li.nav-social-buttons,
+.nav-social-buttons {
+  margin-right: 0 !important;
+  position: static !important;
+  text-align: center !important;
+  width: auto !important;
+  padding: 0 !important;
+}
+
+/* DESKTOP (>= 1200px) */
+@media (min-width: 1200px) {
+  .nav-social-buttons {
+    display: flex !important;
+    align-items: center;
+    margin-left: auto !important;
+    padding-left: 1rem !important;
+    /* border-bottom: solid 1px #747577; */
+    gap: 0.25rem;
+  }
+
+  .dark-mode .nav-social-buttons {
+    border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .nav-social-buttons button {
+    padding: 5px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .nav-social-buttons button:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+}
+
+/* TABLET (800px - 1199px) - ANULANDO conflictos de .nav-ul li */
+@media (min-width: 800px) and (max-width: 1199px) {
+  /* Selectores más específicos para anular .nav-ul li */
+  .nav-ul li.nav-social-buttons {
+    margin: 0 !important;
+    position: static !important;
+    text-align: center !important;
+    width: auto !important;
+    border-bottom: none !important;
+    padding: 0 !important;
+  }
+
+  .nav-social-buttons {
+    display: flex !important;
+    align-items: center;
+    margin-left: auto !important;
+    padding-left: 0.75rem !important;
+    border-left: 1px solid rgba(0, 0, 0, 0.1) !important;
+    gap: 0.1rem;
+  }
+
+  .dark-mode .nav-social-buttons {
+    border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .nav-social-buttons button {
+    padding: 5px !important;
+    min-width: auto !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .nav-social-buttons button:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+}
+
+/* MOBILE (< 800px) */
+@media (max-width: 799px) {
+  .nav-ul li.nav-social-buttons {
+    /* border-bottom: none !important; */
+  }
+
+  .nav-social-buttons {
+    display: flex !important;
+    justify-content: center;
+    width: 100% !important;
+    padding: 1rem 0 !important;
+    border-bottom: 1px solid #747577;
+    /* border-top: none; */
+    margin-top: 0.5rem !important;
+    margin-right: 0 !important;
+    gap: 0.8rem;
+    position: relative !important;
+    text-align: center !important;
+  }
+
+  .dark-mode .nav-social-buttons {
+    border-bottom: 1px solid #a4a5a8 !important;
+  }
+
+  .nav-social-buttons button {
+    padding: 8px !important;
+    min-width: auto !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .nav-social-buttons button:hover {
+    transform: scale(1.15);
+    opacity: 0.8;
+  }
+}
