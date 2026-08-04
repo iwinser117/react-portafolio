@@ -1,10 +1,9 @@
-// src/components/Nav.jsx - VERSIÓN CORREGIDA PARA MÓVIL
-import React, { useState, useEffect } from "react";
+// src/components/Nav.jsx - CORREGIDO (Sin retrasos al cambiar tema)
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import logowhite from "@assets/ok.svg";
 import logoblack from "@assets/ok_white_bgsvg.svg";
 import { NavLink, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useDarkMode } from "../components/Settingsmanager";
 import SettingsManager from "../components/Settingsmanager";
 import SocialButtonsNav from "../buttons/SocialButtonsNav";
 import {
@@ -19,44 +18,44 @@ import {
 
 const Nav = () => {
   const location = useLocation();
-  const { isDarkMode } = useDarkMode();
   const { t } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
 
-  // Scroll hide/show
-  useEffect(() => {
+  // Resetea el scroll y la visibilidad del navbar al cambiar de página
+  useLayoutEffect(() => {
     window.scrollTo(0, 0);
+    setIsVisible(true);
+  }, [location.pathname]);
 
-    let prevScrollpos = window.pageYOffset;
+  // Manejo de scroll para ocultar/mostrar el navbar
+  useEffect(() => {
+    let prevScrollPos = window.pageYOffset;
+
     const handleScroll = () => {
-      let currentScrollPos = window.pageYOffset;
-      const navbar = document.getElementById("navbar");
-      const n2 = document.getElementById("n2");
+      const currentScrollPos = window.pageYOffset;
 
-      if (navbar && n2) {
-        if (prevScrollpos > currentScrollPos) {
-          navbar.style.top = "0";
-          n2.style.top = "0";
-        } else {
-          navbar.style.top = "-50px";
-          n2.style.top = "-50px";
-        }
+      if (currentScrollPos <= 10) {
+        setIsVisible(true);
+      } else if (prevScrollPos > currentScrollPos) {
+        setIsVisible(true);
+      } else if (prevScrollPos < currentScrollPos) {
+        setIsVisible(false);
       }
-      prevScrollpos = currentScrollPos;
-      setLastScrollY(currentScrollPos);
+
+      prevScrollPos = currentScrollPos;
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [location.pathname]);
 
-  // Cerrar menú al cambiar de ruta
+  // Cerrar menú móvil al cambiar de ruta
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location.pathname]);
 
-  // Cerrar con Escape
+  // Cerrar menú con la tecla Escape
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "Escape") setIsMobileMenuOpen(false);
@@ -116,25 +115,26 @@ const Nav = () => {
       <nav
         id="navbar"
         className={`
-          fixed top-0 left-1/2 -translate-x-1/2 w-full h-[50px] z-[100]
+          fixed left-1/2 -translate-x-1/2 w-full h-[50px] z-[100]
           bg-[#F5F6F7] dark:bg-[#1D232A]
-          transition-[top] duration-200 ease-in-out
+          transition-[top,opacity] duration-300 ease-in-out
+          ${isVisible ? "top-0 opacity-100" : "-top-[50px] opacity-0"}
         `}
       >
         <div
           id="n2"
-          className={`
-            w-[90%] max-w-[1200px] mx-auto h-full flex items-center justify-between
-            transition-[top] duration-200 ease-in-out
-            min-[800px]:flex-nowrap
-          `}
+          className="w-[90%] max-w-[1200px] mx-auto h-full flex items-center justify-between min-[800px]:flex-nowrap"
         >
-          {/* LOGO */}
+          {/* LOGO: Alternado por CSS puro sin demoras de JS */}
           <NavLink to="/" className="shrink-0">
             <img
-              className="block"
-              src={isDarkMode ? logoblack : logowhite}
-              width="60px"
+              className="w-[60px] block dark:hidden"
+              src={logowhite}
+              alt="logoIS"
+            />
+            <img
+              className="w-[60px] hidden dark:block"
+              src={logoblack}
               alt="logoIS"
             />
           </NavLink>
@@ -185,7 +185,7 @@ const Nav = () => {
                 <SocialButtonsNav />
               </li>
 
-              {/* SETTINGS - empujado a la derecha */}
+              {/* SETTINGS */}
               <li className="ml-auto mr-0">
                 <SettingsManager />
               </li>
@@ -288,7 +288,7 @@ const Nav = () => {
         </>
       )}
 
-      {/* Spacer para que el contenido no quede detrás del nav */}
+      {/* Spacer */}
       <div className="h-[50px]" />
     </>
   );
