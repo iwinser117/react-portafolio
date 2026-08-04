@@ -117,98 +117,68 @@ nav .container-fluid .collapse {
 }
 
 @media (min-width: 800px) and (max-width: 1199px) {
-  .dark-mode #navbar {
-    /* background-color: transparent; */
-  }
-
-  .navbar-nav-scroll {
-    overflow: visible;
-  }
-
-  .navbar-nav {
-    flex-direction: row;
-  }
-
-  .container-fluid {
-    width: 90% !important;
-  }
-
-  .navbar-collapse {
-    display: flex !important;
-    flex-basis: auto;
-  }
 
   .navbar-toggler {
     display: none;
   }
 
-  .collapse {
-    position: relative;
-  }
-
-  nav {
-    max-width: 1199px;
+  #navbar {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
+    height: 50px;
+    z-index: 100;
+    background-color: #F5F6F7;
   }
 
-  .nav-ul {
-    z-index: inherit;
-    height: 40px;
+  .container-fluid {
+    max-width: 1200px;
     width: 90%;
+    margin: 0 auto;
     display: flex;
-    justify-content: flex-start;
-    position: relative;
     align-items: center;
-    background-color: #F5F6F7;
-    margin: auto;
-    color: #354A5F;
+    flex-wrap: nowrap !important;
+  }
+
+  .navbar-collapse {
+    display: flex !important;
+    flex-grow: 1;
+    flex-basis: auto !important;
+    min-width: 0;
+    
+  }
+
+  .navbar-nav,
+  .nav-ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    flex: 1;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    gap: 6px;
   }
 
   .nav-ul li {
-    position: static;
-    text-align: center;
-    margin: 0 5px;
-  }
-
-  .nav-ul .nav-settings-item {
-    margin-left: auto;
-    margin-right: 0;
+    margin: 0;
+    white-space: nowrap;
   }
 
   .nav-ul a {
-    position: relative;
-    display: inline-block;
-    padding: 5px 15px;
-    background-color: #F5F6F7;
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    white-space: nowrap;
   }
 
-  .nav-ul a:hover {
-    color: #0040B0;
-  }
-
-  .dark-mode .container-fluid {
-    color: white;
-  }
-
-  .dark-mode .nav-ul a {
-    color: white;
-    /* background-color: #333; */
-  }
-
-  .dark-mode .nav-ul a:hover {
-    /* background-color: #1D232A; */
-    color: #4DB1FF;
-  }
-
-  #navbar {
-    z-index: 100;
-    position: fixed;
-    top: 0;
-    height: 50px;
-    background-color: #F5F6F7;
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+  .nav-settings-item {
+    margin-left: auto;
   }
 
 }
