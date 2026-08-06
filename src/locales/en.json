@@ -1,8 +1,9 @@
 {
   "nav": {
     "home": "Home",
+    "services": "Services",
     "skills": "Skills",
-    "applications": "Applications",
+    "applications": "Portfolio",
     "contact": "Contact me",
     "blog": "Blog"
   },
