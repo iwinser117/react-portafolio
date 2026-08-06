@@ -8,7 +8,7 @@ import SettingsManager from "../components/Settingsmanager";
 import SocialButtonsNav from "../buttons/SocialButtonsNav";
 import {
   FaHome,
-  FaBrain,
+  FaSoundcloud,
   FaLaptopCode,
   FaEnvelope,
   FaBlog,
@@ -75,21 +75,32 @@ const Nav = () => {
           },
         ]
       : []),
-    ...(location.pathname !== "/aplicaciones" && location.pathname !== "/blog"
+    ...(location.pathname !== "/servicios"
       ? [
           {
-            href: "#habilidades",
-            label: t("nav.skills"),
-            icon: <FaBrain size={16} />,
+            to: "/servicios",
+            label: t("nav.services"),
+            icon: <FaSoundcloud size={16} />,
+            isNavLink: true,
           },
         ]
       : []),
-    ...(location.pathname !== "/aplicaciones"
+    ...(location.pathname !== "/portafolio"
       ? [
           {
-            to: "/aplicaciones",
+            to: "/portafolio",
             label: t("nav.applications"),
             icon: <FaLaptopCode size={16} />,
+            isNavLink: true,
+          },
+        ]
+      : []),
+    ...(location.pathname !== "/blog"
+      ? [
+          {
+            to: "/blog",
+            label: t("nav.blog"),
+            icon: <FaBlog size={16} />,
             isNavLink: true,
           },
         ]
@@ -98,16 +109,7 @@ const Nav = () => {
       href: "#contactame",
       label: t("nav.contact"),
       icon: <FaEnvelope size={16} />,
-    },
-    ...(location.pathname !== "/blog"
-      ? [
-          {
-            href: "/blog",
-            label: t("nav.blog"),
-            icon: <FaBlog size={16} />,
-          },
-        ]
-      : []),
+    }
   ];
 
   return (
@@ -157,6 +159,7 @@ const Nav = () => {
                         transition-colors duration-150 ease-in-out
                         text-sm font-medium
                         ${isActive ? "text-[#0040B0] dark:text-[#4DB1FF] font-semibold" : ""}
+                        ${link.to === "/servicios" ? "bg-[#e8e9f2] dark:bg-[#2a323c] rounded-sm" : ""}
                       `}
                     >
                       <span className="mr-[5px]">{link.icon}</span>
@@ -243,7 +246,7 @@ const Nav = () => {
                         hover:bg-[#e8edf2] dark:hover:bg-[#2a323c]
                         transition-all duration-150
                         text-base font-medium
-                        ${isActive ? 'text-[#0040B0] dark:text-[#4DB1FF] bg-[#e8edf2] dark:bg-[#2a323c]' : ''}
+                        ${isActive ? "text-[#0040B0] dark:text-[#4DB1FF] bg-[#e8edf2] dark:bg-[#2a323c]" : ""}
                       `}
                       onClick={() => setIsMobileMenuOpen(false)}
                     >

@@ -42,7 +42,7 @@ function TitlebarImageList() {
 
             {/* Overlay */}
             <Link
-              to="/aplicaciones"
+              to="/portafolio"
               className={`
                 absolute inset-0 flex flex-col items-center justify-center
                 text-white text-center p-3 z-[2] cursor-pointer
