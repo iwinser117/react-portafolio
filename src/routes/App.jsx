@@ -19,11 +19,13 @@ const App = () => {
       <Nav />
       <div className="app-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/servicios" element={<Servicios />} />
-          <Route path="/portafolio" element={<Proyectos />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/:lang" element={<Home />} />
+
+          <Route path="/:lang/servicios" element={<Servicios />} />
+          <Route path="/:lang/portafolio" element={<Proyectos />} />
+          <Route path="/:lang/blog" element={<Blog />} />
+          <Route path="/:lang/blog/:slug" element={<BlogPost />} />
         </Routes>
       </div>
     </SettingsProvider>
