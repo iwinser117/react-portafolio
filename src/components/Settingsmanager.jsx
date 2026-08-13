@@ -1,4 +1,5 @@
 // src/components/SettingsManager.jsx
+import { useNavigate, useLocation } from "react-router-dom";
 import React, { useState, useEffect, createContext, useContext } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -56,10 +57,16 @@ const SettingsManager = () => {
   const { isDarkMode, toggleTheme } = useDarkMode();
   const [isOpen, setIsOpen] = useState(false);
   const [expandedSection, setExpandedSection] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLanguageChange = (lang) => {
     i18n.changeLanguage(lang);
     localStorage.setItem("language", lang);
+
+    const pathWithoutLanguage = location.pathname.replace(/^\/(es|en)/, "");
+
+    navigate(`/${lang}${pathWithoutLanguage || "/"}`);
   };
 
   const currentLanguage = i18n.language || "es";
@@ -92,7 +99,8 @@ const SettingsManager = () => {
     };
     if (window.innerWidth >= 800) {
       document.addEventListener("mousedown", handleClickOutside);
-      return () => document.removeEventListener("mousedown", handleClickOutside);
+      return () =>
+        document.removeEventListener("mousedown", handleClickOutside);
     }
   }, [isOpen]);
 
@@ -145,7 +153,10 @@ const SettingsManager = () => {
           >
             {/* Header */}
             <div className="px-5 py-3.5 border-b border-[#d9d9d9] dark:border-[#3c4854] bg-[#f7f7f7] dark:bg-[#232a32]">
-              <h3 id="sap-popover-title" className="text-[0.9375rem] font-semibold text-[#32363a] dark:text-[#f5f6f7] m-0 flex items-center gap-2">
+              <h3
+                id="sap-popover-title"
+                className="text-[0.9375rem] font-semibold text-[#32363a] dark:text-[#f5f6f7] m-0 flex items-center gap-2"
+              >
                 <Settings size={16} />
                 {t("settings.title")}
               </h3>
@@ -161,7 +172,10 @@ const SettingsManager = () => {
                 onClick={() => toggleSection("theme")}
                 aria-expanded={expandedSection === "theme"}
               >
-                <ThemeIcon size={18} className="text-[#6a6d70] dark:text-[#b9c5d1] shrink-0 group-hover:text-[#0070d2]" />
+                <ThemeIcon
+                  size={18}
+                  className="text-[#6a6d70] dark:text-[#b9c5d1] shrink-0 group-hover:text-[#0070d2]"
+                />
                 <span className="flex-1">{t("settings.theme")}</span>
                 <ChevronRight
                   size={16}
@@ -179,9 +193,10 @@ const SettingsManager = () => {
                 <div className="px-5 pb-3 pl-[3.25rem] flex flex-col gap-1.5 animate-[slideDown_0.2s_ease]">
                   <button
                     className={`flex items-center gap-2 px-3 py-2 rounded border text-[0.8125rem] text-[#32363a] dark:text-[#f5f6f7] transition-all duration-200 ease-in-out font-inherit cursor-pointer
-                      ${!isDarkMode 
-                        ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]" 
-                        : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
+                      ${
+                        !isDarkMode
+                          ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]"
+                          : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
                       }`}
                     onClick={() => isDarkMode && toggleTheme()}
                   >
@@ -190,9 +205,10 @@ const SettingsManager = () => {
                   </button>
                   <button
                     className={`flex items-center gap-2 px-3 py-2 rounded border text-[0.8125rem] text-[#32363a] dark:text-[#f5f6f7] transition-all duration-200 ease-in-out font-inherit cursor-pointer
-                      ${isDarkMode 
-                        ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]" 
-                        : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
+                      ${
+                        isDarkMode
+                          ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]"
+                          : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
                       }`}
                     onClick={() => !isDarkMode && toggleTheme()}
                   >
@@ -213,7 +229,10 @@ const SettingsManager = () => {
                 onClick={() => toggleSection("language")}
                 aria-expanded={expandedSection === "language"}
               >
-                <Globe size={18} className="text-[#6a6d70] dark:text-[#b9c5d1] shrink-0" />
+                <Globe
+                  size={18}
+                  className="text-[#6a6d70] dark:text-[#b9c5d1] shrink-0"
+                />
                 <span className="flex-1">{t("settings.language")}</span>
                 <ChevronRight
                   size={16}
@@ -231,9 +250,10 @@ const SettingsManager = () => {
                 <div className="px-5 pb-3 pl-[3.25rem] flex flex-col gap-1.5 animate-[slideDown_0.2s_ease]">
                   <button
                     className={`flex items-center gap-2 px-3 py-2 rounded border text-[0.8125rem] text-[#32363a] dark:text-[#f5f6f7] transition-all duration-200 ease-in-out font-inherit cursor-pointer
-                      ${currentLanguage === "es" 
-                        ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]" 
-                        : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
+                      ${
+                        currentLanguage === "es"
+                          ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]"
+                          : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
                       }`}
                     onClick={() => handleLanguageChange("es")}
                   >
@@ -242,9 +262,10 @@ const SettingsManager = () => {
                   </button>
                   <button
                     className={`flex items-center gap-2 px-3 py-2 rounded border text-[0.8125rem] text-[#32363a] dark:text-[#f5f6f7] transition-all duration-200 ease-in-out font-inherit cursor-pointer
-                      ${currentLanguage === "en" 
-                        ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]" 
-                        : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
+                      ${
+                        currentLanguage === "en"
+                          ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]"
+                          : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
                       }`}
                     onClick={() => handleLanguageChange("en")}
                   >
@@ -268,7 +289,10 @@ const SettingsManager = () => {
             aria-labelledby="sap-panel-title"
           >
             <div className="flex items-center justify-between px-5 py-4 border-b border-[#d9d9d9] dark:border-[#3c4854] bg-[#f7f7f7] dark:bg-[#232a32]">
-              <h2 id="sap-panel-title" className="text-lg font-semibold text-[#32363a] dark:text-[#f5f6f7] m-0 flex items-center gap-2">
+              <h2
+                id="sap-panel-title"
+                className="text-lg font-semibold text-[#32363a] dark:text-[#f5f6f7] m-0 flex items-center gap-2"
+              >
                 <Settings size={18} />
                 {t("settings.title")}
               </h2>
@@ -283,7 +307,10 @@ const SettingsManager = () => {
             </div>
 
             <div className="px-5 py-3 border-b border-[#d9d9d9] dark:border-[#3c4854] relative">
-              <Search size={16} className="absolute left-8 top-1/2 -translate-y-1/2 text-[#6a6d70] dark:text-[#b9c5d1] pointer-events-none" />
+              <Search
+                size={16}
+                className="absolute left-8 top-1/2 -translate-y-1/2 text-[#6a6d70] dark:text-[#b9c5d1] pointer-events-none"
+              />
               <input
                 type="text"
                 className="w-full py-2.5 pr-3.5 pl-9 border border-[#d9d9d9] dark:border-[#3c4854] rounded text-sm font-inherit bg-[#f7f7f7] dark:bg-[#232a32] text-[#32363a] dark:text-[#f5f6f7] box-border
@@ -301,7 +328,10 @@ const SettingsManager = () => {
                 onClick={() => toggleSection("theme")}
                 aria-expanded={expandedSection === "theme"}
               >
-                <ThemeIcon size={18} className="text-[#6a6d70] dark:text-[#b9c5d1] shrink-0" />
+                <ThemeIcon
+                  size={18}
+                  className="text-[#6a6d70] dark:text-[#b9c5d1] shrink-0"
+                />
                 <span className="flex-1">{t("settings.theme")}</span>
                 <ChevronRight
                   size={18}
@@ -319,9 +349,10 @@ const SettingsManager = () => {
                 <div className="px-5 pb-3 pl-10 flex flex-col gap-2 animate-[slideDown_0.2s_ease]">
                   <button
                     className={`flex items-center gap-2.5 px-3.5 py-2.5 rounded border text-sm text-[#32363a] dark:text-[#f5f6f7] transition-all duration-200 ease-in-out font-inherit cursor-pointer
-                      ${!isDarkMode 
-                        ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]" 
-                        : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
+                      ${
+                        !isDarkMode
+                          ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]"
+                          : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
                       }`}
                     onClick={() => isDarkMode && toggleTheme()}
                   >
@@ -330,9 +361,10 @@ const SettingsManager = () => {
                   </button>
                   <button
                     className={`flex items-center gap-2.5 px-3.5 py-2.5 rounded border text-sm text-[#32363a] dark:text-[#f5f6f7] transition-all duration-200 ease-in-out font-inherit cursor-pointer
-                      ${isDarkMode 
-                        ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]" 
-                        : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
+                      ${
+                        isDarkMode
+                          ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]"
+                          : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
                       }`}
                     onClick={() => !isDarkMode && toggleTheme()}
                   >
@@ -352,7 +384,10 @@ const SettingsManager = () => {
                 onClick={() => toggleSection("language")}
                 aria-expanded={expandedSection === "language"}
               >
-                <Globe size={18} className="text-[#6a6d70] dark:text-[#b9c5d1] shrink-0" />
+                <Globe
+                  size={18}
+                  className="text-[#6a6d70] dark:text-[#b9c5d1] shrink-0"
+                />
                 <span className="flex-1">{t("settings.language")}</span>
                 <ChevronRight
                   size={18}
@@ -370,9 +405,10 @@ const SettingsManager = () => {
                 <div className="px-5 pb-3 pl-10 flex flex-col gap-2 animate-[slideDown_0.2s_ease]">
                   <button
                     className={`flex items-center gap-2.5 px-3.5 py-2.5 rounded border text-sm text-[#32363a] dark:text-[#f5f6f7] transition-all duration-200 ease-in-out font-inherit cursor-pointer
-                      ${currentLanguage === "es" 
-                        ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]" 
-                        : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
+                      ${
+                        currentLanguage === "es"
+                          ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]"
+                          : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
                       }`}
                     onClick={() => handleLanguageChange("es")}
                   >
@@ -381,9 +417,10 @@ const SettingsManager = () => {
                   </button>
                   <button
                     className={`flex items-center gap-2.5 px-3.5 py-2.5 rounded border text-sm text-[#32363a] dark:text-[#f5f6f7] transition-all duration-200 ease-in-out font-inherit cursor-pointer
-                      ${currentLanguage === "en" 
-                        ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]" 
-                        : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
+                      ${
+                        currentLanguage === "en"
+                          ? "border-[#0070d2] bg-[#e5f0fa] shadow-[inset_0_0_0_1px_#0070d2] font-medium dark:bg-[rgba(77,177,255,0.14)]"
+                          : "border-[#d9d9d9] bg-white dark:bg-[#1d232a] dark:border-[#3c4854] hover:border-[#0070d2] hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.14)]"
                       }`}
                     onClick={() => handleLanguageChange("en")}
                   >

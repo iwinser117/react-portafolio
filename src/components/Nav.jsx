@@ -18,7 +18,7 @@ import {
 
 const Nav = () => {
   const location = useLocation();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
 
@@ -64,52 +64,63 @@ const Nav = () => {
     return () => window.removeEventListener("keydown", onKey);
   }, [isMobileMenuOpen]);
 
+  const currentPath = location.pathname;
+
+  // Quita /es o /en para saber qué página estamos viendo
+  const pathWithoutLanguage = currentPath.replace(/^\/(es|en)/, "") || "/";
+
+  const currentLanguage = i18n.language?.startsWith("en") ? "en" : "es";
+
   const navLinks = [
-    ...(location.pathname !== "/"
+    ...(pathWithoutLanguage !== "/"
       ? [
           {
-            to: "/",
+            to: `/${currentLanguage}`,
             label: t("nav.home"),
             icon: <FaHome size={16} />,
             isNavLink: true,
           },
         ]
       : []),
-    ...(location.pathname !== "/servicios"
+
+    ...(pathWithoutLanguage !== "/servicios"
       ? [
           {
-            to: "/servicios",
+            to: `/${currentLanguage}/servicios`,
             label: t("nav.services"),
             icon: <FaSoundcloud size={16} />,
             isNavLink: true,
           },
         ]
       : []),
-    ...(location.pathname !== "/portafolio"
+
+    ...(pathWithoutLanguage !== "/portafolio"
       ? [
           {
-            to: "/portafolio",
+            to: `/${currentLanguage}/portafolio`,
             label: t("nav.applications"),
             icon: <FaLaptopCode size={16} />,
             isNavLink: true,
           },
         ]
       : []),
-    ...(location.pathname !== "/blog"
+
+    ...(pathWithoutLanguage !== "/blog"
       ? [
           {
-            to: "/blog",
+            to: `/${currentLanguage}/blog`,
             label: t("nav.blog"),
             icon: <FaBlog size={16} />,
             isNavLink: true,
           },
         ]
       : []),
+
     {
       href: "#contactame",
       label: t("nav.contact"),
       icon: <FaEnvelope size={16} />,
-    }
+    },
   ];
 
   return (
@@ -159,7 +170,7 @@ const Nav = () => {
                         transition-colors duration-150 ease-in-out
                         text-sm font-medium
                         ${isActive ? "text-[#0040B0] dark:text-[#4DB1FF] font-semibold" : ""}
-                        ${link.to === "/servicios" ? "bg-[#e8e9f2] dark:bg-[#2a323c] rounded-sm" : ""}
+                        ${link.to === (`/${currentLanguage}/servicios`) ? "bg-[#e8e9f2] dark:bg-[#2a323c] rounded-sm" : ""}
                       `}
                     >
                       <span className="mr-[5px]">{link.icon}</span>
