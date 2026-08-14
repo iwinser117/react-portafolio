@@ -59,6 +59,66 @@
     "success": "Message sent successfully",
     "error": "Error sending message"
   },
+  "services": {
+    "hero": {
+      "title": "Tailored solutions",
+      "description": "I develop comprehensive software solutions for businesses and organizations, from SAP BTP environments—including SAP Build automations and SAP CPI integrations—to custom web applications."
+    },
+    "imagePlaceholder": "Service image",
+    "items": {
+      "pdf": {
+        "title": "Custom PDF generation",
+        "subtitle": "Smart documents",
+        "description": "Creation of dynamic PDF documents using data retrieved from the client's infrastructure, with multiple pages and customized formats.",
+        "features": ["Multi-page documents", "Data from internal APIs", "Custom format design", "Delivery by email or portal"]
+      },
+      "inbox": {
+        "title": "Email inbox organization",
+        "subtitle": "Smart management",
+        "description": "Optimization and smart management of inboxes through workflow automation and email classification.",
+        "features": ["Automatic classification", "Custom workflows", "SAP CPI integration", "Metrics dashboard"]
+      },
+      "cpi": {
+        "title": "CPI process improvement",
+        "subtitle": "Optimized integration",
+        "description": "Optimization of SAP Cloud Platform Integration integrations to improve performance, reduce processing times, and increase efficiency.",
+        "features": ["Performance analysis", "Flow optimization", "Latency reduction", "Advanced monitoring"]
+      },
+      "data": {
+        "title": "Data consumption and services",
+        "subtitle": "Real-time data",
+        "description": "Retrieval, processing, and delivery of data from the client's infrastructure to proprietary or client portals.",
+        "features": ["API integration", "Data processing", "Custom portals", "Multichannel delivery"]
+      },
+      "portal": {
+        "title": "Client portal",
+        "subtitle": "Secure access",
+        "description": "Development of web portals that allow clients to access their documents, reports, and real-time data.",
+        "features": ["Secure access", "Real-time documents", "Custom dashboard", "Report downloads"]
+      },
+      "consulting": {
+        "title": "SAP BTP consulting",
+        "subtitle": "Digital transformation",
+        "description": "Advisory and development of SAP Business Technology Platform solutions to optimize business processes.",
+        "features": ["Process analysis", "Solution architecture", "Agile implementation", "Ongoing support"]
+      }
+    },
+    "technologies": {
+      "title": "Technologies",
+      "description": "Technology stack used to develop applications, integrations, and business solutions.",
+      "categories": [
+        {"title": "Frontend", "techs": ["React", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"]},
+        {"title": "Backend & databases", "techs": ["Node.js", "Express", "MongoDB", "SQL", "Python", "SAP CAP"]},
+        {"title": "SAP ecosystem", "techs": ["SAP BTP", "SAP UI5", "SAP CPI", "SAP Build Process Automation", "Cloud Foundry", "XSJS", "CDS"]},
+        {"title": "Integration", "techs": ["REST", "SOAP", "OData", "XML", "JSON", "Cloud Integration Platform"]}
+      ]
+    },
+    "cta": {
+      "title": "Ready to transform your business?",
+      "description": "Contact me to discuss how I can help you implement these solutions.",
+      "button": "Contact me now"
+    }
+  },
   "settings": {
     "title": "Settings",
     "theme": "Theme",

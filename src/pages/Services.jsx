@@ -12,6 +12,16 @@ import {
   CheckCircle,
 } from "lucide-react";
 
+import img_generate_pdf from "@assets/Gemini_Generated_Image_pdf_services.webp";
+import img_inbox from "@assets/ChatGPT-Image-auto_emails.webp";
+import img_cpi from "@assets/ChatGPT-Image-process_cpi.webp";
+import img_data from "@assets/ChatGPT-Image-consumo_data.webp";
+import img_portal from "@assets/ChatGPT-Image-portal.webp";
+import img_consulting from "@assets/ChatGPT-Image-consultoria.webp";
+
+import Formulario from "@components/Formulario";
+import Footer from "@components/Footer";
+
 const Services = () => {
   const { t } = useTranslation();
 
@@ -19,101 +29,55 @@ const Services = () => {
     {
       id: 1,
       icon: <FileText size={28} />,
-      title: "Generación de PDF a medida",
-      subtitle: "Documentos inteligentes",
-      description:
-        "Creación de documentos PDF dinámicos con datos recuperados de la infraestructura del cliente, con múltiples páginas y formatos personalizados.",
-      features: [
-        "Documentos de n páginas",
-        "Datos desde APIs internas",
-        "Personalización de formatos",
-        "Entrega por email o portal",
-      ],
+      image: img_generate_pdf,
+      ...t("services.items.pdf", { returnObjects: true }),
     },
     {
       id: 2,
       icon: <Mail size={28} />,
-      title: "Organización de Bandejas de Correo",
-      subtitle: "Gestión inteligente",
-      description:
-        "Optimización y gestión inteligente de bandejas de entrada con automatización de flujos de trabajo y clasificación de correos.",
-      features: [
-        "Clasificación automática",
-        "Flujos de trabajo personalizados",
-        "Integración con SAP CPI",
-        "Dashboard de métricas",
-      ],
+      image: img_inbox,
+      ...t("services.items.inbox", { returnObjects: true }),
     },
     {
       id: 3,
+      image: img_cpi,
       icon: <Zap size={28} />,
-      title: "Mejora de Procesos en CPI",
-      subtitle: "Integración optimizada",
-      description:
-        "Optimización de integraciones en SAP Cloud Platform Integration para mejorar rendimiento, reducir tiempos y aumentar eficiencia.",
-      features: [
-        "Análisis de rendimiento",
-        "Optimización de flujos",
-        "Reducción de latencia",
-        "Monitoreo avanzado",
-      ],
+      ...t("services.items.cpi", { returnObjects: true }),
     },
     {
       id: 4,
       icon: <Database size={28} />,
-      title: "Consumo y Servicio de Datos",
-      subtitle: "Datos en tiempo real",
-      description:
-        "Recuperación, procesamiento y entrega de datos desde la infraestructura del cliente hacia portales propios o del cliente.",
-      features: [
-        "Integración de APIs",
-        "Procesamiento de datos",
-        "Portales personalizados",
-        "Entrega multicanal",
-      ],
+      image: img_data,
+      ...t("services.items.data", { returnObjects: true }),
     },
     {
       id: 5,
+      image: img_portal,
       icon: <Cloud size={28} />,
-      title: "Portal de Clientes",
-      subtitle: "Acceso seguro",
-      description:
-        "Desarrollo de portales web para que los clientes accedan a sus documentos, reportes y datos en tiempo real.",
-      features: [
-        "Acceso seguro",
-        "Documentos en tiempo real",
-        "Dashboard personalizado",
-        "Descarga de reportes",
-      ],
+      ...t("services.items.portal", { returnObjects: true }),
     },
     {
       id: 6,
       icon: <TrendingUp size={28} />,
-      title: "Consultoría SAP BTP",
-      subtitle: "Transformación digital",
-      description:
-        "Asesoría y desarrollo de soluciones en SAP Business Technology Platform para optimizar procesos empresariales.",
-      features: [
-        "Análisis de procesos",
-        "Arquitectura de soluciones",
-        "Implementación ágil",
-        "Soporte continuo",
-      ],
+      image: img_consulting,
+      ...t("services.items.consulting", { returnObjects: true }),
     },
   ];
 
+  const technologyCategories = t("services.technologies.categories", {
+    returnObjects: true,
+  });
+
   return (
+    <>
     <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
       {/* Hero Section - Sin fondo especial */}
       <div className="text-center max-w-4xl mx-auto mb-16 md:mb-20">
         <h1 className="text-3xl sm:text-4xl lg:text-5xl font-light text-[#232946] dark:text-[#F5F6F7] mb-4 tracking-tight">
-          Soluciones personalizadas
+          {t("services.hero.title")}
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto leading-relaxed">
-          Desarrollo soluciones de software integrales para empresas y
-          organizaciones, desde entornos SAP BTP —incluyendo automatizaciones
-          con SAP Build e integraciones mediante SAP CPI— hasta aplicaciones web
-          a medida.
+          {t("services.hero.description")}
         </p>
       </div>
 
@@ -171,13 +135,21 @@ const Services = () => {
                   ))}
                 </ul>
               </div>
-
-              {/* Imagen placeholder */}
               <div className="relative">
                 <div className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700">
-                  <div className="w-full h-full flex items-center justify-center text-gray-400 dark:text-gray-600">
-                    <span className="text-sm">Imagen del servicio</span>
-                  </div>
+                  {service.image ? (
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center text-gray-400 dark:text-gray-600">
+                      <span className="text-sm">
+                        {t("services.imagePlaceholder")}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
@@ -189,62 +161,15 @@ const Services = () => {
       <div className="mt-20 pt-12 border-t border-gray-200 dark:border-gray-800">
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl font-light text-[#232946] dark:text-[#F5F6F7] mb-3">
-            Tecnologías
+            {t("services.technologies.title")}
           </h2>
           <p className="text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto">
-            Conjunto de tecnologías utilizadas en el desarrollo de aplicaciones,
-            integraciones y soluciones empresariales.
+            {t("services.technologies.description")}
           </p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-          {[
-            {
-              title: "Frontend",
-              techs: [
-                "React",
-                "JavaScript",
-                "HTML5",
-                "CSS3",
-                "Tailwind CSS",
-                "Bootstrap",
-              ],
-            },
-            {
-              title: "Backend & DB",
-              techs: [
-                "Node.js",
-                "Express",
-                "MongoDB",
-                "SQL",
-                "Python",
-                "SAP CAP",
-              ],
-            },
-            {
-              title: "SAP Ecosystem",
-              techs: [
-                "SAP BTP",
-                "SAP UI5",
-                "SAP CPI",
-                "SAP Build Process Automation",
-                "Cloud Foundry",
-                "XSJS",
-                "CDS",
-              ],
-            },
-            {
-              title: "Integración",
-              techs: [
-                "REST",
-                "SOAP",
-                "OData",
-                "XML",
-                "JSON",
-                "Cloud Integration Platform",
-              ],
-            },
-          ].map((category) => (
+          {technologyCategories.map((category) => (
             <div key={category.title} className="space-y-3">
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#004085] dark:text-[#4DB1FF]">
                 {category.title}
@@ -267,21 +192,24 @@ const Services = () => {
       {/* CTA Final - Sin fondo especial */}
       <div className="mt-20 pt-12 border-t border-gray-200 dark:border-gray-800 text-center">
         <h3 className="text-2xl sm:text-3xl font-light text-[#232946] dark:text-[#F5F6F7] mb-3">
-          ¿Listo para transformar tu negocio?
+          {t("services.cta.title")}
         </h3>
         <p className="text-gray-600 dark:text-gray-300 font-light mb-6 max-w-2xl mx-auto">
-          Contáctame para discutir cómo puedo ayudarte a implementar estas
-          soluciones
+          {t("services.cta.description")}
         </p>
-        <a
+        <Formulario />
+        {/* <a
           href="#contactame"
           className="inline-flex items-center gap-2 px-6 py-2.5 border border-[#232946] dark:border-[#F5F6F7] text-[#232946] dark:text-[#F5F6F7] hover:bg-[#232946] dark:hover:bg-[#F5F6F7] hover:text-white dark:hover:text-[#232946] transition-all duration-300 text-sm font-medium"
         >
-          <span>Contactar ahora</span>
+          <span>{t("services.cta.button")}</span>
           <ArrowRight size={18} />
-        </a>
+        </a> */}
       </div>
+
     </div>
+    <Footer />
+    </>
   );
 };
 
