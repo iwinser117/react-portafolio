@@ -59,6 +59,66 @@
     "success": "Mensaje enviado correctamente",
     "error": "Error al enviar el mensaje"
   },
+  "services": {
+    "hero": {
+      "title": "Soluciones personalizadas",
+      "description": "Desarrollo soluciones de software integrales para empresas y organizaciones, desde entornos SAP BTP —incluyendo automatizaciones con SAP Build e integraciones mediante SAP CPI— hasta aplicaciones web a medida."
+    },
+    "imagePlaceholder": "Imagen del servicio",
+    "items": {
+      "pdf": {
+        "title": "Generación de PDF a medida",
+        "subtitle": "Documentos inteligentes",
+        "description": "Creación de documentos PDF dinámicos con datos recuperados de la infraestructura del cliente, con múltiples páginas y formatos personalizados.",
+        "features": ["Documentos de n páginas", "Datos desde APIs internas", "Personalización de formatos", "Entrega por email o portal"]
+      },
+      "inbox": {
+        "title": "Organización de bandejas de correo",
+        "subtitle": "Gestión inteligente",
+        "description": "Optimización y gestión inteligente de bandejas de entrada con automatización de flujos de trabajo y clasificación de correos.",
+        "features": ["Clasificación automática", "Flujos de trabajo personalizados", "Integración con SAP CPI", "Panel de métricas"]
+      },
+      "cpi": {
+        "title": "Mejora de procesos en CPI",
+        "subtitle": "Integración optimizada",
+        "description": "Optimización de integraciones en SAP Cloud Platform Integration para mejorar el rendimiento, reducir tiempos y aumentar la eficiencia.",
+        "features": ["Análisis de rendimiento", "Optimización de flujos", "Reducción de latencia", "Monitoreo avanzado"]
+      },
+      "data": {
+        "title": "Consumo y servicio de datos",
+        "subtitle": "Datos en tiempo real",
+        "description": "Recuperación, procesamiento y entrega de datos desde la infraestructura del cliente hacia portales propios o del cliente.",
+        "features": ["Integración de APIs", "Procesamiento de datos", "Portales personalizados", "Entrega multicanal"]
+      },
+      "portal": {
+        "title": "Portal de clientes",
+        "subtitle": "Acceso seguro",
+        "description": "Desarrollo de portales web para que los clientes accedan a sus documentos, reportes y datos en tiempo real.",
+        "features": ["Acceso seguro", "Documentos en tiempo real", "Panel personalizado", "Descarga de reportes"]
+      },
+      "consulting": {
+        "title": "Consultoría SAP BTP",
+        "subtitle": "Transformación digital",
+        "description": "Asesoría y desarrollo de soluciones en SAP Business Technology Platform para optimizar procesos empresariales.",
+        "features": ["Análisis de procesos", "Arquitectura de soluciones", "Implementación ágil", "Soporte continuo"]
+      }
+    },
+    "technologies": {
+      "title": "Tecnologías",
+      "description": "Conjunto de tecnologías utilizadas en el desarrollo de aplicaciones, integraciones y soluciones empresariales.",
+      "categories": [
+        {"title": "Frontend", "techs": ["React", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"]},
+        {"title": "Backend y bases de datos", "techs": ["Node.js", "Express", "MongoDB", "SQL", "Python", "SAP CAP"]},
+        {"title": "Ecosistema SAP", "techs": ["SAP BTP", "SAP UI5", "SAP CPI", "SAP Build Process Automation", "Cloud Foundry", "XSJS", "CDS"]},
+        {"title": "Integración", "techs": ["REST", "SOAP", "OData", "XML", "JSON", "Cloud Integration Platform"]}
+      ]
+    },
+    "cta": {
+      "title": "¿Listo para transformar tu negocio?",
+      "description": "Contáctame para discutir cómo puedo ayudarte a implementar estas soluciones.",
+      "button": "Contactar ahora"
+    }
+  },
   "settings": {
     "title": "Configuración",
     "theme": "Tema",

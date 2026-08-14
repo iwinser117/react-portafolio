@@ -2,16 +2,8 @@ import React from "react";
 import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import App from "./routes/App";
-import track from "./utils/track";
 import { ca } from "date-fns/locale";
 import "./locales/i18nConfig";
-
-// Inicializar el rastreador de visitas
-try{
-  track();
-}catch(err){
-  console.error('Error initializing tracker:', err);
-}
 
 
 // (async function app() {
