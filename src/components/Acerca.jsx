@@ -5,6 +5,7 @@ import mostrarDiploma from "../utils/modalDiploma.js";
 import GridExperiencia from "./AcercaExperiencias";
 import Certifications from "./Certifications.jsx";
 import CategoriesTecnologie from "./CategoriesTecnologie.jsx";
+import ServicesBanner from "./ServicesBanner.jsx";
 
 const Acerca = () => {
   const { t, i18n } = useTranslation();
@@ -61,6 +62,12 @@ const Acerca = () => {
           dangerouslySetInnerHTML={{ __html: t('about.description') }} 
         />
       </article>
+
+      {/* Servicios Banner */}
+
+      <div className="w-full mb-10">
+        <ServicesBanner />      
+      </div>
 
       {/* CATEGORÍAS TECNOLOGÍA */}
       <div className="w-full mb-10">
