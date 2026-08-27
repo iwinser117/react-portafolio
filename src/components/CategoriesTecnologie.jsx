@@ -1,4 +1,3 @@
-// src/components/CategoriesTecnologie.jsx
 import React from "react";
 import { useDarkMode } from "./Settingsmanager";
 import { useTranslation } from "react-i18next";
@@ -42,19 +41,12 @@ const TechnologiesSection = () => {
         </p>
       </div>
 
-      {/* Grid de categorías */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {/* Disposición fluida basada en filas lisas (sin contenedor "Card") */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
         {technologies.map((category) => (
           <div
             key={category.title}
-            className="
-              h-full p-4 sm:p-5 rounded-xl
-              bg-white dark:bg-[#1d232a]
-              border border-[#d9d9d9] dark:border-[#3c4854]
-              transition-all duration-300 ease-in-out
-              hover:-translate-y-1 hover:border-[#0070d2] dark:hover:border-[#4DB1FF]
-              shadow-sm hover:shadow-md
-            "
+            className="py-3 border-b border-[#e8eaed] dark:border-[#2a333d]"
           >
             <h3 className="text-base sm:text-lg font-semibold text-[#354A5F] dark:text-[#F5F6F7] mb-1">
               {category.title}
@@ -64,18 +56,19 @@ const TechnologiesSection = () => {
               {category.description}
             </p>
 
+            {/* Badges tipo SAP Horizon: limpios, sobrios y sin estridencia */}
             <div className="flex flex-wrap gap-1.5">
               {category.items.map((tech) => (
                 <span
                   key={tech}
                   className="
                     inline-flex items-center px-2.5 py-1 rounded-md
-                    text-xs font-medium
-                    border border-[#d9d9d9] dark:border-[#3c4854]
+                    text-xs font-mono font-medium
+                    bg-gray-100/70 dark:bg-[#1d232a]
                     text-[#354A5F] dark:text-[#F5F6F7]
-                    bg-transparent
-                    transition-colors duration-200
-                    hover:bg-[#e5f0fa] dark:hover:bg-[rgba(77,177,255,0.15)]
+                    border border-[#d9d9d9]/60 dark:border-[#3c4854]/60
+                    hover:border-[#0070d2] dark:hover:border-[#4DB1FF]
+                    transition-colors duration-150
                   "
                 >
                   {tech}
