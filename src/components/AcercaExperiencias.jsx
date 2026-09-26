@@ -3,10 +3,14 @@ import React, { useState, useEffect } from "react";
 import { secondImages } from "../utils/galerimages.js";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 function TitlebarImageList() {
   const [width, setWidth] = useState(window.innerWidth);
   const isMobile = width <= 600;
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language?.startsWith("en") ? "en" : "es";
+
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -42,7 +46,7 @@ function TitlebarImageList() {
 
             {/* Overlay */}
             <Link
-              to="/portafolio"
+              to={`/${currentLanguage}/portafolio`}
               className={`
                 absolute inset-0 flex flex-col items-center justify-center
                 text-white text-center p-3 z-[2] cursor-pointer

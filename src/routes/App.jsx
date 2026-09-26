@@ -16,6 +16,7 @@ import Proyectos from "@pages/aplicaciones";
 import Blog from "@pages/Blog";
 import BlogPost from "@containers/BlogPost";
 import Servicios from "@pages/Services";
+import Seo from "@components/Seo";
 
 import i18n from "../locales/i18nConfig"; "./locales/i18nConfig";
 
@@ -31,6 +32,7 @@ const App = () => {
 const AppContent = () => {
   return (
     <SettingsProvider>
+      <Seo />
       <Nav />
       <div className="app-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Routes>
@@ -41,6 +43,7 @@ const AppContent = () => {
           <Route path="/:lang/servicios" element={<Servicios />} />
           <Route path="/:lang/servicios/:slug" element={<Servicios />} />
           <Route path="/:lang/portafolio" element={<Proyectos />} />
+          <Route path="/portafolio" element={<Proyectos />} />
           <Route path="/:lang/blog" element={<Blog />} />
           <Route path="/:lang/blog/:slug" element={<BlogPost />} />
           <Route path="/blog/:slug" element={<BlogPost />} />

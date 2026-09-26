@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Allow: /aplicaciones
 Allow: /assets/
 Allow: /*.js
 Allow: /*.css
@@ -16,13 +15,5 @@ Disallow: /.git/
 Disallow: /.history/
 Disallow: /target/
 
-# Important sections
-Allow: /#acercademi
-Allow: /#habilidades
-Allow: /#contactame
-
 # Sitemap
 Sitemap: https://iwinsersanchez.netlify.app/sitemap.xml
-
-# Crawl-delay
-Crawl-delay: 10

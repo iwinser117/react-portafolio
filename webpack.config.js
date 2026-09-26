@@ -72,6 +72,9 @@ module.exports = {
     new CleanWebpackPlugin(),
     new CopyPlugin({
       patterns: [
+        { from: path.resolve(__dirname, "public", "robots.txt"), to: "robots.txt" },
+        { from: path.resolve(__dirname, "public", "_redirects"), to: "_redirects", toType: "file" },
+        { from: path.resolve(__dirname, "sitemap.xml"), to: "sitemap.xml" },
         {
           from: path.resolve(__dirname, "src", "assets"),
           to: "assets",

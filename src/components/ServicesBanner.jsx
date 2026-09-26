@@ -21,7 +21,8 @@ const serviceIcons = {
 };
 
 const ServicesBanner = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLanguage = i18n.language?.startsWith("en") ? "en" : "es";
   const services = Object.entries(t("services.items", { returnObjects: true }));
 
   return (
@@ -32,7 +33,7 @@ const ServicesBanner = () => {
             {t("services.hero.title")}
           </h2>
         </div>
-        <Link to="/servicios" className="inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-[#0070d2] transition-colors hover:text-[#004085] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0070d2] dark:text-[#4DB1FF] dark:hover:text-[#8bcaff]">
+        <Link to={`/${currentLanguage}/servicios`} className="inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-[#0070d2] transition-colors hover:text-[#004085] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0070d2] dark:text-[#4DB1FF] dark:hover:text-[#8bcaff]">
           {t("common.learn_more", "Ver servicios")}
           <ArrowUpRight size={16} aria-hidden="true" />
         </Link>
@@ -47,7 +48,7 @@ const ServicesBanner = () => {
           const Icon = serviceIcons[key] || BriefcaseBusiness;
 
           return (
-            <Link key={key} to="/servicios" className="group relative flex min-h-36 gap-3 border-b border-[#d9d9d9] p-4 transition-colors duration-200 hover:bg-[#f3f8fc] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#0070d2] dark:border-[#3c4854] dark:hover:bg-[#222d38] sm:[&:nth-last-child(-n+2)]:border-b-0 sm:[&:nth-odd]:border-r sm:[&:nth-odd]:border-[#d9d9d9] sm:dark:[&:nth-odd]:border-[#3c4854]" aria-label={`${service.title}: ${t("common.learn_more", "Ver servicios")}`}>
+            <Link key={key} to={`/${currentLanguage}/servicios`} className="group relative flex min-h-36 gap-3 border-b border-[#d9d9d9] p-4 transition-colors duration-200 hover:bg-[#f3f8fc] focus-visible:z-10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#0070d2] dark:border-[#3c4854] dark:hover:bg-[#222d38] sm:[&:nth-last-child(-n+2)]:border-b-0 sm:[&:nth-odd]:border-r sm:[&:nth-odd]:border-[#d9d9d9] sm:dark:[&:nth-odd]:border-[#3c4854]" aria-label={`${service.title}: ${t("common.learn_more", "Ver servicios")}`}>
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-[#cbddec] bg-[#eaf3fb] text-[#0070d2] transition-colors duration-200 group-hover:border-[#0070d2] group-hover:bg-white dark:border-[#31536d] dark:bg-[#1a3448] dark:text-[#4DB1FF] dark:group-hover:bg-[#1d232a]">
                 <Icon size={18} strokeWidth={1.8} aria-hidden="true" />
               </span>
