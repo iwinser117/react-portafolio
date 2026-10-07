@@ -17,7 +17,7 @@
   "about": {
     "greeting": "Hola, soy ",
     "name": "Iwinser Sanchez",
-    "description": "Desarrollo soluciones de software integrales para empresas y organizaciones, desde entornos SAP BTP —incluyendo automatizaciones con SAP Build e integraciones mediante SAP CPI (Cloud Platform Integration)— hasta aplicaciones web a medida. Mi stack técnico principal incluye Node.js, React, MongoDB y SQL. Me especializo en la integración efectiva con plataformas de terceros, optimizando la lógica de negocio y garantizando soluciones robustas, escalables y orientadas a los objetivos estratégicos de mis clientes.",
+    "description": "Desarrollo soluciones de software integrales para empresas y organizaciones, desde entornos SAP BTP incluyendo automatizaciones con SAP Build e integraciones mediante SAP CPI (Cloud Platform Integration) hasta aplicaciones web a medida. Mi stack técnico principal incluye Node.js, React, MongoDB y SQL. Me especializo en la integración efectiva con plataformas de terceros, optimizando la lógica de negocio y garantizando soluciones robustas, escalables y orientadas a los objetivos estratégicos de mis clientes.",
     "personalProjects": "Proyectos Personales",
     "certifications": "Certificaciones",
     "certificationsDescription": "Actualmente curso la Ingeniería de Sistemas en la UNAD, lo cual combino con una sólida base técnica obtenida en la Facultad de Ingeniería de la Universidad de Antioquia (<i>Misión TIC 2022</i>). Mi enfoque profesional se basa en el aprendizaje continuo, especializándome constantemente en arquitecturas modernas y tecnologías de alto impacto a través de plataformas líderes y recursos técnicos de vanguardia."
@@ -62,7 +62,7 @@
   "services": {
     "hero": {
       "title": "Soluciones personalizadas",
-      "description": "Desarrollo soluciones de software integrales para empresas y organizaciones, desde entornos SAP BTP —incluyendo automatizaciones con SAP Build e integraciones mediante SAP CPI— hasta aplicaciones web a medida."
+      "description": "Desarrollo soluciones de software integrales para empresas y organizaciones, desde entornos SAP BTP incluyendo automatizaciones con SAP Build e integraciones mediante SAP CPI hasta aplicaciones web a medida."
     },
     "imagePlaceholder": "Imagen del servicio",
     "items": {

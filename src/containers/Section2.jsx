@@ -243,7 +243,7 @@ export default function ProyectosNodeJS() {
           <MDBCol>
             <Card
               imgSrc={login}
-              title="Autenticación JWT"
+              title="Autenticación basada en Tokens"
               text="Implementación de login con JSON Web Tokens. Incluye rutas protegidas y manejo de sesiones."
               repoName="autenticate"
               projectUrl="https://autenticate.vercel.app/"

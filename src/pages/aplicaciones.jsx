@@ -36,6 +36,7 @@ const Proyectos = () => {
       title: p.alt || `Proyecto ${i + 1}`,
       img: p.src,
       subtitle: p.subtitle || "",
+      description: p.description || "",
       categories: deriveCategories(p.subtitle),
       tags: p.subtitle ? p.subtitle.split(" - ") : [],
       repo: p.repo || "",
@@ -212,11 +213,17 @@ const ProjectCard = ({ project, featured = false }) => {
           {project.title}
         </h3>
 
-        {project.subtitle && (
-          <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-2 leading-relaxed">
-            {project.subtitle}
-          </p>
-        )}
+        <p
+          className="h-[4.875rem] max-h-[4.875rem] overflow-hidden text-sm text-gray-600 dark:text-gray-300"
+          style={{
+            display: "-webkit-box",
+            WebkitBoxOrient: "vertical",
+            WebkitLineClamp: 3,
+            lineHeight: "1.625rem",
+          }}
+        >
+          {project.description}
+        </p>
 
         <div className="flex flex-wrap gap-1.5">
           {project.tags.slice(0, 3).map((tag, idx) => (

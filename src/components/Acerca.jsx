@@ -58,7 +58,7 @@ const Acerca = () => {
           <span className="text-[#0070d2] dark:text-[#4DB1FF]">Iwinser Sanchez</span>
         </h3>
         <p 
-          className="text-justify text-pretty text-sm sm:text-base leading-relaxed text-[#354A5F] dark:text-[#e0e0e0]"
+          className="text-pretty text-sm sm:text-base leading-relaxed text-[#354A5F] dark:text-[#e0e0e0]"
           dangerouslySetInnerHTML={{ __html: t('about.description') }} 
         />
       </article>
@@ -88,7 +88,7 @@ const Acerca = () => {
           {t('about.certifications')}
         </h4>
         <p 
-          className="text-justify text-pretty text-sm sm:text-base leading-relaxed text-[#354A5F] dark:text-[#e0e0e0]"
+          className="text-pretty text-sm sm:text-base leading-relaxed text-[#354A5F] dark:text-[#e0e0e0]"
           dangerouslySetInnerHTML={{ __html: t('about.certificationsDescription') }} 
         />
       </article>

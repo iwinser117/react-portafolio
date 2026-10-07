@@ -29,7 +29,7 @@ const imagesData = [{
   },
   {
     src: node,
-    alt: 'CRUD Lista tareas'
+    alt: 'Maestro de Datos '
   },
   {
     src: css,
@@ -55,7 +55,8 @@ const section1Projects = [{
   alt: 'Rick and Morty',
   subtitle: 'Consumo API - Paginación',
   demo: 'https://api-rick-and-morty-17j9.vercel.app/',
-  repo: 'https://github.com/iwinser117/Api-Rick-and-Morty'
+  repo: 'https://github.com/iwinser117/Api-Rick-and-Morty',
+  description: 'Aplicación que consume la API de Rick and Morty y muestra los personajes con paginación.'
 }, ];
 
 // Section2: Proyectos Node.js
@@ -76,24 +77,27 @@ const section2Projects = [
   }, */
   {
     src: login,
-    alt: 'Autenticación JWT',
+    alt: 'Autenticación basada en Tokens',
     subtitle: 'Node.js - JWT - Express',
     demo: 'https://autenticate.vercel.app/',
-    repo: 'https://github.com/iwinser117/autenticate'
+    repo: 'https://github.com/iwinser117/autenticate',
+    description: 'Implementación de login con JSON Web Tokens. Incluye rutas para autenticar usuarios, crear usuarios y manejo de sesiones.'
   },
   {
     src: generatePassword,
-    alt: 'Generador Contraseñas',
+    alt: 'Creador de Claves Seguras',
     subtitle: 'Tailwind - NextJs',
     demo: 'https://generatepassword-theta.vercel.app/',
-    repo: 'https://github.com/iwinser117/generatepassword'
+    repo: 'https://github.com/iwinser117/generatepassword',
+    description: 'Crea contraseñas seguras con parámetros personalizables.'
   },
   {
     src: imgtablaExport,
-    alt: 'TableExportJS',
+    alt: 'Centro de Exportación de Datos',
     subtitle: 'Vanilla JS - CSV - XLSX',
     demo: 'https://table-export-js-4zq5.vercel.app/',
-    repo: 'https://github.com/iwinser117/TableExportJS'
+    repo: 'https://github.com/iwinser117/TableExportJS',
+    description: 'Herramienta para exportar tablas en diversos formatos. Fuente de datos dinamica.'
   },
 ];
 
@@ -147,38 +151,43 @@ const secondImages = [
    }, */
   {
     src: listtareas,
-    alt: 'CRUD Lista tareas',
+    alt: 'Maestro de Datos ',
     subtitle: 'NodeJs - React - MongoDB',
     demo: 'https://crudlistatareas.netlify.app/',
-    repo: 'https://github.com/iwinser117/nodeJs_react_crud'
+    repo: 'https://github.com/iwinser117/nodeJs_react_crud',
+    description: 'Aplicación para gestionar tareas con un backend en Node.js y un frontend en React. Incluye operaciones CRUD y almacenamiento en MongoDB.'
   },
   {
     src: login,
-    alt: 'Autenticación JWT',
+    alt: 'Autenticación basada en Tokens',
     subtitle: 'NodeJs - ExpressJs - oAuth',
     demo: 'https://autenticate.vercel.app/',
-    repo: 'https://github.com/iwinser117/autenticate'
+    repo: 'https://github.com/iwinser117/autenticate',
+    description: 'Implementación de login con JSON Web Tokens. Incluye rutas para autenticar usuarios, crear usuarios y manejo de sesiones.'
   },
   {
     src: generatePassword,
-    alt: 'Generador Contraseñas',
+    alt: 'Creador de Claves Seguras',
     subtitle: 'Tailwind - NextJs',
     demo: 'https://generatepassword-theta.vercel.app/',
-    repo: 'https://github.com/iwinser117/generatepassword'
+    repo: 'https://github.com/iwinser117/generatepassword',
+    description: 'Crea contraseñas seguras con parámetros personalizables.'
   },
   {
     src: imgtablaExport,
-    alt: 'TableExportJS',
+    alt: 'Centro de Exportación de Datos',
     subtitle: 'NodeJs',
     demo: 'https://table-export-js-4zq5.vercel.app/',
-    repo: 'https://github.com/iwinser117/TableExportJS'
+    repo: 'https://github.com/iwinser117/TableExportJS',
+    description: 'Herramienta para exportar tablas en diversos formatos. Fuente de datos dinamica.'
   },
   {
     src: crud_sap,
-    alt: 'CRUD SAP',
+    alt: 'Gestor de Datos Maestros',
     subtitle: 'NodeJs - Express - Odata - SAP',
     demo: 'https://mega-crud-table-ui5.vercel.app/',
-    repo: 'https://github.com/iwinser117/mega-crud-table-ui5'
+    repo: 'https://github.com/iwinser117/mega-crud-table-ui5',
+    description: 'Aplicación para gestionar datos maestros desde SAP mediante OData.'
   },
   /* {
     src: imgdevist,
@@ -191,6 +200,7 @@ const secondImages = [
     src: "",
     alt: "apk pdf",
     subtitle: "Visor PDF - Android",
+    description: "Estaba cansado de la publicidad y escribir contraseñas asi que hice esta aplicación para visualizar archivos PDF en dispositivos Android.",
     demo: "https://pdf-generator-nodejs.vercel.app/",
     repo: "https://github.com/iwinser117/pdf_reader"
   }

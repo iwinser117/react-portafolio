@@ -1,0 +1,26 @@
+.habilidades-slider-track {
+  display: flex;
+  width: max-content;
+  animation: habilidades-infinite-scroll 30s linear infinite !important;
+}
+
+.habilidades-slider-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes habilidades-infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .habilidades-slider-track {
+    animation-duration: 30s !important;
+    animation-iteration-count: infinite !important;
+  }
+}

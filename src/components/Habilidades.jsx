@@ -2,6 +2,7 @@
 import React from "react";
 import { Monitor, Server } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import "@styles/habilidades.css";
 
 import react from "../assets/react.svg";
 import htmlimg from "../assets/html.svg";
@@ -63,7 +64,7 @@ const Habilidades = () => {
 
         {/* Infinite Slider Wrapper con máscaras de degradado a los lados */}
         <div className="relative w-full overflow-hidden py-4 [mask-image:_linear-gradient(to_right,_transparent_0,_black_128px,_black_calc(100%-128px),_transparent_100%)]">
-          <div className="animate-infinite-scroll flex items-center gap-8 md:gap-12">
+          <div className="habilidades-slider-track flex items-center gap-8 md:gap-12">
             {/* Duplicamos el array para que el scroll sea infinito sin saltos */}
             {[...frontendTechs, ...frontendTechs].map((tech, idx) => (
               <div
@@ -97,7 +98,7 @@ const Habilidades = () => {
 
         {/* Infinite Slider Wrapper */}
         <div className="relative w-full overflow-hidden py-4 [mask-image:_linear-gradient(to_right,_transparent_0,_black_128px,_black_calc(100%-128px),_transparent_100%)]">
-          <div className="animate-infinite-scroll flex items-center gap-8 md:gap-12">
+          <div className="habilidades-slider-track flex items-center gap-8 md:gap-12">
             {[...backendTechs, ...backendTechs].map((tech, idx) => (
               <div
                 key={idx}

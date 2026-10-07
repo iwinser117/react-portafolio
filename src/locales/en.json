@@ -17,7 +17,7 @@
   "about": {
     "greeting": "Hello, I am ",
     "name": "Iwinser Sanchez",
-    "description": "I build comprehensive software solutions for organizations, ranging from SAP BTP environments—leveraging SAP Build for automation and SAP CPI for seamless integration—to bespoke cloud applications. My primary technical stack includes Node.js, React, MongoDB, and SQL. I specialize in building robust integrations with third-party platforms, streamlining complex business logic, and delivering scalable solutions tailored to my clients' unique business needs.",
+    "description": "I build comprehensive software solutions for organizations, ranging from SAP BTP environmentsleveraging SAP Build for automation and SAP CPI for seamless integrationto bespoke cloud applications. My primary technical stack includes Node.js, React, MongoDB, and SQL. I specialize in building robust integrations with third-party platforms, streamlining complex business logic, and delivering scalable solutions tailored to my clients' unique business needs.",
     "personalProjects": "Personal Projects",
     "certifications": "Certifications",
     "certificationsDescription": "I am currently pursuing a Systems Engineering degree at UNAD, which I combine with a solid technical foundation obtained at the Faculty of Engineering of the University of Antioquia (<i>Misión TIC 2022</i>). My professional approach is based on continuous learning, constantly specializing in modern architectures and high-impact technologies through leading platforms and cutting-edge technical resources."
@@ -62,7 +62,7 @@
   "services": {
     "hero": {
       "title": "Tailored solutions",
-      "description": "I develop comprehensive software solutions for businesses and organizations, from SAP BTP environments—including SAP Build automations and SAP CPI integrations—to custom web applications."
+      "description": "I develop comprehensive software solutions for businesses and organizations, from SAP BTP environmentsincluding SAP Build automations and SAP CPI integrationsto custom web applications."
     },
     "imagePlaceholder": "Service image",
     "items": {
