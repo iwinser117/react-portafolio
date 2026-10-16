@@ -3,7 +3,7 @@ const TRACKER_CONFIG = {
     siteName: 'Portafolio Iwinser Sanchez'
 };
 
-// Función para enviar visita
+// Envía una visita al tracker. React Router se encarga de invocarla al cambiar de ruta.
 function trackPageView() {
     const data = {
         siteName: TRACKER_CONFIG.siteName,
@@ -16,7 +16,7 @@ function trackPageView() {
         }
     };
 
-    fetch(TRACKER_CONFIG.apiUrl, {
+    return fetch(TRACKER_CONFIG.apiUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -26,11 +26,5 @@ function trackPageView() {
         console.error('Error tracking page view:', err);
     });
 }
-
-// Rastrear la visita cuando se carga la página
-window.addEventListener('load', trackPageView);
-
-// Rastrear la visita cuando se navega a una nueva ruta (para SPA)
-window.addEventListener('popstate', trackPageView);
 
 export { trackPageView };

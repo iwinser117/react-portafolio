@@ -1,6 +1,6 @@
 // src/App.jsx
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import "@styles/index.css";
 import "@codigoProyectos/verResultados/calculadora";
@@ -19,6 +19,7 @@ import Servicios from "@pages/Services";
 import Seo from "@components/Seo";
 
 import i18n from "../locales/i18nConfig"; "./locales/i18nConfig";
+import { trackPageView } from "@utils/track";
 
 const App = () => {
   return (
@@ -30,6 +31,12 @@ const App = () => {
 };
 
 const AppContent = () => {
+  const location = useLocation();
+
+  React.useEffect(() => {
+    trackPageView();
+  }, [location.pathname, location.search, location.hash]);
+
   return (
     <SettingsProvider>
       <Seo />
