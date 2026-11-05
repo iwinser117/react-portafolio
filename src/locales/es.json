@@ -65,6 +65,21 @@
       "description": "Desarrollo soluciones de software integrales para empresas y organizaciones, desde entornos SAP BTP incluyendo automatizaciones con SAP Build e integraciones mediante SAP CPI hasta aplicaciones web a medida."
     },
     "imagePlaceholder": "Imagen del servicio",
+    "demos": {
+      "title": "Demostraciones",
+      "description": "Conoce algunos ejemplos de soluciones en funcionamiento.",
+      "play": "Reproducir video",
+      "videos": {
+        "crud": {
+          "title": "Gestión de datos",
+          "subtitle": "Demostración de una aplicación CRUD para crear, consultar, actualizar y eliminar datos."
+        },
+        "iflow": {
+          "title": "Consumo de iFlow SAP",
+          "subtitle": "Consumo de un iFlow de SAP mediante usuario y contraseña, sin utilizar una API key."
+        }
+      }
+    },
     "items": {
       "pdf": {
         "title": "Generación de PDF a medida",

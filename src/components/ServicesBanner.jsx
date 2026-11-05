@@ -10,6 +10,7 @@ import {
   Inbox,
   LayoutDashboard,
 } from "lucide-react";
+import LazyYouTubeVideo from "./LazyYouTubeVideo";
 
 const serviceIcons = {
   pdf: FileText,
@@ -19,6 +20,19 @@ const serviceIcons = {
   portal: LayoutDashboard,
   consulting: BriefcaseBusiness,
 };
+
+const videoDemos = [
+  {
+    url: "https://www.youtube.com/watch?v=JOjaPiqHS-c",
+    titleKey: "services.demos.videos.crud.title",
+    subtitleKey: "services.demos.videos.crud.subtitle",
+  },
+  {
+    url: "https://www.youtube.com/watch?v=a5oyImOKM8E&t=3s",
+    titleKey: "services.demos.videos.iflow.title",
+    subtitleKey: "services.demos.videos.iflow.subtitle",
+  },
+];
 
 const ServicesBanner = () => {
   const { t, i18n } = useTranslation();
@@ -68,6 +82,36 @@ const ServicesBanner = () => {
           );
         })}
       </div>
+
+      {videoDemos.length > 0 && (
+        <div className="mt-6 border-t border-[#d9d9d9] pt-6 dark:border-[#3c4854]">
+          <h3 className="text-base font-semibold text-[#354A5F] dark:text-[#F5F6F7]">
+            {t("services.demos.title")}
+          </h3>
+          <p className="mt-1 text-sm text-[#6a6d70] dark:text-[#b9c5d1]">
+            {t("services.demos.description")}
+          </p>
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            {videoDemos.map((video) => (
+              <div key={video.url}>
+                <div className="relative aspect-video overflow-hidden rounded-lg border border-[#d9d9d9] bg-[#102a43] dark:border-[#3c4854]">
+                  <LazyYouTubeVideo
+                    url={video.url}
+                    title={t(video.titleKey)}
+                    playLabel={t("services.demos.play")}
+                  />
+                </div>
+                <h4 className="mt-3 text-sm font-semibold text-[#354A5F] dark:text-[#F5F6F7]">
+                  {t(video.titleKey)}
+                </h4>
+                <p className="mt-1 text-xs leading-relaxed text-[#6a6d70] dark:text-[#b9c5d1]">
+                  {t(video.subtitleKey)}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 };

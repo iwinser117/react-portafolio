@@ -65,6 +65,21 @@
       "description": "I develop comprehensive software solutions for businesses and organizations, from SAP BTP environmentsincluding SAP Build automations and SAP CPI integrationsto custom web applications."
     },
     "imagePlaceholder": "Service image",
+    "demos": {
+      "title": "Demonstrations",
+      "description": "Explore a few examples of working solutions.",
+      "play": "Play video",
+      "videos": {
+        "crud": {
+          "title": "Data management",
+          "subtitle": "Demonstration of a CRUD application to create, retrieve, update, and delete data."
+        },
+        "iflow": {
+          "title": "SAP iFlow consumption",
+          "subtitle": "Consumes an SAP iFlow with a username and password, without using an API key."
+        }
+      }
+    },
     "items": {
       "pdf": {
         "title": "Custom PDF generation",
