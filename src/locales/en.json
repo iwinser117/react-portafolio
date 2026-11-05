@@ -77,6 +77,10 @@
         "iflow": {
           "title": "SAP iFlow consumption",
           "subtitle": "Consumes an SAP iFlow with a username and password, without using an API key."
+        },
+        "pdf": {
+          "title": "PDF generation",
+          "subtitle": "Demonstration of a PDF generation process using data from an internal API."
         }
       }
     },

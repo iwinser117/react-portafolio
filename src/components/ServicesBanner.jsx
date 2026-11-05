@@ -32,6 +32,11 @@ const videoDemos = [
     titleKey: "services.demos.videos.iflow.title",
     subtitleKey: "services.demos.videos.iflow.subtitle",
   },
+  {
+    url:"https://youtu.be/1jVPcv3hWko",
+    titleKey: "services.demos.videos.pdf.title",
+    subtitleKey: "services.demos.videos.pdf.subtitle",
+  }
 ];
 
 const ServicesBanner = () => {
